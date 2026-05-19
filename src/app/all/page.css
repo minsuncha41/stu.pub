@@ -15,7 +15,7 @@ header{
     color: white;
     font-size: 14px;
 }
-.navlft ul,.logo , .navret ul{
+.navlft ul,.logo , .navret{
     height: 56px;
     display: flex;
     flex-flow: row wrap;
@@ -43,27 +43,28 @@ header{
     background:none;
 }
 
-.navret ul li{
+.navret li{
     cursor: pointer;
+    font-size: 13px;
 }
 
-.navret ul li:nth-child(1){
+.navret li:nth-child(1){
     padding: 0px 15px;
     border-right: 1px solid #3B5F9A;
 }
-.navret ul li:nth-child(2){
+.navret li:nth-child(2){
     margin: 0px 10px 0 15px;
 }
-.navret ul li:nth-child(3) p{
+.navret li:nth-child(3) p{
     color: #CBD5E1;
     padding: 0px 5px;
     border-right: 1px solid #ffffff;
 }
-.navret ul li:nth-child(4){
+.navret li:nth-child(4){
     color: #CBD5E1;
     padding: 0px 5px;
 }
-.navret ul li:nth-child(5){
+.navret li:nth-child(5){
     padding: 0px 10px;
 }
 

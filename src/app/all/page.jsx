@@ -14,7 +14,7 @@ export default function page(){
                         <li>일용직관리</li>
                     </ul>
                  </nav>
-                  
+
                  <nav className="navret">
                     <ul>
                         <li><img src="/Bell.png"/></li>
@@ -24,9 +24,7 @@ export default function page(){
                         <li><img src="/Log Out.png"/></li>
                     </ul>
                  </nav>
-
             </header>
-
         </div>
     )
 }
