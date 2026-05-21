@@ -70,7 +70,7 @@ export default function inc(){
                             },
                             {
                                 titin: { icon: "/File Text.png", titname:"증명서관리" },
-                                sublit: [ "1증명서발급" ]
+                                sublit: [ "증명서발급" ]
                             },
                         ]
                     }
