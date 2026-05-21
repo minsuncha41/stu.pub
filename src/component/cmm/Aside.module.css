@@ -1,0 +1,54 @@
+.lftber{
+    width: 210px;
+    height: calc(100vh - 56px);
+    background: #1E293B;
+    margin-top: 56px;
+    list-style-type: disc;
+}
+
+.lftber ul p{
+    background: #162032;
+    display: flex;
+    color: #60A5FA;
+    padding: 16px;
+    font-size: 12px;
+    cursor: default;
+}
+.lftber ul p img{
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+.lftber ul li{
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 14px 32px;    
+    color: #94A3B8;
+}
+
+.lftber ul li:hover{
+    background: #2A3F5C;
+    color: white;
+    font-size: 12px;
+}
+.lftber ul li:hover span{ 
+    color: #3B82F6;
+}
+
+.lftber ul li span{
+    padding:0 5px;
+    font-size: 10px;
+}
+
+.lftber .lftberces {
+    background: #2A3F5C;
+    font-size: 12px;
+    color: white;
+}   
+
+.lftberces span{
+    color: #3B82F6;
+}

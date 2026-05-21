@@ -1,0 +1,97 @@
+import s from "./Table.module.css";
+
+export default function Table({tablecls}){
+    // const tablecls = [
+    //     "NO",
+    //     "사원번호",
+    //     "성명",
+    //     "부서",
+    //     "직급",
+    //     "입사일",
+    //     "연락처",
+    //     "이메일",
+    //     "관리",
+    //      "상태",
+    // ]
+
+    return(
+        <ul className={s.texts}>
+            <ul>
+                {tablecls.map((tb,idx) => (
+                    <li key={idx}>{tb}</li>
+                ))}
+            </ul>
+
+            <ul>
+                <li>만든거 1</li>
+                <li>EMP-001</li>
+                <li>김철수</li>
+                <li>인사팀</li>
+                <li>팀장</li>
+                <li>2019.03.02</li>
+                <li>010-1234-5678</li>
+                <li>kim@company.com</li>
+                <li><span className={s.jjs}>재직중</span></li>
+                <li><span className={s.sjs}>수정</span></li>
+            </ul>
+            <ul>
+                <li>2</li>
+                <li>EMP-002</li>
+                <li>이영희</li>
+                <li>경영지원팀</li>
+                <li>과장</li>
+                <li>2018.07.15</li>
+                <li>010-9876-5432</li>
+                <li>lee@company.com</li>
+                <li><span className={s.jjs}>재직중</span></li>
+                <li><span className={s.sjs}>수정</span></li>
+            </ul>
+            <ul>
+                <li>3</li>
+                <li>EMP-003</li>
+                <li>박민준</li>
+                <li>개발팀</li>
+                <li>대리</li>
+                <li>2021.08.01</li>
+                <li>010-5555-7777</li>
+                <li>park@company.com</li>
+                <li><span className={s.jjs}>재직중</span></li>
+                <li><span className={s.sjs}>수정</span></li>
+            </ul>
+            <ul>
+                <li>4</li>
+                <li>EMP-004</li>
+                <li>최지영</li>
+                <li>영업팀</li>
+                <li>사원</li>
+                <li>2023.01.09</li>
+                <li>010-3333-4444</li>
+                <li>choi@company.com</li>
+                <li><span className={s.jjs}>재직중</span></li>
+                <li><span className={s.sjs}>수정</span></li>
+            </ul>
+            
+            
+
+            
+            <ul className={s.textsbtns}>
+                <li>총 4건</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <span>&lt;</span>
+                    <span className={s.textsces}>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>&gt;</span>
+                </li>
+            </ul>
+        </ul>
+    );
+
+} 

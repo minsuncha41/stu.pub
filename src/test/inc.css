@@ -1,0 +1,377 @@
+/* <ul className="texts">
+                            <ul>
+                                <li>NO</li>
+                                <li>사원번호</li>
+                                <li>성명</li>
+                                <li>부서</li>
+                                <li>직급</li>
+                                <li>입사일</li>
+                                <li>연락처</li>
+                                <li>이메일</li>
+                                <li>재직상태</li>
+                                <li>관리</li>
+                            </ul>
+
+                            <ul>
+                                <li>1</li>
+                                <li>EMP-001</li>
+                                <li>김철수</li>
+                                <li>인사팀</li>
+                                <li>팀장</li>
+                                <li>2019.03.02</li>
+                                <li>010-1234-5678</li>
+                                <li>kim@company.com</li>
+                                <li><span>재직중</span></li>
+                                <li>수정</li>
+                            </ul>
+                            <ul>
+                                <li>2</li>
+                                <li>EMP-002</li>
+                                <li>이영희</li>
+                                <li>경영지원팀</li>
+                                <li>과장</li>
+                                <li>2018.07.15</li>
+                                <li>010-9876-5432</li>
+                                <li>lee@company.com</li>
+                                <li><span>재직중</span></li>
+                                <li>수정</li>
+                            </ul>
+                            <ul>
+                                <li>3</li>
+                                <li>EMP-003</li>
+                                <li>박민준</li>
+                                <li>개발팀</li>
+                                <li>대리</li>
+                                <li>2021.08.01</li>
+                                <li>010-5555-7777</li>
+                                <li>park@company.com</li>
+                                <li><span>휴직중</span></li>
+                                <li>수정</li>
+                            </ul>
+                            <ul>
+                                <li>4</li>
+                                <li>EMP-004</li>
+                                <li>최지영</li>
+                                <li>영업팀</li>
+                                <li>사원</li>
+                                <li>2023.01.09</li>
+                                <li>010-3333-4444</li>
+                                <li>choi@company.com</li>
+                                <li><span>재직중</span></li>
+                                <li>수정</li>
+                            </ul>
+                            
+                            
+                            <ul className="textsbtns">
+                                <li>총 4건</li>
+                                <li>
+                                    <span>&lt;</span>
+                                    <span className="textsces  ">1</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                    <span>&gt;</span>
+                                </li>
+                            </ul>
+                        </ul> */
+/* <ul>
+                            <li>NO</li>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            </ul>
+
+                            <ul>
+                            <li>사원번호</li>
+                            <li>EMP-001</li>
+                            <li>EMP-002</li>
+                            <li>EMP-003</li>
+                            <li>EMP-004</li>
+                            </ul>
+
+                            <ul>
+                            <li>성명</li>
+                            <li>김철수</li>
+                            <li>이영희</li>
+                            <li>박민준</li>
+                            <li>최지영</li>
+                            </ul>
+
+                            <ul>
+                            <li>부서</li>
+                            <li>인사팀</li>
+                            <li>경영지원팀</li>
+                            <li>개발팀</li>
+                            <li>영업팀</li>
+                            </ul>
+
+                            <ul>
+                            <li>직급</li>
+                            <li>팀장</li>
+                            <li>과장</li>
+                            <li>대리</li>
+                            <li>사원</li>
+                            </ul>
+
+                            <ul>
+                            <li>입사일</li>
+                            <li>2019.03.02</li>
+                            <li>2018.07.15</li>
+                            <li>2021.08.01</li>
+                            <li>2023.01.09</li>
+                            </ul>
+
+                            <ul>
+                            <li>연락처</li>
+                            <li>010-1234-5678</li>
+                            <li>010-9876-5432</li>
+                            <li>010-5555-7777</li>
+                            <li>010-3333-4444</li>
+                            </ul>
+
+                            <ul>
+                            <li>이메일</li>
+                            <li>kim@company.com</li>
+                            <li>lee@company.com</li>
+                            <li>park@company.com</li>
+                            <li>choi@company.com</li>
+                            </ul>
+
+                            <ul>
+                            <li>재직상태</li>
+                            <li>재직중</li>
+                            <li>재직중</li>
+                            <li>휴직중</li>
+                            <li>재직중</li>
+                            </ul>
+
+                            <ul>
+                            <li>관리</li>
+                            <li>수정</li>
+                            <li>수정</li>
+                            <li>수정</li>
+                            <li>수정</li>
+                            </ul>
+
+                            <ul className="textsbtns">
+                                <li>총 4건</li>
+                                <li>
+                                    <span>&lt;</span>
+                                    <span className="textsces  ">1</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                    <span>&gt;</span>
+                                </li>
+                            </ul> */
+
+
+.inwrap{
+    display: flex;
+    flex-flow: row;
+}
+
+.lftber{
+    width: 210px;
+    height: calc(100vh - 56px);
+    background: #1E293B;
+    margin-top: 56px;
+    list-style-type: disc;
+}
+
+.lftber p{
+    background: #162032;
+    display: flex;
+    color: #60A5FA;
+    padding: 16px;
+    font-size: 12px;
+    cursor: default;
+}
+.lftber p img{
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+.lftber li{
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 14px 32px;    
+    color: #94A3B8;
+}
+
+.lftber li:hover{
+    background: #2A3F5C;
+    color: white;
+    font-size: 12px;
+}
+.lftber li:hover span{ 
+    color: #3B82F6;
+}
+
+.lftber li span{
+    padding:0 5px;
+    font-size: 10px;
+}
+
+.lftber .lftberces {
+    background: #2A3F5C;
+    font-size: 12px;
+    color: white;
+}   
+
+.lftberces span{
+    color: #3B82F6;
+}
+
+
+
+
+
+.main{
+    background: #F1F5F9;
+    padding: 20px;
+    margin-top: 56px;
+    height: calc(100vh -56px);
+    width: calc(100% - 210px);
+}
+
+.textbox{
+    width: 100%;
+}
+.texts ul{
+    font-size: 13px;
+    box-sizing: border-box;
+    border-top: 1px solid #E5E7EB;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; 
+    background-color: white;
+}
+.texts ul:last-child{
+    border-top: none;
+    border: 1px solid #E5E7EB;
+}
+.texts ul:first-child  {
+    border-top: none;
+    background:none ;
+    color: #6B7280;
+    font-weight: bold;
+}
+/* .texts ul:nth-child(odd){background: #F1F5F9;} */
+.texts ul:last-child{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+.texts ul li{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+.texts ul li span.jjs{
+    border-radius: 15px;
+    padding: 5px 8px;
+    background: #DCFCE7;
+    color: #16A34A;
+}
+.texts ul li span.hjs{
+    border-radius: 15px;
+    padding: 5px 8px;
+    background: #FEF3C7;
+    color: #D97706;
+}
+.texts ul li span.sjs{
+    border-radius: 5px;
+    padding: 5px 8px;
+    background: #EFF6FF;
+    color: #2563EB;
+}
+
+
+.texts ul li:nth-child(3){
+    font-weight: bold;
+}
+.textsbtns li{
+    margin-right: 10px;
+    display: flex;
+    gap: 10px;
+}
+.textsbtns span{
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px  8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.textsbtns span:hover{
+    background: #1B3A6B;
+    color: white;
+    font-weight: bold;
+}
+.textsbtns span.textsces{
+    background: #1B3A6B;
+    color: white;
+    font-weight: bold;
+}
+
+
+.maps{
+    font-size: 12px;
+    display: flex;
+    align-self: center;
+    flex-flow: row wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.maps img{
+    width: 12px;
+    height: 12px;
+}
+.maps p.mapsces{
+    color: #2563EB;
+}
+
+.titl h3{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.titl p{
+    color: #6B7280;
+    font-size: 13px;
+}
+
+.tit{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.titr {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+}
+.titr button p{
+    font-size: 17px;
+}
+.titr button{
+    height: 34px;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    padding: 0 14px;
+    border: 1px solid #D1D5DB;
+}

@@ -22,6 +22,7 @@
     align-items: center;
 }
 .logo{
+    width: 210px;
     display: flex;
     gap: 10px;
     margin-top:-10px;

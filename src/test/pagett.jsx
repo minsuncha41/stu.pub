@@ -1,9 +1,28 @@
-
+'use client';
 
 import s from "./test.module.css";
 import "./inc.css";
+import { useEffect, useState } from "react";
+import baseApi from "@/api/baseApi";
 
 export default function inc(){
+
+    const [employee, setemployee] = useState([]);
+
+    useEffect(() => {
+        //api를 요청해서 받는다. 통신은async await붙인다  
+        const getEmployee = async () => {
+            const response = await baseApi.get("/api/v1/employees");
+            console.log(response.data.data);
+
+            //useState를 넣는다
+            setemployee(response.data.data);
+
+            //useState에 있는 데이터를 렌더링 시킨다
+        }
+        getEmployee();
+    }, []);
+
     return(
         <div className="wrap">
             <header className={s.header}>
@@ -46,6 +65,33 @@ export default function inc(){
 
 
                 <div className="main">
+                    <div className="maps">
+                        <img src="/House.png" alt="" />
+                        <span>&gt;</span>
+                        <p>인사관리</p>
+                        <span>&gt;</span>
+                        <p>인사정보</p>
+                        <span>&gt;</span>
+                        <p className="mapsces">인사정보등록</p>
+                    </div>
+                    <div className="tit">
+                        <div className="titl">
+                            <h3>인사정보등록</h3>
+                            <p>직원의 인사정보를 등록하고 관리합니다.</p>
+                        </div>
+                        <div className="titr">
+                            <button className="pdfbtn">
+                                <img src="/Download.png" alt="" />
+                                PDF 다운로드
+                            </button>
+                            <button className="plusbtn">
+                                <p>+</p>
+                                신규등록
+                            </button>
+                        </div>
+
+                    </div>
+
                     <div className="textbox">
                         <ul className="texts">
                             <ul>
@@ -60,9 +106,22 @@ export default function inc(){
                                 <li>재직상태</li>
                                 <li>관리</li>
                             </ul>
-
+                            {employee.map((item, index) => (
+                                <ul>
+                                    <li>{index +1}</li>
+                                    <li>{item.employeeNo}</li>
+                                    <li>{item.name}</li>
+                                    <li>인사팀</li>
+                                    <li>팀장</li>
+                                    <li>2019.03.02</li>
+                                    <li>010-1234-5678</li>
+                                    <li>kim@company.com</li>
+                                    <li><span className="jjs">재직중</span></li>
+                                    <li><span className="sjs">수정</span></li>
+                                </ul>
+                            ))}
                             <ul>
-                                <li>1</li>
+                                <li>만든거 1</li>
                                 <li>EMP-001</li>
                                 <li>김철수</li>
                                 <li>인사팀</li>
@@ -70,8 +129,8 @@ export default function inc(){
                                 <li>2019.03.02</li>
                                 <li>010-1234-5678</li>
                                 <li>kim@company.com</li>
-                                <li><span>재직중</span></li>
-                                <li>수정</li>
+                                <li><span className="jjs">재직중</span></li>
+                                <li><span className="sjs">수정</span></li>
                             </ul>
                             <ul>
                                 <li>2</li>
@@ -82,8 +141,8 @@ export default function inc(){
                                 <li>2018.07.15</li>
                                 <li>010-9876-5432</li>
                                 <li>lee@company.com</li>
-                                <li><span>재직중</span></li>
-                                <li>수정</li>
+                                <li><span className="jjs">재직중</span></li>
+                                <li><span className="sjs">수정</span></li>
                             </ul>
                             <ul>
                                 <li>3</li>
@@ -94,8 +153,8 @@ export default function inc(){
                                 <li>2021.08.01</li>
                                 <li>010-5555-7777</li>
                                 <li>park@company.com</li>
-                                <li><span>휴직중</span></li>
-                                <li>수정</li>
+                                <li><span className="hjs">휴직중</span></li>
+                                <li><span className="sjs">수정</span></li>
                             </ul>
                             <ul>
                                 <li>4</li>
@@ -106,8 +165,8 @@ export default function inc(){
                                 <li>2023.01.09</li>
                                 <li>010-3333-4444</li>
                                 <li>choi@company.com</li>
-                                <li><span>재직중</span></li>
-                                <li>수정</li>
+                                <li><span className="jjs">재직중</span></li>
+                                <li><span className="sjs">수정</span></li>
                             </ul>
                             
                             
@@ -122,7 +181,7 @@ export default function inc(){
                                 <li></li>
                                 <li>
                                     <span>&lt;</span>
-                                    <span className="textsces  ">1</span>
+                                    <span className="textsces">1</span>
                                     <span>2</span>
                                     <span>3</span>
                                     <span>&gt;</span>
