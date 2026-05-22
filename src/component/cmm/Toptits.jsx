@@ -10,7 +10,7 @@ export default function Toptits ({toptits}) {
                 <span>&gt;</span>
                 <p>인사관리</p>
                 <span>&gt;</span>
-                <p>인사정보</p>
+                <p>{toptits.map}</p>
                 <span>&gt;</span>
                 <p className={s.mapsces}>{toptits.tit}</p>
             </div>

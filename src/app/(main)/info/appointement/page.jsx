@@ -1,14 +1,19 @@
 'use client';
 
 import "./appointement.css";
+import s from "./Appointement.module.css";
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
 import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
+import { Clock4, Save, X } from "lucide-react";
 
-export default function inc(){
+
+
+
+export default function Appointement(){
 
     const [employee, setemployee] = useState([]);
 
@@ -206,6 +211,20 @@ export default function inc(){
                                     </div>
                                 </div>
                             </div>
+                            <div className="formboxbt">
+                                <h1>비고</h1>
+                                <textarea name="" placeholder="발령 관련 추가 사항을 입력하세요."></textarea>
+                                <div className="fmbtns">
+                                    <button className="css">
+                                        <X size={13} />
+                                        취소
+                                    </button>
+                                    <button className="jjs">
+                                        <Save size={13} />
+                                        저장
+                                    </button>
+                                </div>
+                            </div>
 
 
                         </div>
@@ -216,20 +235,92 @@ export default function inc(){
 
 
                     <div className="textbox">
-                        <Table  
-                            tablecls = {[
-                                "NO",
-                                "사원번호",
-                                "성명",
-                                "부서",
-                                "직급",
-                                "입사일",
-                                "연락처",
-                                "이메일",
-                                "관리",
-                                "상태",
-                            ]}
-                        />
+                        <div className="fromtit">
+                            <h1>
+                                <Clock4 size={15} strokeWidth={1.5} />
+                                발령 이력
+                            </h1>
+                            <h2>총 3건 </h2>
+                        </div>
+
+                        <ul className={s.texts}>
+                            <ul>
+                                <li>NO</li>
+                                <li>발령번호</li>
+                                <li>사원번호</li>
+                                <li>성명</li>
+                                <li>발령유형 </li>
+                                <li>발령전 부서/직급</li>
+                                <li>발령후 부서/직급</li>
+                                <li>발령일</li>
+                                <li>등록자</li>
+                                <li>관리</li>
+                            </ul>
+
+                            <ul>
+                                <li>만든거 1</li>
+                                <li>APT-2025-003</li>
+                                <li>EMP-002</li>
+                                <li>이영희</li>
+                                <li><span className={`${s.uh} ${s.sj}`}>승진</span></li>
+                                <li>경영지원팀<span className="1212">과장</span></li>
+                                <li>인사팀<span className="1212">차장</span></li>
+                                <li>2025.07.01</li>
+                                <li>홍길동</li>
+                                <li>
+                                    <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
+                                    <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>2</li>
+                                <li>APT-2025-002</li>
+                                <li>EMP-001</li>
+                                <li>김철수</li>
+                                <li><span className={`${s.uh} ${s.jb}`}>전보</span></li>
+                                <li>인사팀<span className="1212">팀장</span></li>
+                                <li>기술전략팀<span className="1212">팀장</span></li>
+                                <li>2025.04.01</li>
+                                <li>홍길동</li>
+                                <li>
+                                    <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
+                                    <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
+                                </li>                           </ul>
+                            <ul>
+                                <li>3</li>
+                                <li>APT-2025-004</li>
+                                <li>EMP-003</li>
+                                <li>최지영</li>
+                                <li><span className={`${s.uh} ${s.gj}`}>겸직</span></li>
+                                <li>개발팀<span className="1212">대리</span></li>
+                                <li>영업팀·마케팅팀<span className="1212">사원</span></li>
+                                <li>2025.01.15</li>
+                                <li>홍길동</li>
+                                <li>
+                                    <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
+                                    <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
+                                </li>
+                            </ul>
+                            
+                            
+
+                            
+                            <ul className={s.textsbtns}>
+                                <li>총 3건</li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li>
+                                    <span>&lt;</span>
+                                    <span className={s.textsces}>1</span>  
+                                    <span>&gt;</span>
+                                </li>
+                            </ul>
+                        </ul>
                     </div>
                 </div>
 

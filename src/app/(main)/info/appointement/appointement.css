@@ -237,14 +237,21 @@
     display: flex;
     flex-flow: column;
 }
+
+
 .fromtit{
+    width: 100%;
+    background-color: #F8FAFC;
+    border-radius: 8px;
     padding: 10px 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
+
+
 .fromtit h1, .fromtit h2 {
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     display: flex;
     flex-flow: row wrap;
@@ -432,9 +439,6 @@
     align-items: center;
 }
 
-
-
-
 .fmmdrt {
     border: 1px solid #BFDBFE;
     border-radius: 5px;
@@ -446,4 +450,54 @@
     height: 124px;
     gap: 12px;
     background: #F0F7FF;
+}
+
+
+.formboxbt{
+    width: 100%;
+    display: flex;
+     flex-flow: column;
+}
+.formboxbt h1{
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+.formboxbt textarea{
+    width: 1150px;
+    height: 82px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+}
+.fmbtns{
+    margin-top: 16px;
+    display: flex;
+    flex-flow: row;
+    gap: 8px;
+    justify-content: right;
+}
+.fmbtns button{
+    font-weight: bold;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    gap: 3px;
+    font-size: 13px;
+    width: 83px;
+    height: 36px;
+    border: 1px solid #D1D5DB;
+}
+.css img.jjs img{
+    width: 13px;
+    height: 13px;
+}
+.jjs{
+    color: white;
+    background-color: #1B3A6B;
+}
+.textbox{
+    margin-top: 16px;
 }
