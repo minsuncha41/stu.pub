@@ -53,45 +53,9 @@ export default function Apply(){
                 map: "경조비관리" , 
                 tit: "경조비신청" , 
                 text: "경조사 발생 시 경조비를 신청하고 지급 현황을 관리합니다." , 
-                dls: "신규신청"
+                tllbtn: "PDF 다운로드" , trrbtn: "신규신청"
                 }} />
 
-
-
-            {/* <div className="findebox">
-                <h3><img src="/Search.png" alt="" />검색조건</h3>
-                <div className="findeinput">
-                    <label name="sone" className="sone">
-                        <p>사원검색</p>
-                        <input type="text" name="num" placeholder="사원번호 또는 성명" />
-                        <button><img src="/Searchwt.png" alt="" /></button>
-                    </label>
-
-                    <label name="bls" className="bls">
-                        <p>발령유형</p>
-                        <select>
-                            <option value=""><span>전체</span></option>
-                            <option value="sjs"><span>승진</span></option>
-                            <option value="jbs"><span>전보</span></option>
-                            <option value="gjs"><span>경직</span></option>
-                        </select>
-                    </label>
-                    <label name="days" className="days">
-                        <p>발령일</p>
-                        <input type="date" />
-                        <span>~</span>
-                        <input type="date" />
-                    </label>
-                    <button className="jhbtn">
-                        <img src="/Searchwt.png" alt="" />
-                        조회
-                    </button>
-                    <button className="cghbtn">
-                        <img src="/Rotate Ccw.png" alt="" />
-                        초기화
-                    </button>
-                </div>
-            </div> */}
 
             <div className="inputform">
                 <div className="fromtit">

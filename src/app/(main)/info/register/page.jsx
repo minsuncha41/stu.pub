@@ -8,23 +8,26 @@ import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 
-export default function inc(){
+export default function Inc(){
 
     const [employee, setemployee] = useState([]);
+    const [keywordss, setkeword] = useState([]);
 
     useEffect(() => {
-        //api를 요청해서 받는다. 통신은async await붙인다  
-        const getEmployee = async () => {
-            const response = await baseApi.get("/api/v1/employees");
-            console.log(response.data.data);
+        console.log(".....");
+        console.log(keywordss);
+    }, [keywordss]);
 
-            //useState를 넣는다
-            setemployee(response.data.data);
 
-            //useState에 있는 데이터를 렌더링 시킨다
-        }
-        getEmployee();
-    }, []);
+    const getEmlpoyees = async () => {
+        const res = await baseApi.get("/api/v1/employees",{
+            params: {
+                keyword: keywordss || "",
+                page: 1
+            }
+        });
+        console.log(res.data.data);
+    }
 
     return(
         <div className="wrap">
@@ -104,7 +107,7 @@ export default function inc(){
                             map: "인사관리",
                             tit: "인사관리등록",
                             text: "직원의 인사정보를 등록하고 관리합니다.",
-                            dls: "신규등록"
+                            tllbtn: "PDF 다운로드" , trrbtn: "신규등록"
                         }}
                     />
                     {/* <div className="toptits">
@@ -143,7 +146,9 @@ export default function inc(){
                          <div className="findeinput">
                             <label name="num">
                                 사원번호
-                                <input type="text" name="num" placeholder="전체" />
+                                <input
+                                onChange={(e) => setkeword(e.target.value)}
+                                type="text" name="num" placeholder="전체" />
                             </label>
 
                             <label name="bss">
@@ -176,7 +181,9 @@ export default function inc(){
                                     <option value="oot">영업팀 </option>
                                 </select>
                             </label>
-                            <button className="jhbtn">
+                            <button className="jhbtn"
+                            onClick={() => getEmlpoyees()}
+                            >
                                 <img src="/Searchwt.png" alt="" />
                                 조회
                             </button>

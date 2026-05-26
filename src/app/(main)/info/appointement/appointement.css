@@ -257,6 +257,7 @@
     flex-flow: row wrap;
 }
 .fromtit h1 {
+    color: #1B3A6B;
     font-weight: bold;
     font-size: 13px;
 }

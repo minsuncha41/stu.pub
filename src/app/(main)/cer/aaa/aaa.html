@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                .inputform { width: 100%; display: flex; flex-flow: column; margin-bottom: 24px; }
+        
+        .fromtit {
+            width: 100%; background-color: #F8FAFC; border: 1px solid #E5E7EB; border-bottom: none;
+            border-top-left-radius: 8px; border-top-right-radius: 8px; padding: 12px 20px;
+            display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center; box-sizing: border-box;
+        }
+        .fromtit h1 { font-weight: bold; font-size: 15px; display: flex; align-items: center; gap: 6px; color: #111827; }
+        .fromtit h2 { font-size: 12px; font-weight: bold; color: #2563EB; }
+
+        .formbox {
+            border: 1px solid #E5E7EB; display: flex; flex-flow: column; padding: 24px;
+            background-color: #FFFFFF; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; box-sizing: border-box;
+        }
+
+        .tptits { display: flex; align-items: center; width: 100%; gap: 8px; font-weight: bold; font-size: 14px; margin-bottom: 16px; }
+        .tptits span { height: 14px; border-radius: 10px; display: block; width: 3px; background-color: #1B3A6B; }
+
+        .formboxtp { display: flex; flex-flow: row wrap; font-size: 13px; gap: 16px; }
+        .formboxtp label { display: flex; flex-flow: column; gap: 8px; }
+        .formboxtp label p { font-weight: bold; color: #374151; }
+        label.jgfm input {
+            font-size: 13px; padding: 0 12px; height: 36px; background-color: #F9FAFB;
+            border-radius: 5px; border: 1px solid #E5E7EB; box-sizing: border-box; color: #6B7280;
+        }
+        .formboxtp label:nth-child(2) input { width: 140px; }
+        .formboxtp label:nth-child(3) input { width: 120px; }
+        .formboxtp label:nth-child(4) input { width: 140px; }
+        .formboxtp label:nth-child(5) input { width: 120px; }
+        .formboxtp label:nth-child(6) input { width: 140px; }
+
+        .fmli { width: 100%; height: 1px; background: #E5E7EB; margin: 24px 0; }
+
+        .formboxmd { display: flex; flex-flow: column; }
+        .uhfm ul { display: flex; flex-wrap: wrap; }
+        .uhfm ul li {
+            color: #6B7280; font-size: 13px; font-weight: bold; cursor: pointer; box-sizing: border-box;
+            height: 38px; padding: 0 20px; display: flex; gap: 5px; justify-content: center; align-items: center;
+            border: 1px solid #D1D5DB; border-left: none; background: #ffffff;
+        }
+        .uhfm ul li:first-child { color: white; border: 1px solid #1B3A6B; background: #1B3A6B; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-left: 1px solid #1B3A6B; }
+        .uhfm ul li:last-child { border-top-right-radius: 6px; border-bottom-right-radius: 6px; }
+
+        .uhfm p {
+            border-radius: 6px; height: 40px; background: #EFF6FF; display: inline-flex; align-items: center;
+            font-size: 13px; padding: 0 16px; margin-top: 16px; box-sizing: border-box; color: #4B5563;
+        }
+        .uhfm p span { font-weight: bold; color: #1B3A6B; margin-left: 4px; }
+
+        .formboxbt { width: 100%; display: flex; flex-flow: column; }
+        .formboxbt h1 { font-weight: bold; font-size: 13px; margin-bottom: 10px; color: #374151; }
+        .formboxbt textarea { width: 100%; height: 80px; padding: 12px; border-radius: 6px; border: 1px solid #D1D5DB; box-sizing: border-box; resize: none; font-size: 13px; }
+        .fmbtns { margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end; }
+        .fmbtns button { font-weight: bold; display: flex; align-items: center; gap: 4px; border-radius: 6px; font-size: 13px; height: 38px; padding: 0 20px; cursor: pointer; }
+        .fmbtns .css { color: #374151; background: #ffffff; border: 1px solid #D1D5DB; }
+        .fmbtns .jjs { color: white; background: #1B3A6B; border: none; }
+
+    </style>
+</head>
+<body>
+            <div class="inputform">
+                <div class="fromtit">
+                    <h1>
+                        <i data-lucide="heart-handshake" width="15" height="15" stroke-width="1.5"></i>
+                        발급 정보 입력
+                    </h1>
+                    <h2><span>*</span>재직증명서 발금 중 </h2>
+                </div>
+
+                <div class="formbox">
+                    <h1 class="tptits"><span></span>신청자 정보</h1>
+                    <div class="formboxtp">
+                        <label class="jgfm">
+                            <p>사원번호</p>
+                            <input type="text" value="EMP-002" disabled />
+                        </label>
+                        <label class="jgfm">
+                            <p>성명</p>
+                            <input type="text" value="이영희" disabled />
+                        </label>
+                        <label class="jgfm">
+                            <p>부서</p>
+                            <input type="text" value="경영지원팀" disabled />
+                        </label>
+                        <label class="jgfm">
+                            <p>직급</p>
+                            <input type="text" value="과장" disabled />
+                        </label>
+                        <label class="jgfm">
+                            <p>입사일</p>
+                            <input type="text" value="2025.07.15" disabled />
+                        </label>
+                    </div>
+
+                    <div class="fmli"></div>
+
+                    <div class="formboxmd">
+                        <h1 class="tptits"><span></span>발급 상세 정보</h1>
+                        <div class="formboxtp">
+                            <label class="jgfm">
+                                <p>용도 *</p>
+                                <select name="" id="">
+                                    <option value="">관공서 제출용</option>
+                                    <option value="">근로소득원천징수</option>
+                                    <option value="">재직증명서</option>
+                                    <option value="">경력증명서</option>
+                                    <option value="">급여확인서</option>
+                                </select>
+                            </label>
+                            <label class="jgfm">
+                                <p>제출서 *</p>
+                                <input type="text" value="EMP-002" />
+                            </label>
+                            <label class="jgfm">
+                                <p>용도 *</p>  
+                                <div class="jgfmin ">
+                                    <p>-</p>
+                                    <span>1</span>
+                                    <p>+</p>
+                                </div>
+                            </label>
+                            <label class="jgfm">
+                                <p>언어선택 *</p>  
+                                <div class="jgfmin">
+                                    <div class="gms">국문</div>
+                                    <div class="yms">영문</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="formboxmd">
+                        <div class="formboxtp">
+                            <label class="jgfm">
+                                <p>기준일</p>
+                                <input type="date" value="EMP-002" />
+                            </label>
+                            <label class="jgfm">
+                                <p>발급목적(선택)</p>
+                                <input type="text" value="EMP-002" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="fmli"></div>
+
+                    <div class="formboxbt">
+                        <h1>비고</h1>
+                        <textarea placeholder="발령 관련 추가 사항을 입력하세요."></textarea>
+                        <div class="fmbtns">
+                            <button class="css"><i data-lucide="x" width="13" height="13"></i>취소</button>
+                            <button class="jjs"><i data-lucide="save" width="13" height="13"></i>저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

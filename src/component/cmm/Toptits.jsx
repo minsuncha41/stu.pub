@@ -23,11 +23,11 @@ export default function Toptits ({toptits}) {
                 <div className={s.titr}>
                     <button className={s.pdfbtn}>
                         <img src="/Download.png" alt="" />
-                        PDF 다운로드
+                        {toptits.tllbtn}
                     </button>
                     <button className={s.plusbtn}>
                         <p>+</p>
-                        {toptits.dls}
+                        {toptits.trrbtn}
                     </button>
                 </div>
             </div>
