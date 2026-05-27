@@ -34,7 +34,7 @@ export default function Aaa(){
 
     return(
      <div className="wrap">
-        <Nav />
+            <Nav num1={true} />
 
 
 
@@ -276,20 +276,61 @@ export default function Aaa(){
                             <ul>
                                 <li>만든거 1</li>
                                 <li>2025.07.01 09:22</li>
-                                <li><span className={`${s.gms} ${s.jj}`}>재직증명서</span></li>
-                                <li><span className={`${s.gms} ${s.gl}`}>근로소득원천징수</span></li>
-                                <li><span className={`${s.gms} ${s.glg}`}>경력증명서</span></li>
-                                <li><span className={`${s.gms} ${s.gu}`}>급여확인서</span></li>
+                                <li><span className={`${s.gms} ${s.jj}`}><BriefcaseBusiness size={10}/>재직증명서</span></li>
                                 <li>관공서 제출용</li>
                                 <li>국민은행 ○○지점</li>
                                 <li><span className= {`${s.langs} ${s.gms}`}>국문</span></li>
-                                <li><span className= {`${s.langs} ${s.yms}`}>영문</span></li>
                                 <li>1</li>
                                 <li>CERT-2025-0089</li>
                                 <li>
-                                    <span className={`${s.jcl }`}>재출력</span>
+                                    <span className={`${s.jcl}`}><Printer size={10} /> 재출력</span>
                                 </li>
                             </ul>
+
+                            <ul>
+                                <li>2</li>
+                                <li>2025.06.18 14:05</li>
+                                <li><span className={`${s.gms} ${s.gl}`}><Award size={10}/>근로소득원천징수</span></li>
+                                <li>금융기관 제출용</li>
+                                <li>카카오뱅크 </li>
+                                <li><span className= {`${s.langs} ${s.gms}`}>국문</span></li>
+                                <li>2</li>
+                                <li>CERT-2025-0071</li>
+                                <li>
+                                    <span className={`${s.jcl}`}><Printer size={10} /> 재출력</span>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li>3</li>
+                                <li>2025.05.30 11:48</li>
+                                <li><span className={`${s.gms} ${s.glg}`}><ReceiptText size={10}/>경력증명서</span></li>
+                                <li>이직 제출용</li>
+                                <li>○○테크 인사담당</li>
+                                <li><span className= {`${s.langs} ${s.yms}`}>영문</span></li>
+                                <li>1</li>
+                                <li>CERT-2025-0058</li>
+                                <li>
+                                    <span className={`${s.jcl}`}><Printer size={10} /> 재출력</span>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li>4</li>
+                                <li>2025.05.02 16:33</li>
+                                <li><span className={`${s.gms} ${s.gu}`}><Banknote size={10}/>급여확인서</span></li>
+                                <li>대출 제출용</li>
+                                <li>신한은행 본점</li>
+                                <li><span className= {`${s.langs} ${s.gms}`}>국문</span></li>
+                                <li>1</li>
+                                <li>CERT-2025-0041</li>
+                                <li>
+                                    <span className={`${s.jcl}`}><Printer size={10} /> 재출력</span>
+                                </li>
+                            </ul>
+
+ 
+
 
                             <ul className={s.textsbtns}>
                                 <li>총 4 건</li>

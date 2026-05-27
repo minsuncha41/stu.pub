@@ -33,7 +33,7 @@ export default function Appointement(){
 
     return(
         <div className="wrap">
-            <Nav/>
+            <Nav num1={true} />
             
 
 

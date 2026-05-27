@@ -21,11 +21,11 @@ export default function Aside({dummy}){
         <header>
             <div className={s.lftber}>
                 {dummy.map((item, idx) => (
-                    <ul>
+                    <ul key={idx}>
                         <p><img src={item.titin.icon} alt="" />{item.titin.titname} </p>
 
                         {item.sublit.map((subit, subidx) => (
-                            <li><span>●</span>{subit}</li>
+                            <li  key={subidx}><span>●</span>{subit}</li>
                         ))}
                     </ul>
                 ))}

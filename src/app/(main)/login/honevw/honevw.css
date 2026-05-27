@@ -1,0 +1,290 @@
+
+.inwrap{
+    display: flex;
+    flex-flow: row;
+    padding-top: 56px;
+}
+
+
+.main{
+    background: #F1F5F9;
+    padding: 20px;
+    margin-top: 56px;
+    height: calc(100vh -56px);
+    width: calc(100% - 210px);
+}
+
+.lglb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 660px;
+    height: 844px;
+    background: linear-gradient(235deg, #0F2547 14.1%, #1E40AF 85.9%);
+
+}
+.lglbin{
+    gap: 10;
+    width: 532px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.tspan{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5;
+    padding: 7px 16px;
+    color: #93C5FD;
+    border-radius: 20px;
+    background: #FFFFFF18;
+    margin-bottom: 10px;
+}
+.lglbin h1{
+    font-size: 38px;
+    color: white;
+    font-weight: bold;
+}
+.lglbin h2{
+    font-size: 38px;
+    color: #60A5FA;
+    font-weight: bold;
+}
+.lglbin p{
+    text-align: center;
+    font-size: 15px;
+    color: #BFDBFE;
+}
+
+
+
+
+
+
+.bpbox{
+    margin-top: 30px;
+    gap: 10;
+    display: flex;
+    flex-flow: column;
+}
+.bpbox li{ 
+    padding: 10px 16px;
+    width: 532px; 
+    background-color: #FFFFFF12;
+    border: 1px solid #FFFFFF20;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    gap: 18;
+}
+.bimgbox{
+    width: 38px;
+    height: 38px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF15;
+}
+.btbox h1{
+    font-size: 13px;
+}
+
+.freebtn{
+    color: #FCD34D;
+    display: flex;
+    gap: 7;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+    border: 1px solid #FFFFFF20;
+    background: #FFFFFF18;
+    border-radius: 10px;
+    margin-top: 36px;
+}
+.freebtn h1{
+    color: #FCD34D;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lgwrap{
+    width: 780px;
+    height: 844px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lglrin{
+    width: 560px;
+    height: 617px;
+    display: flex;
+    flex-flow: column;
+}
+.tlgbox h1{
+    font-weight: bold;
+    font-size: 30px;
+}
+.tlgbox p{
+   color: #6B7280;
+   font-size: 15px; 
+}
+.tlgbox{
+    margin-bottom: 19px;
+}
+
+
+.lginbox{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap:0 10;
+    justify-content: space-between;
+}
+
+.lginbox label{
+    display: flex;
+    flex-flow: column;
+    gap: 3;
+    width: 49%;
+    cursor: pointer;
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.lginbox label p{
+    font-size: 13px;
+}
+.lginbox label:nth-child(1) input[type="text"],
+.lginbox label:nth-child(2) input[type="text"]
+{
+    padding: 0 15px;
+}
+.lginbox label input[type="text"], 
+.lginbox label input[type="password"],
+.lginbox label select
+{
+    font-size: 14px;
+    padding: 0 40px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #D1D5DB;
+}
+
+
+
+
+
+
+
+.laicon{
+    color: #9CA3AF;
+    position: absolute;
+    top: 52%;
+    left: 15px;
+}
+.laiconpw{
+    color: #9CA3AF;
+    position: absolute;
+    top: 52%;
+    right: 15px;
+}
+
+
+
+
+.infoic{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5;
+    color: #9CA3AF;
+    margin-bottom: 24px;
+}
+
+
+
+
+.lgbtns{
+    border-radius: 10px;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    padding: 14px 16px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lgbtns label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5;
+    cursor: pointer;
+}
+.lgbtns label input[type="checkbox"]{
+    accent-color: #1E3A5F;    
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.lgbtns span{
+    cursor: pointer;
+    color: #2563EB;
+    font-size: 13px;
+}
+
+
+.logedbtn{
+    padding: 13px 0;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    gap: 10;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background: #1E3A5F;
+    color: white;
+}
+
+
+
+
+.hone{
+    font-size: 14px;
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #6B7280;
+}
+.hone span{
+    margin-left: 10px;
+    color: #2563EB;
+    cursor: pointer;
+}

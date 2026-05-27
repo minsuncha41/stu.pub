@@ -34,7 +34,7 @@ export default function Apply(){
 
     return(
 <div className="wrap">
-    <Nav />
+        <Nav num1={true} />
 
 
 
@@ -306,7 +306,7 @@ export default function Apply(){
 
                         <div className="formboxbt">
                             <h1>비고</h1>
-                            <textarea name="" placeholder="발령 관련 추가 사항을 입력하세요."></textarea>
+                            <textarea name="" placeholder="추가 사항을 입력하세요. (선택)"></textarea>
                             <div className="fmbtns">
                                 <button className="css">
                                     <X size={13} />
@@ -331,7 +331,7 @@ export default function Apply(){
                 <div className="fromtit">
                     <h1>
                         <Clock4 size={15} strokeWidth={1.5} />
-                        발령 이력
+                        나의 경조비 신청 현황
                     </h1>
                     <h2>총 3건 </h2>
                 </div>
@@ -352,11 +352,11 @@ export default function Apply(){
 
                     <ul>
                         <li>만든거 1</li>
-                        <li>20250701</li>
+                        <li>2025.07.01</li>
                         <li><span className={`${s.gb} ${s.bnin}`}>본인결혼</span></li>
                         <li>이영희</li>
                         <li>본인</li>
-                        <li>20250720</li>
+                        <li>2025.07.20</li>
                         <li>500,000원</li>
                         <li>국민 12****-34</li>
                         <li><span className={`${s.clst} ${s.gt}`}>검토중</span></li>
@@ -366,12 +366,12 @@ export default function Apply(){
                     </ul>
                     <ul>
                         <li>2</li>
-                        <li>20250701</li>
+                        <li>2025.03.10</li>
                         <li><span className={`${s.gb} ${s.clsn}`}>출산</span></li>
-                        <li>이영희</li>
-                        <li>본인</li>
-                        <li>20250720</li>
-                        <li>500,000원</li>
+                        <li>이준혁</li>
+                        <li>배우자</li>
+                        <li>2025.03.05</li>
+                        <li>300,000원</li>
                         <li>국민 12****-34</li>
                         <li><span className={`${s.clst} ${s.jg}`}>지급완료</span></li>
                         <li>
@@ -380,12 +380,12 @@ export default function Apply(){
                     </ul>
                     <ul>
                         <li>3</li>
-                        <li>20250701</li>
+                        <li>2024.11.22</li>
                         <li><span className={`${s.gb} ${s.bmhg}`}>부모환갑</span></li>
-                        <li>이영희</li>
-                        <li>본인</li>
-                        <li>20250720</li>
-                        <li>500,000원</li>
+                        <li>이○○</li>
+                        <li>부</li>
+                        <li>2024.11.30</li>
+                        <li>200,000원</li>
                         <li>국민 12****-34</li>
                         <li><span className={`${s.clst} ${s.jg}`}>지급완료</span></li>
                         <li>

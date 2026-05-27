@@ -31,7 +31,7 @@ export default function Inc(){
 
     return(
         <div className="wrap">
-            <Nav/>
+            <Nav num1={true} />
             
             {/* <header className={s.header}>
                 <nav className={s.navlft}>
