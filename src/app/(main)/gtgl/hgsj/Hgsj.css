@@ -268,8 +268,6 @@ label.jgfm img{
     width: 140px;
 }
 .jggj .formboxtp button{
-    cursor: pointer;
-    margin-top: 25px;
     display: flex;
     flex-flow: row wrap;
     box-sizing: border-box;
@@ -281,9 +279,6 @@ label.jgfm img{
     font-weight: bold;
     background: #F0FDF4;
     border: 1px solid #BBF7D0;
-}
-.jggj .formboxtp button:hover{
-    background: #c7e8d0;
 }
 
 
@@ -346,7 +341,6 @@ select{
     color: #9CA3AF;   
 }
 .cmbpil button{
-    cursor: pointer;
     display: flex;
     flex-flow: row wrap;
     align-items: center;

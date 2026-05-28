@@ -56,6 +56,8 @@ export default function Appointement(){
                             },
                         ]
                     }
+                    idxs="1"
+                    subidxs="3"
                 />
 
 
@@ -65,7 +67,8 @@ export default function Appointement(){
                 <div className="main">
                     <Toptits
                         toptits={{
-                            map: "인사관리",
+                            ttmap: "인사관리" ,
+                            map: "인사정보 ",
                             tit: "인사발령등록",
                             text: "사원의 부서·직급·직책 발령 정보를 등록하고 이력을 관리합니다.",
                             tllbtn: "PDF 다운로드" , trrbtn: "발령등록"

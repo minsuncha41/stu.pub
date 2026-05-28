@@ -42,7 +42,12 @@ export default function Aaa(){
         <div className="inwrap">
             <Aside dummy={ [ { titin: { icon: "/User.png" , titname:"인사정보" }, sublit: [ "인사정보등록" , "사원명수/인사기록카드"
                 , "인사발령등록" ] }, { titin: { icon: "/Heart Handshake.png" , titname:"경조비신청" }, sublit: [ "경조비신청"
-                , "경조비신청현황" ] }, { titin: { icon: "/File Text.png" , titname:"증명서관리" }, sublit: [ "증명서발급" ] }, ] } />
+                , "경조비신청현황" ] }, { titin: { icon: "/File Text.png" , titname:"증명서관리" }, sublit: [ "증명서발급" ] }, ] }
+                
+            idxs="3"
+            subidxs="1"
+                
+                />
 
 
 
@@ -50,6 +55,7 @@ export default function Aaa(){
 
             <div className="main">
                 <Toptits toptits={{ 
+                    ttmap: "인사관리" ,
                     map: "증명서관리" , 
                     tit: "증명서발급" , 
                     text: "필요한 증명서를 선택하고 발급 정보를 입력하여 출력하세요." , 

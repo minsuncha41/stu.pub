@@ -15,21 +15,31 @@ import { Award, Baby, Banknote, BriefcaseBusiness, CakeSlice, Check, ClipboardPe
 
 export default function Loginvw(){
 
-    const [employee, setemployee] = useState([]);
+    const [logininfo, setLoginInfo] = useState();
 
-    useEffect(() => {
-        //api를 요청해서 받는다. 통신은async await붙인다  
-        const getEmployee = async () => {
-            const response = await baseApi.get("/api/v1/employees");
-            console.log(response.data.data);
+    const gologin = async () => {
+        const res = await baseApi.post("/api/v1/employees/login" , {...logininfo})
+        localStorage.setItem("키값", "넣을값");
+        // const  로컬스토리지꺼낸데이터 = localStorage.getItem("키값");
+//        await baseApi.post("/api/v1/employees/login" , logininfo)
+// await baseApi.post("/api/v1/employees/login" , {  "email": "string", "password": "string"})
+    }
 
-            //useState를 넣는다
-            setemployee(response.data.data);
+    // const [employee, setemployee] = useState([]);
 
-            //useState에 있는 데이터를 렌더링 시킨다
-        }
-        getEmployee();
-    }, []);
+    // useEffect(() => {
+    //     //api를 요청해서 받는다. 통신은async await붙인다  
+    //     const getEmployee = async () => {
+    //         const response = await baseApi.get("/api/v1/employees");
+    //         console.log(response.data.data);
+
+    //         //useState를 넣는다
+    //         setemployee(response.data.data);
+
+    //         //useState에 있는 데이터를 렌더링 시킨다
+    //     }
+    //     getEmployee();
+    // }, []);
 
     return(
     <div className="wrap">
@@ -105,13 +115,17 @@ export default function Loginvw(){
                     <label>
                         <p>이메일</p>
                         <Mail className="laicon" size={18} />
-                        <input type="text" placeholder="이메일 주소를 입력하세요" />
+                        <input type="text" placeholder="이메일 주소를 입력하세요" 
+                            onChange={(e) => setLoginInfo((prev) => ({...prev, email: e.target.value}))}
+                        />
                     </label>
                     <label>
                         <p>비밀번호</p>
                         <Lock className="laicon" size={18} />
                         <EyeOff className="laiconpw" size={18} />
-                        <input type="password" placeholder="비밀번호를 입력하세요" />
+                        <input type="password" placeholder="비밀번호를 입력하세요"
+                            onChange={(e) => setLoginInfo((prev) => ({...prev, password: e.target.value}))}
+                        />
                     </label>
 
                     <div className="lgbtns">
@@ -122,7 +136,9 @@ export default function Loginvw(){
                         <span>비밀번호 찾기</span>
                     </div>
 
-                    <button className="logedbtn">
+                    <button className="logedbtn"
+                        onClick={() => gologin()}
+                    >
                         <LogIn size={18} />
                         로그인
                     </button>

@@ -1,7 +1,7 @@
 'use client';
 
-import "./apply.css";
-import s from "./Apply.module.css";
+import "./Hgsj.css";
+import s from "./Hgsj.module.css";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -14,7 +14,7 @@ import { Baby, CakeSlice, Check, Clock4, Ellipsis, FileText, Flower2, Heart, Hea
 
 
 
-export default function Apply(){
+export default function Hgsj(){
 
     const [employee, setemployee] = useState([]);
 
@@ -34,19 +34,18 @@ export default function Apply(){
 
     return(
 <div className="wrap">
-        <Nav num1={true} />
+        <Nav num2={true} />
 
 
 
 
     <div className="inwrap">
-        <Aside dummy={ [ { titin: { icon: "/User.png" , titname:"인사정보" }, sublit: [ "인사정보등록" , "사원명수/인사기록카드" , "인사발령등록"
-            ] }, { titin: { icon: "/Heart Handshake.png" , titname:"경조비신청" }, sublit: [ "경조비신청" , "경조비신청현황" ] }, {
-            titin: { icon: "/File Text.png" , titname:"증명서관리" }, sublit: [ "증명서발급" ] }, ] }
-
-            idxs="2"
+        <Aside dummy={ [ { titin: { icon: "/Clock.png" , titname:"근태관리" }, sublit: [ "일일근태등록" , "월근태현황"] }, 
+            { titin: { icon: "/Plane.png" , titname:"출장관리" }, sublit: [ "출장신청" , "출장정산", "출장사용현황" ] }, {
+            titin: { icon: "/Calendar.png" , titname:"휴가관리" }, sublit: [ "휴가일수설정", "휴가일수계산", "휴가일수신청", "휴가사용현황", ] }, ] } 
+             
+            idxs="3"
             subidxs="1"
-
             />
 
 
@@ -55,12 +54,16 @@ export default function Apply(){
 
         <div className="main">
             <Toptits toptits={{ 
-                ttmap: "인사관리" ,
-                map: "경조비관리" , 
-                tit: "경조비신청" , 
-                text: "경조사 발생 시 경조비를 신청하고 지급 현황을 관리합니다." , 
-                tllbtn: "PDF 다운로드" , trrbtn: "신규신청"
-                }} />
+                ttmap: "근태관리" ,
+                map: "휴가관리" , 
+                tit: "휴가일수설정" , 
+                text: "연도별 휴가 정책 및 직급별 기준 일수를 설정합니다." , 
+                tllbtn: "PDF 다운로드" , trrbtn: "신규신청",
+                
+                }} 
+                pdfbtnno="o"
+                plusbtnno="o"
+                />
 
 
             <div className="inputform">

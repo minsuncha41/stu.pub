@@ -77,6 +77,8 @@ export default function Inc(){
                             },
                         ]
                     }
+                    idxs="1"
+                    subidxs="1"
                 />
 
                 {/* <div className="lftber">
@@ -104,7 +106,8 @@ export default function Inc(){
                 <div className="main">
                     <Toptits
                         toptits={{
-                            map: "인사관리",
+                            ttmap: "인사관리" ,
+                            map: "인사정보",
                             tit: "인사관리등록",
                             text: "직원의 인사정보를 등록하고 관리합니다.",
                             tllbtn: "PDF 다운로드" , trrbtn: "신규등록"

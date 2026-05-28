@@ -1,6 +1,25 @@
 import s from "./Aside.module.css";
 
-export default function Aside({dummy}){
+export default function Aside({dummy, idxs, subidxs,}){
+
+
+    return(
+        <header>
+            <div className={s.lftber}>
+                {dummy.map((item, idx) => (
+                    <ul key={idx}>
+                        <p><img src={item.titin.icon} alt="" />{item.titin.titname} </p>
+
+                        {item.sublit.map((subit, subidx) => (
+                            <li className=
+                            { `to${idx+1}to${subidx+1}` === 
+                            `to${idxs}to${subidxs}` ? s.lftberces : "" }
+                            key={subidx}><span>●</span>{subit}</li>
+                        ))}
+                    </ul>
+                ))}
+            </div>
+        </header>
     // const dummy = [
     //     {
     //         titin: { icon: "/User.png", titname:"인사정보" },
@@ -17,20 +36,7 @@ export default function Aside({dummy}){
 
     // ];
 
-    return(
-        <header>
-            <div className={s.lftber}>
-                {dummy.map((item, idx) => (
-                    <ul key={idx}>
-                        <p><img src={item.titin.icon} alt="" />{item.titin.titname} </p>
 
-                        {item.sublit.map((subit, subidx) => (
-                            <li  key={subidx}><span>●</span>{subit}</li>
-                        ))}
-                    </ul>
-                ))}
-            </div>
-        </header>
         // <div className={s.lftber}>
         //     <ul>
         //         <p><img src="/User.png" alt="" />인사정보</p>

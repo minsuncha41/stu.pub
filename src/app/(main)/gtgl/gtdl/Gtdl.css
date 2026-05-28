@@ -1,0 +1,250 @@
+
+.inwrap{
+    display: flex;
+    flex-flow: row;
+}
+
+
+.main{
+    background: #F1F5F9;
+    padding: 20px;
+    margin-top: 56px;
+    height: calc(100vh -56px);
+    width: calc(100% - 210px);
+}
+
+
+.findebox{
+    padding: 20px 14px;
+    width: 100%;
+    height: 62px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #E5E7EB;
+}
+
+
+
+
+
+.findeboxlft{
+    gap: 16;
+    display: flex;
+}
+
+
+
+.jgfmin{
+    height: 34px;
+    display: flex;
+    flex-flow: row wrap;
+}
+.jgfmin p{
+    width: 34px;
+    background-color: #F9FAFB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #D1D5DB;
+}
+.jgfmin p:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.jgfmin p:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.jgfmin p:hover{
+    background-color: #d3d3d4;
+}
+.jgfmin input{
+    cursor: pointer;
+    width: 183px;
+    background-color: #FFFFFF;
+    display: flex;
+    border: 1px solid #D1D5DB;
+    border-left: none;
+    border-right: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.dybox{
+    border-radius: 5px;
+    font-size: 13px;
+    width: 71px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2563EB;
+    gap: 6;
+    font-weight: bold;
+}
+
+
+.lbl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8;
+}
+.lbl p{
+    font-weight: bold;
+    font-size: 13px;
+}
+.lbl input, .lbl select{
+    font-size: 13px;
+    height: 34px;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    padding:0 9px;
+}
+
+.findeboxlft .lbl select{
+    width: 160px;
+}
+.findeboxlft .lbl input{
+    width: 108px;
+    padding-left: 25px;
+}
+.iconelbl{
+    position: relative;
+}
+.iconelbl .icone{
+    left: 10px;
+    position: absolute;
+}
+
+
+
+
+.findeboxret{
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    gap: 8;
+}
+.findeboxret li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    gap: 4;
+    padding: 0 12px;
+    border-radius: 50px;
+}
+.findeboxret li span{
+    font-size: 8px;
+}
+.fdret1{
+    background: #F1F5F9;
+    color: #374151;
+}
+.fdret2{
+    background: #EFF6FF;
+    color: #1D4ED8;
+}
+.fdret3{
+    background: #FFF7ED;
+    color: #EA580C;
+}
+.fdret4{
+    background: #FFF1F2;
+    color: #E11D48;
+}
+.fdret5{
+    background: #F0FDF4;
+    color: #16A34A;
+}
+
+
+
+
+
+.fromtit{
+    width: 100%;
+    background-color: #F8FAFC; 
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0 ;
+    padding: 10px 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+
+.fromtit h1, .fromtit h2 {
+    gap: 5px;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+.fromtit h1 { 
+    color: #1B3A6B;
+    font-weight: bold;
+    font-size: 13px;
+}
+.fromtit h1 span{
+    font-weight: normal;
+    color: #9CA3AF;
+}
+.fromtit h1 p{
+    padding: 0 5px;
+    color: #EF4444;
+}
+
+.fromtit h2 {
+    padding:0 10px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #DBEAFE;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1D4ED8;
+}
+
+
+
+
+
+
+.ingtgl{
+    margin-top: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 12;
+}
+
+
+
+.gtdlbox{
+    width: 340px;
+}
+.textbox{
+    width: 838px;
+}
+
+.gtglip{
+    padding: 16px;
+    background-color: white;
+}
+.gtglip option span{
+    padding: 10px;
+    background-color: wheat;
+}
