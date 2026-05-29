@@ -173,7 +173,8 @@ return(
                     <li>010-1234-5678</li>
                     <li>kim@company.com</li>
                     <li><span className={s.jjs}>재직중</span></li>
-                    <li><span className={s.sjs}>수정</span></li>                  </ul>
+                    <li><span className={s.sjs}>수정</span></li>                 
+                    </ul>
                 ))}
 
             <ul>

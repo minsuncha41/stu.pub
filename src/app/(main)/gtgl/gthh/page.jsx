@@ -1,7 +1,7 @@
 'use client';
 
-import "./Gtdl.css";
-import s from "./Gtdl.module.css";
+import "./Gthh.css";
+import s from "./Gthh.module.css";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -14,7 +14,7 @@ import { AlarmClock, AlertCircle, Baby, BookOpen, CakeSlice, Calendar, CalendarC
 
 
 
-export default function Gtdl(){
+export default function Gthh(){
 
     const [employee, setemployee] = useState([]);
 

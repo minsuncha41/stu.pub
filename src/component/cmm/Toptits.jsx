@@ -1,7 +1,7 @@
 import { Save } from "lucide-react";
 import s from "./Toptits.module.css";
 
-export default function Toptits ({toptits, pdfbtnno, plusimgno}) {
+export default function Toptits ({toptits, lftwtbtnno, plusimgno}) {
 
 
     return(
@@ -22,13 +22,13 @@ export default function Toptits ({toptits, pdfbtnno, plusimgno}) {
                     <p>{toptits.text}</p>
                 </div>
                 <div className={s.titr}>
-                    <button className={s.pdfbtn}
-                    style={{ display: pdfbtnno ? "none" : "flex" }}
+                    <button className={s.lftwtbtn}
+                    style={{ display: lftwtbtnno ? "none" : "flex" }}
                     >
                         <img src="/Download.png" alt="" />
                         {toptits.tllbtn}
                     </button>
-                    <button className={s.plusbtn}>
+                    <button className={s.retblbtn}>
                         <p style={{ display: plusimgno ? "none" : "flex" }}>+</p>
                         
                         <div className={s.savebox}

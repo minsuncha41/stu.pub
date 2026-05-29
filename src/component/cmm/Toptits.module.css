@@ -52,17 +52,17 @@
     padding: 0 14px;
     cursor: pointer;
 }
-.pdfbtn {
+.lftwtbtn {
     background-color: white;
     border: 1px solid #D1D5DB;
 }
-.plusbtn{
+.retblbtn{
     background-color: #1B3A6B;
     color: white;
 }
-.pdfbtn:hover{
+.lftwtbtn:hover{
     background-color: #c9ddff;
 }
-.plusbtn:hover{
+.retblbtn:hover{
     background-color: #476494;
 }

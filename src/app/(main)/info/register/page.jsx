@@ -64,21 +64,31 @@ export default function Inc(){
                     dummy={
                         [
                             {
-                                titin: { icon: "/User.png", titname:"인사정보" },
-                                sublit: [ "인사정보등록", "사원명수/인사기록카드" , "인사발령등록" ]
+                                titin: { icon: "/User.png", titname:"인사정보", main:"info" },
+                                sublit: [ "인사정보등록", "사원명수/인사기록카드" , "인사발령등록" ],
+                                mainsub: [ "register",  "", "appointement" ]
                             },
                             {
-                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청" },
-                                sublit: [ "경조비신청", "경조비신청현황" ]
+                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청", main:"eve" },
+                                sublit: [ "경조비신청", "경조비신청현황" ],
+                                mainsub: [ "apply" ]
                             },
                             {
-                                titin: { icon: "/File Text.png", titname:"증명서관리" },
-                                sublit: [ "증명서발급" ]
+                                titin: { icon: "/File Text.png", titname:"증명서관리", main:"cer"  },
+                                sublit: [ "증명서발급" ],
+                                mainsub: [ "aaa" ]
                             },
                         ]
                     }
                     idxs="1"
                     subidxs="1"
+
+                    main1="info"
+                    main1sub1="register"
+                    main1sub2="appointement"
+
+                    main2="eve"
+                    main2sub1="apply"
                 />
 
                 {/* <div className="lftber">

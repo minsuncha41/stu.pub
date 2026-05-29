@@ -1,6 +1,6 @@
 import s from "./Aside.module.css";
 
-export default function Aside({dummy, idxs, subidxs,}){
+export default function Aside({dummy, idxs, subidxs, main, sub}){
 
 
     return(
@@ -14,7 +14,7 @@ export default function Aside({dummy, idxs, subidxs,}){
                             <li className=
                             { `to${idx+1}to${subidx+1}` === 
                             `to${idxs}to${subidxs}` ? s.lftberces : "" }
-                            key={subidx}><span>●</span>{subit}</li>
+                            key={subidx}> <a href={`http://localhost:3000/${item.titin.main}/${item.mainsub}`}> <span>●</span>{subit} </a>  </li>
                         ))}
                     </ul>
                 ))}
