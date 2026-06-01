@@ -43,16 +43,19 @@ export default function Appointement(){
                     dummy={
                         [
                             {
-                                titin: { icon: "/User.png", titname:"인사정보" },
-                                sublit: [ "인사정보등록", "사원명수/인사기록카드" , "인사발령등록" ]
+                                titin: { icon: "/User.png", titname:"인사정보", main:"info" },
+                                sublit: [ "인사정보등록", "사원명수/인사기록카드" , "인사발령등록" ],
+                                mainsub: [ "register",  "", "appointement" ]
                             },
                             {
-                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청" },
-                                sublit: [ "경조비신청", "경조비신청현황" ]
+                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청", main:"eve" },
+                                sublit: [ "경조비신청", "경조비신청현황" ],
+                                mainsub: [ "apply" ]
                             },
                             {
-                                titin: { icon: "/File Text.png", titname:"증명서관리" },
-                                sublit: [ "증명서발급" ]
+                                titin: { icon: "/File Text.png", titname:"증명서관리", main:"cer"  },
+                                sublit: [ "증명서발급" ],
+                                mainsub: [ "aaa" ]
                             },
                         ]
                     }
@@ -68,7 +71,7 @@ export default function Appointement(){
                     <Toptits
                         toptits={{
                             ttmap: "인사관리" ,
-                            map: "인사정보 ",
+                            map: "인사정보",
                             tit: "인사발령등록",
                             text: "사원의 부서·직급·직책 발령 정보를 등록하고 이력을 관리합니다.",
                             tllbtn: "PDF 다운로드" , trrbtn: "발령등록"

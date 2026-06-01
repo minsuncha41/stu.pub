@@ -40,15 +40,29 @@ export default function Apply(){
 
 
     <div className="inwrap">
-        <Aside dummy={ [ { titin: { icon: "/User.png" , titname:"인사정보" }, sublit: [ "인사정보등록" , "사원명수/인사기록카드" , "인사발령등록"
-            ] }, { titin: { icon: "/Heart Handshake.png" , titname:"경조비신청" }, sublit: [ "경조비신청" , "경조비신청현황" ] }, {
-            titin: { icon: "/File Text.png" , titname:"증명서관리" }, sublit: [ "증명서발급" ] }, ] }
-
-            idxs="2"
-            subidxs="1"
-
-            />
-
+                <Aside
+                    dummy={
+                        [
+                            {
+                                titin: { icon: "/User.png", titname:"인사정보", main:"info" },
+                                sublit: [ "인사정보등록", "사원명수/인사기록카드" , "인사발령등록" ],
+                                mainsub: [ "register",  "", "appointement" ]
+                            },
+                            {
+                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청", main:"eve" },
+                                sublit: [ "경조비신청", "경조비신청현황" ],
+                                mainsub: [ "apply" ]
+                            },
+                            {
+                                titin: { icon: "/File Text.png", titname:"증명서관리", main:"cer"  },
+                                sublit: [ "증명서발급" ],
+                                mainsub: [ "aaa" ]
+                            },
+                        ]
+                    }
+                    idxs="2"
+                    subidxs="1"
+                />
 
 
 

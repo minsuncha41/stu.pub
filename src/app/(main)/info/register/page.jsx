@@ -82,13 +82,6 @@ export default function Inc(){
                     }
                     idxs="1"
                     subidxs="1"
-
-                    main1="info"
-                    main1sub1="register"
-                    main1sub2="appointement"
-
-                    main2="eve"
-                    main2sub1="apply"
                 />
 
                 {/* <div className="lftber">

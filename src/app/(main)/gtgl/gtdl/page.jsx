@@ -40,15 +40,25 @@ export default function Gtdl(){
 
 
     <div className="inwrap">
-        <Aside dummy={ [ { titin: { icon: "/Clock.png" , titname:"근태관리" }, sublit: [ "일일근태등록" , "월근태현황"] }, 
-            { titin: { icon: "/Plane.png" , titname:"출장관리" }, sublit: [ "출장신청" , "출장정산", "출장사용현황" ] }, {
-            titin: { icon: "/Calendar.png" , titname:"휴가관리" }, sublit: [ "휴가일수설정", "휴가일수계산", "휴가일수신청", "휴가사용현황", ] }, ] } 
+        <Aside dummy={ [ 
+            { titin: { icon: "/Clock.png" , titname:"근태관리", main:"gtgl"  }, 
+            sublit: [ "일일근태등록" , "월근태현황"],
+            mainsub: [ "gtdl",  "gthh", ] }, 
+
+            { titin: { icon: "/Plane.png" , titname:"출장관리", main:"gtgl" }, 
+            sublit: [ "출장신청" , "출장정산", "출장사용현황" ],
+            mainsub: [ "",  "",  "" ] }, 
+            
+            {titin: { icon: "/Calendar.png" , titname:"휴가관리", main:"gtgl" }, 
+            sublit: [ "휴가일수설정", "휴가일수계산", "휴가일수신청", "휴가사용현황", ],
+            mainsub: [ "hgsj",  "hggs",  "",  "" ] }, 
+        ] } 
              
-            idxs="1"
-            subidxs="1"
-            />
+        idxs="1"
+        subidxs="1"
+        />
 
-
+ 
 
 
 

@@ -343,6 +343,10 @@
     display: flex;
     flex-flow: row wrap;
 }
+
+
+
+/* 토글버튼 */
 .tgbox{
     width: 100%;
     display: flex;
@@ -357,6 +361,7 @@
     color: #374151;
 }
 .tgbtn{
+    cursor: pointer;
     border-radius: 50px;
     width: 34px;
     height: 18px;
@@ -372,6 +377,10 @@
     background-color: white;
     border-radius: 50%;
 }
+
+
+
+
 .cggmin{
     display: flex;
     gap: 8;

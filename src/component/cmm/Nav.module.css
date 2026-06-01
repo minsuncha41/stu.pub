@@ -34,8 +34,15 @@
     cursor: pointer;
     height: 56px;
     box-sizing: border-box;
+}
+.navlft ul a{
+    display: flex;
     padding: 22px;
 }
+
+
+
+
 .navlft ul li:hover{
     background-color:#2D5F9E;
 }
