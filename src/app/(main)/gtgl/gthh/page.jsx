@@ -50,7 +50,7 @@ export default function Gthh(){
             
             {titin: { icon: "/Calendar.png" , titname:"휴가관리", main:"gtgl" }, 
             sublit: [ "휴가일수설정", "휴가일수계산", "휴가일수신청", "휴가사용현황", ],
-            mainsub: [ "hgsj",  "hggs",  "",  "" ] }, 
+            mainsub: [ "hgsj",  "hggs",  "hgsc",  "hghh" ] }, 
         ] } 
              
         idxs="1"

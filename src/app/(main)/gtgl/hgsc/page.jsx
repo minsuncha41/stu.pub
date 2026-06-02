@@ -1,7 +1,7 @@
 'use client';
 
-import "./Gtdl.css";
-import s from "./Gtdl.module.css";
+import "./Hgsc.css";
+import s from "./Hgsc.module.css";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -9,12 +9,12 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
-import { AlarmClock, AlertCircle, Baby, BookOpen, CakeSlice, Calendar, CalendarCheck, Check, CheckCheck, ChevronLeft, ChevronRight, ClipboardPen, Clock, Clock1, Clock10, Clock4, Ellipsis, FileText, Flower2, Heart, HeartHandshake, ListChecks, LogOut, Paperclip, Plane, Plus, RotateCcw, Save, SaveAll, SaveOff, Search, SendHorizontal, ShieldCheck, Upload, Users, X } from "lucide-react";
+import { AlarmClock, AlertCircle, Baby, BookOpen, CakeSlice, Calendar, CalendarCheck, CalendarPlus, Check, CheckCheck, ChevronLeft, ChevronRight, ClipboardPen, Clock, Clock1, Clock10, Clock4, Ellipsis, FileText, Flower2, Heart, HeartHandshake, HeartPulse, ListChecks, LogOut, MoonStar, Paperclip, Plane, Plus, RotateCcw, Save, SaveAll, SaveOff, Search, SendHorizontal, ShieldCheck, Star, Sun, Upload, User2, Users, X } from "lucide-react";
 
 
 
 
-export default function Gtdl(){
+export default function Hgsc(){
 
     const [employee, setemployee] = useState([]);
 
@@ -54,8 +54,8 @@ export default function Gtdl(){
             mainsub: [ "hgsj",  "hggs",  "hgsc",  "hghh" ] }, 
         ] } 
              
-        idxs="1"
-        subidxs="1"
+        idxs="3"
+        subidxs="3"
         />
 
  
@@ -65,181 +65,149 @@ export default function Gtdl(){
         <div className="main">
             <Toptits toptits={{ 
                 ttmap: "근태관리" ,
-                map: "근태관리" , 
-                tit: "일일근태등록" , 
-                text: "날짜별 직원 근태 현황을 등록하고 수정합니다." , 
+                map: "휴가관리" , 
+                tit: "휴가일수신청" , 
+                text: "휴가 종류와 기간을 선택하여 신청합니다." , 
                 tllbtn: "PDF 다운로드" , trrbtn: "일괄저장", 
                 }} 
-                lftwtbtnno=""
+                lftwtbtnno="o"
+                retwtbtnno="o"
                 plusimgno="o"
+                ttct="o"
             />
 
-            <div className="findebox">
-                <div className="findeboxlft">
-                    <div className="ipdybox">
-                        <div class="jgfmin ">
-                            <p><ChevronLeft size={14}/></p>
-                            <input type="date" />
-                            <p><ChevronRight size={14} /></p>
-                        </div>
-                    </div>
-
-                    <div className="dybox">
-                        <CalendarCheck size={13} />
-                        <p>오늘</p>
-                    </div>
-
-
-                    <label className="lbl">
-                        <p>부서</p>
-                        <select>
-                            <option value="">전체 부서</option>
-                            <option value="bs1">부서1</option>
-                            <option value="bs2">부서2</option>
-                            <option value="bs3">부서3</option>
-                        </select>
-                    </label>
-                    <label className="lbl iconelbl">
-                        <Search className="icone" size={13}  color="#9CA3AF"/>
-                        <input type="text" placeholder="사원명 검색" />
-                    </label>
-
-                </div>
-
-
-                <ul className="findeboxret">
-                    <li className="fdret1">
-                        <span>●</span> 전체23명
-                    </li>                    
-                    <li className="fdret2">
-                        <span>●</span> 출근18
-                    </li>                    
-                    <li className="fdret3">
-                        <span>●</span> 지각2
-                    </li>                    
-                    <li className="fdret4">
-                        <span>●</span> 결근1
-                    </li>                    
-                    <li className="fdret5">
-                        <span>●</span> 연차2
-                    </li>                    
-                </ul>
-
-
-            </div>
+            <ul className="findebox">
+                <li>
+                    <p>총 부여일수</p>
+                    <h1>14일</h1>
+                </li>
+                <li>
+                    <p>사용일수</p>
+                    <h1>11일</h1>
+                </li>
+                <li>
+                    <p>잔여일수</p>
+                    <h1>3일</h1>
+                </li>
+                <li>
+                    <p>승인대기</p>
+                    <h1>1건</h1>
+                </li>
+                <li>
+                    <p>이월일수</p>
+                    <h1>0일</h1>
+                </li>
+            </ul>
 
             <div className="ingtgl">
                 <div className="gtdlbox">
                     <div className="fromtit">
                         <h1>
-                            <ClipboardPen size={15}/>
-                            근태 등록
+                            <CalendarPlus size={15}/>
+                            휴가신청
                         </h1>
-                        <h2>7월 1일</h2>
+                        <h2><span>*</span> 필수항목</h2>
                     </div>
 
                     <div className="gtglip">
                         <label className="sost" >
-                            <p>사원 선택<span className="str">*</span></p>
+                            <p>신청자 정보</p>
                             <div className="gtglipin">
-                                <p><span>박</span>박민준 · 개발팀</p>
-                                <p>x</p>
+                                <div className="gtglipinin">
+                                    <span>박</span>
+                                    <div className="gtglipininp">
+                                        <p>박민준</p>
+                                        <h1>
+                                            <p>개발팀 · 대리</p>
+                                            <s></s>
+                                            <span>EMP-003</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <span>
+                                    <CalendarCheck size={12}/>
+                                    잔여 3일
+                                </span>
                             </div>
                         </label>
+
+                        <div className="line"></div>
+                        
                         <label className="gtuh">
-                            <p>근태 유형<span className="str">*</span></p>
+                            <p>휴가 종류<span className="str">*</span></p>
                             <ul className="gtglipin">
-                                <li className="cg gtuhlicis">
-                                    <CheckCheck size={12}/>
-                                    <p>출근</p>
-                                </li>
-                                <li className="jg">
-                                    <AlarmClock size={12}/>
-                                    <p>지각</p>
-                                </li>
-                                <li className="jt">
-                                    <LogOut size={12}/>
-                                    <p>조퇴</p>
-                                </li>
-                                <li className="gg">
-                                    <X size={12}/>
-                                    <p>결근</p>
-                                </li>
-                                <li className="uc">
+                                <li className="uc gtuhlicis">
                                     <CalendarCheck size={12}/>
                                     <p>연차</p>
                                 </li>
-                                <li className="bc">
-                                    <Calendar size={12}/>
-                                    <p>반차</p>
+                                <li className="ojbc">
+                                    <Sun size={12}/>
+                                    <p>오전반차</p>
                                 </li>
-                                <li className="cj">
-                                    <Plane size={12}/>
-                                    <p>출장</p>
+                                <li className="ohbc">
+                                    <MoonStar size={12}/>
+                                    <p>오후반차</p>
                                 </li>
-                                <li className="gu">
-                                    <BookOpen size={12}/>
-                                    <p>교육</p>
+                                <li className="tbhg">
+                                    <Star size={12}/>
+                                    <p>특별휴가</p>
                                 </li>
-                                <li className="gog">
+                                <li className="bg">
+                                    <HeartPulse size={12}/>
+                                    <p>병가</p>
+                                </li>
+                                <li className="gg">
                                     <ShieldCheck size={12}/>
                                     <p>공가</p>
                                 </li>
+                                <h1 className="gtuhif"><p><span>ⓘ</span>연차 선택됨</p> <s></s> 1일 차감 / 잔여 3일</h1>
                             </ul>
                         </label>
 
+                        <div className="line"></div>
+
+
                         <div className="lboutbox">
                             <label className="cgsg" >
-                                <p>출근 시간</p>
-                                <div className="gtglipin">
-                                    <input type="text" value={"09:00"} />
-                                    <Clock4 size={13} className="gtglipinic"/>
-                                </div>
+                                <p>휴가 기간<span className="str">*</span></p>
+                                <label>
+                                    <p>시작일</p>
+                                    <input type="date" name="" id="" />
+                                </label>
+                                <span>~</span>
+                                <label>
+                                    <p>종료일</p>
+                                    <input type="date" name="" id="" />
+                                </label>
                             </label>
-                            <label className="tgsg" >
-                                <p>출근 시간</p>
-                                <div className="gtglipin">
-                                    <input type="text" value={"18:00"} />
-                                    <Clock4 size={13} className="gtglipinic"/>
-                                </div>
-                            </label>
+                            <h1 className="gtuhif hgggif"><p><span><Clock size={12} /></span>신청 일수: 1일 (평일 기준)</p></h1>
                         </div>
+                        
+                        
+                        <div className="line"></div>
 
-                        <div className="lboutbox">
-                            <label className="cggm" >
-                                <div className="tgbox">
-                                    <p>초과근무(OT)</p>
-                                    <div className="tgbtnbox">
-                                        <div className="tgbtn">
-                                            <div className="tgs"></div>
-                                        </div>
-                                        <p>적용</p>
-                                    </div>
-                                </div>
-                                <div className="cggmin">
-                                    <div className="gtglipin">
-                                        <input type="text" value={"18:00"} />
-                                        <Clock4 size={13} className="gtglipinic"/>
-                                    </div>
-                                    <p>~</p>
-                                    <div className="gtglipin">
-                                        <input type="text" value={"20:30"} />
-                                        <Clock4 size={13} className="gtglipinic"/>
-                                    </div>
-                                    <div className="times">
-                                        <p>2.5h</p>
-                                    </div>
-                                </div>
+
+                        <div className="lftbtinp">
+                            <label className="cgsg" >
+                                <p>업무 대리자<span className="">선택사항</span></p>
+                                <label> 
+                                    <User2 className="inc" size={13} color="#9CA3AF"/>
+                                    <input type="text" placeholder="대리자를 선택하세요"/>
+                                </label>
+                                
+                                <p>휴가사유<span className="str">*</span></p>
+                                <label> 
+                                    <textarea className="hgsu" placeholder="휴가 사유를 입력하세요"></textarea>
+                                </label>
+
+                                <p>첨부파일<span className="">선택사항 · 최대 3개</span></p>
+                                <label> 
+                                </label>
                             </label>
                         </div>
 
 
-                        <label className="bg" >
-                            <p>비고</p>
-                            <div className="gtglipin">
-                                <textarea type="text" placeholder="특이사항을 입력하세요" />
-                            </div>
-                        </label>
+
 
                         <div className="btnsbox">
                             <button className="lftwtbtn">

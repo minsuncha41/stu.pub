@@ -1,7 +1,7 @@
 import { Save } from "lucide-react";
 import s from "./Toptits.module.css";
 
-export default function Toptits ({toptits, lftwtbtnno, plusimgno}) {
+export default function Toptits ({toptits, lftwtbtnno, retwtbtnno, plusimgno, ttct}) {
 
 
     return(
@@ -11,12 +11,14 @@ export default function Toptits ({toptits, lftwtbtnno, plusimgno}) {
                 <span>&gt;</span>
                 <p>{toptits.ttmap}</p>
                 <span>&gt;</span>
-                <p>{toptits.map} </p>
+                <p>{toptits.map} </p> 
                 <span>&gt;</span>
                 <p className={s.mapsces}>{toptits.tit}</p>
             </div>
 
-            <div className={s.tit}>
+            <div className={s.tit}
+            style={{ justifyContent: ttct ? "center" : "space-between" }}            
+            >
                 <div className={s.titl}>
                     <h3>{toptits.tit}</h3>
                     <p>{toptits.text}</p>
@@ -28,7 +30,9 @@ export default function Toptits ({toptits, lftwtbtnno, plusimgno}) {
                         <img src="/Download.png" alt="" />
                         {toptits.tllbtn}
                     </button>
-                    <button className={s.retblbtn}>
+                    <button className={s.retblbtn}
+                    style={{ display: retwtbtnno ? "none" : "flex" }}
+                    >
                         <p style={{ display: plusimgno ? "none" : "flex" }}>+</p>
                         
                         <div className={s.savebox}

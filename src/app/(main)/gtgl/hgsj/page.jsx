@@ -1,7 +1,6 @@
 'use client';
 
 import "./Hgsj.css";
-import s from "./Hgsj.module.css";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -9,7 +8,7 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
-import { Baby, CakeSlice, Check, ChevronLeft, ChevronRight, Clock4, Copy, Ellipsis, FileText, Flower2, Heart, HeartHandshake, Layers, Paperclip, Plus, Save, SendHorizontal, Upload, X } from "lucide-react";
+import { Baby, CakeSlice, Check, ChevronLeft, ChevronRight, Clock4, Copy, Ellipsis, FileText, Flower2, Heart, HeartHandshake, Layers, Paperclip, Plus, Save, SendHorizontal, Star, TrendingUp, Upload, X } from "lucide-react";
 
 
 
@@ -51,7 +50,7 @@ export default function Hgsj(){
             
             {titin: { icon: "/Calendar.png" , titname:"휴가관리", main:"gtgl" }, 
             sublit: [ "휴가일수설정", "휴가일수계산", "휴가일수신청", "휴가사용현황", ],
-            mainsub: [ "hgsj",  "hggs",  "",  "" ] }, 
+            mainsub: [ "hgsj",  "hggs",  "hgsc",  "hghh" ] }, 
         ] } 
              
         idxs="3"
@@ -122,10 +121,12 @@ export default function Hgsj(){
                             <li>비고</li>
                         </ul>
 
+
+
                         <ul>
                             <li>임원</li>
-                            <li><p>25</p></li>
-                            <li><p>10</p></li>
+                            <li><input type="text" value={25}/></li>
+                            <li><input type="text" value={10}/></li>
                             <li>
                                 <div className="tgbtnbox">
                                     <div className="tgbtn">
@@ -135,10 +136,184 @@ export default function Hgsj(){
                             </li>
                             <li>최고 직급 기준</li>
                         </ul>
+                        <ul>
+                            <li>부장</li>
+                            <li><input type="text" value={21}/></li>
+                            <li><input type="text" value={10}/></li>
+                            <li>
+                                <div className="tgbtnbox">
+                                    <div className="tgbtn">
+                                        <div className="tgs"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>-</li>
+                        </ul>
+                        <ul>
+                            <li>차장 </li>
+                            <li><input type="text" value={18}/></li>
+                            <li><input type="text" value={5}/></li>
+                            <li>
+                                <div className="tgbtnbox">
+                                    <div className="tgbtn">
+                                        <div className="tgs"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>-</li>
+                        </ul>
+                        <ul>
+                            <li>과장</li>
+                            <li><input type="text" value={15}/></li>
+                            <li><input type="text" value={5}/></li>
+                            <li>
+                                <div className="tgbtnbox">
+                                    <div className="tgbtn">
+                                        <div className="tgs"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>-</li>
+                        </ul>
+                        <ul>
+                            <li>대리</li>
+                            <li><input type="text" value={12}/></li>
+                            <li><input type="text" value={5}/></li>
+                            <li>
+                                <div className="tgbtnbox">
+                                    <div className="tgbtn">
+                                        <div className="tgs"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>-</li>
+                        </ul>
+
+
+
+                        <ul>
+                            <li>임원</li>
+                            <li><input type="text" value={11}/></li>
+                            <li><input type="text" value={0}/></li>
+                            <li>
+                                <div className="tgbtnbox">
+                                    <div className="tgbtn no">
+                                        <div className="tgs"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>신입 기준</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div className="retbox">
+                    <div className="topretbox">
+                        <div className="fromtit">
+                            <h1>
+                                <Star size={15} strokeWidth={1.5} />
+                                특별 휴가 정책
+                            </h1>
+                        </div>
+                            
+                        <div className="toplbbox">
+                            <label>
+                                <p>결혼 휴가</p>
+                                <input type="text" value={5} />
+                                <h1>일</h1>
+                            </label>
+                            <label>
+                                <p>출산 휴가 (여)</p>
+                                <input type="text" value={90} />
+                                <h1>일</h1>
+                            </label>
+
+                            <label>
+                                <p>배우자 출산 휴가)</p>
+                                <input type="text" value={10} />
+                                <h1>일</h1>
+                            </label>
+                            <label>
+                                <p>부모 사망</p>
+                                <input type="text" value={5} />
+                                <h1>일</h1>
+                            </label>
+
+                            <label>
+                                <p>배우자/자녀 사망</p>
+                                <input type="text" value={3} />
+                                <h1>일</h1>
+                            </label>
+                            <label>
+                                <p>형제/자매 사망</p>
+                                <input type="text" value={1} />
+                                <h1>일</h1>
+                            </label>
+
+                        </div>
 
                     </div>
 
+                    <div className="botretbox">
+                        <div className="fromtit">
+                            <h1>
+                                <TrendingUp size={15} strokeWidth={1.5} />
+                                근속 가산 일수
+                            </h1>
+                        </div>
+                        <div className="btboxtb">
+                            <h1 className="iftt"><span>ⓘ</span> 근속 2년 초과 시 매 2년마다 1일씩 최대 25일까지 가산됩니다.</h1>
+                            <ul>
+                                <li>근속 연수</li>
+                                <li>가산 일수</li>
+                                <li>최종 일수 (사원 기준)</li>
+                            </ul>
+
+
+
+
+
+
+                            <ul>
+                                <li>1년 미만</li>
+                                <li className="pls0">+0일</li>
+                                <li>11일</li>
+                            </ul>
+                            <ul>
+                                <li>1년 이상 ~ 3년 미만</li>
+                                <li className="">+1일</li>
+                                <li>12일</li>
+                            </ul>
+                            <ul>
+                                <li>3년 이상 ~ 5년 미만</li>
+                                <li className="">+2일</li>
+                                <li>13일</li>
+                            </ul>
+                            <ul>
+                                <li>5년 이상 ~ 10년 미만</li>
+                                <li className="">+3일</li>
+                                <li>14일</li>
+                            </ul>
+                            <ul>
+                                <li>10년 이상</li>
+                                <li className="">+5일</li>
+                                <li>16일</li>
+                            </ul>
+
+
+
+
+                        </div>
+                    
+                    
+                    </div>
+
+
+                    
                 </div>
+
 
 
 

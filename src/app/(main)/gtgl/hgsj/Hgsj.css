@@ -121,7 +121,7 @@
 
 .lftbox{
     width: 589px;
-    gap: 18px;
+    gap: 0px;
     display: flex;
     flex-flow: column;
 }
@@ -130,7 +130,7 @@
 .fromtit{
     width: 100%;
     background-color: #F8FAFC; 
-    border-radius: 8px;
+    border-radius: 7px;
     padding: 10px 20px;
     display: flex;
     flex-flow: row wrap;
@@ -162,6 +162,10 @@
     font-size: 12px;
     font-weight: bold;
     color: #2563EB;
+    cursor: pointer;
+}
+.fromtit h2:hover{
+    background: #d8e9ff;
 }
 
 
@@ -184,6 +188,7 @@
     background-color: white;
     height: 44px;
     font-size: 13px;
+    border-top: 1px solid #E5E7EB;
 }
 .lftboxtb ul:first-child li{
     height: 38px;
@@ -192,6 +197,25 @@
     color: #6B7280;
     font-weight: bold;
     background: #F1F5F9;
+}
+.lftboxtb ul li input{
+    width: 64px;
+    height: 34px;
+    border: 1px solid #D1D5DB;
+    text-align: center;
+    border-radius: 10px;
+}
+.lftboxtb ul li input:focus{
+    border-color:#2563EB;
+    color: #2563EB;
+    outline: none;
+}
+
+.lftboxtb ul li:nth-child(2) input{
+    font-weight: bold;
+}
+.lftboxtb ul li:nth-child(1){
+    font-weight: bold;
 }
 
 
@@ -217,7 +241,7 @@
 }
 
 
-
+ 
 
 
 
@@ -248,3 +272,148 @@
     background-color: white;
     border-radius: 50%;
 }
+
+
+.tgbtn.no{
+    cursor: pointer;
+    border-radius: 50px;
+    width: 34px;
+    height: 18px;
+    background: #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 4;
+}
+
+
+
+
+
+
+
+
+.retbox{
+    width: 589px;
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+}
+.toplbbox{
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+} 
+.toplbbox label{
+    position: relative;
+    width: calc(50% - 5px);
+}
+.toplbbox label p{
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.toplbbox label h1{
+    position: absolute;
+    color: #9CA3AF;
+    top: 50%;
+    right: 12px;
+}
+.toplbbox label input{
+    font-weight: bold;
+    font-size: 13px;
+    width: 100%;
+    border-radius: 7px;
+    height: 36px;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+}
+
+
+
+
+
+
+.botretbox .btboxtb{
+    background: white;
+    padding: 16px 20px;
+    display: flex;
+    flex-flow: column ;
+    gap: 10px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.btboxtb .iftt{
+    width: 100%;
+    height: 35px;
+    border-radius: 7px;
+    padding:0 14px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    background-color: #FFF9EC;
+    border: 1px solid #FDE68A;
+    color: #92400E;
+}
+.btboxtb .iftt span{
+    margin-right: 8px;
+}
+
+.btboxtb ul{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    height: 34px;
+    font-size: 12px;
+    border-bottom: 1px solid #E5E7EB;
+}
+.btboxtb ul:last-child{
+    border-bottom: none;
+}
+
+.btboxtb ul:nth-child(2){
+    background: #F1F5F9;
+    font-weight: bold;
+    color: #6B7280;
+    border: 1px solid #E5E7EB;
+}
+
+.btboxtb ul li{
+    height: 34px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+.btboxtb ul:nth-child(2) li:nth-child(2){
+    color: #6B7280;
+}
+.btboxtb ul li:nth-child(2){
+    color: #16A34A;
+    font-weight: bold;
+}
+.btboxtb ul li.pls0{
+    font-weight: normal;
+    color: #9CA3AF;
+}
+
+.btboxtb ul:nth-child(2) li:nth-child(3){
+    color: #6B7280;
+}
+.btboxtb ul li:nth-child(3){
+    color: #1B3A6B;
+    font-weight: bold;
+}
+
+
+

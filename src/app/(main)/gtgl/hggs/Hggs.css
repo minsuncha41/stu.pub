@@ -1,0 +1,278 @@
+
+.inwrap{
+    display: flex;
+    flex-flow: row;
+}
+
+
+.main{
+    background: #F1F5F9;
+    padding: 20px;
+    margin-top: 56px;
+    height: calc(100vh -56px);
+    width: calc(100% - 210px);
+}
+
+
+.findebox{
+    padding: 20px 14px;
+    width: 100%;
+    height: 62px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #E5E7EB;
+}
+
+/* 테이블 위쪽타이들 부분 */
+.fromtit{
+    width: 100%;
+    background-color: #F8FAFC; 
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0 ;
+    padding: 10px 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+
+.fromtit h1, .fromtit h2, .fromtit h3 {
+    gap: 5px;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+.fromtit h1 { 
+    color: #1B3A6B;
+    font-weight: bold;
+    font-size: 13px;
+}
+.fromtit h1 span{
+    font-weight: normal;
+    color: #9CA3AF;
+}
+.fromtit h1 p{
+    padding: 0 5px;
+    color: #EF4444;
+}
+
+
+
+
+
+
+
+.findeboxlft{
+    gap: 16;
+    display: flex;
+}
+
+
+
+
+.lbl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8;
+}
+.lbl p{
+    font-weight: bold;
+    font-size: 13px;
+}
+.lbl select{
+    font-size: 13px;
+    height: 34px;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    padding:0 9px;
+    width: 160px;
+}
+
+
+.fdbtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 83px;
+    height: 34px;
+    background: #1B3A6B;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    gap: 3;
+    cursor: pointer;
+}
+.fdbtns:hover{
+    background: #3567b7;
+}
+
+
+.lblic{
+    position: relative;
+}
+.lblic input{
+    padding-left: 25px;
+    font-size: 13px;
+    width: 108px;
+    height: 34px;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+}
+
+.inlblic{
+    left: 10px;
+    position: absolute;
+}
+.cgh{
+    background-color: white;
+    border: 1px solid #D1D5DB;
+    color: #6B7280;
+}
+
+
+
+
+
+
+.intable .fromtit{
+    margin-top: 16px;
+}
+
+
+.intable .fromtit h2{
+    width: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+    font-size: 11px;
+    color: #2563EB;
+    font-weight: bold;
+    border-radius: 10px;
+    background: #ddecff;
+}
+
+
+
+
+
+.tablesbox{
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+}
+.tablesbox ul{
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #E5E7EB;
+}
+.tablesbox ul li{
+    height: 44px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+}
+.tablesbox ul:nth-child(1){
+    height: 38px;
+    background: #F1F5F9;
+    font-weight: bold;
+    color: #6B7280;
+    border-top: 1px solid #E5E7EB;
+}
+
+
+.lispan{
+    padding:2px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+
+
+
+.tablesbox ul:nth-child(1) li:nth-child(1){
+    flex: 1.5;    
+}
+.tablesbox ul li:nth-child(1){
+    flex: 1.5;    
+}
+
+
+.tablesbox ul li:nth-child(2){
+    font-weight: bold;    
+}
+
+.tablesbox ul:nth-child(1) li:nth-child(6){
+    flex: 1.5;    
+
+}
+.tablesbox ul li:nth-child(6){
+    flex: 1.5;    
+}
+
+
+.tablesbox ul:nth-child(1) li:nth-child(8){
+    color: #6B7280;
+
+}
+.tablesbox ul li:nth-child(8){
+    color: #16A34A;    
+    font-weight: bold;
+}
+
+.tablesbox ul:nth-child(1) li:nth-child(9){
+    color: #6B7280;
+
+}
+.tablesbox ul li:nth-child(9){
+    color: #3B82F6;    
+}
+.tablesbox ul li:nth-child(9).ooos0{
+    color: #9CA3AF;    
+}
+
+.tablesbox ul:nth-child(1) li:nth-child(10){
+    color: #6B7280;
+    font-size: 12px;
+
+}
+.tablesbox ul li:nth-child(10){
+    color: #1B3A6B;
+    font-size: 15px;
+    font-weight: bold;    
+}
+
+
+
+
+.gsosup{
+    background: #EDE9FE;
+    color: #7C3AED;
+}
+.gsosdo{
+    background: #FEF9C3;
+    color: #CA8A04;
+}
+
+.joosup{
+    background: #DCFCE7;
+    color: #16A34A;
+}
+.joosdo{
+    background: #FEF9C3;
+    color: #D97706;
+}
+.st{
+    background: #DBEAFE;
+    color: #1D4ED8;
+}
