@@ -1,7 +1,6 @@
 'use client';
 
 import "./Hgsc.css";
-import s from "./Hgsc.module.css";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -58,7 +57,7 @@ export default function Hgsc(){
         subidxs="3"
         />
 
- 
+  
 
 
 
@@ -201,22 +200,28 @@ export default function Hgsc(){
                                 </label>
 
                                 <p>첨부파일<span className="">선택사항 · 최대 3개</span></p>
-                                <label> 
-                                </label>
+                                <div className="cmbpilin">
+                                    <Paperclip size={14}  color="#9CA3AF" />
+                                    <div className="cmbpiltt">
+                                        <h1>파일을 끌어다 놓거나</h1>
+                                    </div>
+                                    <button><Upload size={11} />선택</button>
+                                </div>
                             </label>
                         </div>
 
 
+                        <div className="line"></div>
 
 
                         <div className="btnsbox">
                             <button className="lftwtbtn">
-                                <RotateCcw size={12} color="#6B7280" />
-                                <p>초기화</p>
+                                <X size={13} color="#6B7280" />
+                                <p>취소</p>
                             </button>
                             <button className="retblbtn">
-                                <Save size={12} />
-                                <p>저장</p>
+                                <SendHorizontal size={13} />
+                                <p>신청하기</p>
                             </button>
                         </div>
                     </div>
@@ -225,169 +230,174 @@ export default function Hgsc(){
 
 
                 <div className="textbox">
-                    <div className="fromtit">
-                        <h1>
-                            <ListChecks size={15} strokeWidth={1.5} />
-                            2025.07.01 근태 목록
-                        </h1>
-                        <div className="titin">
-                            <h2>총 23건 </h2>
-                            <h3><Users size={12} /> 일괄등록</h3>
+                    <div className="tptbl">
+                        <div className="fromtit">
+                            <h1>
+                                <Calendar size={15} strokeWidth={1.5} />
+                                2025년 7월
+                            </h1>
+
+                        </div>
+
+                        <div className="crd">
+                            <ul>
+                                <li className="ili"><span>일</span></li>
+                                <li><span>월</span></li>
+                                <li><span>화</span></li>
+                                <li><span>수</span></li>
+                                <li><span>목</span></li>
+                                <li><span>금</span></li>
+                                <li className="tyi"><span>토</span></li>
+                            </ul>
+                            <ul>
+                                <li><span></span></li>
+                                <li><span>1</span></li>
+                                <li><span>2</span></li>
+                                <li><span>3</span></li>
+                                <li><span>4</span></li>
+                                <li><span>5</span></li>
+                                <li className="tyi"><span>6</span></li>
+                            </ul>
+                            <ul>
+                                <li className="ili"><span>7</span></li>
+                                <li><span>8</span></li>
+                                <li><span>9</span></li>
+                                <li><span>10</span></li>
+                                <li><span>11</span></li>
+                                <li><span>12</span></li>
+                                <li className="tyi"><span>13</span></li>
+                            </ul>
+                            <ul>
+                                <li className="ili"><span>14</span></li>
+                                <li className="clday"><span>15</span></li>
+                                <li><span>16</span></li>
+                                <li><span>17</span></li>
+                                <li><span>18</span></li>
+                                <li><span>19</span></li>
+                                <li className="tyi"><span>20</span></li>
+                            </ul>
+                            <ul>
+                                <li className="ili"><span>21</span></li>
+                                <li><span>22</span></li>
+                                <li><span>23</span></li>
+                                <li><span>24</span></li>
+                                <li><span>25</span></li>
+                                <li><span>26</span></li>
+                                <li className="tyi"><span>27</span></li>
+                            </ul>
+                            <ul>
+                                <li className="ili"><span>28</span></li>
+                                <li><span>29</span></li>
+                                <li><span>30</span></li>
+                                <li><span>31</span></li>
+                                <li><span></span></li>
+                                <li><span></span></li>
+                                <li><span></span></li>
+                            </ul>
+
+                            <ul>
+                                <li className="sci datsp"><p>●</p><h1>신청일</h1></li>
+                                <li className="gso datsp"><p>●</p><h1>기사용</h1></li>
+                                <li className="gui datsp"><p>●</p><h1>공휴일</h1></li>
+                                <li><span></span></li>
+                                <li><span></span></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
                         </div>
                     </div>
 
-                    <ul className={s.texts}>
-                        <ul>
-                            <li><input type="checkbox" checked/></li>
-                            <li>사원번호</li>
-                            <li>성명</li>
-                            <li>부서</li>
-                            <li>직급</li>
-                            <li>근태유형</li>
-                            <li>출근시간</li>
-                            <li>퇴근시간</li>
-                            <li>OT</li>
-                            <li>비고</li>
-                            <li>관리</li>
-                        </ul>
-
-                        <ul>
-                            <li><input type="checkbox"/></li>
-                            <li>EMP-001</li>
-                            <li>김철수</li>
-                            <li>인사팀</li>
-                            <li>팀장</li>
-                            <li><p className={`${s.gtuh} ${s.cg}`}><span>●</span>출근</p></li>
-                            <li>09:02</li>
-                            <li>18:05</li>
-                            <li>-</li>
-                            <li>-</li>
-                            <li>
-                                <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
-                                <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
-                            </li>
-                        </ul>
-                        <ul>
-                            <li><input type="checkbox"/></li>
-                            <li>EMP-002</li>
-                            <li>이영희</li>
-                            <li>경영지원팀</li> 
-                            <li>과장</li>
-                            <li><p className={`${s.gtuh} ${s.jg}`}><span>●</span>지각</p></li>
-                            <li className={s.jgtt} >09:27</li>
-                            <li>18:10</li>
-                            <li>-</li>
-                            <li className={s.jgtt} >27분 지각</li>
-                            <li>
-                                <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
-                                <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
-                            </li>
-                        </ul>
-                        <ul>
-                            <li><input type="checkbox"/></li>
-                            <li>EMP-003</li>
-                            <li>박민준</li>
-                            <li>개발팀</li>
-                            <li>대리</li>
-                            <li><p className={`${s.gtuh} ${s.uc}`}><span>●</span>연차</p></li>
-                            <li>-</li>
-                            <li>-</li>
-                            <li>-</li>
-                            <li className={s.uctt} >연차 1일 사용</li>
-                            <li>
-                                <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
-                                <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
-                            </li>
-                        </ul>
-                        <ul>
-                            <li><input type="checkbox"/></li>
-                            <li>EMP-004</li>
-                            <li>최지영</li>
-                            <li>영업팀</li>
-                            <li>사원</li>
-                            <li><p className={`${s.gtuh} ${s.cj}`}><span>●</span>출장</p></li>
-                            <li>08:50</li>
-                            <li>19:30</li>
-                            <li>1.5h</li>
-                            <li className={s.cjtt} >부산츨장</li>
-                            <li>
-                                <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
-                                <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
-                            </li>
-                        </ul>
-                        <ul>
-                            <li><input type="checkbox"/></li>
-                            <li>EMP-005</li>
-                            <li>정수빈</li>
-                            <li>개발팀</li>
-                            <li>사원</li>
-                            <li><p className={`${s.gtuh} ${s.bc}`}><span>●</span>반차</p></li>
-                            <li>09:02</li>
-                            <li>18:05</li>
-                            <li>-</li>
-                            <li className={s.bctt} >오후반차</li>
-                            <li>
-                                <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
-                                <span className={`${s.dls} ${s.glbtns}`}>삭제</span>                                
-                            </li>
-                        </ul>
-                        <ul className={s.mdlul}>
-                            <li><input type="checkbox"/></li>
-                            <li>EMP-006</li>
-                            <li>한지민</li>
-                            <li>영업팀</li>
-                            <li>대리</li>
-                            <li><p className={`${s.gtuh} ${s.mdl}`}><span><AlertCircle size={10} /></span>미등록</p></li>
-                            <li>-</li>
-                            <li>-</li>
-                            <li>-</li>
-                            <li>-</li>
-                            <li>
-                                <span className={`${s.dls} ${s.glbtns}`}><Plus size={10} /> 등록</span>
-                            </li>
-                        </ul>
-                        
-
-                        <ul className="alltbl">
-                            <div className="alltblin">
-                                <li>
-                                    <h1>합계</h1>
-                                </li>
-                                <li>
-                                    <h2>6명 조회</h2>
-                                </li>
-                                <li>
-                                    <p>평균</p>
-                                    <h1>09:05</h1>
-                                </li>
-                                <li>
-                                    <p>평균</p>
-                                    <h1>18:09</h1>
-                                </li>
-                                <li>
-                                    <p>합계</p>
-                                    <h3>3.0h</h3>
-                                </li>
+                    <div className="btmtbl">
+                        <div className="fromtit">
+                            <h1>
+                                <ListChecks size={15} strokeWidth={1.5} />
+                                2025.07.01 근태 목록
+                            </h1>
+                            <div className="titin">
+                                <h1>총 5건</h1>
                             </div>
-                        </ul>
+                        </div>
+                        <div className="noscol">
+                            <ul>
+                                <li>신청일</li>
+                                <li>휴가종류</li>
+                                <li>휴가기간</li>
+                                <li>일수</li>
+                                <li>사유</li>
+                                <li>승인상태</li>
+                                <li>관리</li>
+                            </ul>
 
 
 
 
-                        <ul className={s.textsbtns}>
-                            <li><p>전체 23명 중 6명 표시 · 미등록 1명</p></li>
+                            <ul>
+                                <li>2025.07.01</li>
+                                <li><span className="tbcm uc"><p>●</p>연차</span></li>
+                                <li>2025.07.14 ~ 07.14</li>
+                                <li>1일</li>
+                                <li>개인사유</li>
+                                <li><span className="tbcm sodg"><p>●</p> 승인대기</span></li>
+                                <li><span className="gl">취소</span></li>
+                            </ul>
+                            <ul>
+                                <li>2025.06.02</li>
+                                <li><span className="tbcm ojbc"><p>●</p>오전반차</span></li>
+                                <li>2025.06.10 ~ 06.10</li>
+                                <li>0.5일</li>
+                                <li>병원 방문</li>
+                                <li><span className="tbcm sool"><p>●</p> 승인완료</span></li>
+                                <li><span className="gl">상세</span></li>
+                            </ul>
+                            <ul>
+                                <li>2025.05.12</li>
+                                <li><span className="tbcm uc"><p>●</p>연차</span></li>
+                                <li>2025.05.19 ~ 05.21</li>
+                                <li>3일</li>
+                                <li>가족 여행</li>
+                                <li><span className="tbcm sool"><p>●</p> 승인완료</span></li>
+                                <li><span className="gl">상세</span></li>
+                            </ul>
+                            <ul>
+                                <li>2025.04.21</li>
+                                <li><span className="tbcm tbbg"><p>●</p>병가</span></li>
+                                <li>2025.04.22 ~ 04.23</li>
+                                <li>2일</li>
+                                <li>몸살 감기</li>
+                                <li><span className="tbcm sool"><p>●</p> 승인완료</span></li>
+                                <li><span className="gl">상세</span></li>
+                            </ul>
+                            <ul>
+                                <li>2025.03.05</li>
+                                <li><span className="tbcm uc"><p>●</p>연차</span></li>
+                                <li>2025.03.10 ~ 03.14</li>
+                                <li>5일</li>
+                                <li>개인 휴가</li>
+                                <li><span className="tbcm sool"><p>●</p> 승인완료</span></li>
+                                <li><span className="gl">상세</span></li>
+                            </ul>
+                            <ul className="textsbtns">
+                                <li><p>총 5건 · 승인완료 4건 · 승인대기 1건</p></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li>
+                                    <span>&lt;</span>
+                                    <span className="textsces">1</span>
+                                    <span>&gt;</span>
+                                </li>
+                            </ul>
 
-                            <li></li>
-                            <li>
-                                <span>&lt;</span>
-                                <span className={s.textsces}>1</span>
-                                <span>2</span>
-                                <span>3</span>
-                                <span>4</span>
-                                <span>&gt;</span>
-                            </li>
-                        </ul>
-                    </ul>
+                        </div>
+
+
+                    </div>
+
+
                 </div>   
 
 

@@ -1,7 +1,7 @@
-import { Save } from "lucide-react";
+import { Printer, Save } from "lucide-react";
 import s from "./Toptits.module.css";
 
-export default function Toptits ({toptits, lftwtbtnno, retwtbtnno, plusimgno, ttct}) {
+export default function Toptits ({toptits, lftwtbtnno, retwtbtnno, retsaveimg, prtbtnon, ttct}) {
 
 
     return(
@@ -33,15 +33,23 @@ export default function Toptits ({toptits, lftwtbtnno, retwtbtnno, plusimgno, tt
                     <button className={s.retblbtn}
                     style={{ display: retwtbtnno ? "none" : "flex" }}
                     >
-                        <p style={{ display: plusimgno ? "none" : "flex" }}>+</p>
+                        <p style={{ display: retsaveimg ? "none" : "flex" }}>+</p>
                         
                         <div className={s.savebox}
-                            style={{ display: plusimgno ? "flex" : "none" }}
+                            style={{ display: retsaveimg ? "flex" : "none" }}
                         >
                             <Save size={14} />
                         </div>
                         {toptits.trrbtn}
                     </button>
+                    <button className={s.prtbtn}
+                    style={{ display: prtbtnon ? "flex" : "none" }}
+                    >
+                        <Printer size={14} />
+                        인쇄
+                    </button>
+
+
                 </div>
             </div>
         </div>

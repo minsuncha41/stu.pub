@@ -85,6 +85,8 @@ export default function Hgsj(){
                             <p><ChevronRight size={14} /></p>
                         </div>
                     </div>
+
+                    
                     <div className="ifbox">
                         ⓘ 회계연도 기준 (1월~12월)
                     </div>

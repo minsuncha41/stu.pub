@@ -70,7 +70,7 @@ export default function Hggs(){
                 tllbtn: "PDF 다운로드" , trrbtn: "전직원 일괄계산", 
                 }} 
                 lftwtbtnno=""
-                plusimgno="o"
+                retsaveimg="0"
             />
 
             <div className="findebox">

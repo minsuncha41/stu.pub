@@ -70,7 +70,7 @@ export default function Gthh(){
                 tllbtn: "PDF 다운로드" , trrbtn: "인쇄", 
                 }} 
                 lftwtbtnno=""
-                plusimgno="o"
+                retsaveimg="0"
             />
 
             <div className="findebox">

@@ -71,7 +71,7 @@ export default function Gtdl(){
                 tllbtn: "PDF 다운로드" , trrbtn: "일괄저장", 
                 }} 
                 lftwtbtnno=""
-                plusimgno="o"
+                retsaveimg="0"
             />
 
             <div className="findebox">
@@ -408,7 +408,6 @@ export default function Gtdl(){
 
                         <ul className={s.textsbtns}>
                             <li><p>전체 23명 중 6명 표시 · 미등록 1명</p></li>
-
                             <li></li>
                             <li>
                                 <span>&lt;</span>
