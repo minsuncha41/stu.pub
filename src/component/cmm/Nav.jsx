@@ -16,7 +16,7 @@ export default function Nav({none, num1,num2,num3,num4,}){
                         <a href="http://localhost:3000/gtgl/gtdl">근태관리</a>
                     </li>
                     <li className={ num3 ? s.navlftces : ""}>
-                        <a href="">급여관리</a>
+                        <a href="http://localhost:3000/gogl/gojbgl">급여관리</a>
                     </li>
                     <li className={ num4 ? s.navlftces : ""}>
                         <a href="">일용직관리</a>

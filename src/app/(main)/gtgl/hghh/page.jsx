@@ -54,7 +54,7 @@ export default function Hghh(){
         ] } 
              
         idxs="3"
-        subidxs="3"
+        subidxs="4"
         />
 
   
@@ -356,7 +356,7 @@ export default function Hghh(){
                         <li><p>-</p></li>
                         <li>4일</li>
                         <li>7일</li>
-                        <li className="pstbli">
+                        <li className=" ">
                             36%
                             <div className="pstb">
                                 <div className="pstinb pstbl pstnum8"></div>
@@ -367,7 +367,7 @@ export default function Hghh(){
                         <li></li>
                         <li></li>
                         <li></li>
-                        <li><Sigma size={13} />합계 / 평균</li>
+                        <li> <Sigma size={13} />합계 / 평균 </li>
                         <li>120일</li>
                         <li>66일</li>
                         <li>4일</li>
@@ -377,7 +377,7 @@ export default function Hghh(){
                         <li>80일</li>
                         <li>40일<span>평균 5.0일</span></li>
                         <li className="pstbli">
-                            66%
+                            66.7%
                             <div className="pstb">
                                 <div className="pstinb pstnb pstnum9"></div>
                             </div>
@@ -385,7 +385,7 @@ export default function Hghh(){
                     </ul>
 
                     <ul className="textsbtns">
-                        <li><h2>총 8명</h2><AlertCircle size={12} color="red" />잔여 3일 이하 3명 (박민준·정수빈·오준혁)</li>
+                        <li><h2>총 8명</h2> <h3></h3> <AlertCircle size={12} color="red" />잔여 3일 이하 3명 (박민준·정수빈·오준혁)</li>
                         <li></li>
                         <li></li>
                         <li></li>

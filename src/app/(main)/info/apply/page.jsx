@@ -49,14 +49,14 @@ export default function Apply(){
                                 mainsub: [ "register",  "", "appointement" ]
                             },
                             {
-                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청", main:"eve" },
+                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청", main:"info" },
                                 sublit: [ "경조비신청", "경조비신청현황" ],
                                 mainsub: [ "apply" ]
                             },
                             {
-                                titin: { icon: "/File Text.png", titname:"증명서관리", main:"cer"  },
+                                titin: { icon: "/File Text.png", titname:"증명서관리", main:"info"  },
                                 sublit: [ "증명서발급" ],
-                                mainsub: [ "aaa" ]
+                                mainsub: [ "jmsbg" ]
                             },
                         ]
                     }
