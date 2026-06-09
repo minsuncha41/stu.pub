@@ -189,24 +189,106 @@ export default function Gojg(){
 
                     <ul>
                         <li><input type="checkbox" name="" id=""/></li>
-                        <li>EMP001</li>
+                        <li>EMP-001</li> 
                         <li>김철수</li>
                         <li>인사팀</li>
                         <li>4,200,000</li>
-                        <li>기본급</li>
-                        <li>식대</li>
-                        <li>교통비</li>
-                        <li>야근수당</li>
-                        <li>지급소계</li>
-                        <li>국민연금</li>
-                        <li>건강보험</li>
-                        <li>고용보험</li>
-                        <li>소득세</li>
-                        <li>공제소계</li>
-                        <li>실지급액</li>
+                        <li>200,000</li>
+                        <li>150,000</li>
+                        <li>250,000</li>
+                        <li>4,800,000</li>
+                        <li>189,000</li>
+                        <li>167,400</li>
+                        <li>43,200</li>
+                        <li>132,000</li>
+                        <li>643,230</li>
+                        <li>4,268,400</li>
                     </ul>
-
-
+                    <ul>
+                        <li><input type="checkbox" name="" id="" /></li>
+                        <li>EMP-002</li>
+                        <li>이영희</li>
+                        <li>인사팀</li>
+                        <li>4,700,000</li>
+                        <li>200,000</li>
+                        <li>150,000</li>
+                        <li>120,000</li>
+                        <li>5,170,000</li>
+                        <li>211,500</li>
+                        <li>187,200</li>
+                        <li>46,530</li>
+                        <li>198,000</li>
+                        <li>643,230</li>
+                        <li>4,526,770</li>
+                    </ul>
+                    <ul>
+                        <li><input type="checkbox" name="" id="" /></li>
+                        <li>EMP-003</li>
+                        <li>박민준</li>
+                        <li>개발팀</li>
+                        <li>3,500,000</li>
+                        <li>200,000</li>
+                        <li>150,000</li>
+                        <li>350,000</li>
+                        <li>4,200,000</li>
+                        <li>157,500</li>
+                        <li>139,300</li>
+                        <li>37,800</li>
+                        <li>88,000</li>
+                        <li>422,600</li>
+                        <li>3,777,400</li>
+                    </ul>
+                    <ul>
+                        <li><input type="checkbox" name="" id="" /></li>
+                        <li>EMP-004</li>
+                        <li>최지영</li>
+                        <li>영업팀</li>
+                        <li>2,800,000</li>
+                        <li>200,000</li>
+                        <li>100,000</li>
+                        <li><p>-</p></li>
+                        <li>3,100,000</li>
+                        <li>126,000</li>
+                        <li>111,400</li>
+                        <li>27,900</li>
+                        <li>44,000</li>
+                        <li>309,300</li>
+                        <li>2,790,700</li>
+                    </ul>
+                    <ul>
+                        <li><input type="checkbox" name="" id="" /></li>
+                        <li>EMP-005</li>
+                        <li>정수빈</li>
+                        <li>개발팀</li>
+                        <li>2,900,000</li>
+                        <li>200,000</li>
+                        <li>100,000</li>
+                        <li>180,000</li>
+                        <li>3,380,000</li>
+                        <li>130,500</li>
+                        <li>115,200</li>
+                        <li>30,420</li>
+                        <li>55,000</li>
+                        <li>331,120</li>
+                        <li>3,048,880</li>
+                    </ul>
+                    <ul>
+                        <li><input type="checkbox" name="" id="" /></li>
+                        <li>EMP-006</li>
+                        <li>한지민</li>
+                        <li>영업팀</li>
+                        <li>3,200,000</li>
+                        <li>200,000</li>
+                        <li>100,000</li>
+                        <li>90,000</li>
+                        <li>3,590,000</li>
+                        <li>144,000</li>
+                        <li>127,300</li>
+                        <li>32,310</li>
+                        <li>77,000</li>
+                        <li>380,610</li>
+                        <li>3,209,390</li>
+                    </ul>
 
 
 
@@ -216,24 +298,36 @@ export default function Gojg(){
                         <li></li>
                         <li></li>
                         <li></li>
-                        <li></li>
                         <li><Sigma size={13}/> 합계 (8명)</li>
-                        <li>29,300,000</li>
+                        <li>25,760,000</li>
                         <li>1,600,000</li>
                         <li>1,000,000</li>
-                        <li>740,000</li>
-                        <li>3,340,000</li>
-                        <li><p>-</p></li>
-                        <li><p>-</p></li>
-                        <li><p>-</p></li>
-                        <li><p>-</p></li>
-                    </ul>
+                        <li>1,280,000</li>
+                        <li>28,640,000</li>
+                        <li>1,152,000</li>
+                        <li>1,018,800</li>
+                        <li>277,260</li>
+                        <li>720,000</li>
+                        <li>4,128,060</li>
+                        <li>24,511,940</li>
+
+
+                    </ul> 
+
 
 
 
 
                     <ul className="textsbtns">
-                        <li><h2>총 8명 조회 · 1명 수정 중</h2></li>
+                        <li>
+                            <h2>총 8명 · 2025년 7월분 급여</h2>
+                            <div className="br"></div>
+                            <div className="ttrettt">
+                                <p><Clock size={11}/> 미확정 8건 — 급여확정 후 명세서 발송 가능</p>
+                            </div>
+                            
+                        </li>
+                        <li></li>
                         <li></li>
                         <li></li>
                         <li></li>
