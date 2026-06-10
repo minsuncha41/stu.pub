@@ -1,7 +1,7 @@
-import { CheckCheck, Pencil, Printer, Save } from "lucide-react";
+import { Calculator, CheckCheck, Pencil, Printer, Save } from "lucide-react";
 import s from "./Toptits.module.css";
 
-export default function Toptits ({toptits, lftwtbtnno, sjbtnon, ptbtnon, retwtbtnno, retsaveimg, ckdbtnon, prtbtnon, ttct}) {
+export default function Toptits ({toptits, lftwtbtnno, sjbtnon, ptbtnon, retwtbtnno, retsaveimg, gsbtnon, ckdbtnon, prtbtnon, ttct}) {
 
 
     return(
@@ -57,13 +57,21 @@ export default function Toptits ({toptits, lftwtbtnno, sjbtnon, ptbtnon, retwtbt
                         </div>
                         {toptits.trrbtn}
                     </button>
+                    
 
+                    <button className={s.retgsbtn}
+                    style={{ display: gsbtnon ? "flex" : "none" }}
+                    >   
+                        <Calculator size={14} />
+                        전직원 일괄계산
+                    </button>
                     <button className={s.retblbtn}
                     style={{ display: ckdbtnon ? "flex" : "none" }}
                     >   
                         <CheckCheck size={14} />
                         급여확정
                     </button>
+
 
 
                     <button className={s.prtbtn}

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import "./register.css";
 import { useEffect, useState } from "react";
@@ -8,32 +8,39 @@ import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 
-export default function Inc(){
+export default function Inc() {
+  const [employee, setemployee] = useState([]);
+  const [keywordss, setkeword] = useState([]);
 
-    const [employee, setemployee] = useState([]);
-    const [keywordss, setkeword] = useState([]);
+  useEffect(() => {
+    console.log(".....");
+    console.log(keywordss);
+  }, [keywordss]);
 
-    useEffect(() => {
-        console.log(".....");
-        console.log(keywordss);
-    }, [keywordss]);
+  const getEmlpoyees = async () => {
+    const token = localStorage.getItem("accessToken");
 
+    const res = await baseApi.get("/api/v1/employees", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: {
+        keyword: keywordss || "",
+        page: 1,
+      },
+    });
+    console.log(res.data.data);
+  };
 
-    const getEmlpoyees = async () => {
-        const res = await baseApi.get("/api/v1/employees",{
-            params: {
-                keyword: keywordss || "",
-                page: 1
-            }
-        });
-        console.log(res.data.data);
-    }
+  useEffect(() => {
+    getEmlpoyees();
+  }, []);
 
-    return(
-        <div className="wrap">
-            <Nav num1={true} />
-            
-            {/* <header className={s.header}>
+  return (
+    <div className="wrap">
+      <Nav num1={true} />
+
+      {/* <header className={s.header}>
                 <nav className={s.navlft}>
                     <ul>
                         <li className={s.logo}><img src="/Briefcase Business.png"/>인사관리시스템</li>
@@ -53,38 +60,38 @@ export default function Inc(){
                 </ul>
             </header> */}
 
+      <div className="inwrap">
+        <Aside
+          dummy={[
+            {
+              titin: { icon: "/User.png", titname: "인사정보", main: "info" },
+              sublit: ["인사정보등록", "사원명수/인사기록카드", "인사발령등록"],
+              mainsub: ["register", "", "appointement"],
+            },
+            {
+              titin: {
+                icon: "/Heart Handshake.png",
+                titname: "경조비신청",
+                main: "info",
+              },
+              sublit: ["경조비신청", "경조비신청현황"],
+              mainsub: ["apply"],
+            },
+            {
+              titin: {
+                icon: "/File Text.png",
+                titname: "증명서관리",
+                main: "info",
+              },
+              sublit: ["증명서발급"],
+              mainsub: ["jmsbg"],
+            },
+          ]}
+          idxs="1"
+          subidxs="1"
+        />
 
-
-
-
-
-
-            <div className="inwrap">
-                <Aside
-                    dummy={
-                        [
-                            {
-                                titin: { icon: "/User.png", titname:"인사정보", main:"info" },
-                                sublit: [ "인사정보등록", "사원명수/인사기록카드" , "인사발령등록" ],
-                                mainsub: [ "register",  "", "appointement" ]
-                            },
-                            {
-                                titin: { icon: "/Heart Handshake.png", titname:"경조비신청", main:"info" },
-                                sublit: [ "경조비신청", "경조비신청현황" ],
-                                mainsub: [ "apply" ]
-                            },
-                            {
-                                titin: { icon: "/File Text.png", titname:"증명서관리", main:"info"  },
-                                sublit: [ "증명서발급" ],
-                                mainsub: [ "jmsbg" ]
-                            },
-                        ]
-                    }
-                    idxs="1"
-                    subidxs="1"
-                />
-
-                {/* <div className="lftber">
+        {/* <div className="lftber">
                     <ul>
                         <p><img src="/User.png" alt="" />인사정보</p>
                         <li className="lftberces"><span>●</span>인사정보등록</li>
@@ -102,21 +109,18 @@ export default function Inc(){
                     </ul>
                 </div> */}
 
-
-
-
-
-                <div className="main">
-                    <Toptits
-                        toptits={{
-                            ttmap: "인사관리" ,
-                            map: "인사정보",
-                            tit: "인사관리등록",
-                            text: "직원의 인사정보를 등록하고 관리합니다.",
-                            tllbtn: "PDF 다운로드" , trrbtn: "신규등록"
-                        }}
-                    />
-                    {/* <div className="toptits">
+        <div className="main">
+          <Toptits
+            toptits={{
+              ttmap: "인사관리",
+              map: "인사정보",
+              tit: "인사관리등록",
+              text: "직원의 인사정보를 등록하고 관리합니다.",
+              tllbtn: "PDF 다운로드",
+              trrbtn: "신규등록",
+            }}
+          />
+          {/* <div className="toptits">
                         <div className="maps">
                             <img src="/House.png" alt="" />
                             <span>&gt;</span>
@@ -145,92 +149,81 @@ export default function Inc(){
                         </div>
                     </div> */}
 
+          <div className="findebox">
+            <h3>
+              <img src="/Search.png" alt="" />
+              검색조건
+            </h3>
+            <div className="findeinput">
+              <label name="num">
+                사원번호
+                <input
+                  onChange={(e) => setkeword(e.target.value)}
+                  type="text"
+                  name="num"
+                  placeholder="전체"
+                />
+              </label>
 
-
-                    <div className="findebox">
-                         <h3><img src="/Search.png" alt="" />검색조건</h3>
-                         <div className="findeinput">
-                            <label name="num">
-                                사원번호
-                                <input
-                                onChange={(e) => setkeword(e.target.value)}
-                                type="text" name="num" placeholder="전체" />
-                            </label>
-
-                            <label name="bss">
-                                부서
-                                <select name="" id="">
-                                    <option value=""><span>전체 </span></option>
-                                    <option value="inct">인사팀 </option>
-                                    <option value="ggt">경영지원팀 </option>
-                                    <option value="gvt">개발팀 </option>
-                                    <option value="oot">영업팀 </option>
-                                </select>
-                            </label>
-                            <label name="jgs">
-                                직급
-                                <select name="" id="">
-                                    <option value=""><span>전체 </span></option>
-                                    <option value="inct">인사팀 </option>
-                                    <option value="ggt">경영지원팀 </option>
-                                    <option value="gvt">개발팀 </option>
-                                    <option value="oot">영업팀 </option>
-                                </select>
-                            </label>
-                            <label name="bss">
-                                재직상테
-                                <select name="" id="">
-                                    <option value=""><span>전체 </span></option>
-                                    <option value="inct">인사팀 </option>
-                                    <option value="ggt">경영지원팀 </option>
-                                    <option value="gvt">개발팀 </option>
-                                    <option value="oot">영업팀 </option>
-                                </select>
-                            </label>
-                            <button className="jhbtn"
-                            onClick={() => getEmlpoyees()}
-                            >
-                                <img src="/Searchwt.png" alt="" />
-                                조회
-                            </button>
-                            <button className="cghbtn">
-                                <img src="/Rotate Ccw.png" alt="" />
-                                초기화
-                            </button>
-                         </div>
-                    </div>
-
-
-
-
-                    <div className="textbox">
-                        <Table 
-                            tablecls = {[
-                                "NO",
-                                "사원번호",
-                                "성명",
-                                "부서",
-                                "직급",
-                                "입사일",
-                                "연락처",
-                                "이메일",
-                                "관리",
-                                "상태",
-                            ]}
-                        />
-
-                    </div>
-                </div>
-
-                
+              <label name="bss">
+                부서
+                <select name="" id="">
+                  <option value="">전체</option>
+                  <option value="inct">인사팀 </option>
+                  <option value="ggt">경영지원팀 </option>
+                  <option value="gvt">개발팀 </option>
+                  <option value="oot">영업팀 </option>
+                </select>
+              </label>
+              <label name="jgs">
+                직급
+                <select name="" id="">
+                  <option value="">전체</option>
+                  <option value="inct">인사팀 </option>
+                  <option value="ggt">경영지원팀 </option>
+                  <option value="gvt">개발팀 </option>
+                  <option value="oot">영업팀 </option>
+                </select>
+              </label>
+              <label name="bss">
+                재직상테
+                <select name="" id="">
+                  <option value="">전체</option>
+                  <option value="inct">인사팀 </option>
+                  <option value="ggt">경영지원팀 </option>
+                  <option value="gvt">개발팀 </option>
+                  <option value="oot">영업팀 </option>
+                </select>
+              </label>
+              <button className="jhbtn" onClick={() => getEmlpoyees()}>
+                <img src="/Searchwt.png" alt="" />
+                조회
+              </button>
+              <button className="cghbtn">
+                <img src="/Rotate Ccw.png" alt="" />
+                초기화
+              </button>
             </div>
+          </div>
 
-
-            
-
+          <div className="textbox">
+            <Table
+              tablecls={[
+                "NO",
+                "사원번호",
+                "성명",
+                "부서",
+                "직급",
+                "입사일",
+                "연락처",
+                "이메일",
+                "관리",
+                "상태",
+              ]}
+            />
+          </div>
         </div>
-
-    )
-
-
+      </div>
+    </div>
+  );
 }

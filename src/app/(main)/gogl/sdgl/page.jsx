@@ -73,6 +73,8 @@ export default function Sdgl(){
                 ttct=""
             />
 
+            
+
             <ul className="findebox">
                 <li>
                     <p>등록 수당 종류</p>
