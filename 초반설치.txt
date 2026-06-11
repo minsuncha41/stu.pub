@@ -1,0 +1,133 @@
+https://www.oracle.com/kr/java/technologies/downloads/#jdk21-windows
+https://mariadb.org/download/?t=mariadb&p=mariadb&r=12.2.2&os=windows&cpu=x86_64&pkg=msi&mirror=tuna
+https://www.jetbrains.com/idea/download/?source=google&medium=cpc&campaign=APAC_en_KR_IDEA_Branded&term=intellij&content=693444343130&gad_source=1&gad_campaignid=9730674179&gbraid=0AAAAADloJzjBZYNR9d24ffOiyalEOGU4f&gclid=EAIaIQobChMIzOnN0svClAMVuZumAx0IATeNEAAYAiABEgLRKfD_BwE&section=windows
+https://dbeaver.io/download/
+
+npm install axios
+
+윈도우+R하고 cmd
+자바 잘 설치됐는지
+java -version
+
+
+
+디비
+1234
+
+http://localhost:33000/api/v1/employees
+
+
+파일
+git clone https://github.com/minsuncha41/stu.pub.git
+
+-@latest-최신버전
+npx create-next-app@latest .
+
+ㅡㅡㅡㅡㅡㅡㅡ깃에 올리기ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+git status
+변경점 확인
+
+git add .
+
+git commit -m "feat: 프로젝트셋팅"
+
+git branch -M main
+
+git push
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡ수정ㅡㅡㅡㅡㅡㅡ
+git status
+변경점 확인
+
+git add .
+
+git commit -m "feat: 인사관리페이지추가"
+
+git push
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡIJ에서 업테이트됬으면 터미널ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+git stash
+
+git pull
+
+잘 됬는지 확인사이트 ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+http://localhost:33000/api/v1/employees
+
+http://localhost:33000/api/v1/employees?keyword=L0001
+
+API 사용문서
+http://localhost:33000/swagger-ui/index.html
+
+
+클론해서 받아올수있다
+
+
+깃에서 코드버틀누른다음 
+깃 베쉬에 들어가서
+git clone
+쉬프르 인설트
+
+실행 
+npm run dev
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+깃 배우기
+
+새로운 브렌치만들기
+git checkout -b feature/githubtest
+
+자기 위치 브렌치확인
+git branch
+
+처음 브렌치 만들고 처음 푸쉬할때 해야함
+git push --set-upstream origin feature/githubtest
+
+메인 브렌치로 가는거
+git checkout main
+git checkout -
+
+메인에서 당겨올때
+git merge --no-ff feature/githubtest
+:q!
+?????git merge feature/githubtest
+그리고 git push해야함
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+포스트멘에서 api확인할수있음
+http://localhost:33000/api/v1/employees/login
+
+body에서 raw이랑 Json에서
+{
+    "email": "minsung@naver.com",
+    "password": "1234"
+}
+
+author 에들어가서 bearer token에  저 로그인한후 나온 토큰 붙여넣고 
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtaW5zdW5nQG5hdmVyLmNvbSIsImlhdCI6MTc4MTE4MDgyOSwiZXhwIjoxNzgxMTgyNjI5fQ.Hv60cKpsUe4sViN_tgyCoRhx0JgwpbG0K8uJO5cRT2w
+
+get에서  http://localhost:33000/api/v1/employees 보내기
+
+
+경조비
+http://localhost:33000/api/v1/support
+토큰 넣고
+post
+
+body
+raw
+{
+  "eventType": "본인결혼",
+  "familyRelation": "본인",
+  "targetName": "차민성",
+  "applicationDate": "2026-06-11",
+  "eventDate": "2026-06-11",
+  "requestedAmount": 5000000,
+  "eventLocation": "학교",
+  "bankName": "우리은행",
+  "accountNumber": "12345678123",
+  "accountHolder": "차민성",
+  "approvalStatus": "확인",
+  "memo": "string"
+}
