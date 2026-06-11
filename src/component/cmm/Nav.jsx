@@ -1,6 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import s from "./Nav.module.css";
 
 export default function Nav({ none, num1, num2, num3, num4 }) {
+  //  const [names, setnames] = useState();
+  //  const [departmentNames, setdepartmentNames] = useState();
+  const [navif] = useState(() => ({
+    departmentName: localStorage.getItem("departmentName"),
+    name: localStorage.getItem("name"),
+  }));
+  // useEffect(() => {
+  //   const name = localStorage.getItem("name");
+  //   const departmentName = localStorage.getItem("departmentName");
+
+  //   setnavif({
+  //     departmentName: departmentName,
+  //     name: name,
+  //   });
+  // }, []);
+
   return (
     <header className={s.header}>
       <nav className={s.navlft}>
@@ -33,11 +52,14 @@ export default function Nav({ none, num1, num2, num3, num4 }) {
             <img src="/Bell.png" />
           </a>
         </li>
-        <li className={s.name}>홍</li>
+        <li className={s.name}>{navif?.name.slice(0, 1)}</li>
+        {/* <li className={s.name}>홍</li> */}
         <li>
-          <p>홍길동</p>
+          <p>{navif?.name}</p>
+          {/* <p>홍길동</p> */}
         </li>
-        <li>인사팀</li>
+        <li>{navif?.departmentName}</li>
+        {/* <li>인사팀</li> */}
         <li>
           <img src="/Log Out.png" />
         </li>

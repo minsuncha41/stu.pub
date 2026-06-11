@@ -7,6 +7,8 @@ export default function Table({ tablecls }) {
   const [employee, setemployee] = useState([]);
   const [keyword, setkeword] = useState([]);
 
+  const [page, setPage] = useState(1);
+
   //api를 요청해서 받는다. 통신은async await붙인다
   const getEmployee = async () => {
     const token = localStorage.getItem("accessToken");
@@ -17,7 +19,7 @@ export default function Table({ tablecls }) {
       },
       params: {
         keyword: keyword || "",
-        page: 1,
+        page: page - 1,
       },
     });
     console.log(response.data.data);
@@ -29,8 +31,21 @@ export default function Table({ tablecls }) {
   };
 
   useEffect(() => {
-    getEmployee();
-  }, [employee]);
+    const fetchData = async () => {
+      await getEmployee();
+    };
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
+
+  const handleClick = (e) => {
+    const value = Number(e.target.textContent);
+    setPage(value); // 클릭한 숫자로 page 변경
+  };
+
+  // useEffect(() => {
+  //   getEmployee();
+  // }, []);
 
   // const tablecls = [
   //     "NO",
@@ -264,9 +279,11 @@ export default function Table({ tablecls }) {
         <li></li>
         <li>
           <span>&lt;</span>
-          <span className={s.textsces}>1</span>
-          <span>2</span>
-          <span>3</span>
+          <span onClick={handleClick} className={s.textsces}>
+            1
+          </span>
+          <span onClick={handleClick}>2</span>
+          <span onClick={handleClick}>3</span>
           <span>&gt;</span>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-.header{
+.header {
     z-index: 10000;
     padding: 0;
     box-sizing: border-box;
@@ -9,33 +9,39 @@
     flex-flow: row wrap;
     justify-content: space-between;
     height: 56px;
-    background-color:#1B3A6B;
+    background-color: #1B3A6B;
     color: white;
     font-size: 14px;
 }
-.navlft ul,.logo , .navret{
+
+.navlft ul,
+.logo,
+.navret {
     height: 56px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
 }
-.logo{
+
+.logo {
     width: 210px;
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top:-10px;
+    margin-top: -10px;
     font-size: 16px;
     font-weight: bold;
 }
-.navlft ul li{
+
+.navlft ul li {
     display: flex;
     align-items: center;
     cursor: pointer;
     height: 56px;
     box-sizing: border-box;
 }
-.navlft ul a{
+
+.navlft ul a {
     display: flex;
     padding: 22px;
 }
@@ -43,39 +49,44 @@
 
 
 
-.navlft ul li:hover{
-    background-color:#2D5F9E;
-}
-.navlft ul li:first-child:hover{
-    background:none;
+.navlft ul li:hover {
+    background-color: #2D5F9E;
 }
 
-.navret li{
+.navlft ul li:first-child:hover {
+    background: none;
+}
+
+.navret li {
     cursor: pointer;
     font-size: 13px;
 }
 
-.navret li:nth-child(1){
+.navret li:nth-child(1) {
     padding: 0px 15px;
     border-right: 1px solid #3B5F9A;
 }
-.navret li:nth-child(2){
+
+.navret li:nth-child(2) {
     margin: 0px 10px 0 15px;
 }
-.navret li:nth-child(3) p{
+
+.navret li:nth-child(3) p {
     color: #CBD5E1;
-    padding: 0px 5px;
+    padding: 0px 10px;
     border-right: 1px solid #CBD5E1;
 }
-.navret li:nth-child(4){
+
+.navret li:nth-child(4) {
     color: #CBD5E1;
-    padding: 0px 5px;
-}
-.navret li:nth-child(5){
     padding: 0px 10px;
 }
 
-.name{
+.navret li:nth-child(5) {
+    padding: 0px 30px 0px 10px;
+}
+
+.name {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,9 +95,8 @@
     width: 30px;
     height: 30px;
 }
-.navlftces{
+
+.navlftces {
     background: #2D5F9E;
     font-weight: bold;
 }
-
-

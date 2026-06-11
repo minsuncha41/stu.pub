@@ -9,32 +9,32 @@ import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 
 export default function Inc() {
-  const [employee, setemployee] = useState([]);
-  const [keywordss, setkeword] = useState([]);
+  // const [employee, setemployee] = useState([]);
+  // const [keywordss, setkeword] = useState([]);
 
-  useEffect(() => {
-    console.log(".....");
-    console.log(keywordss);
-  }, [keywordss]);
+  // useEffect(() => {
+  //   console.log(".....");
+  //   console.log(keywordss);
+  // }, [keywordss]);
 
-  const getEmlpoyees = async () => {
-    const token = localStorage.getItem("accessToken");
+  // const getEmlpoyees = async () => {
+  //   const token = localStorage.getItem("accessToken");
 
-    const res = await baseApi.get("/api/v1/employees", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      params: {
-        keyword: keywordss || "",
-        page: 1,
-      },
-    });
-    console.log(res.data.data);
-  };
+  //   const res = await baseApi.get("/api/v1/employees", {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //     params: {
+  //       keyword: keywordss || "",
+  //       page: 1,
+  //     },
+  //   });
+  //   console.log(res.data.data);
+  // };
 
-  useEffect(() => {
-    getEmlpoyees();
-  }, []);
+  // useEffect(() => {
+  //   getEmlpoyees();
+  // }, []);
 
   return (
     <div className="wrap">

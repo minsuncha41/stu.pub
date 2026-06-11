@@ -27,21 +27,82 @@ import {
 } from "lucide-react";
 
 export default function Apply() {
-  const [employee, setemployee] = useState([]);
+  {
+    // const [employee, setemployee] = useState([]);
+    // useEffect(() => {
+    //   //api를 요청해서 받는다. 통신은async await붙인다
+    //   const getEmployee = async () => {
+    //     //const response = await baseApi.get("/api/v1/employees");
+    //     console.log(response.data.data);
+    //     //useState를 넣는다
+    //     setemployee(response.data.data);
+    //     //useState에 있는 데이터를 렌더링 시킨다
+    //   };
+    //   getEmployee();
+    // }, []);
+  }
+  //
+  //
 
+  const [useif, setuseif] = useState();
+  const [apply, setapply] = useState([]);
   useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
+    const name = localStorage.getItem("name");
+    const position = localStorage.getItem("position");
+    const employeeNo = localStorage.getItem("employeeNo");
+    const departmentName = localStorage.getItem("departmentName");
 
-      //useState를 넣는다
-      setemployee(response.data.data);
+    const Years = new Date().getFullYear();
+    const Months =
+      new Date().getMonth() + 1 < 10
+        ? "0" + (new Date().getMonth() + 1)
+        : new Date().getMonth() + 1;
 
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
+    const Dates =
+      new Date().getUTCDate() < 10
+        ? "0" + (new Date().getUTCDate() + 1)
+        : new Date().getUTCDate() + 1;
+
+    const allday = `${Years}.${Months}.${Dates}`;
+
+    setapply({
+      //오류나는건 다른 의존성없으면 상관없음
+      name,
+      position,
+      employeeNo,
+      departmentName,
+      allday,
+    });
   }, []);
+
+  const [evttype, setevttype] = useState("본인결혼");
+
+  const [evtname, setevtname] = useState();
+  const [evtgg, setevtgg] = useState("bnin");
+  const [evtgji, setevtgji] = useState();
+  const [evtgjjs, setevtgjjs] = useState();
+
+  const [evtoh, setevtoh] = useState("ggmn");
+  const [evtgjbh, setevtgjbh] = useState();
+  const [evtogj, setevtogj] = useState();
+
+  const [allevt, setallevt] = useState({
+    tgname: "val",
+    tggg: "val",
+    applicationDate: "val",
+    tggjjs: "val",
+    tgoh: "val",
+    accoutNumber: "val",
+    tgoh: "val",
+  });
+  {
+    // const [app] = useState(() => ({
+    //   name: localStorage.getItem("name"),
+    //   position: localStorage.getItem("position"),
+    //   employeeNo: localStorage.getItem("employeeNo"),
+    //   departmentName: localStorage.getItem("departmentName"),
+    // }));
+  }
 
   return (
     <div className="wrap">
@@ -119,27 +180,52 @@ export default function Apply() {
                 <label name="bsfm" className="jgfm">
                   <p>사원번호</p>
                   <img src="/Lock.png" alt="" />
-                  <input type="text" value={"EMP-002"} disabled />
+                  <input
+                    type="text"
+                    value={apply?.employeeNo || ""}
+                    readOnly
+                    disabled
+                  />
                 </label>
                 <label name="jgfm" className="jgfm">
                   <p>성명</p>
                   <img src="/Lock.png" alt="" />
-                  <input type="text" value={"이영희"} disabled />
+                  <input
+                    type="text"
+                    value={apply?.name || ""}
+                    readOnly
+                    disabled
+                  />
                 </label>
                 <label name="jgfm" className="jgfm">
                   <p>부서</p>
                   <img src="/Lock.png" alt="" />
-                  <input type="text" value={"경영지원팀"} disabled />
+                  <input
+                    type="text"
+                    value={apply?.departmentName || ""}
+                    readOnly
+                    disabled
+                  />
                 </label>
                 <label name="jgfm" className="jgfm">
                   <p>직급</p>
                   <img src="/Lock.png" alt="" />
-                  <input type="text" value={"과장"} disabled />
+                  <input
+                    type="text"
+                    value={apply?.position || ""}
+                    readOnly
+                    disabled
+                  />
                 </label>
                 <label name="jgfm" className="jgfm">
                   <p>신청일</p>
                   <img src="/Lock.png" alt="" />
-                  <input type="text" value={"2025.07.01"} disabled />
+                  <input
+                    type="text"
+                    value={apply?.allday || ""}
+                    readOnly
+                    disabled
+                  />
                 </label>
               </div>
 
@@ -151,31 +237,65 @@ export default function Apply() {
                 </h1>
                 <label name="uhfm" className="uhfm">
                   <ul>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setevttype("본인결혼");
+                      }}
+                    >
                       <Heart size={13} color="#FFFFFF" />
                       본인결혼
                     </li>
-                    <li>
+
+                    <li
+                      onClick={() => {
+                        setevttype("자녀결혼");
+                      }}
+                    >
                       <Heart size={13} color="#D1D5DB" />
                       자녀결혼
                     </li>
-                    <li>
+
+                    <li
+                      onClick={() => {
+                        setevttype("출산");
+                      }}
+                    >
                       <Baby size={13} color="#D1D5DB" />
                       출산
                     </li>
-                    <li>
+
+                    <li
+                      onClick={() => {
+                        setevttype("부모사망");
+                      }}
+                    >
                       <Flower2 size={13} color="#D1D5DB" />
                       부모사망
                     </li>
-                    <li>
+
+                    <li
+                      onClick={() => {
+                        setevttype("배우자사망");
+                      }}
+                    >
                       <Flower2 size={13} color="#D1D5DB" />
                       배우자사망
                     </li>
-                    <li>
+
+                    <li
+                      onClick={() => {
+                        setevttype("부모회갑");
+                      }}
+                    >
                       <CakeSlice size={13} color="#D1D5DB" />
                       부모회갑
                     </li>
-                    <li>
+
+                    <li
+                      onClick={() => {
+                        setevttype("기타");
+                      }}
+                    >
                       <Ellipsis size={13} color="#D1D5DB" />
                       기타
                     </li>
@@ -195,11 +315,36 @@ export default function Apply() {
                   </h1>
                   <label name="bsfm" className="jgfm">
                     <p>대상자 성명 *</p>
-                    <input type="text" placeholder="성명을 입력하세요" />
+                    <input
+                      //onChange={(e) => setevtname(e.target.value)}
+                      //onChange={(e) => setallevt({ tgname: e.target.value })}
+                      onChange={(e) =>
+                        setallevt((prev) => {
+                          return {
+                            ...prev,
+                            tgname: e.target.value,
+                          };
+                        })
+                      }
+                      type="text"
+                      placeholder="성명을 입력하세요"
+                    />
                   </label>
                   <label name="" className="jgfm">
                     <p>관계 *</p>
-                    <select name="" id="">
+                    <select
+                      name=""
+                      id=""
+                      //onChange={(e) => setevtgg(e.target.value)}
+                      onChange={(e) =>
+                        setallevt((prev) => {
+                          return {
+                            ...prev,
+                            tggg: e.target.value,
+                          };
+                        })
+                      }
+                    >
                       <option value="bnin">본인</option>
                       <option value="boo">부</option>
                       <option value="moo">모</option>
@@ -210,11 +355,34 @@ export default function Apply() {
                   </label>
                   <label name="" className="jgfm">
                     <p>경조일 *</p>
-                    <input type="date" />
+                    <input
+                      type="date"
+                      //onChange={(e) => setevtgji(e.target.value)}
+                      onChange={(e) =>
+                        setallevt((prev) => {
+                          return {
+                            ...prev,
+                            applicationDate: e.target.value,
+                          };
+                        })
+                      }
+                    />
                   </label>
                   <label name="" className="jgfm">
                     <p>경조 장소</p>
-                    <input type="text" placeholder="장소를 입력하세요 (선택)" />
+                    <input
+                      type="text"
+                      placeholder="장소를 입력하세요 (선택)"
+                      //onChange={(e) => setevtgjjs(e.target.value)}
+                      onChange={(e) =>
+                        setallevt((prev) => {
+                          return {
+                            ...prev,
+                            tggjjs: e.target.value,
+                          };
+                        })
+                      }
+                    />
                   </label>
                 </div>
 
@@ -240,7 +408,19 @@ export default function Apply() {
                   </h1>
                   <label name="bsfm" className="jgfm">
                     <p>은행</p>
-                    <select name="" id="">
+                    <select
+                      name=""
+                      id=""
+                      //onChange={(e) => setevtoh(e.target.value)}
+                      onChange={(e) =>
+                        setallevt((prev) => {
+                          return {
+                            ...prev,
+                            tgoh: e.target.value,
+                          };
+                        })
+                      }
+                    >
                       <option value="ggmn">국민은행</option>
                       <option value="ol">우리은행</option>
                       <option value="toos">토스뱅크</option>
@@ -251,11 +431,36 @@ export default function Apply() {
                   </label>
                   <label name="" className="jgfm">
                     <p>계좌번호</p>
-                    <input type="text" placeholder="- 없이 숫자만 입력" />
+                    <input
+                      type="text"
+                      placeholder="- 없이 숫자만 입력"
+                      //onChange={(e) => setevtgjbh(e.target.value)}
+                      onChange={(e) =>
+                        setallevt((prev) => {
+                          return {
+                            ...prev,
+                            accoutNumber: e.target.value,
+                          };
+                        })
+                      }
+                    />
                   </label>
                   <label name="" className="jgfm">
                     <p>예금주</p>
-                    <input type="text" value={"이영희"} />
+                    <input
+                      type="text"
+                      //value={"이영희"}
+                      placeholder="받는분 이름"
+                      //onChange={(e) => setevtogj(e.target.value)}
+                      onChange={(e) =>
+                        setallevt((prev) => {
+                          return {
+                            ...prev,
+                            tgogj: e.target.value,
+                          };
+                        })
+                      }
+                    />
                   </label>
                   <button>
                     <Check size={13} />
@@ -304,7 +509,23 @@ export default function Apply() {
                       <X size={13} />
                       취소
                     </button>
-                    <button className="jjs">
+                    <button
+                      className="jjs"
+                      onClick={() => {
+                        console.log(
+                          "클릭함",
+                          // evttype,
+                          // evtname,
+                          // evtgg,
+                          // evtgji,
+                          // evtgjjs,
+                          // evtoh,
+                          // evtgjbh,
+                          // evtogj,
+                          allevt,
+                        );
+                      }}
+                    >
                       <SendHorizontal size={13} />
                       신청하기
                     </button>

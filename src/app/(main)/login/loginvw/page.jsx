@@ -42,6 +42,9 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+// minsung@naver.com
+// 1234
+
 export default function Loginvw() {
   const router = useRouter();
   const [loginUserInfo, setloginUserInfo] = useState();
@@ -53,6 +56,10 @@ export default function Loginvw() {
       const token = res.data.data.accessToken;
       if (token) {
         localStorage.setItem("accessToken", res.data.data.accessToken);
+        localStorage.setItem("name", res.data.data.name);
+        localStorage.setItem("employeeNo", res.data.data.employeeNo);
+        localStorage.setItem("position", res.data.data.position);
+        localStorage.setItem("departmentName", res.data.data.departmentName);
         router.push("/info/register");
       } else {
         alert("로그인 실패");
