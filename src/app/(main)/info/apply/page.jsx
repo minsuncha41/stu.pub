@@ -25,7 +25,15 @@ import {
   Upload,
   X,
 } from "lucide-react";
-
+import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 export default function Apply() {
   {
     // const [employee, setemployee] = useState([]);
@@ -43,9 +51,25 @@ export default function Apply() {
   }
   //
   //
+  const [evtgjblist, setevtgjblist] = useState([]);
+  const gjblist = async () => {
+    const token = localStorage.getItem("accessToken");
+    const res = await baseApi.get("/api/v1/support", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(res.data.data);
+    setevtgjblist(res.data.data);
+  };
+
+  useEffect(() => {
+    gjblist();
+  }, []);
 
   const [useif, setuseif] = useState();
   const [apply, setapply] = useState([]);
+
   useEffect(() => {
     const name = localStorage.getItem("name");
     const position = localStorage.getItem("position");
@@ -60,8 +84,8 @@ export default function Apply() {
 
     const Dates =
       new Date().getUTCDate() < 10
-        ? "0" + (new Date().getUTCDate() + 1)
-        : new Date().getUTCDate() + 1;
+        ? "0" + new Date().getUTCDate()
+        : new Date().getUTCDate();
 
     const allday = `${Years}.${Months}.${Dates}`;
 
@@ -87,13 +111,20 @@ export default function Apply() {
   const [evtogj, setevtogj] = useState();
 
   const [allevt, setallevt] = useState({
-    tgname: "val",
-    tggg: "val",
-    applicationDate: "val",
-    tggjjs: "val",
-    tgoh: "val",
-    accoutNumber: "val",
-    tgoh: "val",
+    tgname: "",
+    tggg: "본인결혼",
+    eventDate: "",
+    tggjjs: "",
+    tgoh: "국민은헹",
+    accoutNumber: "",
+    tgogj: "",
+    // tgname: "val",
+    // tggg: "본인결혼",
+    // eventDate: "val",
+    // tggjjs: "val",
+    // tgoh: "ggmn",
+    // accoutNumber: "val",
+    // tgogj: "val",
   });
   {
     // const [app] = useState(() => ({
@@ -103,6 +134,75 @@ export default function Apply() {
     //   departmentName: localStorage.getItem("departmentName"),
     // }));
   }
+
+  const 경조사비신청하기 = async () => {
+    const token = localStorage.getItem("accessToken");
+
+    // 1. 경조부분확인
+    if (!evttype) {
+      return alert("경조 구분을 선택해주세요");
+    }
+
+    // 2. 경조대상자명
+    if (!allevt.tgname) {
+      return alert("경조 대상자명을 입력해주세요");
+    }
+
+    // 3. 경조대상자관개
+    if (!allevt.tggg) {
+      return alert("경조 대상자관개를 선택해주세요");
+    }
+
+    // 2. 경조일
+    if (!allevt.eventDate) {
+      return alert("경조일 선택해주세요");
+    }
+
+    // 2. 은행
+    if (!allevt.tgoh) {
+      return alert("경조비 받을 은행을 선택해주세요");
+    }
+
+    // 2. 계좌번호
+    if (!allevt.accoutNumber) {
+      return alert("경조비 받을 계좌번호를 입력해주세요");
+    }
+    // 2-2. 계좌번호 확인
+    if (
+      !(10 <= allevt.accoutNumber.length && allevt.accoutNumber.length <= 12)
+    ) {
+      return alert("올바른 계좌번호를 입력해주세요");
+    }
+
+    // 2. 예금주
+    if (!allevt.tgogj) {
+      return alert("경조비 받을 예금주 입력해주세요");
+    }
+
+    const res = await baseApi.post(
+      "/api/v1/support",
+      {
+        eventType: evttype,
+        familyRelation: allevt?.tggg,
+        targetName: allevt?.tgname,
+        applicationDate: "2026-06-12",
+        eventDate: "2026-06-12",
+        requestedAmount: 500000,
+        eventLocation: allevt?.tggjjs,
+        bankName: allevt?.tgoh,
+        accountNumber: allevt?.accoutNumber,
+        accountHolder: allevt?.tgogj,
+        approvalStatus: "확인",
+        memo: "메모",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+    console.log(allevt);
+  };
 
   return (
     <div className="wrap">
@@ -162,7 +262,6 @@ export default function Apply() {
                 필수 입력 항목
               </h2>
             </div>
-
             <div className="formbox">
               <div className="formboxtp">
                 <h1 className="tptits">
@@ -182,7 +281,7 @@ export default function Apply() {
                   <img src="/Lock.png" alt="" />
                   <input
                     type="text"
-                    value={apply?.employeeNo || ""}
+                    value={apply?.employeeNo || "EMP-002"}
                     readOnly
                     disabled
                   />
@@ -192,17 +291,17 @@ export default function Apply() {
                   <img src="/Lock.png" alt="" />
                   <input
                     type="text"
-                    value={apply?.name || ""}
+                    value={apply?.name || "이영희"}
                     readOnly
                     disabled
                   />
                 </label>
                 <label name="jgfm" className="jgfm">
                   <p>부서</p>
-                  <img src="/Lock.png" alt="" />
+                  <img src="/Lock.png" alt="경영지원팀" />
                   <input
                     type="text"
-                    value={apply?.departmentName || ""}
+                    value={apply?.departmentName || "과장"}
                     readOnly
                     disabled
                   />
@@ -212,7 +311,7 @@ export default function Apply() {
                   <img src="/Lock.png" alt="" />
                   <input
                     type="text"
-                    value={apply?.position || ""}
+                    value={apply?.position || "2025.07.01"}
                     readOnly
                     disabled
                   />
@@ -318,6 +417,9 @@ export default function Apply() {
                     <input
                       //onChange={(e) => setevtname(e.target.value)}
                       //onChange={(e) => setallevt({ tgname: e.target.value })}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") 경조사비신청하기();
+                      }}
                       onChange={(e) =>
                         setallevt((prev) => {
                           return {
@@ -333,6 +435,9 @@ export default function Apply() {
                   <label name="" className="jgfm">
                     <p>관계 *</p>
                     <select
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") 경조사비신청하기();
+                      }}
                       name=""
                       id=""
                       //onChange={(e) => setevtgg(e.target.value)}
@@ -345,24 +450,27 @@ export default function Apply() {
                         })
                       }
                     >
-                      <option value="bnin">본인</option>
-                      <option value="boo">부</option>
-                      <option value="moo">모</option>
-                      <option value="buj">배우자</option>
-                      <option value="jsg">자식</option>
-                      <option value="cnsg">친척</option>
+                      <option value="본인">본인</option>
+                      <option value="부">부</option>
+                      <option value="모">모</option>
+                      <option value="배우자">배우자</option>
+                      <option value="자식">자식</option>
+                      <option value="친척">친척</option>
                     </select>
                   </label>
                   <label name="" className="jgfm">
                     <p>경조일 *</p>
                     <input
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") 경조사비신청하기();
+                      }}
                       type="date"
                       //onChange={(e) => setevtgji(e.target.value)}
                       onChange={(e) =>
                         setallevt((prev) => {
                           return {
                             ...prev,
-                            applicationDate: e.target.value,
+                            eventDate: e.target.value,
                           };
                         })
                       }
@@ -371,6 +479,9 @@ export default function Apply() {
                   <label name="" className="jgfm">
                     <p>경조 장소</p>
                     <input
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") 경조사비신청하기();
+                      }}
                       type="text"
                       placeholder="장소를 입력하세요 (선택)"
                       //onChange={(e) => setevtgjjs(e.target.value)}
@@ -409,6 +520,9 @@ export default function Apply() {
                   <label name="bsfm" className="jgfm">
                     <p>은행</p>
                     <select
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") 경조사비신청하기();
+                      }}
                       name=""
                       id=""
                       //onChange={(e) => setevtoh(e.target.value)}
@@ -421,17 +535,20 @@ export default function Apply() {
                         })
                       }
                     >
-                      <option value="ggmn">국민은행</option>
-                      <option value="ol">우리은행</option>
-                      <option value="toos">토스뱅크</option>
-                      <option value="kaka">카카오뱅크</option>
-                      <option value="nohb">농협은행</option>
-                      <option value="snhn">신한은행</option>
+                      <option value="국민은행">국민은행</option>
+                      <option value="우리은행">우리은행</option>
+                      <option value="토스뱅크">토스뱅크</option>
+                      <option value="카카오뱅크">카카오뱅크</option>
+                      <option value="농협은행">농협은행</option>
+                      <option value="신한은행">신한은행</option>
                     </select>
                   </label>
                   <label name="" className="jgfm">
                     <p>계좌번호</p>
                     <input
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") 경조사비신청하기();
+                      }}
                       type="text"
                       placeholder="- 없이 숫자만 입력"
                       //onChange={(e) => setevtgjbh(e.target.value)}
@@ -448,6 +565,9 @@ export default function Apply() {
                   <label name="" className="jgfm">
                     <p>예금주</p>
                     <input
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") 경조사비신청하기();
+                      }}
                       type="text"
                       //value={"이영희"}
                       placeholder="받는분 이름"
@@ -512,18 +632,20 @@ export default function Apply() {
                     <button
                       className="jjs"
                       onClick={() => {
-                        console.log(
-                          "클릭함",
-                          // evttype,
-                          // evtname,
-                          // evtgg,
-                          // evtgji,
-                          // evtgjjs,
-                          // evtoh,
-                          // evtgjbh,
-                          // evtogj,
-                          allevt,
-                        );
+                        // console.log(
+                        //   "클릭함",
+                        //   allevt,
+                        //   // evttype,
+                        //   // evtname,
+                        //   // evtgg,
+                        //   // evtgji,
+                        //   // evtgjjs,
+                        //   // evtoh,
+                        //   // evtgjbh,
+                        //   // evtogj,
+                        // );
+                        경조사비신청하기();
+                        gjblist();
                       }}
                     >
                       <SendHorizontal size={13} />
@@ -557,7 +679,28 @@ export default function Apply() {
                 <li>처리상태</li>
                 <li>관리</li>
               </ul>
-
+              {evtgjblist.map((it, idx) => (
+                <ul key={idx}>
+                  <li>{it.EmployeeEventSupportId}</li>
+                  <li>{it.applicationDate}</li>
+                  <li>
+                    <span className={`${s.gb} ${s.bnin}`}>{it.eventType}</span>
+                  </li>
+                  <li>{it.targetName}</li>
+                  <li>{it.familyRelation}</li>
+                  <li>{it.eventDate}</li>
+                  <li>500,000원</li>
+                  <li>
+                    {it.bankName} {it.accountNumber}
+                  </li>
+                  <li>
+                    <span className={`${s.clst} ${s.gt}`}>검토중</span>
+                  </li>
+                  <li>
+                    <span className={`${s.sjs} ${s.glbtns}`}>상세</span>
+                  </li>{" "}
+                </ul>
+              ))}
               <ul>
                 <li>만든거 1</li>
                 <li>2025.07.01</li>

@@ -65,6 +65,7 @@ export default function Loginvw() {
         alert("로그인 실패");
       }
     } catch (e) {
+      alert("로그인 실패 다시입력");
       console.error("네트워크 실패", e);
     } finally {
     }
@@ -186,6 +187,22 @@ export default function Loginvw() {
               <input
                 type="text"
                 placeholder="이메일 주소를 입력하세요"
+                onKeyDown={(e) => {
+                  console.log(e.key);
+
+                  if (e.key === "Enter") {
+                    //로그인처리
+                    if (!loginUserInfo?.email) {
+                      return alert("이메일을 입력해주세요");
+                    }
+                    if (!loginUserInfo?.password) {
+                      alert("비밀번호를 입력해주세요");
+                      return;
+                    }
+
+                    goLogin();
+                  }
+                }}
                 onChange={(e) =>
                   setloginUserInfo((prev) => ({
                     ...prev,
@@ -201,6 +218,22 @@ export default function Loginvw() {
               <input
                 type="password"
                 placeholder="비밀번호를 입력하세요"
+                onKeyDown={(e) => {
+                  console.log(e.key);
+
+                  if (e.key === "Enter") {
+                    //로그인처리
+                    if (!loginUserInfo?.email) {
+                      return alert("이메일을 입력해주세요");
+                    }
+                    if (!loginUserInfo?.password) {
+                      alert("비밀번호를 입력해주세요");
+                      return;
+                    }
+
+                    goLogin();
+                  }
+                }}
                 onChange={(e) =>
                   setloginUserInfo((prev) => ({
                     ...prev,

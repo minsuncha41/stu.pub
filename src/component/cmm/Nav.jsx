@@ -52,10 +52,11 @@ export default function Nav({ none, num1, num2, num3, num4 }) {
             <img src="/Bell.png" />
           </a>
         </li>
-        <li className={s.name}>{navif?.name.slice(0, 1)}</li>
+        {/* <li className={s.name}>{navif?.name?[0]} ?? "홍"</li> */}
+        <li className={s.name}>{navif?.name?.slice(0, 1) ?? "홍"}</li>
         {/* <li className={s.name}>홍</li> */}
         <li>
-          <p>{navif?.name}</p>
+          <p>{navif?.name ?? "홍길동"}</p>
           {/* <p>홍길동</p> */}
         </li>
         <li>{navif?.departmentName}</li>

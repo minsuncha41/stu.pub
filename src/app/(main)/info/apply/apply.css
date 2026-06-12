@@ -1,11 +1,10 @@
-
-.inwrap{
+.inwrap {
     display: flex;
     flex-flow: row;
 }
 
 
-.main{
+.main {
     background: #F1F5F9;
     padding: 20px;
     margin-top: 56px;
@@ -16,11 +15,11 @@
 
 
 
-.textbox{
+.textbox {
     width: 100%;
 }
 
-.inputform{
+.inputform {
     width: 100%;
     gap: 18px;
     display: flex;
@@ -28,9 +27,9 @@
 }
 
 
-.fromtit{
+.fromtit {
     width: 100%;
-    background-color: #F8FAFC; 
+    background-color: #F8FAFC;
     border-radius: 8px;
     padding: 10px 20px;
     display: flex;
@@ -39,12 +38,14 @@
 }
 
 
-.fromtit h1, .fromtit h2 {
+.fromtit h1,
+.fromtit h2 {
     gap: 5px;
     align-items: center;
     display: flex;
     flex-flow: row wrap;
 }
+
 .fromtit h1 {
     color: #1B3A6B;
     font-weight: bold;
@@ -61,7 +62,7 @@
 
 
 
-.formbox{
+.formbox {
     border: 1px solid #E5E7EB;
     border-top: none;
     gap: 16px 0;
@@ -73,13 +74,14 @@
     border-bottom-left-radius: 8px;
 }
 
-.formboxtp{
+.formboxtp {
     display: flex;
     flex-flow: row wrap;
     font-size: 13px;
     gap: 12px;
 }
-.tptits{
+
+.tptits {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -87,7 +89,8 @@
     gap: 8px;
     font-weight: bold;
 }
-.tptits span{
+
+.tptits span {
     height: 14px;
     border-radius: 10px;
     display: block;
@@ -100,20 +103,22 @@
 
 
 
-.formboxtp p{
+.formboxtp p {
     font-weight: bold;
 }
-.formboxtp label{
+
+.formboxtp label {
     display: flex;
     flex-flow: column;
     gap: 6px 0;
 }
 
 
-.uhfm ul{
+.uhfm ul {
     display: flex;
 }
-.uhfm ul li{
+
+.uhfm ul li {
     color: #6B7280;
     font-weight: bold;
     cursor: pointer;
@@ -128,7 +133,8 @@
     border-left: none;
     /* background: #1B3A6B; */
 }
-.uhfm ul li:first-child{
+
+.uhfm ul li:first-child {
     color: white;
     border: 1px solid #1B3A6B;
     background: #1B3A6B;
@@ -136,12 +142,12 @@
     border-bottom-left-radius: 5px;
 }
 
-.uhfm ul li:last-child{
+.uhfm ul li:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-.uhfm p{
+.uhfm p {
     border-radius: 6px;
     align-items: center;
     height: 40px;
@@ -153,22 +159,24 @@
     padding: 8px 14px;
     margin-top: 12px;
 }
-.uhfm p span{
+
+.uhfm p span {
     font-weight: bold;
     color: #1B3A6B;
     margin-left: 8px;
 }
 
 
-.formboxmd{
+.formboxmd {
     display: flex;
     flex-flow: row wrap;
     gap: 12px;
- }
+}
 
 
 
-label.jgfm input, .fmmdltinput select{
+label.jgfm input,
+.fmmdltinput select {
     font-size: 13px;
     padding: 0 12px;
     width: 162px;
@@ -177,26 +185,32 @@ label.jgfm input, .fmmdltinput select{
     border-radius: 5px;
     border: 1px solid #FECACA;
 }
-label.jgfm{
+
+label.jgfm {
     position: relative;
 }
-.formboxtp label:nth-child(2) input[type="text"]{
+
+.formboxtp label:nth-child(2) input[type="text"] {
     width: 150px;
 }
-.formboxtp label:nth-child(3) input[type="text"]{
+
+.formboxtp label:nth-child(3) input[type="text"] {
     width: 130px;
 }
-.formboxtp label:nth-child(4) input[type="text"]{
+
+.formboxtp label:nth-child(4) input[type="text"] {
     width: 140px;
 }
-.formboxtp label:nth-child(5) input[type="text"]{
+
+.formboxtp label:nth-child(5) input[type="text"] {
     width: 110px;
 }
-.formboxtp label:nth-child(6) input[type="text"]{
+
+.formboxtp label:nth-child(6) input[type="text"] {
     width: 150px;
 }
- 
-label.jgfm img{
+
+label.jgfm img {
     width: 12px;
     height: 12px;
     position: absolute;
@@ -208,12 +222,14 @@ label.jgfm img{
 
 
 
-.gjdsjjb{
+.gjdsjjb {
     width: 100%;
     display: flex;
     flex-flow: column;
 }
-.gjdsjjb label.jgfm input,.gjdsjjb select{
+
+.gjdsjjb label.jgfm input,
+.gjdsjjb select {
     font-size: 13px;
     padding: 0 12px;
     width: 162px;
@@ -222,31 +238,37 @@ label.jgfm img{
     border-radius: 5px;
     border: 1px solid #FECACA;
 }
-.gjdsjjb label.jgfm{
+
+.gjdsjjb label.jgfm {
     position: relative;
 }
-.gjdsjjb .formboxtp label:nth-child(2) input[type="text"]{
+
+.gjdsjjb .formboxtp label:nth-child(2) input[type="text"] {
     width: 180px;
 }
-.gjdsjjb .formboxtp label:nth-child(3)  select{
+
+.gjdsjjb .formboxtp label:nth-child(3) select {
     width: 140px;
 }
-.gjdsjjb .formboxtp label:nth-child(4) input[type="date"]{
+
+.gjdsjjb .formboxtp label:nth-child(4) input[type="date"] {
     width: 180px;
 }
-.gjdsjjb .formboxtp label:nth-child(5) input[type="text"]{
+
+.gjdsjjb .formboxtp label:nth-child(5) input[type="text"] {
     width: 240px;
 }
 
 
-.jggj{
+.jggj {
     width: 100%;
     display: flex;
     flex-flow: column;
 }
 
 
-.jggj label.jgfm input,.jggj select{
+.jggj label.jgfm input,
+.jggj select {
     font-size: 13px;
     padding: 0 12px;
     width: 162px;
@@ -255,19 +277,24 @@ label.jgfm img{
     border-radius: 5px;
     border: 1px solid #FECACA;
 }
-.jggj label.jgfm{
+
+.jggj label.jgfm {
     position: relative;
 }
-.jggj .formboxtp label:nth-child(2)  select{
+
+.jggj .formboxtp label:nth-child(2) select {
     width: 160px;
 }
-.jggj .formboxtp label:nth-child(3) input[type="text"]{
+
+.jggj .formboxtp label:nth-child(3) input[type="text"] {
     width: 240px;
 }
-.jggj .formboxtp label:nth-child(4) input[type="text"]{
+
+.jggj .formboxtp label:nth-child(4) input[type="text"] {
     width: 140px;
 }
-.jggj .formboxtp button{
+
+.jggj .formboxtp button {
     cursor: pointer;
     margin-top: 25px;
     display: flex;
@@ -282,34 +309,36 @@ label.jgfm img{
     background: #F0FDF4;
     border: 1px solid #BBF7D0;
 }
-.jggj .formboxtp button:hover{
+
+.jggj .formboxtp button:hover {
     background: #c7e8d0;
 }
 
 
 
 
-input[type="date"]{
-    cursor: pointer;
-}
-select{
+input[type="date"] {
     cursor: pointer;
 }
 
+select {
+    cursor: pointer;
+}
 
 
-.textbox{
+
+.textbox {
     margin-top: 16px;
 }
 
-.fmli{
+.fmli {
     width: 100%;
     height: 2px;
     background: #F1F5F9;
 }
 
 
-.cmbpil{
+.cmbpil {
     gap: 18;
     width: 100%;
     display: flex;
@@ -317,11 +346,11 @@ select{
     align-self: center;
 }
 
-.cmbpilin{
+.cmbpilin {
     width: 1150px;
     height: 80px;
     background: #F9FAFB;
-    border: 1px solid #D1D5DB ;
+    border: 1px solid #D1D5DB;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -329,7 +358,8 @@ select{
     border-radius: 8px;
     cursor: pointer;
 }
-.cmbpiltt{
+
+.cmbpiltt {
     width: 308px;
     display: flex;
     flex-flow: column wrap;
@@ -337,16 +367,19 @@ select{
     justify-content: center;
     justify-self: center;
 }
-.cmbpiltt h1{
-    font-weight: bold  ;
+
+.cmbpiltt h1 {
+    font-weight: bold;
     font-size: 13px;
-    color: #6B7280;    
+    color: #6B7280;
 }
-.cmbpiltt h2{
+
+.cmbpiltt h2 {
     font-size: 11px;
-    color: #9CA3AF;   
+    color: #9CA3AF;
 }
-.cmbpil button{
+
+.cmbpil button {
     cursor: pointer;
     display: flex;
     flex-flow: row wrap;
@@ -360,36 +393,40 @@ select{
     box-sizing: border-box;
     border-radius: 6px;
     background: #FFFFFF;
-    border: 1px solid #D1D5DB; 
+    border: 1px solid #D1D5DB;
 }
 
 
 
-.formboxbt{
+.formboxbt {
     width: 100%;
     display: flex;
-     flex-flow: column;
+    flex-flow: column;
 }
-.formboxbt h1{
+
+.formboxbt h1 {
     font-weight: bold;
     font-size: 13px;
     margin-bottom: 6px;
 }
-.formboxbt textarea{
+
+.formboxbt textarea {
     width: 1150px;
     height: 82px;
     padding: 10px 12px;
     border-radius: 6px;
     border: 1px solid #D1D5DB;
 }
-.fmbtns{
+
+.fmbtns {
     margin-top: 16px;
     display: flex;
     flex-flow: row;
     gap: 8px;
     justify-content: right;
 }
-.fmbtns button{
+
+.fmbtns button {
     font-weight: bold;
     display: flex;
     flex-flow: row wrap;
@@ -401,20 +438,23 @@ select{
     height: 36px;
     border: 1px solid #D1D5DB;
 }
-.fmbtns .css{
+
+.fmbtns .css {
     width: 87px;
     color: black;
     background: #ffffff;
 }
-.fmbtns .jjs{
+
+.fmbtns .jjs {
     color: white;
     background: #1B3A6B;
 }
-.textbox{
+
+.textbox {
     margin-top: 16px;
 }
 
-.cmbpilfl{
+.cmbpilfl {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -423,28 +463,38 @@ select{
     border-radius: 6px;
     border: 1px solid #E5E7EB;
 }
-.cmbpilfllft{
+
+.cmbpilfllft {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     gap: 5;
 }
-.cmbpilfllft h1{
+
+.cmbpilfllft h1 {
     font-size: 13px;
     font-weight: bold;
 }
-.cmbpilfllft h2{
+
+.cmbpilfllft h2 {
     font-size: 11px;
     color: #9CA3AF;
 }
-.cmbpilflret{
+
+.cmbpilflret {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     gap: 5;
     font-size: 12px;
 }
-.cmbpilflret span{
+
+.cmbpilflret span {
     font-size: 15px;
 }
 
+
+
+.popin {
+    width: calc(100% - 25px);
+}
