@@ -1,6 +1,6 @@
 "use client";
 
-import "./Gogs.css";
+import "./Gojh.css";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -17,6 +17,7 @@ import {
   Banknote,
   Bookmark,
   BookOpen,
+  Building2,
   CakeSlice,
   Calculator,
   Calendar,
@@ -70,7 +71,7 @@ import {
   X,
 } from "lucide-react";
 
-export default function Gogs() {
+export default function Gojh() {
   const [employee, setemployee] = useState([]);
 
   useEffect(() => {
@@ -127,7 +128,7 @@ export default function Gogs() {
             },
           ]}
           idxs="1"
-          subidxs="4"
+          subidxs="5"
         />
 
         <div className="main">
@@ -135,170 +136,79 @@ export default function Gogs() {
             toptits={{
               ttmap: "급여관리",
               map: "급여관리",
-              tit: "급여계산",
-              text: "계산기준월을 선택하고 조건을 설정한 후 전 직원 급여를 자동 계산합니다.",
+              tit: "급여조회",
+              text: "연도별 급여 수령 내역 및 월별 명세서를 조회합니다.",
               tllbtn: "PDF 다운로드",
               trrbtn: "수당 추가",
             }}
-            gsbtnon="0"
-            ckdbtnon="0"
+            gsbtnon=""
+            ckdbtnon=""
             sjbtnon=""
             lftwtbtnno=""
             retwtbtnno="0"
             prtbtnon=""
             ttct=""
+            clprtbtnon="0"
           />
+
+          <div className="glpwrap">
+            <div className="fromtit glptt">
+              <h1>
+                <TableIcon size={15} />
+                2025년 7월 급여계산 미리보기
+                <span>2025년</span>
+              </h1>
+              <div className="fromtitin">
+                <h3>
+                  <span></span>실지급액
+                </h3>
+                <h3>
+                  <span></span>이번달 (7월)
+                </h3>
+                <h3>
+                  <span></span>미지급
+                </h3>
+              </div>
+            </div>
+            <div className="glps"></div>
+          </div>
           <div className="findebox">
             <div className="fdlftbox">
               <label className="lbl">
-                <p>기준년도</p>
+                <p>조회연도</p>
                 <div className="ipdybox">
                   <div class="jgfmin ">
                     <p>
                       <ChevronLeft size={14} />
                     </p>
                     <Calendar className="cld" size={13} />
-                    <input
-                      type="text"
-                      id="year"
-                      name="year"
-                      value={"2025년 7월"}
-                    />
+                    <input type="text" id="year" name="year" value={"2025년"} />
                     <p>
                       <ChevronRight size={14} />
                     </p>
                   </div>
                 </div>
               </label>
-
-              <div className="lin"></div>
-
-              <label className="fdlftin">
-                <label>
-                  <p>계산상태</p>
-                  <h1 className="gsj">
-                    <span>●</span>계산전
-                  </h1>
-                </label>
-
-                <label>
-                  <p>확정상태</p>
-                  <h1 className="mhj">
-                    <span>●</span>미확정
-                  </h1>
-                </label>
-              </label>
-            </div>
-
-            <div className="fdretbox">
-              <div className="fromtit">
-                <h1>
-                  <SlidersHorizontal size={14} />
-                  계산조건 설정
-                </h1>
-                <div className="fdretboxgbg">
-                  <RotateCcw size={11} /> 기본값
+              <label className="lbl">
+                <p>조회대상</p>
+                <div className="jhds">
+                  <p>
+                    <span>박</span>박민준 (본인)
+                  </p>
+                  <Lock size={12} color="#9CA3AF" />
                 </div>
-              </div>
-              <ul className="gsjg">
-                <li>
-                  <h1>
-                    근태 데이터 연동
-                    <p>야근·지각 데이터 자동 반영</p>
-                  </h1>
-                  <div className="tgbtnbox">
-                    <div className="tgbtn">
-                      <div className="tgs"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <h1>
-                    간이세액표 적용
-                    <p>국세청 간이세액 기준 소득세 계산</p>
-                  </h1>
-                  <div className="tgbtnbox">
-                    <div className="tgbtn">
-                      <div className="tgs"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <h1>
-                    원 단위 반올림
-                    <p>1원 미만 반올림 처리</p>
-                  </h1>
-                  <div className="tgbtnbox">
-                    <div className="tgbtn no">
-                      <div className="tgs"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <h1>
-                    지방소득세 자동포함
-                    <p>소득세의 10% 자동 산출</p>
-                  </h1>
-                  <div className="tgbtnbox">
-                    <div className="tgbtn">
-                      <div className="tgs"></div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              </label>
+              <span>
+                <Building2 size={12} />
+                개발팀 · 대리
+              </span>
             </div>
+            <ul className="fdnd">
+              <li>2023</li>
+              <li>2024</li>
+              <li>2025</li>
+            </ul>
           </div>
-
-          <ul className="boxbox">
-            <li>
-              <p>
-                <TrendingUp size={13} />
-                지급합계
-              </p>
-              <h1>28,640,000원</h1>
-              <span>
-                <h4>●</h4>기본급 25,760,000 + 수당 2,880,000
-              </span>
-            </li>
-            <li>
-              <p>
-                <TrendingDown size={13} />
-                공제합계
-              </p>
-              <h1>4,128,060원</h1>
-              <span>
-                <h4>●</h4>4대보험 3,408,060 + 소득세 720,000
-              </span>
-            </li>
-            <li>
-              <p>
-                <Banknote size={13} />
-                실지급합계
-              </p>
-              <h1>24,511,940원</h1>
-              <span>
-                <h4>●</h4>1인 평균 3,063,993원
-              </span>
-            </li>
-            <li>
-              <p>
-                <Users size={13} />
-                계산 대상
-              </p>
-              <h1>8명</h1>
-              <span>계산전 8명</span>
-            </li>
-            <li>
-              <p>
-                <Clock size={13} />
-                전월 대비
-              </p>
-              <h1>+206,000원</h1>
-              <span>
-                <h4>●</h4>야근수당 증가 영향
-              </span>
-            </li>
-          </ul>
 
           <div className="mainin">
             <div className="fromtit">

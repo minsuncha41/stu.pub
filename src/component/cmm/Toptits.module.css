@@ -1,5 +1,4 @@
-
-.maps{
+.maps {
     font-size: 12px;
     display: flex;
     align-self: center;
@@ -7,28 +6,30 @@
     gap: 10px;
     margin-bottom: 15px;
 }
-.maps img{
+
+.maps img {
     display: flex;
     align-self: center;
     flex-flow: row wrap;
     width: 12px;
     height: 12px;
 }
-.maps p.mapsces{
+
+.maps p.mapsces {
     color: #2563EB;
 }
 
-.titl h3{
+.titl h3 {
     font-weight: bold;
     font-size: 20px;
 }
 
-.titl p{
+.titl p {
     color: #6B7280;
     font-size: 13px;
 }
 
-.tit{
+.tit {
     display: flex;
     align-items: center;
     flex-flow: row wrap;
@@ -41,10 +42,12 @@
     flex-flow: row wrap;
     gap: 5px;
 }
-.titr button p{
+
+.titr button p {
     font-size: 17px;
 }
-.titr button{
+
+.titr button {
     height: 34px;
     border-radius: 5px;
     display: flex;
@@ -56,35 +59,46 @@
     padding: 0 14px;
     cursor: pointer;
 }
+
 .lftwtbtn {
     background-color: white;
     border: 1px solid #D1D5DB;
 }
-.retblbtn{
+
+.retblbtn {
     background-color: #1B3A6B;
     color: white;
 }
-.lftwtbtn:hover{
+
+.lftwtbtn:hover {
     background-color: #c9ddff;
 }
-.retblbtn:hover{
+
+.retblbtn:hover {
     background-color: #476494;
 }
 
 
 
-.prtbtn{
+.prtbtn {
     border: 1px solid #D1D5DB;
     background-color: white;
 }
 
-.sjbtn{
+.sjbtn {
     margin: 0 3px;
     border: 1px solid #D1D5DB;
     background-color: white;
 }
 
-.retgsbtn{
+.retgsbtn {
     background: #2563EB;
+    color: white;
+}
+
+
+
+.clprtbtn {
+    background: #1B3A6B;
     color: white;
 }
