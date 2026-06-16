@@ -9,6 +9,8 @@ export default function Table({ tablecls }) {
 
   const [page, setPage] = useState(1);
 
+  const pagss = 1;
+
   //api를 요청해서 받는다. 통신은async await붙인다
   const getEmployee = async () => {
     const token = localStorage.getItem("accessToken");

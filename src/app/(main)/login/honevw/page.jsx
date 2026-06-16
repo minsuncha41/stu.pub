@@ -51,27 +51,92 @@ import {
 import { useRouter } from "next/navigation";
 
 export default function Honevw() {
-  const [employee, setemployee] = useState([]);
   const router = useRouter();
-
-  useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
-
-      //useState를 넣는다
-      setemployee(response.data.data);
-
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
-  }, []);
 
   const loginvw = () => {
     router.push("/login/loginvw");
   };
 
+  const token = localStorage.getItem("accessToken");
+  const [allinput, setallinput] = useState({
+    firstName: "",
+    name: "",
+    employeeNo: "",
+    departmentName: "",
+    positionName: "",
+    email: "",
+    password: "",
+    checkPassword: "",
+  });
+
+  const [ogdo, setogdo] = useState(false);
+
+  const 회원가입 = async () => {
+    // 성;
+    if (!allinput.firstName) {
+      return alert("성을 입력해주세요");
+    }
+
+    // 이름;
+    if (!allinput.name) {
+      return alert("이름을 입력해주세요");
+    }
+
+    // 사번;
+    if (!allinput.employeeNo) {
+      return alert("사번을 입력해주세요");
+    }
+
+    // 부서;
+    if (!allinput.departmentName) {
+      return alert("부서를 선택해주세요");
+    }
+
+    // 직급;
+    if (!allinput.positionName) {
+      return alert("직급을 선택해주세요");
+    }
+
+    // 회사 이메일;
+    if (!allinput.email) {
+      return alert("회사 이메일을 입력해주세요");
+    }
+
+    // 비밀번호;
+    if (!allinput.password) {
+      return alert("비밀번호를 입력해주세요");
+    }
+
+    // 비밀번호 확인;
+    if (!allinput.checkPassword) {
+      return alert("다시한번더 비밀번호를 입력해주세요");
+    }
+
+    // 약관동의확인;
+    if (!ogdo) {
+      return alert("약관에 동의 하셔야 회원가입이 가능합니다");
+    }
+
+    const res = await baseApi.post(
+      "/api/v1/employees/joinErp",
+      {
+        firstName: allinput?.firstName,
+        name: allinput?.name,
+        employeeNo: allinput?.employeeNo,
+        departmentName: allinput?.departmentName,
+        positionName: allinput?.positionName,
+        email: allinput?.email,
+        password: allinput?.password,
+        checkPassword: allinput?.checkPassword,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+    console.log(allinput);
+  };
   return (
     <div className="wrap">
       <Nav none={true} />
@@ -142,58 +207,150 @@ export default function Honevw() {
             <div className="lginbox">
               <label>
                 <p>성</p>
-                <input type="text" placeholder="성" />
+                <input
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        firstName: e.target.value,
+                      };
+                    })
+                  }
+                  type="text"
+                  placeholder="성"
+                />
               </label>
               <label>
                 <p>이름</p>
-                <input type="text" placeholder="이름" />
+                <input
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        name: e.target.value,
+                      };
+                    })
+                  }
+                  type="text"
+                  placeholder="이름"
+                />
               </label>
 
               <label>
                 <p>사번</p>
                 <IdCard className="laicon" size={18} />
-                <input type="text" placeholder="EMP-0001" />
+                <input
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        employeeNo: e.target.value,
+                      };
+                    })
+                  }
+                  type="text"
+                  placeholder="EMP-0001"
+                />
               </label>
               <label>
                 <p>부서</p>
                 <Building2 className="laicon" size={18} />
-                <select name="" id="">
+                <select
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        departmentName: e.target.value,
+                      };
+                    })
+                  }
+                  name=""
+                  id=""
+                >
                   <option value="">소속 부서 선택</option>
-                  <option value="bs1">1부서</option>
-                  <option value="bs2">2부서</option>
-                  <option value="bs3">3부서</option>
-                  <option value="bs4">4부서</option>
+                  <option value="경영지원본부">경영지원본부</option>
+                  <option value="물류운영본부">물류운영본부</option>
+                  <option value="냉장/냉동물류본부">냉장/냉동물류본부</option>
+                  <option value="차량관리본부">차량관리본부</option>
+                  <option value="창고운영본부">창고운영본부</option>
+                  <option value="영업본부">영업본부</option>
+                  <option value="IT본부">IT본부</option>
                 </select>
               </label>
 
               <label>
                 <p>직급</p>
                 <Briefcase className="laicon" size={18} />
-                <select name="" id="">
+                <select
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        positionName: e.target.value,
+                      };
+                    })
+                  }
+                  name=""
+                  id=""
+                >
                   <option value="">직급 선택</option>
-                  <option value="jg1">1직급</option>
-                  <option value="jg2">2직급</option>
-                  <option value="jg3">3직급</option>
-                  <option value="jg4">4직급</option>
+                  <option value="사원">사원</option>
+                  <option value="과장">과장</option>
+                  <option value="부장">부장</option>
+                  <option value="팀장">팀장</option>
+                  <option value="사장">사장</option>
                 </select>
               </label>
               <label>
                 <p>회사 이메일</p>
                 <Mail className="laicon" size={18} />
-                <input type="password" placeholder="company@example.com" />
+                <input
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        email: e.target.value,
+                      };
+                    })
+                  }
+                  type="text"
+                  placeholder="company@example.com"
+                />
               </label>
 
               <label>
                 <p>비밀번호</p>
                 <Lock className="laicon" size={18} />
                 <EyeOff className="laiconpw" size={18} />
-                <input type="text" placeholder="비밀번호 입력" />
+                <input
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        password: e.target.value,
+                      };
+                    })
+                  }
+                  type="text"
+                  placeholder="비밀번호 입력"
+                />
               </label>
               <label>
                 <p>비밀번호 확인</p>
                 <Lock className="laicon" size={18} />
                 <CircleChevronDown className="laiconpw" size={18} />
-                <input type="password" placeholder="비밀번호 재입력" />
+                <input
+                  onChange={(e) =>
+                    setallinput((tt) => {
+                      return {
+                        ...tt,
+                        checkPassword: e.target.value,
+                      };
+                    })
+                  }
+                  type="password"
+                  placeholder="비밀번호 재입력"
+                />
               </label>
             </div>
 
@@ -203,13 +360,26 @@ export default function Honevw() {
 
             <div className="lgbtns">
               <label>
-                <input type="checkbox" name="" id="" />
+                <input
+                  checked={ogdo}
+                  onChange={(e) => {
+                    setogdo(e.target.checked);
+                  }}
+                  type="checkbox"
+                  name=""
+                  id=""
+                />
                 <p>이용약관 및 개인정보처리방침에 동의합니다</p>
               </label>
               <span>내용 보기</span>
             </div>
 
-            <button className="logedbtn">
+            <button
+              className="logedbtn"
+              onClick={() => {
+                회원가입();
+              }}
+            >
               <UserPlus size={18} />
               회원가입
             </button>

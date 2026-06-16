@@ -1,184 +1,430 @@
 "use client";
 
 import "./register.css";
-import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
 import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 import { Clock4, Save, Search, UserPlus, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Inc() {
-  // const [employee, setemployee] = useState([]);
-  // const [keywordss, setkeword] = useState([]);
+  const [popvw, setpopvw] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(".....");
-  //   console.log(keywordss);
-  // }, [keywordss]);
+  const popon = () => {
+    setpopvw(true);
+  };
 
-  // const getEmlpoyees = async () => {
-  //   const token = localStorage.getItem("accessToken");
+  const popno = () => {
+    setpopvw(false);
+  };
 
-  //   const res = await baseApi.get("/api/v1/employees", {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     params: {
-  //       keyword: keywordss || "",
-  //       page: 1,
-  //     },
-  //   });
-  //   console.log(res.data.data);
-  // };
+  const token = localStorage.getItem("accessToken");
 
-  // useEffect(() => {
-  //   getEmlpoyees();
-  // }, []);
+  const [allinput, setallinput] = useState({
+    name: "",
+    departmentName: "",
+    positionName: "사원",
+    hireDate: "",
+    employmentStatus: "",
+    phone: "",
+    email: "",
+    postCode: "",
+    roadAddress: "",
+    detailAddress: "",
+  });
 
+  const 인사가입등록 = async () => {
+    // 이름
+    if (!allinput.name) {
+      return alert("인사등록 할 사람의 이름을 입력해주세요");
+    }
+
+    // 부서
+    if (!allinput.departmentName) {
+      return alert("인사등록 할 사람의 부서를 선택해주세요");
+    }
+
+    // 직급
+    if (!allinput.positionName) {
+      return alert("인사등록 할 사람의 직급을 선택해주세요");
+    }
+
+    // 입사일
+    if (!allinput.hireDate) {
+      return alert("인사등록 할 사람의 입사일을 선택해주세요");
+    }
+
+    // 재직상태
+    if (!allinput.employmentStatus) {
+      return alert("인사등록 할 사람의 재직상태를 선택해주세요");
+    }
+
+    // 휴대폰
+    if (!allinput.phone) {
+      return alert("인사등록 할 사람의 휴대폰번호를 입력해주세요");
+    }
+
+    // 이메일
+    if (!allinput.email) {
+      return alert("인사등록 할 사람의 이메일을 입력해주세요");
+    }
+
+    const res = await baseApi.post(
+      "/api/v1/employees/registerEmployee",
+      {
+        name: allinput?.name,
+        departmentName: allinput?.departmentName,
+        positionName: allinput?.positionName,
+        hireDate: allinput?.hireDate,
+        employmentStatus: allinput?.employmentStatus,
+        phone: allinput?.phone,
+        email: allinput?.email,
+        postCode: allinput?.postCode,
+        roadAddress: allinput?.roadAddress,
+        detailAddress: allinput?.detailAddress,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+    console.log(allinput);
+  };
+
+  {
+    // const [employee, setemployee] = useState([]);
+    // const [keywordss, setkeword] = useState([]);
+    // useEffect(() => {
+    //   console.log(".....");
+    //   console.log(keywordss);
+    // }, [keywordss]);
+    // const getEmlpoyees = async () => {
+    //   const token = localStorage.getItem("accessToken");
+    //   const res = await baseApi.get("/api/v1/employees", {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //     },
+    //     params: {
+    //       keyword: keywordss || "",
+    //       page: 1,
+    //     },
+    //   });
+    //   console.log(res.data.data);
+    // };
+    // useEffect(() => {
+    //   getEmlpoyees();
+    // }, []);
+  }
   return (
     <div className="wrap">
-      <div className="modalwrap">
-        <div className="modal">
-          <div className="tit">
-            <div className="titlft">
-              <UserPlus size={18} />
-              인사정보 등록
+      <div
+        onClick={() => {
+          popon();
+        }}
+        className="sgdlbtn"
+      >
+        i
+      </div>
+      {popvw && (
+        <div className="modalwrap">
+          <div className="modal">
+            <div className="tit">
+              <div className="titlft">
+                <UserPlus size={18} />
+                인사정보 등록
+              </div>
+              <div
+                onClick={() => {
+                  popno();
+                }}
+                className="titret"
+              >
+                <X size={18} />
+              </div>
             </div>
-            <div className="titret">
-              <X size={18} />
-            </div>
-          </div>
-          <div className="modalin">
-            <div className="lblbox">
-              <h1>기본정보</h1>
-              <label className="lbl">
-                <p>
-                  사원번호 <span>*</span>
-                </p>
-                <input
-                  className="noinput"
-                  type="text"
-                  placeholder="자동생성"
-                  disabled
-                />
-              </label>
-              <label className="lbl">
-                <p>
-                  성명 <span>*</span>
-                </p>
-                <input
-                  type="text"
-                  value={"홍길동"}
-                  placeholder="이름을 입력해주세요"
-                />
-              </label>
-              <label className="lbl">
-                <p>
-                  부서 <span>*</span>
-                </p>
-                <select>
-                  <option value="">부서를 선택하세요</option>
-                  <option value="경영지원본부">경영지원본부</option>
-                  <option value="물류운영본부">물류운영본부</option>
-                  <option value="냉장/냉동물류본부">냉장/냉동물류본부</option>
-                  <option value="차량관리본부">차량관리본부</option>
-                  <option value="창고운영본부">창고운영본부</option>
-                  <option value="영업본부">영업본부</option>
-                  <option value="IT본부">IT본부</option>
-                </select>
-              </label>
-              <label className="lbl">
-                <p>
-                  직급 <span>*</span>
-                </p>
-                <select>
-                  <option value="">직급을 선택하세요</option>
-                  <option value="사원">사원</option>
-                  <option value="과장">과장</option>
-                  <option value="부장">부장</option>
-                  <option value="팀장">팀장</option>
-                  <option value="사장">사장</option>
-                </select>
-              </label>
-              <label className="lbl">
-                <p>
-                  입사일 <span>*</span>
-                </p>
-                <input type="date" />
-              </label>
-              <label className="lbl">
-                <p>
-                  재직상태 <span>*</span>
-                </p>
-                <ul>
-                  <li className="checked">
-                    <label>
-                      <input type="radio" name="jjst" value={"재직중"} />
-                      재직중
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="radio" name="jjst" value={"휴직중"} />
-                      휴직중
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="radio" name="jjst" value={"퇴직"} />
-                      퇴직
-                    </label>
-                  </li>
-                </ul>
-              </label>
-            </div>
+            <div className="modalin">
+              <div className="lblbox">
+                <h1>기본정보</h1>
+                <label className="lbl">
+                  <p>
+                    사원번호 <span>*</span>
+                  </p>
+                  <input
+                    className="noinput"
+                    type="text"
+                    placeholder="자동생성"
+                    disabled
+                  />
+                </label>
+                <label className="lbl">
+                  <p>
+                    성명 <span>*</span>
+                  </p>
+                  <input
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          name: e.target.value,
+                        };
+                      })
+                    }
+                    type="text"
+                    placeholder="이름을 입력해주세요"
+                  />
+                </label>
+                <label className="lbl">
+                  <p>
+                    부서 <span>*</span>
+                  </p>
+                  <select
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          departmentName: e.target.value,
+                        };
+                      })
+                    }
+                  >
+                    <option value="">부서를 선택하세요</option>
+                    <option value="경영지원본부">경영지원본부</option>
+                    <option value="물류운영본부">물류운영본부</option>
+                    <option value="냉장/냉동물류본부">냉장/냉동물류본부</option>
+                    <option value="차량관리본부">차량관리본부</option>
+                    <option value="창고운영본부">창고운영본부</option>
+                    <option value="영업본부">영업본부</option>
+                    <option value="IT본부">IT본부</option>
+                  </select>
+                </label>
+                <label className="lbl">
+                  <p>
+                    직급 <span>*</span>
+                  </p>
+                  <select
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          positionName: e.target.value,
+                        };
+                      })
+                    }
+                  >
+                    <option value="">직급을 선택하세요</option>
+                    <option value="사원">사원</option>
+                    <option value="과장">과장</option>
+                    <option value="부장">부장</option>
+                    <option value="팀장">팀장</option>
+                    <option value="사장">사장</option>
+                  </select>
+                </label>
+                <label className="lbl">
+                  <p>
+                    입사일 <span>*</span>
+                  </p>
+                  <input
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          hireDate: e.target.value,
+                        };
+                      })
+                    }
+                    type="date"
+                  />
+                </label>
+                <label className="lbl">
+                  <p>
+                    재직상태 <span>*</span>
+                  </p>
+                  <ul
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          employmentStatus: e.target.value,
+                        };
+                      })
+                    }
+                  >
+                    <li className="checked">
+                      <label>
+                        <input type="radio" name="jjst" value={"재직중"} />
+                        재직중
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="radio" name="jjst" value={"휴직중"} />
+                        휴직중
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="radio" name="jjst" value={"퇴직"} />
+                        퇴직
+                      </label>
+                    </li>
+                  </ul>
+                </label>
+              </div>
 
-            <div className="lblbox">
-              <h1>연락처</h1>
-              <label className="lbl">
-                <p>
-                  휴대폰 <span>*</span>
-                </p>
-                <input type="text" placeholder="010-0000-0000" />
-              </label>
-              <label className="lbl">
-                <p>
-                  이메일 <span>*</span>
-                </p>
-                <input type="text" placeholder="example@company.com" />
-              </label>
-            </div>
+              <div className="lblbox">
+                <h1>연락처</h1>
+                <label className="lbl">
+                  <p>
+                    휴대폰 <span>*</span>
+                  </p>
+                  <input
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          phone: e.target.value,
+                        };
+                      })
+                    }
+                    type="text"
+                    placeholder="010-0000-0000"
+                  />
+                </label>
+                <label className="lbl">
+                  <p>
+                    이메일 <span>*</span>
+                  </p>
+                  <input
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          email: e.target.value,
+                        };
+                      })
+                    }
+                    type="text"
+                    placeholder="example@company.com"
+                  />
+                </label>
+              </div>
 
-            <div className="lblbox js">
-              <h1>주소</h1>
-              <label className="lbl">
-                <p>
-                  우편번호 <span>*</span>
-                </p>
-                <input type="text" placeholder="우편번호" />
-              </label>
-              <button>
-                <Search size={13} />
-                주소검색
-              </button>
-              <label className="lbl">
-                <p>
-                  도로명주소<span>*</span>
-                </p>
-                <input type="text" placeholder="우편번호" />
-              </label>
-              <label className="lbl">
-                <p>
-                  상세주소<span>*</span>
-                </p>
-                <input type="text" placeholder="우편번호" />
-              </label>
+              <div className="lblbox js">
+                <h1>주소</h1>
+                <div className="jsin">
+                  <label className="lbl">
+                    <p>우편번호</p>
+                    <input
+                      onChange={(e) =>
+                        setallinput((tt) => {
+                          return {
+                            ...tt,
+                            postCode: e.target.value,
+                          };
+                        })
+                      }
+                      className="noinput"
+                      type="text"
+                      placeholder="우편번호"
+                    />
+                  </label>
+                  <label className="lbl">
+                    <p className="lblnott">0</p>
+                    <button>
+                      <Search size={13} />
+                      주소검색
+                    </button>
+                  </label>
+                </div>
+                <label className="lbl">
+                  <p>도로명주소</p>
+                  <input
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          roadAddress: e.target.value,
+                        };
+                      })
+                    }
+                    className="noinput"
+                    type="text"
+                    placeholder="주소검색 후 자동입력"
+                  />
+                </label>
+                <label className="lbl">
+                  <p>상세주소</p>
+                  <input
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          detailAddress: e.target.value,
+                        };
+                      })
+                    }
+                    type="text"
+                    placeholder="상세주소를 입력하세요"
+                  />
+                </label>
+              </div>
+              <div className="lblbox bsilcl">
+                <h1>비상연락처</h1>
+                <div className="jsin">
+                  <label className="lbl">
+                    <p>우편번호</p>
+                    <input type="text" placeholder="우편번호" />
+                  </label>
+                  <label className="lbl">
+                    <p>괸계</p>
+                    <select>
+                      <option value="">관계 선택</option>
+                      <option value="엄마">엄마</option>
+                      <option value="아빠">아빠</option>
+                      <option value="누나">누나</option>
+                      <option value="형">형</option>
+                      <option value="동생">동생</option>
+                      <option value="친척">친척</option>
+                      <option value="기타">기타</option>
+                    </select>
+                  </label>
+                  <label className="lbl">
+                    <p>연락처</p>
+                    <input type="text" placeholder="010-0000-0000" />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="btlft">
+              <p>
+                <span>*</span>필수 입력 항목입니다.
+              </p>
+              <div className="btret">
+                <button
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  취소
+                </button>
+
+                <button
+                  onClick={() => {
+                    인사가입등록();
+                  }}
+                >
+                  <Save size={14} />
+                  저장
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       <Nav num1={true} />
 
       {/* <header className={s.header}>

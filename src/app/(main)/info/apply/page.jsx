@@ -101,15 +101,17 @@ export default function Apply() {
 
   const [evttype, setevttype] = useState("본인결혼");
 
-  const [evtname, setevtname] = useState();
-  const [evtgg, setevtgg] = useState("bnin");
-  const [evtgji, setevtgji] = useState();
-  const [evtgjjs, setevtgjjs] = useState();
+  // 값들 가져오는방법 1
+  // const [evtname, setevtname] = useState();
+  // const [evtgg, setevtgg] = useState("bnin");
+  // const [evtgji, setevtgji] = useState();
+  // const [evtgjjs, setevtgjjs] = useState();
 
-  const [evtoh, setevtoh] = useState("ggmn");
-  const [evtgjbh, setevtgjbh] = useState();
-  const [evtogj, setevtogj] = useState();
+  // const [evtoh, setevtoh] = useState("ggmn");
+  // const [evtgjbh, setevtgjbh] = useState();
+  // const [evtogj, setevtogj] = useState();
 
+  // 값들 가져오는방법 2
   const [allevt, setallevt] = useState({
     tgname: "",
     tggg: "본인결혼",

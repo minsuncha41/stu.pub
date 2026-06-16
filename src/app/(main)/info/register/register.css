@@ -221,13 +221,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 500px;
+    /* padding-top: 500px; */
 }
 
 .modal {
     margin: 0 auto;
     width: 600px;
-    height: 814px;
+    /* height: 814px; */
     background-color: white;
     overflow: hidden;
     border-radius: 10px;
@@ -259,6 +259,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 
@@ -307,6 +308,7 @@
 }
 
 .lbl p {
+    font-size: 13px;
     width: 100%;
     color: #374151;
     font-weight: bold;
@@ -357,4 +359,126 @@
 .checked {
     color: black !important;
     font-weight: bold;
+}
+
+.jsin {
+    width: 100%;
+    display: flex;
+    gap: 8;
+}
+
+.jsin label {
+    width: 160px;
+}
+
+
+
+.lblnott {
+    color: white !important;
+}
+
+.jsin button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 94px;
+    height: 36px;
+    background: #1B3A6B;
+    color: white;
+    font-size: 13px;
+    gap: 5;
+    border-radius: 7px;
+
+}
+
+
+.js label:nth-child(3) {
+    width: 100%;
+}
+
+.js label:nth-child(4) {
+    width: 100%;
+}
+
+
+
+
+
+
+.bsilcl label:nth-child(1) {
+    width: 174px;
+}
+
+.bsilcl label:nth-child(2) {
+    width: 140px;
+}
+
+.bsilcl label:nth-child(3) {
+    width: 194px;
+}
+
+
+
+
+
+
+
+.btlft {
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 20px;
+    justify-content: space-between;
+    border-top: 1px solid #E5E7EB
+}
+
+
+.btlft p {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+.btlft p span {
+    margin-right: 5px;
+    color: red;
+}
+
+.btret {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8;
+}
+
+.btret button {
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    flex-flow: row wrap;
+    height: 36px;
+    padding: 0 20px;
+    justify-self: center;
+    align-items: center;
+    gap: 6;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.btret button:first-child {
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB
+}
+
+.btret button:last-child {
+    color: white;
+    background: #1B3A6B;
+}
+
+.sgdlbtn {
+    right: 20px;
+    top: 117px;
+    width: 96px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
 }
