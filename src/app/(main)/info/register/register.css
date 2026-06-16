@@ -1,171 +1,4 @@
-/* <ul className="texts">
-                            <ul>
-                                <li>NO</li>
-                                <li>사원번호</li>
-                                <li>성명</li>
-                                <li>부서</li>
-                                <li>직급</li>
-                                <li>입사일</li>
-                                <li>연락처</li>
-                                <li>이메일</li>
-                                <li>재직상태</li>
-                                <li>관리</li>
-                            </ul>
-
-                            <ul>
-                                <li>1</li>
-                                <li>EMP-001</li>
-                                <li>김철수</li>
-                                <li>인사팀</li>
-                                <li>팀장</li>
-                                <li>2019.03.02</li>
-                                <li>010-1234-5678</li>
-                                <li>kim@company.com</li>
-                                <li><span>재직중</span></li>
-                                <li>수정</li>
-                            </ul>
-                            <ul>
-                                <li>2</li>
-                                <li>EMP-002</li>
-                                <li>이영희</li>
-                                <li>경영지원팀</li>
-                                <li>과장</li>
-                                <li>2018.07.15</li>
-                                <li>010-9876-5432</li>
-                                <li>lee@company.com</li>
-                                <li><span>재직중</span></li>
-                                <li>수정</li>
-                            </ul>
-                            <ul>
-                                <li>3</li>
-                                <li>EMP-003</li>
-                                <li>박민준</li>
-                                <li>개발팀</li>
-                                <li>대리</li>
-                                <li>2021.08.01</li>
-                                <li>010-5555-7777</li>
-                                <li>park@company.com</li>
-                                <li><span>휴직중</span></li>
-                                <li>수정</li>
-                            </ul>
-                            <ul>
-                                <li>4</li>
-                                <li>EMP-004</li>
-                                <li>최지영</li>
-                                <li>영업팀</li>
-                                <li>사원</li>
-                                <li>2023.01.09</li>
-                                <li>010-3333-4444</li>
-                                <li>choi@company.com</li>
-                                <li><span>재직중</span></li>
-                                <li>수정</li>
-                            </ul>
-                            
-                            
-                            <ul className="textsbtns">
-                                <li>총 4건</li>
-                                <li>
-                                    <span>&lt;</span>
-                                    <span className="textsces  ">1</span>
-                                    <span>2</span>
-                                    <span>3</span>
-                                    <span>&gt;</span>
-                                </li>
-                            </ul>
-                        </ul> */
-/* <ul>
-                            <li>NO</li>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            </ul>
-
-                            <ul>
-                            <li>사원번호</li>
-                            <li>EMP-001</li>
-                            <li>EMP-002</li>
-                            <li>EMP-003</li>
-                            <li>EMP-004</li>
-                            </ul>
-
-                            <ul>
-                            <li>성명</li>
-                            <li>김철수</li>
-                            <li>이영희</li>
-                            <li>박민준</li>
-                            <li>최지영</li>
-                            </ul>
-
-                            <ul>
-                            <li>부서</li>
-                            <li>인사팀</li>
-                            <li>경영지원팀</li>
-                            <li>개발팀</li>
-                            <li>영업팀</li>
-                            </ul>
-
-                            <ul>
-                            <li>직급</li>
-                            <li>팀장</li>
-                            <li>과장</li>
-                            <li>대리</li>
-                            <li>사원</li>
-                            </ul>
-
-                            <ul>
-                            <li>입사일</li>
-                            <li>2019.03.02</li>
-                            <li>2018.07.15</li>
-                            <li>2021.08.01</li>
-                            <li>2023.01.09</li>
-                            </ul>
-
-                            <ul>
-                            <li>연락처</li>
-                            <li>010-1234-5678</li>
-                            <li>010-9876-5432</li>
-                            <li>010-5555-7777</li>
-                            <li>010-3333-4444</li>
-                            </ul>
-
-                            <ul>
-                            <li>이메일</li>
-                            <li>kim@company.com</li>
-                            <li>lee@company.com</li>
-                            <li>park@company.com</li>
-                            <li>choi@company.com</li>
-                            </ul>
-
-                            <ul>
-                            <li>재직상태</li>
-                            <li>재직중</li>
-                            <li>재직중</li>
-                            <li>휴직중</li>
-                            <li>재직중</li>
-                            </ul>
-
-                            <ul>
-                            <li>관리</li>
-                            <li>수정</li>
-                            <li>수정</li>
-                            <li>수정</li>
-                            <li>수정</li>
-                            </ul>
-
-                            <ul className="textsbtns">
-                                <li>총 4건</li>
-                                <li>
-                                    <span>&lt;</span>
-                                    <span className="textsces  ">1</span>
-                                    <span>2</span>
-                                    <span>3</span>
-                                    <span>&gt;</span>
-                                </li>
-                            </ul> */
-
-
-.inwrap{
+.inwrap {
     display: flex;
     flex-flow: row;
 }
@@ -173,7 +6,7 @@
 
 
 
-.main{
+.main {
     background: #F1F5F9;
     padding: 20px;
     margin-top: 56px;
@@ -282,7 +115,7 @@
 
 
 
-.findebox{
+.findebox {
     border: 1px solid #E5E7EB;
     border-radius: 15px;
     padding: 15px;
@@ -292,57 +125,236 @@
     flex-flow: column;
     gap: 5px;
 }
-.findebox h3{
+
+.findebox h3 {
     font-size: 13px;
     display: flex;
     align-items: center;
     font-weight: bold;
     gap: 5px;
 }
-.findebox h3 img{
+
+.findebox h3 img {
     width: 14px;
     height: 14px;
 }
-.findeinput{
+
+.findeinput {
     font-size: 13px;
     width: 100%;
     display: flex;
     gap: 15px;
     flex-flow: row wrap;
 }
-.findeinput select{
-    -webkit-appearance: none;  /* 크롬 화살표 없애기 */
-    -moz-appearance: none; /* 파이어폭스 화살표 없애기 */
-    appearance: none;  /* 화살표 없애기 */
+
+.findeinput select {
+    -webkit-appearance: none;
+    /* 크롬 화살표 없애기 */
+    -moz-appearance: none;
+    /* 파이어폭스 화살표 없애기 */
+    appearance: none;
+    /* 화살표 없애기 */
 }
-.findeinput label{
+
+.findeinput label {
     display: flex;
-    align-items: center ;
+    align-items: center;
     gap: 10px;
 }
-.findeinput label input,.findeinput label select  {
+
+.findeinput label input,
+.findeinput label select {
     border: 1px solid #D1D5DB;
     padding: 5px 10px;
     border-radius: 5px;
     width: 120px;
 }
 
-.findebox button{
+.findebox button {
     height: 34px;
     border-radius: 5px;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;       
-    gap: 5px; 
+    align-items: center;
+    gap: 5px;
     font-size: 13px;
     padding: 0 14px;
     cursor: pointer;
 }
+
 .cghbtn {
     background-color: white;
     border: 1px solid #D1D5DB;
 }
-.jhbtn{
+
+.jhbtn {
     background-color: #1B3A6B;
     color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrap {
+    position: relative;
+}
+
+
+
+
+
+.modalwrap {
+    z-index: 99999999;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 500px;
+}
+
+.modal {
+    margin: 0 auto;
+    width: 600px;
+    height: 814px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tit {
+    background: #1B3A6B;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    color: white;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+
+.titlft {
+    font-size: 16;
+    font-weight: bold;
+    display: flex;
+    gap: 10;
+}
+
+.titret {
+    width: 32px;
+    height: 32px;
+    background: #2D5F9E;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modalin {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-flow: column;
+    gap: 14;
+}
+
+
+.lblbox {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 12px;
+}
+
+.lblbox h1 {
+    position: relative;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #1B3A6B;
+    font-weight: bold;
+    width: 100%;
+    height: 25px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.lblbox h1::after {
+    position: absolute;
+    content: "";
+    width: 3;
+    height: 16px;
+    background: #1B3A6B;
+    left: 0;
+    border-radius: 10px;
+}
+
+.lbl {
+    width: calc(50% - 6px);
+    display: flex;
+    flex-flow: column;
+    gap: 4;
+}
+
+.lbl p {
+    width: 100%;
+    color: #374151;
+    font-weight: bold;
+}
+
+.lbl p span {
+    color: red;
+}
+
+.lbl input,
+.lbl select,
+.lbl ul {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+
+.noinput {
+    background: #F9FAFB;
+    cursor: default !important;
+}
+
+.lbl ul {
+    cursor: default !important;
+    display: flex;
+    justify-content: space-around;
+}
+
+.lbl ul li label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6;
+    color: #6B7280;
+}
+
+.lbl ul li input {
+    width: 16px;
+}
+
+.checked {
+    color: black !important;
+    font-weight: bold;
 }

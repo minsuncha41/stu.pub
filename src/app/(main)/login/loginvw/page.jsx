@@ -85,6 +85,10 @@ export default function Loginvw() {
     getEmployees();
   }, []);
 
+  const honevw = () => {
+    router.push("/login/honevw");
+  };
+
   // const [logininfo, setLoginInfo] = useState();
 
   // const gologin = async () => {
@@ -265,7 +269,13 @@ export default function Loginvw() {
             </div>
             <p className="hone">
               계정이 없으신가요?
-              <span>회원가입 신청</span>
+              <span
+                onClick={(e) => {
+                  honevw();
+                }}
+              >
+                회원가입 신청
+              </span>
             </p>
           </div>
         </div>

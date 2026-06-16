@@ -8,7 +8,7 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
-import { Clock4, Save, X } from "lucide-react";
+import { Clock4, Save, UserPlus, X } from "lucide-react";
 
 export default function Appointement() {
   const [employee, setemployee] = useState([]);

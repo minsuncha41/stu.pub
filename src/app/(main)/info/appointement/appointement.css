@@ -1,11 +1,10 @@
-
-.inwrap{
+.inwrap {
     display: flex;
     flex-flow: row;
 }
 
 
-.main{
+.main {
     background: #F1F5F9;
     padding: 20px;
     margin-top: 56px;
@@ -16,9 +15,10 @@
 
 
 
-    .textbox{
-        width: 100%;
-    }
+.textbox {
+    width: 100%;
+}
+
 /* 
     .texts ul{
         font-size: 13px;
@@ -115,7 +115,7 @@
 
 
 
-.findebox{
+.findebox {
     border: 1px solid #E5E7EB;
     border-radius: 8px;
     padding: 20px;
@@ -125,14 +125,16 @@
     flex-flow: column;
     gap: 5px;
 }
-.findebox h3{
+
+.findebox h3 {
     display: flex;
     align-items: center;
     font-weight: bold;
     gap: 5px;
     font-size: 13px;
 }
-.findebox p{
+
+.findebox p {
     height: 38px;
     border-radius: 5px;
     padding: 10px;
@@ -140,11 +142,13 @@
     background-color: #F1F5F9;
     border: 1px solid #D1D5DB;
 }
-.findebox h3 img{
+
+.findebox h3 img {
     width: 14px;
     height: 14px;
 }
-.findeinput{
+
+.findeinput {
     font-size: 13px;
     width: 100%;
     display: flex;
@@ -152,43 +156,48 @@
     flex-flow: row wrap;
 }
 
-.findeinput label{
+.findeinput label {
     display: flex;
-    align-items: center ;
+    align-items: center;
     gap: 10px;
 }
-.findeinput label input,.findeinput label select  {
+
+.findeinput label input,
+.findeinput label select {
     border: 1px solid #D1D5DB;
     padding: 5px 10px;
     border-radius: 5px;
     width: 120px;
-    height: 38px;        
+    height: 38px;
 }
 
-.findebox button{
+.findebox button {
     height: 38px;
     border-radius: 5px;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;       
-    gap: 5px; 
+    align-items: center;
+    gap: 5px;
     font-size: 13px;
     padding: 0 14px;
     cursor: pointer;
 }
+
 .cghbtn {
     background-color: white;
     border: 1px solid #D1D5DB;
 }
-.jhbtn{
+
+.jhbtn {
     background-color: #1B3A6B;
     color: white;
 }
 
-.sone button{
+.sone button {
     background-color: #1B3A6B;
 }
-.days span{
+
+.days span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,48 +207,56 @@
     border: 1px solid #D1D5DB;
     color: #9CA3AF;
 }
+
 .sone p {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
 .sone input[type="text"] {
     width: 200px;
     text-align: center;
     border-radius: 0px;
 }
-.sone button{
+
+.sone button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-.bls p{
+
+.bls p {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.bls select{
+
+.bls select {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-.days p{
+
+.days p {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.days input[type="date"]{
+
+.days input[type="date"] {
     border-radius: 0;
 }
-.days input[type="date"]:last-child{
+
+.days input[type="date"]:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-} 
+}
 
 
-.inputform{
+.inputform {
     width: 100%;
     display: flex;
     flex-flow: column;
 }
 
 
-.fromtit{
+.fromtit {
     width: 100%;
     background-color: #F8FAFC;
     border-radius: 8px;
@@ -250,31 +267,37 @@
 }
 
 
-.fromtit h1, .fromtit h2 {
+.fromtit h1,
+.fromtit h2 {
     gap: 5px;
     align-items: center;
     display: flex;
     flex-flow: row wrap;
 }
+
 .fromtit h1 {
     color: #1B3A6B;
     font-weight: bold;
     font-size: 13px;
 }
-.fromtit h1 img{
+
+.fromtit h1 img {
     width: 15px;
     height: 15px;
 }
+
 .fromtit h2 {
     font-size: 12px;
     font-weight: bold;
     color: #2563EB;
 }
-.fromtit h2 img{
+
+.fromtit h2 img {
     width: 13px;
     height: 13px;
 }
-.formbox{
+
+.formbox {
     border: 1px solid #E5E7EB;
     border-top: none;
     gap: 16px 0;
@@ -286,26 +309,29 @@
     border-bottom-left-radius: 8px;
 }
 
-.formboxtp{
+.formboxtp {
     display: flex;
     flex-flow: row wrap;
     font-size: 13px;
     gap: 20px;
 }
-.formboxtp p{
+
+.formboxtp p {
     font-weight: bold;
 }
-.formboxtp label{
+
+.formboxtp label {
     display: flex;
     flex-flow: column;
     gap: 6px 0;
 }
 
 
-.uhfm ul{
+.uhfm ul {
     display: flex;
 }
-.uhfm ul li{
+
+.uhfm ul li {
     color: #6B7280;
     font-weight: bold;
     cursor: pointer;
@@ -318,7 +344,8 @@
     border: 1px solid #D1D5DB;
     /* background: #1B3A6B; */
 }
-.uhfm ul li:first-child{
+
+.uhfm ul li:first-child {
     color: white;
     border: 1px solid #1B3A6B;
     background: #1B3A6B;
@@ -326,18 +353,20 @@
     border-bottom-left-radius: 5px;
 }
 
-.uhfm ul li:last-child{
+.uhfm ul li:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.dayfm input{
+
+.dayfm input {
     border-radius: 6;
     padding: 12px;
     border: 1px solid #D1D5DB;
     height: 36px;
     width: 180px;
 }
-.numfm input{
+
+.numfm input {
     border-radius: 6;
     padding: 12px;
     border: 1px solid #D1D5DB;
@@ -346,7 +375,8 @@
     background: #F9FAFB;
     color: #9CA3AF;
 }
-.sufm input{
+
+.sufm input {
     border-radius: 6;
     padding: 12px;
     border: 1px solid #D1D5DB;
@@ -354,11 +384,12 @@
     width: 260px;
 }
 
-.formboxmd{
+.formboxmd {
     display: flex;
     flex-flow: row wrap;
     gap: 12px;
 }
+
 .fmmdlt {
     border: 1px solid #FECACA;
     border-radius: 5px;
@@ -371,6 +402,7 @@
     height: 124px;
     gap: 12px;
 }
+
 .fmmdlttit {
     display: flex;
     flex-flow: row wrap;
@@ -378,7 +410,8 @@
     justify-content: space-between;
     width: 100%;
 }
-.fmmdlttit  span{
+
+.fmmdlttit span {
     display: block;
     font-size: 12px;
     font-weight: bold;
@@ -386,26 +419,31 @@
     background: #FEE2E2;
     border-radius: 50px;
 }
-.fmmdline{
+
+.fmmdline {
     height: 1px;
     width: 435px;
 }
-.fmmdlt .fmmdline{
+
+.fmmdlt .fmmdline {
     height: 1px;
     width: 435px;
     background-color: #FECACA;
 }
-.fmmdrt .fmmdline{
+
+.fmmdrt .fmmdline {
     height: 1px;
     width: 435px;
     background-color: #BFDBFE;
 }
 
-.fmmdltinput{
+.fmmdltinput {
     display: flex;
     gap: 12px;
 }
-.fmmdltinput input, .fmmdltinput select{
+
+.fmmdltinput input,
+.fmmdltinput select {
     font-size: 13px;
     padding: 0 12px;
     width: 162px;
@@ -414,10 +452,12 @@
     border-radius: 5px;
     border: 1px solid #FECACA;
 }
-.fmmdltinput label{
+
+.fmmdltinput label {
     position: relative;
 }
-.fmmdltinput label img{
+
+.fmmdltinput label img {
     width: 12px;
     height: 12px;
     position: absolute;
@@ -425,12 +465,13 @@
     right: calc(0% + 12px);
     transform: translateY(50%);
 }
-.fmmdltinput label p{
+
+.fmmdltinput label p {
     font-size: 12px;
     color: #6B7280;
 }
 
-.formboxmd h3{
+.formboxmd h3 {
     margin-left: 10px;
     width: 24.1px;
     height: 124px;
@@ -454,31 +495,35 @@
 }
 
 
-.formboxbt{
+.formboxbt {
     width: 100%;
     display: flex;
-     flex-flow: column;
+    flex-flow: column;
 }
-.formboxbt h1{
+
+.formboxbt h1 {
     font-weight: bold;
     font-size: 13px;
     margin-bottom: 6px;
 }
-.formboxbt textarea{
+
+.formboxbt textarea {
     width: 1150px;
     height: 82px;
     padding: 10px 12px;
     border-radius: 6px;
     border: 1px solid #D1D5DB;
 }
-.fmbtns{
+
+.fmbtns {
     margin-top: 16px;
     display: flex;
     flex-flow: row;
     gap: 8px;
     justify-content: right;
 }
-.fmbtns button{
+
+.fmbtns button {
     font-weight: bold;
     display: flex;
     flex-flow: row wrap;
@@ -491,14 +536,17 @@
     height: 36px;
     border: 1px solid #D1D5DB;
 }
-.css img.jjs img{
+
+.css img.jjs img {
     width: 13px;
     height: 13px;
 }
-.jjs{
+
+.jjs {
     color: white;
     background-color: #1B3A6B;
 }
-.textbox{
+
+.textbox {
     margin-top: 16px;
 }

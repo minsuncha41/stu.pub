@@ -7,6 +7,7 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
+import { Clock4, Save, Search, UserPlus, X } from "lucide-react";
 
 export default function Inc() {
   // const [employee, setemployee] = useState([]);
@@ -38,6 +39,146 @@ export default function Inc() {
 
   return (
     <div className="wrap">
+      <div className="modalwrap">
+        <div className="modal">
+          <div className="tit">
+            <div className="titlft">
+              <UserPlus size={18} />
+              인사정보 등록
+            </div>
+            <div className="titret">
+              <X size={18} />
+            </div>
+          </div>
+          <div className="modalin">
+            <div className="lblbox">
+              <h1>기본정보</h1>
+              <label className="lbl">
+                <p>
+                  사원번호 <span>*</span>
+                </p>
+                <input
+                  className="noinput"
+                  type="text"
+                  placeholder="자동생성"
+                  disabled
+                />
+              </label>
+              <label className="lbl">
+                <p>
+                  성명 <span>*</span>
+                </p>
+                <input
+                  type="text"
+                  value={"홍길동"}
+                  placeholder="이름을 입력해주세요"
+                />
+              </label>
+              <label className="lbl">
+                <p>
+                  부서 <span>*</span>
+                </p>
+                <select>
+                  <option value="">부서를 선택하세요</option>
+                  <option value="경영지원본부">경영지원본부</option>
+                  <option value="물류운영본부">물류운영본부</option>
+                  <option value="냉장/냉동물류본부">냉장/냉동물류본부</option>
+                  <option value="차량관리본부">차량관리본부</option>
+                  <option value="창고운영본부">창고운영본부</option>
+                  <option value="영업본부">영업본부</option>
+                  <option value="IT본부">IT본부</option>
+                </select>
+              </label>
+              <label className="lbl">
+                <p>
+                  직급 <span>*</span>
+                </p>
+                <select>
+                  <option value="">직급을 선택하세요</option>
+                  <option value="사원">사원</option>
+                  <option value="과장">과장</option>
+                  <option value="부장">부장</option>
+                  <option value="팀장">팀장</option>
+                  <option value="사장">사장</option>
+                </select>
+              </label>
+              <label className="lbl">
+                <p>
+                  입사일 <span>*</span>
+                </p>
+                <input type="date" />
+              </label>
+              <label className="lbl">
+                <p>
+                  재직상태 <span>*</span>
+                </p>
+                <ul>
+                  <li className="checked">
+                    <label>
+                      <input type="radio" name="jjst" value={"재직중"} />
+                      재직중
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="radio" name="jjst" value={"휴직중"} />
+                      휴직중
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="radio" name="jjst" value={"퇴직"} />
+                      퇴직
+                    </label>
+                  </li>
+                </ul>
+              </label>
+            </div>
+
+            <div className="lblbox">
+              <h1>연락처</h1>
+              <label className="lbl">
+                <p>
+                  휴대폰 <span>*</span>
+                </p>
+                <input type="text" placeholder="010-0000-0000" />
+              </label>
+              <label className="lbl">
+                <p>
+                  이메일 <span>*</span>
+                </p>
+                <input type="text" placeholder="example@company.com" />
+              </label>
+            </div>
+
+            <div className="lblbox js">
+              <h1>주소</h1>
+              <label className="lbl">
+                <p>
+                  우편번호 <span>*</span>
+                </p>
+                <input type="text" placeholder="우편번호" />
+              </label>
+              <button>
+                <Search size={13} />
+                주소검색
+              </button>
+              <label className="lbl">
+                <p>
+                  도로명주소<span>*</span>
+                </p>
+                <input type="text" placeholder="우편번호" />
+              </label>
+              <label className="lbl">
+                <p>
+                  상세주소<span>*</span>
+                </p>
+                <input type="text" placeholder="우편번호" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
       <Nav num1={true} />
 
       {/* <header className={s.header}>
@@ -167,7 +308,7 @@ export default function Inc() {
 
               <label name="bss">
                 부서
-                <select name="" id="">
+                <select>
                   <option value="">전체</option>
                   <option value="inct">인사팀 </option>
                   <option value="ggt">경영지원팀 </option>
@@ -177,7 +318,7 @@ export default function Inc() {
               </label>
               <label name="jgs">
                 직급
-                <select name="" id="">
+                <select>
                   <option value="">전체</option>
                   <option value="inct">인사팀 </option>
                   <option value="ggt">경영지원팀 </option>
@@ -187,7 +328,7 @@ export default function Inc() {
               </label>
               <label name="bss">
                 재직상테
-                <select name="" id="">
+                <select>
                   <option value="">전체</option>
                   <option value="inct">인사팀 </option>
                   <option value="ggt">경영지원팀 </option>
