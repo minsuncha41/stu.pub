@@ -6,7 +6,7 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
-import { Clock4, Save, Search, UserPlus, X } from "lucide-react";
+import { Clock4, Download, Save, Search, UserPlus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Inc() {
@@ -18,6 +18,15 @@ export default function Inc() {
 
   const popno = () => {
     setpopvw(false);
+  };
+
+  const [pdfpopvw, setpdfpopvw] = useState(true);
+  const pdfpopon = () => {
+    setpdfpopvw(true);
+  };
+
+  const pdfpopno = () => {
+    setpdfpopvw(false);
   };
 
   const token = localStorage.getItem("accessToken");
@@ -143,6 +152,38 @@ export default function Inc() {
       >
         i
       </div>
+      <div
+        onClick={() => {
+          pdfpopon();
+        }}
+        className="pdfbtn"
+      >
+        i
+      </div>
+      {pdfpopvw && (
+        <div className="modalwrap">
+          <div className="pdfpop">
+            <div className="pdfic">
+              <Download size={24} color="#3B82F6" />
+            </div>
+            <h1>PDF 다운로드</h1>
+            <p>
+              선택한 데이터를 PDF 파일로 다운로드합니다. <br /> 계속
+              진행하시겠습니까?
+            </p>
+            <div className="pdfbtns">
+              <button
+                onClick={() => {
+                  pdfpopno();
+                }}
+              >
+                취소
+              </button>
+              <button>확인</button>
+            </div>
+          </div>
+        </div>
+      )}
       {popvw && (
         <div className="modalwrap">
           <div className="modal">
