@@ -170,8 +170,131 @@ export default function Gojh() {
                 </h3>
               </div>
             </div>
-            <div className="glps"></div>
+            <div className="glps">
+              <div className="glpsli">
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>12</li>
+                </ul>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>12</li>
+                </ul>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>12</li>
+                </ul>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>12</li>
+                </ul>
+              </div>
+              <div className="glpsbttt">
+                <ul className="glppst">
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    <span>2</span>
+                  </li>
+                  <li>
+                    <span>3</span>
+                  </li>
+                  <li>
+                    <span>4</span>
+                  </li>
+                  <li>
+                    <span>5</span>
+                  </li>
+                  <li>
+                    <span>6</span>
+                  </li>
+                  <li>
+                    <span>7</span>
+                  </li>
+                  <li>
+                    <span>8</span>
+                  </li>
+                  <li>
+                    <span>9</span>
+                  </li>
+                  <li>
+                    <span>10</span>
+                  </li>
+                  <li>
+                    <span>11</span>
+                  </li>
+                  <li>
+                    <span>12</span>
+                  </li>
+                </ul>
+                <ul>
+                  <li>1월</li>
+                  <li>2월</li>
+                  <li>3월</li>
+                  <li>4월</li>
+                  <li>5월</li>
+                  <li>6월</li>
+                  <li>7월</li>
+                  <li>8월</li>
+                  <li>9월</li>
+                  <li>10월</li>
+                  <li>11월</li>
+                  <li>12월</li>
+                </ul>
+              </div>
+              <div className="glpslfttt">
+                <ul>
+                  <li>300</li>
+                  <li>200</li>
+                  <li>100</li>
+                  <li>0</li>
+                </ul>
+              </div>
+            </div>
+            <div className="retbox"></div>
           </div>
+
           <div className="findebox">
             <div className="fdlftbox">
               <label className="lbl">

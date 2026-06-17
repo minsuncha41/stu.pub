@@ -247,7 +247,7 @@ export default function Loginvw() {
               />
             </label>
 
-            <div className="lgbtns">
+            <div className="hobtns">
               <label>
                 <input type="checkbox" name="" id="" />
                 <p>로그인 상태유지</p>

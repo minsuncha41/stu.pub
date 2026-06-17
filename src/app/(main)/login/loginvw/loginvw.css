@@ -1,12 +1,11 @@
-
-.inwrap{
+.inwrap {
     display: flex;
     flex-flow: row;
     padding-top: 56px;
 }
 
 
-.main{
+.main {
     background: #F1F5F9;
     padding: 20px;
     margin-top: 56px;
@@ -14,7 +13,7 @@
     width: calc(100% - 210px);
 }
 
-.lglb{
+.lglb {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +22,8 @@
     background: linear-gradient(235deg, #0F2547 14.1%, #1E40AF 85.9%);
 
 }
-.lglbin{
+
+.lglbin {
     gap: 10;
     width: 532px;
     display: flex;
@@ -31,7 +31,8 @@
     justify-content: center;
     align-items: center;
 }
-.tspan{
+
+.tspan {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -43,34 +44,40 @@
     background: #FFFFFF18;
     margin-bottom: 10px;
 }
-.lglbin h1{
+
+.lglbin h1 {
     font-size: 38px;
     color: white;
     font-weight: bold;
 }
-.lglbin h2{
+
+.lglbin h2 {
     font-size: 38px;
     color: #60A5FA;
     font-weight: bold;
 }
-.lglbin p{
+
+.lglbin p {
     text-align: center;
     font-size: 15px;
     color: #BFDBFE;
 }
 
 
-.mpbox{
+.mpbox {
     margin-top: 10px;
     display: flex;
 }
-.mpbox h1{
+
+.mpbox h1 {
     font-size: 26px;
 }
-.mpbox p{
-    font-size: 12px ;
+
+.mpbox p {
+    font-size: 12px;
 }
-.mpbox li{
+
+.mpbox li {
     width: 150px;
     display: flex;
     flex-flow: column wrap;
@@ -78,7 +85,7 @@
     align-items: center;
 }
 
-.mpbox li:nth-child(2){
+.mpbox li:nth-child(2) {
     border: 1px solid #FFFFFF25;
     border-top: none;
     border-bottom: none;
@@ -86,13 +93,14 @@
 
 
 
-.bpbox{
+.bpbox {
     margin-top: 30px;
     gap: 10;
     display: flex;
     flex-flow: column;
 }
-.bpbox li{ 
+
+.bpbox li {
     padding: 16px 18px;
     width: 532px;
     background-color: #FFFFFF12;
@@ -103,7 +111,8 @@
     display: flex;
     gap: 18;
 }
-.bimgbox{
+
+.bimgbox {
     width: 38px;
     height: 38px;
     display: flex;
@@ -112,10 +121,12 @@
     align-items: center;
     background-color: #FFFFFF15;
 }
-.btbox h1{
+
+.btbox h1 {
     font-size: 14px;
 }
-.btbox p{
+
+.btbox p {
     font-size: 12px;
 }
 
@@ -124,7 +135,7 @@
 
 
 
-.lgwrap{
+.lgwrap {
     width: 780px;
     height: 844px;
     background-color: white;
@@ -132,77 +143,89 @@
     justify-content: center;
     align-items: center;
 }
-.lglrin{
+
+.lglrin {
     width: 400px;
     height: 497px;
     display: flex;
     flex-flow: column;
 }
-.tlgbox h1{
+
+.tlgbox h1 {
     font-weight: bold;
     font-size: 30px;
 }
-.tlgbox p{
-   color: #6B7280;
-   font-size: 15px; 
+
+.tlgbox p {
+    color: #6B7280;
+    font-size: 15px;
 }
-.tlgbox{
+
+.tlgbox {
     margin-bottom: 29px;
 }
-.lglrin label{
+
+.lglrin label {
     cursor: pointer;
     margin-bottom: 14px;
     position: relative;
     width: 100%;
 }
 
-.lglrin label p{
+.lglrin label p {
     font-size: 13px;
 }
-.lglrin label input[type="text"], .lglrin label input[type="password"]{
+
+.lglrin label input[type="text"],
+.lglrin label input[type="password"] {
     padding: 0 40px;
     width: 100%;
     height: 50px;
     border-radius: 10px;
     border: 1px solid #D1D5DB;
 }
-.laicon{
+
+.laicon {
     color: #9CA3AF;
     position: absolute;
     top: 52%;
     left: 15px;
 }
-.laiconpw{
+
+.laiconpw {
     color: #9CA3AF;
     position: absolute;
     top: 52%;
     right: 15px;
 }
 
-.lgbtns{
+.hobtns {
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
 }
-.lgbtns label{
+
+.hobtns label {
     display: flex;
     gap: 5;
     cursor: pointer;
 }
-.lgbtns label input[type="checkbox"]{
+
+.hobtns label input[type="checkbox"] {
     accent-color: #1E3A5F;
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
-.lgbtns span{
+
+.hobtns span {
     cursor: pointer;
     width: 105px;
     color: #2563EB;
     font-size: 13px;
 }
 
-.logedbtn{
+.logedbtn {
     cursor: pointer;
     height: 50px;
     width: 100%;
@@ -214,7 +237,8 @@
     background: #1E3A5F;
     color: white;
 }
-.tnp{
+
+.tnp {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,20 +247,22 @@
     color: #9CA3AF;
     position: relative;
 }
-.tnp span{
+
+.tnp span {
     z-index: 1;
     padding: 0 5px;
     background-color: rgb(255, 255, 255);
 }
 
-.tnp::after{
+.tnp::after {
     position: absolute;
     content: "";
     width: 100%;
     height: 1px;
     background-color: #E5E7EB;
 }
-.hone{
+
+.hone {
     font-size: 14px;
     margin-top: 28px;
     display: flex;
@@ -245,7 +271,8 @@
     width: 100%;
     color: #6B7280;
 }
-.hone span{
+
+.hone span {
     margin-left: 10px;
     color: #2563EB;
     cursor: pointer;

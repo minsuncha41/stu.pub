@@ -1,12 +1,11 @@
-
-.inwrap{
+.inwrap {
     display: flex;
     flex-flow: row;
     padding-top: 56px;
 }
 
 
-.main{
+.main {
     background: #F1F5F9;
     padding: 20px;
     margin-top: 56px;
@@ -14,7 +13,7 @@
     width: calc(100% - 210px);
 }
 
-.lglb{
+.lglb {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +22,8 @@
     background: linear-gradient(235deg, #0F2547 14.1%, #1E40AF 85.9%);
 
 }
-.lglbin{
+
+.lglbin {
     gap: 10;
     width: 532px;
     display: flex;
@@ -31,7 +31,8 @@
     justify-content: center;
     align-items: center;
 }
-.tspan{
+
+.tspan {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -43,17 +44,20 @@
     background: #FFFFFF18;
     margin-bottom: 10px;
 }
-.lglbin h1{
+
+.lglbin h1 {
     font-size: 38px;
     color: white;
     font-weight: bold;
 }
-.lglbin h2{
+
+.lglbin h2 {
     font-size: 38px;
     color: #60A5FA;
     font-weight: bold;
 }
-.lglbin p{
+
+.lglbin p {
     text-align: center;
     font-size: 15px;
     color: #BFDBFE;
@@ -64,15 +68,16 @@
 
 
 
-.bpbox{
+.bpbox {
     margin-top: 30px;
     gap: 10;
     display: flex;
     flex-flow: column;
 }
-.bpbox li{ 
+
+.bpbox li {
     padding: 10px 16px;
-    width: 532px; 
+    width: 532px;
     background-color: #FFFFFF12;
     border: 1px solid #FFFFFF20;
     border-radius: 10px;
@@ -81,7 +86,8 @@
     display: flex;
     gap: 18;
 }
-.bimgbox{
+
+.bimgbox {
     width: 38px;
     height: 38px;
     display: flex;
@@ -90,11 +96,12 @@
     align-items: center;
     background-color: #FFFFFF15;
 }
-.btbox h1{
+
+.btbox h1 {
     font-size: 13px;
 }
 
-.freebtn{
+.freebtn {
     color: #FCD34D;
     display: flex;
     gap: 7;
@@ -107,7 +114,8 @@
     border-radius: 10px;
     margin-top: 36px;
 }
-.freebtn h1{
+
+.freebtn h1 {
     color: #FCD34D;
     font-size: 13px;
 }
@@ -129,42 +137,47 @@
 
 
 
-.lgwrap{
+.lgwrap {
     width: 780px;
     height: 844px;
     background-color: white;
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 }
-.lglrin{
+
+.lglrin {
     width: 560px;
     height: 617px;
     display: flex;
     flex-flow: column;
 }
-.tlgbox h1{
+
+.tlgbox h1 {
     font-weight: bold;
     font-size: 30px;
 }
-.tlgbox p{
-   color: #6B7280;
-   font-size: 15px; 
+
+.tlgbox p {
+    color: #6B7280;
+    font-size: 15px;
 }
-.tlgbox{
+
+.tlgbox {
     margin-bottom: 19px;
 }
 
 
-.lginbox{
+.hoinbox {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    gap:0 10;
+    gap: 0 10;
     justify-content: space-between;
 }
 
-.lginbox label{
+.hoinbox label {
     display: flex;
     flex-flow: column;
     gap: 3;
@@ -174,18 +187,18 @@
     position: relative;
 }
 
-.lginbox label p{
+.hoinbox label p {
     font-size: 13px;
 }
-.lginbox label:nth-child(1) input[type="text"],
-.lginbox label:nth-child(2) input[type="text"]
-{
+
+.hoinbox label:nth-child(1) input[type="text"],
+.hoinbox label:nth-child(2) input[type="text"] {
     padding: 0 15px;
 }
-.lginbox label input[type="text"], 
-.lginbox label input[type="password"],
-.lginbox label select
-{
+
+.hoinbox label input[type="text"],
+.hoinbox label input[type="password"],
+.hoinbox label select {
     font-size: 14px;
     padding: 0 40px;
     width: 100%;
@@ -200,13 +213,14 @@
 
 
 
-.laicon{
+.laicon {
     color: #9CA3AF;
     position: absolute;
     top: 52%;
     left: 15px;
 }
-.laiconpw{
+
+.laiconpw {
     color: #9CA3AF;
     position: absolute;
     top: 52%;
@@ -216,7 +230,7 @@
 
 
 
-.infoic{
+.infoic {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -228,7 +242,7 @@
 
 
 
-.lgbtns{
+.lgbtns {
     border-radius: 10px;
     background: #F9FAFB;
     border: 1px solid #E5E7EB;
@@ -238,27 +252,30 @@
     align-items: center;
     justify-content: space-between;
 }
-.lgbtns label{
+
+.lgbtns label {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5;
     cursor: pointer;
 }
-.lgbtns label input[type="checkbox"]{
-    accent-color: #1E3A5F;    
+
+.lgbtns label input[type="checkbox"] {
+    accent-color: #1E3A5F;
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
-.lgbtns span{
+
+.lgbtns span {
     cursor: pointer;
     color: #2563EB;
     font-size: 13px;
 }
 
 
-.logedbtn{
+.logedbtn {
     padding: 13px 0;
     cursor: pointer;
     width: 100%;
@@ -274,7 +291,7 @@
 
 
 
-.hone{
+.hone {
     font-size: 14px;
     margin-top: 28px;
     display: flex;
@@ -283,7 +300,8 @@
     width: 100%;
     color: #6B7280;
 }
-.hone span{
+
+.hone span {
     margin-left: 10px;
     color: #2563EB;
     cursor: pointer;

@@ -1,6 +1,6 @@
 "use client";
 
-import "./honevw.css";
+import "./Honevw.css";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -204,7 +204,7 @@ export default function Honevw() {
               <h1>회원가입</h1>
               <p>계정을 만들어 인사관리를 시작하세요</p>
             </div>
-            <div className="lginbox">
+            <div className="hoinbox">
               <label>
                 <p>성</p>
                 <input
