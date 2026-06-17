@@ -88,9 +88,17 @@ git checkout main
 git checkout -
 
 메인에서 당겨올때
-git merge --no-ff feature/githubtest
+??git merge --no-ff feature/githubtest
+
+??git fetch origin
+
+git pull
+
+터미널에서 뭐 뜨면
 :q!
-?????git merge feature/githubtest
+
+입력
+
 그리고 git push해야함
 
 

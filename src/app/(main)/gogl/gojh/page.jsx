@@ -232,40 +232,64 @@ export default function Gojh() {
               <div className="glpsbttt">
                 <ul className="glppst">
                   <li>
-                    <span>1</span>
+                    <span>
+                      <p>238</p>
+                    </span>
                   </li>
                   <li>
-                    <span>2</span>
+                    <span>
+                      <p>241</p>
+                    </span>
                   </li>
                   <li>
-                    <span>3</span>
+                    <span>
+                      <p>245</p>
+                    </span>
                   </li>
                   <li>
-                    <span>4</span>
+                    <span>
+                      <p>243</p>
+                    </span>
                   </li>
                   <li>
-                    <span>5</span>
+                    <span>
+                      <p>249</p>
+                    </span>
                   </li>
                   <li>
-                    <span>6</span>
+                    <span>
+                      <p>245</p>
+                    </span>
+                  </li>
+                  <li className="obd">
+                    <span>
+                      <p>이번달</p>
+                    </span>
                   </li>
                   <li>
-                    <span>7</span>
+                    <span>
+                      <p></p>
+                    </span>
                   </li>
                   <li>
-                    <span>8</span>
+                    <span>
+                      <p></p>
+                    </span>
                   </li>
                   <li>
-                    <span>9</span>
+                    <span>
+                      <p></p>
+                    </span>
                   </li>
                   <li>
-                    <span>10</span>
+                    <span>
+                      <p></p>
+                    </span>
                   </li>
                   <li>
-                    <span>11</span>
-                  </li>
-                  <li>
-                    <span>12</span>
+                    <span>
+                      <p></p>
+                    </span>
                   </li>
                 </ul>
                 <ul>
@@ -275,7 +299,7 @@ export default function Gojh() {
                   <li>4월</li>
                   <li>5월</li>
                   <li>6월</li>
-                  <li>7월</li>
+                  <li className="obdtt">7월</li>
                   <li>8월</li>
                   <li>9월</li>
                   <li>10월</li>
@@ -290,6 +314,7 @@ export default function Gojh() {
                   <li>100</li>
                   <li>0</li>
                 </ul>
+                <p>만원</p>
               </div>
             </div>
             <div className="retbox"></div>
