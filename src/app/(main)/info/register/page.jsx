@@ -9,7 +9,7 @@ import Toptits from "@/component/cmm/Toptits";
 import { Clock4, Download, Save, Search, UserPlus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function Inc() {
+export default function Register() {
   const [popvw, setpopvw] = useState(false);
 
   const popon = () => {
@@ -20,7 +20,7 @@ export default function Inc() {
     setpopvw(false);
   };
 
-  const [pdfpopvw, setpdfpopvw] = useState(true);
+  const [pdfpopvw, setpdfpopvw] = useState(false);
   const pdfpopon = () => {
     setpdfpopvw(true);
   };
@@ -40,8 +40,8 @@ export default function Inc() {
     phone: "",
     email: "",
     postCode: "",
-    roadAddress: "",
-    detailAddress: "",
+    address: "",
+    detailedAddress: "",
   });
 
   const 인사가입등록 = async () => {
@@ -91,8 +91,8 @@ export default function Inc() {
         phone: allinput?.phone,
         email: allinput?.email,
         postCode: allinput?.postCode,
-        roadAddress: allinput?.roadAddress,
-        detailAddress: allinput?.detailAddress,
+        address: allinput?.address,
+        detailedAddress: allinput?.detailedAddress,
       },
       {
         headers: {
@@ -136,6 +136,14 @@ export default function Inc() {
       oncomplete(data) {
         // 여기에다 state의 setter 설정하면됨!
         console.log("선택한 주소 데이터 >>> ", data);
+        const postCode = data.zonecode;
+        const address = data.address;
+
+        setallinput((prev) => ({
+          ...prev,
+          postCode: postCode,
+          address: address,
+        }));
       },
     });
 
@@ -385,6 +393,7 @@ export default function Inc() {
                       className="noinput"
                       type="text"
                       placeholder="우편번호"
+                      value={allinput.postCode}
                     />
                   </label>
                   <label className="lbl">
@@ -402,13 +411,14 @@ export default function Inc() {
                       setallinput((tt) => {
                         return {
                           ...tt,
-                          roadAddress: e.target.value,
+                          address: e.target.value,
                         };
                       })
                     }
                     className="noinput"
                     type="text"
                     placeholder="주소검색 후 자동입력"
+                    value={allinput.address}
                   />
                 </label>
                 <label className="lbl">
@@ -418,7 +428,7 @@ export default function Inc() {
                       setallinput((tt) => {
                         return {
                           ...tt,
-                          detailAddress: e.target.value,
+                          detailedAddress: e.target.value,
                         };
                       })
                     }
