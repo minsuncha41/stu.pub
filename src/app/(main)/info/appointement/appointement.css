@@ -391,6 +391,7 @@
 }
 
 .fmmdlt {
+    text-align: left;
     border: 1px solid #FECACA;
     border-radius: 5px;
     padding: 16px;
@@ -400,7 +401,7 @@
     background: #FFF7F7;
     width: 543px;
     height: 124px;
-    gap: 12px;
+    gap: 7px;
 }
 
 .fmmdlttit {
@@ -419,6 +420,28 @@
     background: #FEE2E2;
     border-radius: 50px;
 }
+
+
+
+
+.fmmdrt .fmmdlttit span {
+    background: #DBEAFE;
+    color: #1D4ED8;
+}
+
+.fmmdrt select {
+    border-color: #1D4ED8;
+    color: #1D4ED8;
+}
+
+
+
+
+
+
+
+
+
 
 .fmmdline {
     height: 1px;
@@ -442,6 +465,10 @@
     gap: 12px;
 }
 
+.fmmdltinput input {
+    text-align: center;
+}
+
 .fmmdltinput input,
 .fmmdltinput select {
     font-size: 13px;
@@ -454,6 +481,9 @@
 }
 
 .fmmdltinput label {
+    display: flex;
+    flex-flow: column;
+    gap: 6;
     position: relative;
 }
 

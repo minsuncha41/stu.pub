@@ -105,14 +105,14 @@
 
 
 .glppst {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #15803D;
 }
 
 .glppst li {
+    height: 500px;
     position: relative;
 }
+
 
 .glppst span {
     position: absolute;
@@ -120,6 +120,11 @@
     width: 34px;
     background-color: #1B3A6B;
     height: 100px;
+    border-radius: 7px;
+}
+
+.glppst span:first-child {
+    height: 100%;
 }
 
 

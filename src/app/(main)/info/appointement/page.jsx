@@ -169,17 +169,14 @@ export default function Appointement() {
                   <div className="fmmdltinput">
                     <label name="bsfm" className="bsfm">
                       <p>부서</p>
-                      <img src="/Lock.png" alt="" />
                       <input type="text" value={"경영지원팀"} disabled />
                     </label>
                     <label name="jgfm" className="jgfm">
                       <p>직급</p>
-                      <img src="/Lock.png" alt="" />
                       <input type="text" value={"과장"} disabled />
                     </label>
                     <label name="jgfm" className="jgfm">
                       <p>직책</p>
-                      <img src="/Lock.png" alt="" />
                       <input type="text" value={"팀원"} disabled />
                     </label>
                   </div>
@@ -189,7 +186,7 @@ export default function Appointement() {
 
                 <div className="fmmdrt">
                   <div className="fmmdlttit">
-                    <span>발령 전</span>
+                    <span>발령 후</span>
                     <div className="fmmdline"></div>
                   </div>
                   <div className="fmmdltinput">
