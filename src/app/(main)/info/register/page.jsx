@@ -118,6 +118,22 @@ export default function Inc() {
     //   getEmlpoyees();
     // }, []);
   }
+
+  // [다음 지도 API 호출] 2. 버튼 클릭시 호출
+  const openPostcode = () => {
+    if (!window || window === undefined) return;
+
+    const postCode = new window.daum.Postcode({
+      oncomplete(data) {
+        // 여기에다 state의 setter 설정하면됨!
+        console.log("선택한 주소 데이터 >>> ", data);
+      },
+    });
+
+    postCode.open();
+
+  };
+
   return (
     <div className="wrap">
       <div
@@ -333,7 +349,7 @@ export default function Inc() {
                   </label>
                   <label className="lbl">
                     <p className="lblnott">0</p>
-                    <button>
+                    <button onClick={openPostcode}>
                       <Search size={13} />
                       주소검색
                     </button>
