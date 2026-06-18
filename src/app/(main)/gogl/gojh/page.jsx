@@ -1,6 +1,7 @@
 "use client";
 
 import "./Gojh.css";
+import aside from "../goglaside.json";
 
 import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
@@ -93,43 +94,7 @@ export default function Gojh() {
       <Nav num3={true} />
 
       <div className="inwrap">
-        <Aside
-          dummy={[
-            {
-              titin: {
-                icon: "/Banknote.png",
-                titname: "급여관리",
-                main: "gogl",
-              },
-              sublit: [
-                "급여기본정보관리.",
-                "급여지급.",
-                "기본수당외수당관리.",
-                "급여계산.",
-                "급여조회.",
-              ],
-              mainsub: ["gojbgl", "gojg", "sdgl", "gogs", "gojh"],
-            },
-
-            {
-              titin: {
-                icon: "/Shield Check.png",
-                titname: "4대보험관리",
-                main: "gogl",
-              },
-              sublit: [
-                "4대보험요율표설정. ",
-                "국민연금관리",
-                "건강보험관리",
-                "고용보험관리",
-                "4대보험취득/상실.",
-              ],
-              mainsub: ["bhsj", "", "", "", "bhcdss"],
-            },
-          ]}
-          idxs="1"
-          subidxs="5"
-        />
+        <Aside dummy={aside} idxs="1" subidxs="5" />
 
         <div className="main">
           <Toptits

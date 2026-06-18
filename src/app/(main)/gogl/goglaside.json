@@ -1,0 +1,33 @@
+[
+  {
+    "titin": {
+      "icon": "/Banknote.png",
+      "titname": "급여관리",
+      "main": "gogl"
+    },
+    "sublit": [
+      "급여기본정보관리1",
+      "급여지급1",
+      "기본수당외수당관리1",
+      "급여계산1",
+      "급여조회1"
+    ],
+    "mainsub": ["gojbgl", "gojg", "sdgl", "gogs", "gojh"]
+  },
+
+  {
+    "titin": {
+      "icon": "/Shield Check.png",
+      "titname": "4대보험관리",
+      "main": "gogl"
+    },
+    "sublit": [
+      "4대보험요율표설정1",
+      "국민연금관리",
+      "건강보험관리",
+      "고용보험관리",
+      "4대보험취득/상실1"
+    ],
+    "mainsub": ["bhsj", "", "", "", "bhcdss"]
+  }
+]

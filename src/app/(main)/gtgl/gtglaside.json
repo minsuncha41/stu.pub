@@ -1,0 +1,24 @@
+[
+  {
+    "titin": { "icon": "/Clock.png", "titname": "근태관리", "main": "gtgl" },
+    "sublit": ["일일근태등록1", "월근태현황1"],
+    "mainsub": ["gtdl", "gthh"]
+  },
+
+  {
+    "titin": { "icon": "/Plane.png", "titname": "출장관리", "main": "gtgl" },
+    "sublit": ["출장신청", "출장정산", "출장사용현황"],
+    "mainsub": ["", "", ""]
+  },
+
+  {
+    "titin": { "icon": "/Calendar.png", "titname": "휴가관리", "main": "gtgl" },
+    "sublit": [
+      "휴가일수설정1",
+      "휴가일수계산1",
+      "휴가일수신청1",
+      "휴가사용현황1"
+    ],
+    "mainsub": ["hgsj", "hggs", "hgsc", "hghh"]
+  }
+]
