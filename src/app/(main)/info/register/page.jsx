@@ -105,7 +105,7 @@ export default function Register() {
       alert("등록 성공");
       console.log(allinput);
     } catch (e) {
-      alert("등록 실패 다시입력(등록된 메일이거나 백엔드문제)");
+      alert("등록 실패 다시입력(등록된 이메일이거나 // 백엔드문제)");
       console.error("네트워크 실패", e);
     } finally {
     }

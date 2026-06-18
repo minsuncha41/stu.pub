@@ -1,4 +1,12 @@
-import { Calculator, CheckCheck, Pencil, Printer, Save } from "lucide-react";
+import {
+  Calculator,
+  CheckCheck,
+  Copy,
+  Pencil,
+  Printer,
+  RotateCcw,
+  Save,
+} from "lucide-react";
 import s from "./Toptits.module.css";
 
 export default function Toptits({
@@ -13,6 +21,8 @@ export default function Toptits({
   prtbtnon,
   clprtbtnon,
   ttct,
+  gbgbtnon,
+  jndbtnon,
 }) {
   return (
     <div className={s.toptits}>
@@ -43,6 +53,7 @@ export default function Toptits({
             {toptits.tllbtn}
           </button>
 
+          {/* 급여기본정보관리 */}
           <button
             className={s.sjbtn}
             style={{ display: sjbtnon ? "flex" : "none" }}
@@ -50,6 +61,8 @@ export default function Toptits({
             <Pencil size={14} />
             일괄수정
           </button>
+
+          {/* 급여지급*/}
           <button
             className={s.sjbtn}
             style={{ display: ptbtnon ? "flex" : "none" }}
@@ -58,6 +71,23 @@ export default function Toptits({
             급여명세서 출력
           </button>
 
+          {/* 4대보험요율표설정 */}
+          <button
+            className={s.sjbtn}
+            style={{ display: jndbtnon ? "flex" : "none" }}
+          >
+            <Copy size={14} />
+            전년도 복사
+          </button>
+          <button
+            className={s.sjbtn}
+            style={{ display: gbgbtnon ? "flex" : "none" }}
+          >
+            <RotateCcw size={14} />
+            기본값
+          </button>
+
+          {/* 기본버튼 */}
           <button
             className={s.retblbtn}
             style={{ display: retwtbtnno ? "none" : "flex" }}
@@ -73,6 +103,7 @@ export default function Toptits({
             {toptits.trrbtn}
           </button>
 
+          {/* 급여계산 */}
           <button
             className={s.retgsbtn}
             style={{ display: gsbtnon ? "flex" : "none" }}
@@ -80,6 +111,7 @@ export default function Toptits({
             <Calculator size={14} />
             전직원 일괄계산
           </button>
+
           <button
             className={s.retblbtn}
             style={{ display: ckdbtnon ? "flex" : "none" }}
