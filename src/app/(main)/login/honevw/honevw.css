@@ -101,7 +101,7 @@
     font-size: 13px;
 }
 
-.freebtn {
+.btmfreebtn {
     color: #FCD34D;
     display: flex;
     gap: 7;
@@ -115,7 +115,7 @@
     margin-top: 36px;
 }
 
-.freebtn h1 {
+.btmfreebtn>h1 {
     color: #FCD34D;
     font-size: 13px;
 }
@@ -147,7 +147,7 @@
     align-items: center;
 }
 
-.lglrin {
+.honelglrin {
     width: 560px;
     height: 617px;
     display: flex;
@@ -242,7 +242,7 @@
 
 
 
-.lgbtns {
+.honelgbtns {
     border-radius: 10px;
     background: #F9FAFB;
     border: 1px solid #E5E7EB;
@@ -253,7 +253,7 @@
     justify-content: space-between;
 }
 
-.lgbtns label {
+.honelgbtns label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -261,14 +261,14 @@
     cursor: pointer;
 }
 
-.lgbtns label input[type="checkbox"] {
+.honelgbtns label input[type="checkbox"] {
     accent-color: #1E3A5F;
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
 
-.lgbtns span {
+.honelgbtns span {
     cursor: pointer;
     color: #2563EB;
     font-size: 13px;

@@ -191,15 +191,15 @@ export default function Honevw() {
               </li>
             </ul>
 
-            <div className="freebtn">
+            <div className="btmfreebtn">
               <Gift size={18} />
-              <h1>30일 무료 체험 제공</h1>
+              <h3>30일 무료 체험 제공</h3>
             </div>
           </div>
         </div>
 
         <div className="lgwrap">
-          <div className="lglrin">
+          <div className="honelglrin">
             <div className="tlgbox">
               <h1>회원가입</h1>
               <p>계정을 만들어 인사관리를 시작하세요</p>
@@ -358,7 +358,7 @@ export default function Honevw() {
               <Info size={14} /> 영문, 숫자, 특수문자 포함 8자리 이상
             </p>
 
-            <div className="lgbtns">
+            <div className="honelgbtns">
               <label>
                 <input
                   checked={ogdo}
