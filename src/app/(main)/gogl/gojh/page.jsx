@@ -282,7 +282,25 @@ export default function Gojh() {
                 <p>만원</p>
               </div>
             </div>
-            <div className="retbox"></div>
+            <div className="retboxwrap">
+              <ul className="retboxss">
+                <li>
+                  <p>2025년 누적</p>
+                  <h1>17,023,590</h1>
+                  <span>원</span>
+                </li>
+                <li>
+                  <p>최고 지급월</p>
+                  <h1>5월</h1>
+                  <span>2,490,000원</span>
+                </li>
+                <li>
+                  <p>월 평균</p>
+                  <h1>2,432,000</h1>
+                  <span>원</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="findebox">
@@ -327,10 +345,10 @@ export default function Gojh() {
             <div className="fromtit">
               <h1>
                 <TableIcon size={15} />
-                2025년 7월 급여계산 미리보기
+                2025년 월별 급여 수령 이력
               </h1>
               <div className="fromtitin">
-                <h2>총 8명</h2>
+                <h2>7개월 조회</h2>
                 <h3>
                   <span>●</span>지급
                 </h3>
@@ -340,137 +358,153 @@ export default function Gojh() {
                 <h3>
                   <span>●</span>실지급
                 </h3>
-                <button>
-                  <RefreshCw size={11} />
-                  재계산
-                </button>
               </div>
             </div>
 
             <div className="tbin">
               <ul>
-                <li>사원번호</li>
-                <li>성명</li>
-                <li>부서</li>
+                <li>지급연월</li>
                 <li>기본급</li>
                 <li>수당합계</li>
                 <li>지급소계</li>
-                <li>4대보험 </li>
-                <li>소득세+지방</li>
-                <li>공제소계</li>
+                <li>공제합계</li>
                 <li>실지급액</li>
+                <li>지급일</li>
                 <li>상태</li>
+                <li>명세서</li>
               </ul>
-              <ul>
-                <li>EMP-001</li>
-                <li>김철수</li>
-                <li>인사팀</li>
-                <li>4,200,000</li>
-                <li>600,000</li>
-                <li>4,800,000</li>
-                <li>399,600</li>
-                <li>145,200</li>
-                <li>544,800</li>
-                <li>4,255,200</li>
+              <ul class="tomoon">
                 <li>
-                  <span className="tbsp gsj">계산전</span>
+                  <span>이번달</span>
+                  2025년 7월
                 </li>
-              </ul>
-              <ul>
-                <li>EMP-002</li>
-                <li>이영희</li>
-                <li>인사팀</li>
-                <li>4,700,000</li>
-                <li>470,000</li>
-                <li>5,170,000</li>
-                <li>445,230</li>
-                <li>217,800</li>
-                <li>663,030</li>
-                <li>4,506,970</li>
-                <li>
-                  <span className="tbsp gsj">계산전</span>
-                </li>
-              </ul>
-              <ul className="gtpoli">
-                <li>EMP-003</li>
-                <li>
-                  박민준{" "}
-                  <AlertCircle
-                    size={11}
-                    color="red"
-                    style={{ margin: "4px" }}
-                  />
-                </li>
-                <li>개발팀</li>
                 <li>3,500,000</li>
                 <li>500,000</li>
                 <li>4,000,000</li>
-                <li>344,400</li>
-                <li>96,800</li>
                 <li>441,200</li>
                 <li>3,558,800</li>
+                <li>2025.07.25</li>
                 <li>
-                  <span className="tbsp gtpo">
-                    <AlertCircle size={9} />
-                    검토필요
+                  <span className="tbsp mhj">
+                    <p>●</p>미확정
+                  </span>
+                </li>
+                <li>
+                  <span className="msssp mlbg">
+                    <ReceiptText size={12} />
+                    미리보기
                   </span>
                 </li>
               </ul>
-              <ul>
-                <li>EMP-004</li>
-                <li>최지영</li>
-                <li>영업팀</li>
-                <li>2,800,000</li>
-                <li>300,000</li>
-                <li>3,100,000</li>
-                <li>266,940</li>
-                <li>48,400</li>
-                <li>315,340</li>
-                <li>2,784,660</li>
+              <ul class="">
+                <li>2025년 6월</li>
+                <li>3,500,000</li>
+                <li>350,000</li>
+                <li>3,850,000</li>
+                <li>431,400</li>
+                <li>3,418,600</li>
+                <li>2025.06.25</li>
                 <li>
-                  <span className="tbsp gsj">계산전</span>
+                  <span className="tbsp hj">
+                    <p>●</p>확정
+                  </span>
+                </li>
+                <li>
+                  <span className="msssp mss">
+                    <ReceiptText size={12} />
+                    명세서
+                  </span>
                 </li>
               </ul>
-              <ul>
-                <li>EMP-005</li>
-                <li>정수빈</li>
-                <li>개발팀</li>
-                <li>2,900,000</li>
-                <li>480,000</li>
-                <li>3,380,000</li>
-                <li>290,952</li>
-                <li>60,500</li>
-                <li>351,452</li>
-                <li>3,028,548</li>
+              <ul class="">
+                <li>2025년 5월</li>
+                <li>3,500,000</li>
+                <li>380,000</li>
+                <li>3,880,000</li>
+                <li>434,640</li>
+                <li>3,445,360</li>
+                <li>2025.05.25</li>
                 <li>
-                  <span className="tbsp gsj">계산전</span>
+                  <span className="tbsp hj">
+                    <p>●</p>확정
+                  </span>
+                </li>
+                <li>
+                  <span className="msssp mss">
+                    <ReceiptText size={12} />
+                    명세서
+                  </span>
                 </li>
               </ul>
+              <ul class="">
+                <li>2025년 4월</li>
+                <li>3,500,000</li>
+                <li>350,000</li>
+                <li>3,850,000</li>
+                <li>431,400</li>
+                <li>3,418,600</li>
+                <li>2025.04.25</li>
+                <li>
+                  <span className="tbsp hj">
+                    <p>●</p>확정
+                  </span>
+                </li>
+                <li>
+                  <span className="msssp mss">
+                    <ReceiptText size={12} />
+                    명세서
+                  </span>
+                </li>
+              </ul>
+              <ul class="">
+                <li>2025년 3월</li>
+                <li>3,500,000</li>
+                <li>350,000</li>
+                <li>3,850,000</li>
+                <li>431,400</li>
+                <li>3,418,600</li>
+                <li>2025.03.25</li>
+                <li>
+                  <span className="tbsp hj">
+                    <p>●</p>확정
+                  </span>
+                </li>
+                <li>
+                  <span className="msssp mss">
+                    <ReceiptText size={12} />
+                    명세서
+                  </span>
+                </li>
+              </ul>
+
               <ul className="hgtb">
-                <li></li>
-                <li></li>
                 <li>
-                  <Sigma size={13} /> 합계 (8명)
+                  <Sigma size={13} />
+                  7개월 합계
                 </li>
-                <li>25,760,000</li>
-                <li>2,880,000</li>
-                <li>28,640,000</li>
-                <li>3,408,060</li>
-                <li>720,000</li>
-                <li>4,128,060</li>
-                <li>24,511,940</li>
+                <li>24,500,000</li>
+                <li>2,660,000</li>
+                <li>27,160,000</li>
+                <li>3,136,410</li>
+                <li>24,023,590</li>
+                <li>
+                  <p>-</p>
+                </li>
+                <li>
+                  <p>-</p>
+                </li>
                 <li>
                   <p>-</p>
                 </li>
               </ul>
               <ul className="textsbtns">
                 <li>
-                  <h2>총 8명 · 검토필요 1명</h2>
+                  <h2>2025년 1~7월 표시 · 8~12월 미지급</h2>
                   <div className="br"></div>
                   <div className="ttrettt">
                     <p>
-                      <Clock size={11} />
-                      EMP-003 박민준 · 야근수당 데이터 불일치 — 확인 필요
+                      <TrendingUp size={12} />
+                      월평균 실지급 3,431,942원
                     </p>
                   </div>
                 </li>
