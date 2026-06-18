@@ -46,62 +46,69 @@ export default function Register() {
   });
 
   const 인사가입등록 = async () => {
-    // 이름
-    if (!allinput.name) {
-      return alert("인사등록 할 사람의 이름을 입력해주세요");
-    }
+    try {
+      // 이름
+      if (!allinput.name) {
+        return alert("인사등록 할 사람의 이름을 입력해주세요");
+      }
 
-    // 부서
-    if (!allinput.departmentName) {
-      return alert("인사등록 할 사람의 부서를 선택해주세요");
-    }
+      // 부서
+      if (!allinput.departmentName) {
+        return alert("인사등록 할 사람의 부서를 선택해주세요");
+      }
 
-    // 직급
-    if (!allinput.positionName) {
-      return alert("인사등록 할 사람의 직급을 선택해주세요");
-    }
+      // 직급
+      if (!allinput.positionName) {
+        return alert("인사등록 할 사람의 직급을 선택해주세요");
+      }
 
-    // 입사일
-    if (!allinput.hireDate) {
-      return alert("인사등록 할 사람의 입사일을 선택해주세요");
-    }
+      // 입사일
+      if (!allinput.hireDate) {
+        return alert("인사등록 할 사람의 입사일을 선택해주세요");
+      }
 
-    // 재직상태
-    if (!allinput.employmentStatus) {
-      return alert("인사등록 할 사람의 재직상태를 선택해주세요");
-    }
+      // 재직상태
+      if (!allinput.employmentStatus) {
+        return alert("인사등록 할 사람의 재직상태를 선택해주세요");
+      }
 
-    // 휴대폰
-    if (!allinput.phone) {
-      return alert("인사등록 할 사람의 휴대폰번호를 입력해주세요");
-    }
+      // 휴대폰
+      if (!allinput.phone) {
+        return alert("인사등록 할 사람의 휴대폰번호를 입력해주세요");
+      }
 
-    // 이메일
-    if (!allinput.email) {
-      return alert("인사등록 할 사람의 이메일을 입력해주세요");
-    }
+      // 이메일
+      if (!allinput.email) {
+        return alert("인사등록 할 사람의 이메일을 입력해주세요");
+      }
 
-    const res = await baseApi.post(
-      "/api/v1/employees/registerEmployee",
-      {
-        name: allinput?.name,
-        departmentName: allinput?.departmentName,
-        positionName: allinput?.positionName,
-        hireDate: allinput?.hireDate,
-        employmentStatus: allinput?.employmentStatus,
-        phone: allinput?.phone,
-        email: allinput?.email,
-        postCode: allinput?.postCode,
-        address: allinput?.address,
-        detailedAddress: allinput?.detailedAddress,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await baseApi.post(
+        "/api/v1/employees/registerEmployee",
+        {
+          name: allinput?.name,
+          departmentName: allinput?.departmentName,
+          positionName: allinput?.positionName,
+          hireDate: allinput?.hireDate,
+          employmentStatus: allinput?.employmentStatus,
+          phone: allinput?.phone,
+          email: allinput?.email,
+          postCode: allinput?.postCode,
+          address: allinput?.address,
+          detailedAddress: allinput?.detailedAddress,
         },
-      },
-    );
-    console.log(allinput);
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      alert("등록 성공");
+      console.log(allinput);
+    } catch (e) {
+      alert("등록 실패 다시입력(등록된 메일이거나 백엔드문제)");
+      console.error("네트워크 실패", e);
+    } finally {
+    }
   };
 
   {
