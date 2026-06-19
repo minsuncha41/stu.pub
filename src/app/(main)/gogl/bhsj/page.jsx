@@ -15,6 +15,7 @@ import {
   Baby,
   Banknote,
   BookOpen,
+  Briefcase,
   Building2,
   CakeSlice,
   Calculator,
@@ -33,6 +34,7 @@ import {
   Ellipsis,
   FileText,
   Flower2,
+  HardHat,
   Heart,
   HeartCrackIcon,
   HeartHandshake,
@@ -167,7 +169,7 @@ export default function Bhsj() {
                         <span>●</span>
                         근로자
                       </p>
-                      <div className="boxttlbin">
+                      <div className="boxttlbin  gljin">
                         <input type="text" value={4.5} />
                         <div className="boxttlbinpst">%</div>
                       </div>
@@ -176,16 +178,16 @@ export default function Bhsj() {
                     <label>
                       <p>
                         <span>●</span>
-                        근로자
+                        사업자
                       </p>
-                      <div className="boxttlbin">
+                      <div className="boxttlbin ">
                         <input type="text" value={4.5} />
                         <div className="boxttlbinpst">%</div>
                       </div>
                       <h1>157,500원</h1>
                     </label>
                   </div>
-                  <div className="boxttin">
+                  <div className="boxttin  bdl">
                     <div className="boxttinlft">
                       <Sigma size={11} color="#1D4ED8" />
                       합산 부담률
@@ -216,22 +218,22 @@ export default function Bhsj() {
                         <span>●</span>
                         근로자
                       </p>
-                      <div className="boxttlbin">
-                        <input type="text" value={4.5} />
+                      <div className="boxttlbin   gljin">
+                        <input type="text" value={3.545} />
                         <div className="boxttlbinpst">%</div>
                       </div>
-                      <h1>157,500원</h1>
+                      <h1>124,075원</h1>
                     </label>
                     <label>
                       <p>
                         <span>●</span>
-                        근로자
+                        사업자
                       </p>
-                      <div className="boxttlbin">
-                        <input type="text" value={4.5} />
+                      <div className="boxttlbin ">
+                        <input type="text" value={3.545} />
                         <div className="boxttlbinpst">%</div>
                       </div>
-                      <h1>157,500원</h1>
+                      <h1>124,075원</h1>
                     </label>
                   </div>
                   <div className="jgoobh">
@@ -243,37 +245,37 @@ export default function Bhsj() {
                         <input type="text" value={12} />
                         <div className="jgoobhinboxpst">%</div>
                       </div>
-                      <X size={12} />
+                      <X size={32} />
                       <div className="jgoobhinbox">
                         <input type="text" value={12} />
                         <div className="jgoobhinboxpst">%</div>
                       </div>
                     </div>
                   </div>
-                  <div className="boxttin">
+                  <div className="boxttin bdl">
                     <div className="boxttinlft">
                       <Sigma size={11} color="#0F766E" />
-                      합산 부담률
+                      합산 부담률 (장기요양 포함)
                     </div>
-                    <div className="boxttinret">9.0%</div>
+                    <div className="boxttinret">7.09%</div>
                   </div>
                 </div>
               </li>
 
-              <li className="gmog">
+              <li className="gobh">
                 <div className="boxtit">
                   <div className="boxtitic">
                     <div className="ics">
-                      <Shield size={14} />
+                      <Briefcase size={14} />
                     </div>
-                    국민연금
+                    고용보험
                   </div>
-                  <p>9.0%</p>
+                  <p>2.05%</p>
                 </div>
                 <div className="boxtt">
                   <div className="boxttin">
                     <Info size={11} />
-                    <p>표준소득월액 기준 · 상한 590만원 / 하한 37만원</p>
+                    <p>실업급여 기준 · 사업자는 규모별 추가부담</p>
                   </div>
                   <div className="boxttlb">
                     <label>
@@ -281,83 +283,115 @@ export default function Bhsj() {
                         <span>●</span>
                         근로자
                       </p>
-                      <div className="boxttlbin">
-                        <input type="text" value={4.5} />
+                      <div className="boxttlbin   gljin">
+                        <input type="text" value={0.9} />
                         <div className="boxttlbinpst">%</div>
                       </div>
-                      <h1>157,500원</h1>
+                      <h1>31,500원</h1>
                     </label>
                     <label>
                       <p>
                         <span>●</span>
-                        근로자
+                        사업자
                       </p>
-                      <div className="boxttlbin">
-                        <input type="text" value={4.5} />
+                      <div className="boxttlbin ">
+                        <input type="text" value={1.15} />
                         <div className="boxttlbinpst">%</div>
                       </div>
-                      <h1>157,500원</h1>
+                      <h1>40,250원</h1>
                     </label>
                   </div>
-                  <div className="boxttin">
-                    <div className="boxttinlft">
-                      <Sigma size={11} color="#1D4ED8" />
+                  <div className="boxttin bdl">
+                    <div className="boxttinlft ">
+                      <Sigma size={11} color="#D97706" />
                       합산 부담률
                     </div>
-                    <div className="boxttinret">9.0%</div>
+                    <div className="boxttinret">2.05%</div>
                   </div>
                 </div>
               </li>
 
-              <li className="gmog">
+              <li className="hjbh">
                 <div className="boxtit">
                   <div className="boxtitic">
                     <div className="ics">
-                      <Shield size={14} />
+                      <HardHat size={14} />
                     </div>
-                    국민연금
+                    산재보험
                   </div>
-                  <p>9.0%</p>
+                  <p>업종별</p>
                 </div>
                 <div className="boxtt">
                   <div className="boxttin">
                     <Info size={11} />
-                    <p>표준소득월액 기준 · 상한 590만원 / 하한 37만원</p>
+                    <p>전액 사업자 부담 · 업종별 요율 상이</p>
+                  </div>
+                  <div className="gljbd">
+                    <h1>
+                      <span>●</span>근로자 부담
+                    </h1>
+                    <div className="gljbdhdoo">
+                      <p>ㅡ 해당없음 (근로자 부담 없음)</p>
+                    </div>
                   </div>
                   <div className="boxttlb">
                     <label>
                       <p>
                         <span>●</span>
-                        근로자
+                        사업자 (업종별 적용)
                       </p>
-                      <div className="boxttlbin">
-                        <input type="text" value={4.5} />
+                      <div className="boxttlbin   gljin">
+                        <input type="text" value={1.43} />
                         <div className="boxttlbinpst">%</div>
                       </div>
-                      <h1>157,500원</h1>
-                    </label>
-                    <label>
-                      <p>
-                        <span>●</span>
-                        근로자
-                      </p>
-                      <div className="boxttlbin">
-                        <input type="text" value={4.5} />
-                        <div className="boxttlbinpst">%</div>
-                      </div>
-                      <h1>157,500원</h1>
+                      <h1>50,050원</h1>
                     </label>
                   </div>
-                  <div className="boxttin">
+                  <div className="hjoj">
+                    <Building2 size={11} color="#9CA3AF" />
+                    <p>현재 업종:</p>
+                    <span>IT서비스업 (1.43%)</span>
+                  </div>
+                  <div className="boxttin bdl">
                     <div className="boxttinlft">
-                      <Sigma size={11} color="#1D4ED8" />
-                      합산 부담률
+                      <Sigma size={11} color="#DC2626" />
+                      사업자 전액 부담
                     </div>
-                    <div className="boxttinret">9.0%</div>
+                    <div className="boxttinret">1.43%</div>
                   </div>
                 </div>
               </li>
             </ul>
+          </div>
+
+          <div className="oooo">
+            <div className="oooolft">
+              <Calculator size={15} color="#60A5FA" />
+              <p>2025년 4대보험 합산 요율 요약</p>
+            </div>
+            <div className="ooooret">
+              <div className="ooooretbox">
+                <h1>
+                  <p>근로자 합계</p>
+                  8.945%
+                </h1>
+                <h2>
+                  국민연금 4.5% · 건강+장기 3.545%+α
+                  <p>고용 0.9%</p>
+                </h2>
+              </div>
+              <div className="pls">+</div>
+              <div className="ooooretbox">
+                <h1>
+                  <p>사업자 합계</p>
+                  10.635%
+                </h1>
+                <h2>
+                  국민연금 4.5% · 건강+장기 3.545%+α
+                  <p>고용 1.15% · 산재 1.43%</p>
+                </h2>
+              </div>
+            </div>
           </div>
 
           <div className="tbs">
@@ -368,178 +402,99 @@ export default function Bhsj() {
               </h1>
               <div className="fromtitin">
                 <h2>총 8명</h2>
-                <div className="fromtitinbox">
-                  <input type="checkbox" name="" id="" />
-                  전체선택
-                </div>
+                <p>
+                  <span>●</span>근로자 부담
+                </p>
+                <p>
+                  <span>●</span>근로자 부담
+                </p>
               </div>
             </div>
+
             <div className="tbin">
               <ul>
-                <li>
-                  <input type="checkbox" name="" id="" checked />
-                </li>
                 <li>사원번호</li>
                 <li>성명</li>
-                <li>부서</li>
-                <li>기본급</li>
-                <li>식대</li>
-                <li>교통비</li>
-                <li>야근수당</li>
-                <li>지급소계</li>
+                <li>기준보수</li>
                 <li>국민연금</li>
-                <li>건강보험</li>
+                <li>건강+장기</li>
                 <li>고용보험</li>
-                <li>소득세</li>
-                <li>공제소계</li>
-                <li>실지급액</li>
+                <li>근로자계</li>
+                <li>국민연금</li>
+                <li>건강+장기</li>
+                <li>고용보험</li>
+                <li>산재보험</li>
+                <li>사업자계</li>
               </ul>
-
               <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
-                </li>
                 <li>EMP-001</li>
                 <li>김철수</li>
-                <li>인사팀</li>
-                <li>4,200,000</li>
-                <li>200,000</li>
-                <li>150,000</li>
-                <li>250,000</li>
                 <li>4,800,000</li>
-                <li>189,000</li>
-                <li>167,400</li>
+                <li>216,000</li>
+                <li>216,030</li>
                 <li>43,200</li>
-                <li>132,000</li>
-                <li>643,230</li>
-                <li>4,268,400</li>
+                <li>475,230</li>
+                <li>216,000</li>
+                <li>216,030</li>
+                <li>55,200</li>
+                <li>68,640</li>
+                <li>555,870</li>
               </ul>
               <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
-                </li>
                 <li>EMP-002</li>
                 <li>이영희</li>
-                <li>인사팀</li>
-                <li>4,700,000</li>
-                <li>200,000</li>
-                <li>150,000</li>
-                <li>120,000</li>
                 <li>5,170,000</li>
-                <li>211,500</li>
-                <li>187,200</li>
+                <li>232,650</li>
+                <li>232,777</li>
                 <li>46,530</li>
-                <li>198,000</li>
-                <li>643,230</li>
-                <li>4,526,770</li>
+                <li>511,957</li>
+                <li>232,650</li>
+                <li>232,777</li>
+                <li>59,455</li>
+                <li>73,931</li>
+                <li>598,813</li>
               </ul>
               <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
-                </li>
                 <li>EMP-003</li>
                 <li>박민준</li>
-                <li>개발팀</li>
-                <li>3,500,000</li>
-                <li>200,000</li>
-                <li>150,000</li>
-                <li>350,000</li>
-                <li>4,200,000</li>
-                <li>157,500</li>
-                <li>139,300</li>
-                <li>37,800</li>
-                <li>88,000</li>
-                <li>422,600</li>
-                <li>3,777,400</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
-                </li>
-                <li>EMP-004</li>
-                <li>최지영</li>
-                <li>영업팀</li>
-                <li>2,800,000</li>
-                <li>200,000</li>
-                <li>100,000</li>
-                <li>
-                  <p>-</p>
-                </li>
-                <li>3,100,000</li>
-                <li>126,000</li>
-                <li>111,400</li>
-                <li>27,900</li>
-                <li>44,000</li>
-                <li>309,300</li>
-                <li>2,790,700</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
-                </li>
-                <li>EMP-005</li>
-                <li>정수빈</li>
-                <li>개발팀</li>
-                <li>2,900,000</li>
-                <li>200,000</li>
-                <li>100,000</li>
+                <li>4,000,000</li>
                 <li>180,000</li>
-                <li>3,380,000</li>
-                <li>130,500</li>
-                <li>115,200</li>
-                <li>30,420</li>
-                <li>55,000</li>
-                <li>331,120</li>
-                <li>3,048,880</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
-                </li>
-                <li>EMP-006</li>
-                <li>한지민</li>
-                <li>영업팀</li>
-                <li>3,200,000</li>
-                <li>200,000</li>
-                <li>100,000</li>
-                <li>90,000</li>
-                <li>3,590,000</li>
-                <li>144,000</li>
-                <li>127,300</li>
-                <li>32,310</li>
-                <li>77,000</li>
-                <li>380,610</li>
-                <li>3,209,390</li>
+                <li>180,106</li>
+                <li>36,000</li>
+                <li>396,106</li>
+                <li>180,000</li>
+                <li>180,106</li>
+                <li>46,000</li>
+                <li>57,200</li>
+                <li>463,306</li>
               </ul>
 
               <ul className="hgtb">
                 <li></li>
-                <li></li>
-                <li></li>
                 <li>
                   <Sigma size={13} /> 합계 (8명)
                 </li>
-                <li>25,760,000</li>
-                <li>1,600,000</li>
-                <li>1,000,000</li>
-                <li>1,280,000</li>
-                <li>28,640,000</li>
-                <li>1,152,000</li>
-                <li>1,018,800</li>
-                <li>277,260</li>
-                <li>720,000</li>
-                <li>4,128,060</li>
-                <li>24,511,940</li>
+                <li>29,300,000</li>
+                <li>1,318,500</li>
+                <li>1,319,110</li>
+                <li>263,700</li>
+                <li>3,408,060</li>
+                <li>1,318,500</li>
+                <li>1,319,110</li>
+                <li>336,950</li>
+                <li>418,990</li>
+                <li>4,219,890</li>
               </ul>
 
               <ul className="textsbtns">
                 <li>
-                  <h2>총 8명 · 2025년 7월분 급여</h2>
+                  <h2>8명 기준 월 예상 보험료 합계</h2>
                   <div className="br"></div>
                   <div className="ttrettt">
                     <p>
-                      <Clock size={11} /> 미확정 8건 — 급여확정 후 명세서 발송
-                      가능
+                      <Banknote size={12} color="#2563EB" /> 총 부담
+                      (근로자+사업자)
+                      <span>7,627,950원</span>
                     </p>
                   </div>
                 </li>
