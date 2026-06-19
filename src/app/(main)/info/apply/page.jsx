@@ -4,7 +4,7 @@ import aside from "../infoaside.json";
 import "./apply.css";
 import s from "./Apply.module.css";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import baseApi from "@/api/baseApi";
 import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
@@ -15,6 +15,7 @@ import {
   CakeSlice,
   Check,
   Clock4,
+  Download,
   Ellipsis,
   FileText,
   Flower2,
@@ -22,8 +23,10 @@ import {
   HeartHandshake,
   Paperclip,
   Save,
+  Search,
   SendHorizontal,
   Upload,
+  UserPlus,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -35,6 +38,8 @@ import {
   PopoverTitle,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { toast } from "sonner";
+import axios from "axios";
 export default function Apply() {
   {
     // const [employee, setemployee] = useState([]);
@@ -206,9 +211,120 @@ export default function Apply() {
     );
     console.log(allevt);
   };
+  const [popvw, setpopvw] = useState(false);
+
+  const popon = () => {
+    setpopvw(true);
+  };
+
+  const popno = () => {
+    setpopvw(false);
+  };
+
+  const [pdfpopvw, setpdfpopvw] = useState(false);
+  const pdfpopon = () => {
+    setpdfpopvw(true);
+  };
+
+  const pdfpopno = () => {
+    setpdfpopvw(false);
+  };
+
+  //
+
+  //
+
+  //
+
+  //0619
+
+  // 토스트메세지
+  toast.loading("오...;;", { position: "top-center" });
+
+  // 파일업로드 백엔드로 보내는거
+  const upldref = useRef(null);
+
+  const upld = (filess) => {
+    const url = "http://localhost:33000/api/v1/files/upload";
+    const token = localStorage.getItem("accessToken");
+
+    const fileupld = filess[0];
+
+    const formData = new FormData();
+    formData.append("file", fileupld);
+    formData.append("refType", "1");
+
+    axios.post(url, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  };
 
   return (
     <div className="wrap">
+      <div
+        onClick={() => {
+          popon();
+        }}
+        className="sgdlbtn"
+      >
+        i111111111
+      </div>
+      <div
+        onClick={() => {
+          pdfpopon();
+        }}
+        className="pdfbtn"
+      >
+        i222222
+      </div>
+      {pdfpopvw && (
+        <div className="modalwrap">
+          <div className="pdfpop">
+            <div className="pdfic">
+              <Download size={24} color="#3B82F6" />
+            </div>
+            <h1>PDF 다운로드</h1>
+            <p>
+              선택한 데이터를 PDF 파일로 다운로드합니다. <br /> 계속
+              진행하시겠습니까?
+            </p>
+            <div className="pdfbtns">
+              <button
+                onClick={() => {
+                  pdfpopno();
+                }}
+              >
+                취소
+              </button>
+              <button>확인</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {popvw && (
+        <div className="modalwrap">
+          <div className="modal">
+            <div className="btlft">
+              <p>
+                <span>*</span>필수 입력 항목입니다.
+              </p>
+              <div className="btret">
+                <button
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  취소
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Nav num1={true} />
 
       <div className="inwrap">
@@ -574,7 +690,23 @@ export default function Apply() {
                     <h1>청첩장·출생증명서 등 관련 서류를 첨부해 주세요</h1>
                     <h2>PDF, JPG, PNG · 최대 10MB · 파일 3개까지</h2>
                   </div>
-                  <button>
+
+                  {/* 파일열기 */}
+                  <input
+                    type="file"
+                    hidden
+                    ref={upldref}
+                    onChange={(e) => {
+                      // 백엔드 API파일 전송
+                      upld(e.target.files);
+                      console.log(e.target.files);
+                    }}
+                  />
+                  <button
+                    onClick={() => {
+                      upldref.current.click();
+                    }}
+                  >
                     <Upload size={13} />
                     파일 선택
                   </button>

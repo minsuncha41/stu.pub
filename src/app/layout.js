@@ -2,6 +2,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
+/* 토스트메세지 */
+import { Toaster } from "@/components/ui/sonner";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,12 +27,16 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-      {children}
-      {/*[다음 지도 API 호출] 1. 스크립트 호출*/}
-      <Script
-        src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
-        strategy="lazyOnload"
-      />
+        {children}
+
+        {/* 토스트메세지 */}
+        <Toaster />
+
+        {/*[다음 지도 API 호출] 1. 스크립트 호출*/}
+        <Script
+          src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

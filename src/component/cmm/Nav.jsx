@@ -6,19 +6,25 @@ import s from "./Nav.module.css";
 export default function Nav({ none, num1, num2, num3, num4 }) {
   //  const [names, setnames] = useState();
   //  const [departmentNames, setdepartmentNames] = useState();
-  const [navif] = useState(() => ({
-    departmentName: localStorage.getItem("departmentName"),
-    name: localStorage.getItem("name"),
-  }));
-  // useEffect(() => {
-  //   const name = localStorage.getItem("name");
-  //   const departmentName = localStorage.getItem("departmentName");
+  // const [navif] = useState(() => ({
+  //   departmentName: localStorage.getItem("departmentName"),
+  //   name: localStorage.getItem("name"),
+  // }));
 
-  //   setnavif({
-  //     departmentName: departmentName,
-  //     name: name,
-  //   });
-  // }, []);
+  const [navif, setNavif] = useState({
+    departmentName: "",
+    name: "",
+  });
+
+  useEffect(() => {
+    const name = localStorage.getItem("name");
+    const departmentName = localStorage.getItem("departmentName");
+
+    setNavif({
+      departmentName: departmentName,
+      name: name,
+    });
+  }, []);
 
   return (
     <header className={s.header}>
