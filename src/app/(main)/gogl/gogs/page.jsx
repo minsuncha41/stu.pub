@@ -105,6 +105,7 @@ export default function Gogs() {
               tllbtn: "PDF 다운로드",
               trrbtn: "수당 추가",
             }}
+            ttmapno="0"
             gsbtnon="0"
             ckdbtnon="0"
             sjbtnon=""

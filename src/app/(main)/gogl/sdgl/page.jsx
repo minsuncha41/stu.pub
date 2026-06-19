@@ -101,6 +101,7 @@ export default function Sdgl() {
               tllbtn: "PDF 다운로드",
               trrbtn: "수당 추가",
             }}
+            ttmapno="0"
             sjbtnon=""
             lftwtbtnno=""
             retwtbtnno=""

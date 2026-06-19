@@ -1,6 +1,6 @@
 "use client";
 
-import "./Gojg.css";
+import "./bhcdss.css";
 import aside from "../goglaside.json";
 
 import { useEffect, useState } from "react";
@@ -61,7 +61,7 @@ import {
   X,
 } from "lucide-react";
 
-export default function Gojg() {
+export default function Bhcdss() {
   const [employee, setemployee] = useState([]);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function Gojg() {
       <Nav num3={true} />
 
       <div className="inwrap">
-        <Aside dummy={aside} idxs="1" subidxs="2" />
+        <Aside dummy={aside} idxs="2" subidxs="5" />
 
         <div className="main">
           <Toptits
@@ -95,7 +95,6 @@ export default function Gojg() {
               tllbtn: "PDF 다운로드",
               trrbtn: "",
             }}
-            ttmapno="0"
             ckdbtnon="0"
             ptbtnon="0"
             sjbtnon=""

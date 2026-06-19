@@ -106,6 +106,7 @@ export default function Gojh() {
               tllbtn: "PDF 다운로드",
               trrbtn: "수당 추가",
             }}
+            ttmapno="0"
             gsbtnon=""
             ckdbtnon=""
             sjbtnon=""

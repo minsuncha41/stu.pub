@@ -23,6 +23,7 @@ export default function Toptits({
   ttct,
   gbgbtnon,
   jndbtnon,
+  ttmapno,
 }) {
   return (
     <div className={s.toptits}>
@@ -30,8 +31,8 @@ export default function Toptits({
         <img src="/House.png" alt="" />
         <span>&gt;</span>
         <p>{toptits.ttmap}</p>
-        <span>&gt;</span>
-        <p>{toptits.map} </p>
+        <span style={{ display: ttmapno ? "none" : "flex" }}>&gt;</span>
+        <p style={{ display: ttmapno ? "none" : "flex" }}>{toptits.map} </p>
         <span>&gt;</span>
         <p className={s.mapsces}>{toptits.tit}</p>
       </div>

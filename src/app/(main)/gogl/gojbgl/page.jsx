@@ -92,6 +92,7 @@ export default function Gojbgl() {
               tllbtn: "PDF 다운로드",
               trrbtn: "급여정보등록",
             }}
+            ttmapno="0"
             sjbtnon=""
             lftwtbtnno=""
             retwtbtnno=""
