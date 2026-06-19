@@ -94,9 +94,9 @@ export default function Bhsj() {
           <Toptits
             toptits={{
               ttmap: "급여관리",
-              map: "급여관리",
-              tit: "급여지급",
-              text: "월별 직원 급여 지급 내역을 관리하고 확정합니다. ",
+              map: "4대보험관리",
+              tit: "4대보험요율표설정",
+              text: "연도별 4대보험 요율을 설정하고 직원별 예상 보험료를 시뮬레이션합니다.",
               tllbtn: "PDF 다운로드",
               trrbtn: "요율 저장",
             }}

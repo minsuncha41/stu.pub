@@ -1,12 +1,13 @@
 .inwrap {
     display: flex;
     flex-flow: row;
+    padding: 0;
 }
 
 
 
 
-.main {
+.registermain {
     background: #F1F5F9;
     padding: 20px;
     margin-top: 56px;

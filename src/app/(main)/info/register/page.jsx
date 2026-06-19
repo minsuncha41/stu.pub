@@ -1,7 +1,7 @@
 "use client";
 import aside from "../infoaside.json";
-
 import "./register.css";
+
 import baseApi from "@/api/baseApi";
 import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
@@ -542,7 +542,7 @@ export default function Register() {
                     </ul>
                 </div> */}
 
-        <div className="main">
+        <div className="registermain">
           <Toptits
             toptits={{
               ttmap: "인사관리",

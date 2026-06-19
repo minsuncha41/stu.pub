@@ -72,70 +72,77 @@ export default function Honevw() {
   const [ogdo, setogdo] = useState(false);
 
   const 회원가입 = async () => {
-    // 성;
-    if (!allinput.firstName) {
-      return alert("성을 입력해주세요");
-    }
+    try {
+      // 성;
+      if (!allinput.firstName) {
+        return alert("성을 입력해주세요");
+      }
 
-    // 이름;
-    if (!allinput.name) {
-      return alert("이름을 입력해주세요");
-    }
+      // 이름;
+      if (!allinput.name) {
+        return alert("이름을 입력해주세요");
+      }
 
-    // 사번;
-    if (!allinput.employeeNo) {
-      return alert("사번을 입력해주세요");
-    }
+      // 사번;
+      if (!allinput.employeeNo) {
+        return alert("사번을 입력해주세요");
+      }
 
-    // 부서;
-    if (!allinput.departmentName) {
-      return alert("부서를 선택해주세요");
-    }
+      // 부서;
+      if (!allinput.departmentName) {
+        return alert("부서를 선택해주세요");
+      }
 
-    // 직급;
-    if (!allinput.positionName) {
-      return alert("직급을 선택해주세요");
-    }
+      // 직급;
+      if (!allinput.positionName) {
+        return alert("직급을 선택해주세요");
+      }
 
-    // 회사 이메일;
-    if (!allinput.email) {
-      return alert("회사 이메일을 입력해주세요");
-    }
+      // 회사 이메일;
+      if (!allinput.email) {
+        return alert("회사 이메일을 입력해주세요");
+      }
 
-    // 비밀번호;
-    if (!allinput.password) {
-      return alert("비밀번호를 입력해주세요");
-    }
+      // 비밀번호;
+      if (!allinput.password) {
+        return alert("비밀번호를 입력해주세요");
+      }
 
-    // 비밀번호 확인;
-    if (!allinput.checkPassword) {
-      return alert("다시한번더 비밀번호를 입력해주세요");
-    }
+      // 비밀번호 확인;
+      if (!allinput.checkPassword) {
+        return alert("다시한번더 비밀번호를 입력해주세요");
+      }
 
-    // 약관동의확인;
-    if (!ogdo) {
-      return alert("약관에 동의 하셔야 회원가입이 가능합니다");
-    }
+      // 약관동의확인;
+      if (!ogdo) {
+        return alert("약관에 동의 하셔야 회원가입이 가능합니다");
+      }
 
-    const res = await baseApi.post(
-      "/api/v1/employees/joinErp",
-      {
-        firstName: allinput?.firstName,
-        name: allinput?.name,
-        employeeNo: allinput?.employeeNo,
-        departmentName: allinput?.departmentName,
-        positionName: allinput?.positionName,
-        email: allinput?.email,
-        password: allinput?.password,
-        checkPassword: allinput?.checkPassword,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await baseApi.post(
+        "/api/v1/employees/joinErp",
+        {
+          firstName: allinput?.firstName,
+          name: allinput?.name,
+          employeeNo: allinput?.employeeNo,
+          departmentName: allinput?.departmentName,
+          positionName: allinput?.positionName,
+          email: allinput?.email,
+          password: allinput?.password,
+          checkPassword: allinput?.checkPassword,
         },
-      },
-    );
-    console.log(allinput);
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      alert("회원가입 완료");
+      console.log(allinput);
+    } catch (e) {
+      alert("회원가입 실패 / 이미 회원가입을했거나 백엔드 안켜짐");
+      console.error("네트워크 실패", e);
+    } finally {
+    }
   };
   return (
     <div className="wrap">
