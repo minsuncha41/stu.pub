@@ -26,7 +26,7 @@ export default function Nav({ none, num1, num2, num3, num4 }) {
         <ul>
           <li className={s.logo}>
             <a href="http://localhost:3000/info/register">
-              <img src="/Briefcase Business.png" />
+              <img alt="imgs" src="/Briefcase Business.png" />
               인사관리시스템
             </a>
           </li>
@@ -49,7 +49,7 @@ export default function Nav({ none, num1, num2, num3, num4 }) {
       <ul className={s.navret} style={{ display: none ? "none" : "flex" }}>
         <li>
           <a href="http://localhost:3000/login/loginvw">
-            <img src="/Bell.png" />
+            <img alt="imgs" src="/Bell.png" />
           </a>
         </li>
         {/* <li className={s.name}>{navif?.name?[0]} ?? "홍"</li> */}
@@ -62,7 +62,7 @@ export default function Nav({ none, num1, num2, num3, num4 }) {
         <li>{navif?.departmentName}</li>
         {/* <li>인사팀</li> */}
         <li>
-          <img src="/Log Out.png" />
+          <img alt="imgs" src="/Log Out.png" />
         </li>
       </ul>
     </header>
