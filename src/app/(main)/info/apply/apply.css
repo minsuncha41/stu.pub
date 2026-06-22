@@ -523,13 +523,10 @@ select {
 
 
 
-
+/* 모달 팝 */
 .wrap {
     position: relative;
 }
-
-
-
 
 
 .modalwrap {
@@ -545,255 +542,23 @@ select {
 }
 
 .modal {
-    margin: 0 auto;
+    position: absolute;
+    top: 200px;
     width: 600px;
+    height: 500px;
     /* height: 814px; */
     background-color: white;
     overflow: hidden;
     border-radius: 10px;
 }
 
-.tit {
-    background: #1B3A6B;
-    display: flex;
-    align-items: center;
-    height: 56px;
-    color: white;
-    padding: 0 20px;
-    justify-content: space-between;
-}
-
-
-.titlft {
-    font-size: 16;
-    font-weight: bold;
-    display: flex;
-    gap: 10;
-}
-
-.titret {
-    width: 32px;
-    height: 32px;
-    background: #2D5F9E;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-
-.modalin {
-    width: 100%;
-    height: 100%;
-    padding: 16px;
-    display: flex;
-    flex-flow: column;
-    gap: 14;
-}
-
-
-.lblbox {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 12px;
-}
-
-.lblbox h1 {
-    position: relative;
-    padding: 0 12px;
-    font-size: 14px;
-    color: #1B3A6B;
-    font-weight: bold;
-    width: 100%;
-    height: 25px;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.lblbox h1::after {
-    position: absolute;
-    content: "";
-    width: 3;
-    height: 16px;
-    background: #1B3A6B;
-    left: 0;
-    border-radius: 10px;
-}
-
-.lbl {
-    width: calc(50% - 6px);
-    display: flex;
-    flex-flow: column;
-    gap: 4;
-}
-
-.lbl p {
-    font-size: 13px;
-    width: 100%;
-    color: #374151;
-    font-weight: bold;
-}
-
-.lbl p span {
-    color: red;
-}
-
-.lbl input,
-.lbl select,
-.lbl ul {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    border: 1px solid #D1D5DB;
-    border-radius: 10px;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-
-.noinput {
-    background: #F9FAFB;
-    cursor: default !important;
-}
-
-.lbl ul {
-    cursor: default !important;
-    display: flex;
-    justify-content: space-around;
-}
-
-.lbl ul li label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6;
-    color: #6B7280;
-}
-
-.lbl ul li input {
-    width: 16px;
-}
-
-.checked {
-    color: black !important;
-    font-weight: bold;
-}
-
-.jsin {
-    width: 100%;
-    display: flex;
-    gap: 8;
-}
-
-.jsin label {
-    width: 160px;
-}
-
-
-
-.lblnott {
-    color: white !important;
-}
-
-.jsin button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 94px;
-    height: 36px;
-    background: #1B3A6B;
-    color: white;
-    font-size: 13px;
-    gap: 5;
-    border-radius: 7px;
-
-}
-
-
-.js label:nth-child(3) {
-    width: 100%;
-}
-
-.js label:nth-child(4) {
-    width: 100%;
-}
 
 
 
 
 
 
-.bsilcl label:nth-child(1) {
-    width: 174px;
-}
-
-.bsilcl label:nth-child(2) {
-    width: 140px;
-}
-
-.bsilcl label:nth-child(3) {
-    width: 194px;
-}
-
-
-
-
-
-
-
-.btlft {
-    background: #000000;
-    display: flex;
-    align-items: center;
-    height: 56px;
-    padding: 0 20px;
-    justify-content: space-between;
-    border-top: 1px solid #E5E7EB
-}
-
-
-.btlft p {
-    font-size: 12px;
-    color: #9CA3AF;
-}
-
-.btlft p span {
-    margin-right: 5px;
-    color: red;
-}
-
-.btret {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 8;
-}
-
-.btret button {
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    flex-flow: row wrap;
-    height: 36px;
-    padding: 0 20px;
-    justify-self: center;
-    align-items: center;
-    gap: 6;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-.btret button:first-child {
-    background: #FFFFFF;
-    border: 1px solid #D1D5DB
-}
-
-.btret button:last-child {
-    color: white;
-    background: #1B3A6B;
-}
-
+/* 투명신청버튼 */
 .sgdlbtn {
     z-index: 10;
     right: 20px;
@@ -805,6 +570,227 @@ select {
 }
 
 
+/* 모달 창 위에 */
+
+.mdt {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #1B3A6B;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.btlft {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    justify-content: space-between;
+    gap: 10;
+    color: white;
+}
+
+.btlft h1 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.btlft p {
+    font-weight: normal;
+    font-size: 12px;
+    color: #60A5FA;
+}
+
+
+.btret {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 8;
+}
+
+.btret button {
+    background: #2D5F9E;
+    color: white;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.btret span {
+    background: #CA8A04;
+    color: white;
+    width: 55px;
+    height: 20px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.mdin {
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    gap: 16;
+}
+
+
+.mdintp {
+    background: #F8FAFC;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 16px 12px;
+    display: flex;
+    flex-flow: column;
+    gap: 6;
+}
+
+.mdintptp {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.mdintptp h1 {
+    display: flex;
+    align-items: center;
+    gap: 6;
+}
+
+
+
+
+
+.mdintpbt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.mdintpbt label {
+    display: flex;
+    gap: 5;
+    font-weight: bold;
+    width: 70px;
+}
+
+.mdintpbt label span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid #E5E7EB;
+}
+
+.mdintpbtline {
+    height: 2px;
+    width: 75px;
+    background: #E5E7EB;
+}
+
+.mdintpbt label:nth-child(1) span {
+    background: #1B3A6B;
+}
+
+.mdintpbt label:nth-child(1) {
+    color: #1B3A6B;
+}
+
+.mdintpbt label:nth-child(3) span {
+    border: 6.5px solid #CA8A04;
+    background: white;
+}
+
+.mdintpbt label:nth-child(3) {
+    color: #CA8A04;
+}
+
+.mdintpbt label:nth-child(5) span {
+    border: 6.5px solid #E5E7EB;
+    background: #9CA3AF;
+}
+
+.mdintpbt label:nth-child(5) {
+    color: #9CA3AF;
+}
+
+.mdintpbt label:nth-child(7) span {
+    border: 6.5px solid #E5E7EB;
+    background: #9CA3AF;
+}
+
+.mdintpbt label:nth-child(7) {
+    color: #9CA3AF;
+}
+
+
+
+.mdinbox h1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-size: 13px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #1B3A6B;
+}
+
+.mdinbox h1::after {
+    background-color: #1B3A6B;
+    content: "";
+    position: absolute;
+    height: 13px;
+    width: 2px;
+    border-radius: 10px;
+    left: 0;
+}
+
+.tbs {
+    display: flex;
+    flex-flow: column;
+}
+
+.tbs ul {
+    display: flex;
+}
+
+.tbs ul li {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 12px;
+    border: 1px solid #E5E7EB;
+}
+
+.tbs ul li:first-child {
+    color: #6B7280;
+    font-weight: bold;
+    background: #F8FAFC;
+    width: 130px;
+    text-align: left;
+}
+
+.tbs ul li:last-child {
+    width: calc(100% - 130px);
+    display: flex;
+    text-align: left;
+}
 
 
 
@@ -820,6 +806,28 @@ select {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 투명 FDP파일 다운버튼 */
 .pdfbtn {
     z-index: 10;
     right: 122px;
@@ -830,8 +838,10 @@ select {
     cursor: pointer;
 }
 
-
+/* FDP 다운 모달 */
 .pdfpop {
+    position: absolute;
+    top: 200px;
     z-index: 10;
     padding-top: 28px;
     width: 400px;

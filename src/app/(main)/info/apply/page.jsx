@@ -13,14 +13,18 @@ import Toptits from "@/component/cmm/Toptits";
 import {
   Baby,
   CakeSlice,
+  Calendar,
   Check,
   Clock4,
   Download,
   Ellipsis,
   FileText,
   Flower2,
+  Gift,
+  Hash,
   Heart,
   HeartHandshake,
+  MapPin,
   Paperclip,
   Save,
   Search,
@@ -65,7 +69,7 @@ export default function Apply() {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log(res.data.data);
+    console.log("경조사리스트", res.data.data);
     setevtgjblist(res.data.data);
   };
 
@@ -120,19 +124,15 @@ export default function Apply() {
   // 값들 가져오는방법 2
   const [allevt, setallevt] = useState({
     tgname: "",
-    tggg: "본인결혼",
+    tggg: "본인",
     eventDate: "",
     tggjjs: "",
+
     tgoh: "국민은헹",
     accoutNumber: "",
     tgogj: "",
-    // tgname: "val",
-    // tggg: "본인결혼",
-    // eventDate: "val",
-    // tggjjs: "val",
-    // tgoh: "ggmn",
-    // accoutNumber: "val",
-    // tgogj: "val",
+
+    memo: "",
   });
   {
     // const [app] = useState(() => ({
@@ -201,7 +201,8 @@ export default function Apply() {
         accountNumber: allevt?.accoutNumber,
         accountHolder: allevt?.tgogj,
         approvalStatus: "확인",
-        memo: "메모",
+        memo: allevt.memo,
+        fileIdList: [fileId],
       },
       {
         headers: {
@@ -209,7 +210,7 @@ export default function Apply() {
         },
       },
     );
-    console.log(allevt);
+    console.log("경조사 인풋 들", evttype, allevt, fileId);
   };
   const [popvw, setpopvw] = useState(false);
 
@@ -244,7 +245,9 @@ export default function Apply() {
   // 파일업로드 백엔드로 보내는거
   const upldref = useRef(null);
 
-  const upld = (filess) => {
+  const [fileName, setFileName] = useState(null);
+  const [fileId, setFileId] = useState(null);
+  const upld = async (filess) => {
     const url = "http://localhost:33000/api/v1/files/upload";
     const token = localStorage.getItem("accessToken");
 
@@ -254,12 +257,33 @@ export default function Apply() {
     formData.append("file", fileupld);
     formData.append("refType", "1");
 
-    axios.post(url, formData, {
+    formData.append("filename", fileupld.name);
+    setFileName(formData.get("filename"));
+
+    console.log("업로드 선택한 파일 이름", formData.get("filename"));
+
+    const res = await axios.post(url, formData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    console.log("업로드한파일", res.data);
+    setFileId(res.data.data);
+    console.log("업로드한파일ID", res.data.data);
   };
+
+  // const [uplodlist, setuplodlist] = useState([]);
+  // const uplodlistss = async () => {
+  //   const token = localStorage.getItem("accessToken");
+  //   const res = await baseApi.get("/api/v1/files/{fileId}/download", {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   });
+  //   console.log("업로드리스트", res);
+  //   setuplodlist(res);
+  // };
 
   return (
     <div className="wrap">
@@ -306,19 +330,92 @@ export default function Apply() {
       {popvw && (
         <div className="modalwrap">
           <div className="modal">
-            <div className="btlft">
-              <p>
-                <span>*</span>필수 입력 항목입니다.
-              </p>
+            <div className="mdt">
+              <div className="btlft">
+                <Gift size={17} color="#60A5FA" />
+                <h1>
+                  경조비 신청 상세
+                  <p>Welfare Benefit Detail</p>
+                </h1>
+              </div>
               <div className="btret">
+                <span>검토중</span>
                 <button
                   onClick={() => {
                     popno();
                   }}
                 >
                   <X size={14} />
-                  취소
                 </button>
+              </div>
+            </div>
+            <div className="mdin">
+              <div className="mdintp">
+                <div className="mdintptp">
+                  <h1>
+                    <Hash size={12} color="#9CA3AF" />
+                    신청번호: WEL-2025-07-001
+                  </h1>
+                  <h1>
+                    <Calendar size={12} color="#9CA3AF" />
+                    신청일: 2025.07.01
+                  </h1>
+                </div>
+                <div className="mdintpbt">
+                  <label>
+                    <span>
+                      <Check size={11} color="#FFFFFF" />
+                    </span>
+                    신청완료
+                  </label>
+                  <div className="mdintpbtline"></div>
+                  <label>
+                    <span></span>
+                    검토중
+                  </label>
+                  <div className="mdintpbtline"></div>
+                  <label>
+                    <span></span>
+                    승인
+                  </label>
+                  <div className="mdintpbtline"></div>
+                  <label>
+                    <span></span>
+                    지급완료
+                  </label>
+                </div>
+              </div>
+              <div className="mdinbox">
+                <ul className="tbs gjjb">
+                  <h1>경조 정보</h1>
+                  <ul>
+                    <li>경조구분</li>
+                    <li>
+                      <span>본인결혼</span>
+                      <h5>경조비 지급 규정 3조 1항</h5>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>대상자 / 관계</li>
+                    <li>
+                      <span>이</span> 이영희 <p>본인</p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>경조일</li>
+                    <li>
+                      <Calendar size={13} color="#9CA3AF" /> 2025년 7월 20일
+                      (일)
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>경조 장소</li>
+                    <li>
+                      <MapPin size={13} color="#9CA3AF" /> 더케이서울호텔
+                      그랜드볼룸
+                    </li>
+                  </ul>
+                </ul>
               </div>
             </div>
           </div>
@@ -699,7 +796,7 @@ export default function Apply() {
                     onChange={(e) => {
                       // 백엔드 API파일 전송
                       upld(e.target.files);
-                      console.log(e.target.files);
+                      console.log("백엔드전송파일", e.target.files);
                     }}
                   />
                   <button
@@ -716,7 +813,7 @@ export default function Apply() {
                   <div className="cmbpilfllft">
                     <FileText color="#3B82F6" size={15} />
                     <div className="cmbpilfllfttt">
-                      <h1>청첩장_이영희.pdf</h1>
+                      <h1>{fileName ?? "(예)청첩장_이영희.pdf"}</h1>
                       <h2>238 KB · 업로드 완료</h2>
                     </div>
                   </div>
@@ -730,6 +827,14 @@ export default function Apply() {
                   <textarea
                     name=""
                     placeholder="추가 사항을 입력하세요. (선택)"
+                    onChange={(e) =>
+                      setallevt((prev) => {
+                        return {
+                          ...prev,
+                          memo: e.target.value,
+                        };
+                      })
+                    }
                   ></textarea>
                   <div className="fmbtns">
                     <button className="css">
