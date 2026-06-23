@@ -135,10 +135,15 @@
     /* background: #1B3A6B; */
 }
 
-.uhfm ul li:first-child {
+/* 클릭한거 클레스 주기 엑티브 */
+.uhfm ul li.active {
     color: white;
-    border: 1px solid #1B3A6B;
+    border-color: #1B3A6B;
     background: #1B3A6B;
+}
+
+.uhfm ul li:first-child {
+    border: 1px solid #D1D5DB;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }

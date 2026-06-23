@@ -212,7 +212,7 @@ export default function Apply() {
     );
     console.log("경조사 인풋 들", evttype, allevt, fileId);
   };
-  const [popvw, setpopvw] = useState(false);
+  const [popvw, setpopvw] = useState(true);
 
   const popon = () => {
     setpopvw(true);
@@ -240,7 +240,7 @@ export default function Apply() {
   //0619
 
   // 토스트메세지
-  toast.loading("오...;;", { position: "top-center" });
+  // toast.loading("오...;;", { position: "top-center" });
 
   // 파일업로드 백엔드로 보내는거
   const upldref = useRef(null);
@@ -284,6 +284,12 @@ export default function Apply() {
   //   console.log("업로드리스트", res);
   //   setuplodlist(res);
   // };
+
+  /* 클릭한거 클레스 주기 엑티브 */
+  const [clgjgb, setclgjgb] = useState("본인결혼");
+
+  // onClick={() => setclgjgb("아무다른이름")}
+  // className={clgjgb === "아무다른이름" ? "active" : ""}
 
   return (
     <div className="wrap">
@@ -527,7 +533,9 @@ export default function Apply() {
                     <li
                       onClick={() => {
                         setevttype("본인결혼");
+                        setclgjgb("본인결혼");
                       }}
+                      className={clgjgb === "본인결혼" ? "active" : ""}
                     >
                       <Heart size={13} color="#FFFFFF" />
                       본인결혼
@@ -536,7 +544,9 @@ export default function Apply() {
                     <li
                       onClick={() => {
                         setevttype("자녀결혼");
+                        setclgjgb("자녀결혼");
                       }}
+                      className={clgjgb === "자녀결혼" ? "active" : ""}
                     >
                       <Heart size={13} color="#D1D5DB" />
                       자녀결혼
@@ -545,7 +555,9 @@ export default function Apply() {
                     <li
                       onClick={() => {
                         setevttype("출산");
+                        setclgjgb("출산");
                       }}
+                      className={clgjgb === "출산" ? "active" : ""}
                     >
                       <Baby size={13} color="#D1D5DB" />
                       출산
@@ -554,7 +566,9 @@ export default function Apply() {
                     <li
                       onClick={() => {
                         setevttype("부모사망");
+                        setclgjgb("부모사망");
                       }}
+                      className={clgjgb === "부모사망" ? "active" : ""}
                     >
                       <Flower2 size={13} color="#D1D5DB" />
                       부모사망
@@ -563,7 +577,9 @@ export default function Apply() {
                     <li
                       onClick={() => {
                         setevttype("배우자사망");
+                        setclgjgb("배우자사망");
                       }}
+                      className={clgjgb === "배우자사망" ? "active" : ""}
                     >
                       <Flower2 size={13} color="#D1D5DB" />
                       배우자사망
@@ -572,7 +588,9 @@ export default function Apply() {
                     <li
                       onClick={() => {
                         setevttype("부모회갑");
+                        setclgjgb("부모회갑");
                       }}
+                      className={clgjgb === "부모회갑" ? "active" : ""}
                     >
                       <CakeSlice size={13} color="#D1D5DB" />
                       부모회갑
@@ -581,7 +599,9 @@ export default function Apply() {
                     <li
                       onClick={() => {
                         setevttype("기타");
+                        setclgjgb("기타");
                       }}
+                      className={clgjgb === "기타" ? "active" : ""}
                     >
                       <Ellipsis size={13} color="#D1D5DB" />
                       기타
