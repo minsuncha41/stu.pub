@@ -22,6 +22,7 @@ import {
   CheckCheck,
   ChevronLeft,
   ChevronRight,
+  CircleAlert,
   ClipboardPen,
   Clock,
   Clock1,
@@ -32,6 +33,7 @@ import {
   Flower2,
   Heart,
   HeartHandshake,
+  Info,
   ListChecks,
   LogOut,
   Paperclip,
@@ -44,6 +46,8 @@ import {
   Search,
   SendHorizontal,
   ShieldCheck,
+  Sun,
+  Trash2,
   Upload,
   Users,
   X,
@@ -65,6 +69,12 @@ export default function Gtdl() {
     };
     getEmployee();
   }, []);
+
+  /* 클릭한거 클레스 주기 엑티브 */
+  const [clgtoh, setclgtoh] = useState(null);
+  const [clocgb, setocgb] = useState(null);
+  // onClick={() => setclgtoh("아무다른이름")}
+  // className={`  ${clgtoh === "아무다른이름" ? "active" : ""}`}
 
   return (
     <div className="wrap">
@@ -167,107 +177,496 @@ export default function Gtdl() {
                     근태 유형<span className="str">*</span>
                   </p>
                   <ul className="gtglipin">
-                    <li className="cg gtuhlicis">
+                    <li
+                      onClick={() => setclgtoh("출근")}
+                      className={` cg  ${clgtoh === "출근" ? "active" : ""}`}
+                    >
+                      {/* className="cg gtuhlicis" */}
                       <CheckCheck size={12} />
                       <p>출근</p>
                     </li>
-                    <li className="jg">
+                    <li
+                      onClick={() => setclgtoh("지각")}
+                      className={` jg ${clgtoh === "지각" ? "active" : ""}`}
+                    >
                       <AlarmClock size={12} />
                       <p>지각</p>
                     </li>
-                    <li className="jt">
+                    <li
+                      onClick={() => setclgtoh("조퇴")}
+                      className={`jt  ${clgtoh === "조퇴" ? "active" : ""}`}
+                    >
                       <LogOut size={12} />
                       <p>조퇴</p>
                     </li>
-                    <li className="gg">
+                    <li
+                      onClick={() => setclgtoh("결근")}
+                      className={`gg  ${clgtoh === "결근" ? "active" : ""}`}
+                    >
                       <X size={12} />
                       <p>결근</p>
                     </li>
-                    <li className="uc">
+                    <li
+                      onClick={() => setclgtoh("연차")}
+                      className={`uc  ${clgtoh === "연차" ? "active" : ""}`}
+                    >
                       <CalendarCheck size={12} />
                       <p>연차</p>
                     </li>
-                    <li className="bc">
+                    <li
+                      onClick={() => setclgtoh("반차")}
+                      className={` bc ${clgtoh === "반차" ? "active" : ""}`}
+                    >
                       <Calendar size={12} />
                       <p>반차</p>
                     </li>
-                    <li className="cj">
+                    <li
+                      onClick={() => setclgtoh("출장")}
+                      className={`cj  ${clgtoh === "출장" ? "active" : ""}`}
+                    >
                       <Plane size={12} />
                       <p>출장</p>
                     </li>
-                    <li className="gu">
+                    <li
+                      onClick={() => setclgtoh("교육")}
+                      className={`gu  ${clgtoh === "교육" ? "active" : ""}`}
+                    >
                       <BookOpen size={12} />
                       <p>교육</p>
                     </li>
-                    <li className="gog">
+                    <li
+                      onClick={() => setclgtoh("공가")}
+                      className={` gog ${clgtoh === "공가" ? "active" : ""}`}
+                    >
                       <ShieldCheck size={12} />
                       <p>공가</p>
                     </li>
                   </ul>
                 </label>
 
-                <div className="lboutbox">
-                  <label className="cgsg">
-                    <p>출근 시간</p>
-                    <div className="gtglipin">
-                      <input type="text" value={"09:00"} />
-                      <Clock4 size={13} className="gtglipinic" />
-                    </div>
-                  </label>
-                  <label className="tgsg">
-                    <p>출근 시간</p>
-                    <div className="gtglipin">
-                      <input type="text" value={"18:00"} />
-                      <Clock4 size={13} className="gtglipinic" />
-                    </div>
-                  </label>
-                </div>
+                {/*  */}
 
-                <div className="lboutbox">
-                  <label className="cggm">
-                    <div className="tgbox">
-                      <p>초과근무(OT)</p>
-                      <div className="tgbtnbox">
-                        <div className="tgbtn">
-                          <div className="tgs"></div>
+                {/*  */}
+
+                {/* 근태 등록별 인풋 */}
+
+                {/* 출근 */}
+                {(clgtoh === "출근" ||
+                  clgtoh === "결근" ||
+                  clgtoh === "반차" ||
+                  clgtoh === "출장" ||
+                  clgtoh === "교육") && (
+                  <div className="cginputbox">
+                    <div className="lboutbox">
+                      <label className="cgsg">
+                        <p>출근 시간</p>
+                        <div className="gtglipin">
+                          <input type="text" value={"09:00"} />
+                          <Clock4 size={13} className="gtglipinic" />
                         </div>
-                        <p>적용</p>
-                      </div>
+                      </label>
+                      <label className="tgsg">
+                        <p>퇴근 시간</p>
+                        <div className="gtglipin">
+                          <input type="text" value={"18:00"} />
+                          <Clock4 size={13} className="gtglipinic" />
+                        </div>
+                      </label>
                     </div>
-                    <div className="cggmin">
-                      <div className="gtglipin">
-                        <input type="text" value={"18:00"} />
-                        <Clock4 size={13} className="gtglipinic" />
-                      </div>
-                      <p>~</p>
-                      <div className="gtglipin">
-                        <input type="text" value={"20:30"} />
-                        <Clock4 size={13} className="gtglipinic" />
-                      </div>
-                      <div className="times">
-                        <p>2.5h</p>
-                      </div>
-                    </div>
-                  </label>
-                </div>
 
-                <label className="bg">
-                  <p>비고</p>
-                  <div className="gtglipin">
-                    <textarea type="text" placeholder="특이사항을 입력하세요" />
+                    <div className="lboutbox">
+                      <label className="cggm">
+                        <div className="tgbox">
+                          <p>초과근무(OT)</p>
+                          <div className="tgbtnbox">
+                            <div className="tgbtn">
+                              <div className="tgs"></div>
+                            </div>
+                            <p>적용</p>
+                          </div>
+                        </div>
+                        <div className="cggmin">
+                          <div className="gtglipin">
+                            <input type="text" placeholder="18:00" />
+                            <Clock4 size={13} className="gtglipinic" />
+                          </div>
+                          <p>~</p>
+                          <div className="gtglipin">
+                            <input type="text" placeholder="20:30" />
+                            <Clock4 size={13} className="gtglipinic" />
+                          </div>
+                          <div className="times">
+                            <p>2.5h</p>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <label className="bg">
+                      <p>비고</p>
+                      <div className="gtglipin">
+                        <textarea
+                          type="text"
+                          placeholder="특이사항을 입력하세요"
+                        />
+                      </div>
+                    </label>
+
+                    <div className="btnsbox">
+                      <button className="lftwtbtn">
+                        <RotateCcw size={12} color="#6B7280" />
+                        <p>초기화</p>
+                      </button>
+                      <button className="retblbtn">
+                        <Save size={12} />
+                        <p>저장</p>
+                      </button>
+                    </div>
                   </div>
-                </label>
+                )}
 
-                <div className="btnsbox">
-                  <button className="lftwtbtn">
-                    <RotateCcw size={12} color="#6B7280" />
-                    <p>초기화</p>
-                  </button>
-                  <button className="retblbtn">
-                    <Save size={12} />
-                    <p>저장</p>
-                  </button>
-                </div>
+                {/* 지각 */}
+                {clgtoh === "지각" && (
+                  <div className="jginputbox">
+                    <h1>
+                      <CircleAlert size={14} /> 지각 시간이 자동으로 계산됩니다.
+                    </h1>
+                    <div className="lboutbox">
+                      <label className="cgsg">
+                        <p>
+                          출근 시간 <span>지각</span>
+                        </p>
+                        <div className="gtglipin">
+                          <input type="text" placeholder="10:30" />
+                          <Clock4 size={13} className="gtglipinic" />
+                        </div>
+                      </label>
+                      <label className="tgsg">
+                        <p>출근 시간</p>
+                        <div className="gtglipin">
+                          <input type="text" placeholder="18:00" />
+                          <Clock4 size={13} className="gtglipinic" />
+                        </div>
+                      </label>
+                    </div>
+
+                    <div className="lboutbox">
+                      <label className="cggm">
+                        <div className="tgbox">
+                          <p>지각사유</p>
+                        </div>
+                        <div className="cggmin">
+                          <select name="" id="">
+                            <option value="교통지연">교통지연</option>
+                            <option value="늦잠">늦잠</option>
+                            <option value="공사">공사</option>
+                            <option value="아픔">아픔</option>
+                            <option value="기타">기타</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+
+                    <label className="bg">
+                      <p>비고</p>
+                      <div className="gtglipin">
+                        <textarea
+                          type="text"
+                          placeholder="특이사항을 입력하세요"
+                        />
+                      </div>
+                    </label>
+
+                    <div className="btnsbox">
+                      <button className="lftwtbtn">
+                        <RotateCcw size={12} color="#6B7280" />
+                        <p>초기화</p>
+                      </button>
+                      <button className="retblbtn">
+                        <Save size={12} />
+                        <p>저장</p>
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* 조퇴 */}
+                {clgtoh === "조퇴" && (
+                  <div className="jtinputbox">
+                    <h1>
+                      <CircleAlert size={14} /> 지각 시간이 자동으로 계산됩니다.
+                    </h1>
+                    <div className="lboutbox">
+                      <label className="cgsg">
+                        <p>출근 시간</p>
+                        <div className="gtglipin">
+                          <input type="text" placeholder="09:00" />
+                          <Clock4 size={13} className="gtglipinic" />
+                        </div>
+                      </label>
+                      <label className="tgsg">
+                        <p>
+                          조퇴 시간 <span>필수</span>
+                        </p>
+                        <div className="gtglipin">
+                          <input type="text" placeholder="14:00" />
+                          <Clock4 size={13} className="gtglipinic" />
+                        </div>
+                      </label>
+                    </div>
+
+                    <div className="lboutbox">
+                      <label className="cggm">
+                        <div className="tgbox">
+                          <p>조퇴사유</p>
+                        </div>
+                        <div className="cggmin">
+                          <select name="" id="">
+                            <option value="개인사정">개인사정</option>
+                            <option value="병원">병원</option>
+                            <option value="아픔">아픔</option>
+                            <option value="기타">기타</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+
+                    <label className="bg">
+                      <p>비고</p>
+                      <div className="gtglipin">
+                        <textarea
+                          type="text"
+                          placeholder="특이사항을 입력하세요"
+                        />
+                      </div>
+                    </label>
+
+                    <div className="btnsbox">
+                      <button className="lftwtbtn">
+                        <RotateCcw size={12} color="#6B7280" />
+                        <p>초기화</p>
+                      </button>
+                      <button className="retblbtn">
+                        <Save size={12} />
+                        <p>저장</p>
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* 공가 */}
+                {clgtoh === "공가" && (
+                  <div className="gginputbox">
+                    <div className="lboutbox">
+                      <label className="cggm">
+                        <div className="tgbox">
+                          <p>
+                            공가 구분 <span style={{ color: "red" }}>*</span>
+                          </p>
+                        </div>
+                        <div className="cggmin">
+                          <select name="" id="">
+                            <option value="개인사정">개인사정</option>
+                            <option value="병원">병원</option>
+                            <option value="아픔">아픔</option>
+                            <option value="기타">기타</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+
+                    <div className="lboutbox">
+                      <p>
+                        공가 기간
+                        <span style={{ color: "red", background: "none" }}>
+                          *
+                        </span>
+                      </p>
+                      <div className="lboutboxin">
+                        <div className="lboutboxintp">
+                          <label className="cgsg">
+                            <div className="gtglipin">
+                              <input type="text" placeholder="09:00" />
+                              <Calendar size={13} className="gtglipinic" />
+                            </div>
+                          </label>
+                          <b>~</b>
+                          <label className="tgsg">
+                            <div className="gtglipin">
+                              <input type="text" placeholder="14:00" />
+                              <Calendar size={13} className="gtglipinic" />
+                            </div>
+                          </label>
+                        </div>
+
+                        <span>
+                          <Clock size={12} />총 2일
+                        </span>
+                      </div>
+                    </div>
+
+                    <label className="jbsl">
+                      <p>
+                        증빙서류 <span>(필수)</span>
+                      </p>
+                      <div className="jbslbox">
+                        <h1>
+                          <Paperclip size={14} />
+                          훈련소집통지서.pdf
+                        </h1>
+                        <div className="jbslboxbt">
+                          <p>
+                            <Trash2 size={13} />
+                            삭제
+                          </p>
+                          <button>
+                            <Plus size={12} />
+                            추가
+                          </button>
+                        </div>
+                      </div>
+                    </label>
+                    <label className="bg">
+                      <p>비고</p>
+                      <div className="gtglipin">
+                        <textarea
+                          type="text"
+                          placeholder="특이사항을 입력하세요"
+                        />
+                      </div>
+                    </label>
+
+                    <div className="btnsbox">
+                      <button className="lftwtbtn">
+                        <RotateCcw size={12} color="#6B7280" />
+                        <p>초기화</p>
+                      </button>
+                      <button className="retblbtn">
+                        <Save size={12} />
+                        <p>저장</p>
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* 연차 */}
+                {clgtoh === "연차" && (
+                  <div className="ocinputbox">
+                    <div className="topbox">
+                      <div className="topboxtop">
+                        <h1>
+                          <CalendarCheck size={13} /> 연차 현황
+                        </h1>
+                        <p>2025년 기준</p>
+                      </div>
+                      <ul className="topboxbtm">
+                        <li>
+                          <h1>15일</h1>
+                          <p>총 부여</p>
+                        </li>
+                        <li>
+                          <h1>8일</h1>
+                          <p>사용</p>
+                        </li>
+                        <li>
+                          <h1>7일</h1>
+                          <p>잔여</p>
+                        </li>
+                        <li>
+                          <h1>2일</h1>
+                          <p>이번 신청</p>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="lboutbox">
+                      <label className="cggm">
+                        <div className="tgbox">
+                          <p>
+                            연차 구분 <span style={{ color: "red" }}>*</span>
+                          </p>
+                        </div>
+                        <ul className="cggminocgb">
+                          <li
+                            onClick={() => setocgb("종일")}
+                            className={`ocgb  ${clocgb === "종일" ? "active" : ""}`}
+                          >
+                            <Sun size={12} />
+                            종일
+                          </li>
+                          <li
+                            onClick={() => setocgb("오전반차")}
+                            className={`ocgb  ${clocgb === "오전반차" ? "active" : ""}`}
+                          >
+                            <Sun size={12} />
+                            오전반차
+                          </li>
+                          <li
+                            onClick={() => setocgb("오후반차")}
+                            className={`ocgb  ${clocgb === "오후반차" ? "active" : ""}`}
+                          >
+                            <Sun size={12} />
+                            오후반차
+                          </li>
+                        </ul>
+                      </label>
+                    </div>
+
+                    <div className="lboutbox">
+                      <p>
+                        연차 기간{" "}
+                        <span style={{ color: "red", background: "none" }}>
+                          *
+                        </span>
+                      </p>
+                      <div className="lboutboxin">
+                        <div className="lboutboxintp">
+                          <label className="cgsg">
+                            <div className="gtglipin">
+                              <input type="date" placeholder="09:00" />
+                            </div>
+                          </label>
+                          <b>~</b>
+                          <label className="tgsg">
+                            <div className="gtglipin">
+                              <input type="date" placeholder="14:00" />
+                            </div>
+                          </label>
+                        </div>
+                        <div className="lboutboxinbtm">
+                          <span>
+                            <Clock size={12} />총 2일 차감
+                          </span>
+                          <p>
+                            <Info size={12} />
+                            신청 후 잔여 5일
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <label className="bg">
+                      <p>연차 사유</p>
+                      <div className="gtglipin">
+                        <textarea
+                          type="text"
+                          placeholder="특이사항을 입력하세요"
+                        />
+                      </div>
+                    </label>
+
+                    <div className="btnsbox">
+                      <button className="lftwtbtn">
+                        <RotateCcw size={12} color="#6B7280" />
+                        <p>초기화</p>
+                      </button>
+                      <button className="retblbtn">
+                        <Save size={12} />
+                        <p>저장</p>
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
