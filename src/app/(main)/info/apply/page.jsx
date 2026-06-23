@@ -12,12 +12,16 @@ import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 import {
   Baby,
+  Banknote,
   CakeSlice,
   Calendar,
   Check,
+  Clock,
   Clock4,
+  CreditCard,
   Download,
   Ellipsis,
+  FileImage,
   FileText,
   Flower2,
   Gift,
@@ -25,11 +29,13 @@ import {
   Heart,
   HeartHandshake,
   MapPin,
+  MessageSquareText,
   Paperclip,
   Save,
   Search,
   SendHorizontal,
   Upload,
+  User,
   UserPlus,
   X,
 } from "lucide-react";
@@ -212,7 +218,7 @@ export default function Apply() {
     );
     console.log("경조사 인풋 들", evttype, allevt, fileId);
   };
-  const [popvw, setpopvw] = useState(true);
+  const [popvw, setpopvw] = useState(false);
 
   const popon = () => {
     setpopvw(true);
@@ -404,7 +410,7 @@ export default function Apply() {
                   <ul>
                     <li>대상자 / 관계</li>
                     <li>
-                      <span>이</span> 이영희 <p>본인</p>
+                      <span>이</span> <b>이영희</b> <p>본인</p>
                     </li>
                   </ul>
                   <ul>
@@ -422,6 +428,96 @@ export default function Apply() {
                     </li>
                   </ul>
                 </ul>
+
+                <ul className="tbs jgjb">
+                  <h1>지급 정보</h1>
+                  <ul>
+                    <li>지급금액</li>
+                    <li>
+                      <Banknote size={13} color="#1B3A6B" />
+                      <b>500,000원</b>
+                      <p>(오십만원정)</p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>지급계좌</li>
+                    <li>
+                      <CreditCard size={13} color="#9CA3AF" /> 국민은행
+                      12****-34 (이영희)
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>예상 지급일</li>
+                    <li>
+                      <Clock size={13} color="#9CA3AF" /> 승인 후 3영업일 이내
+                    </li>
+                  </ul>
+                </ul>
+
+                <ul className="tbs cbsl">
+                  <h1>첨부 서류</h1>
+                  <li>
+                    <div className="icbox">
+                      <FileText size={14} color="#2563EB" />
+                    </div>
+                    <div className="ttbox">
+                      <h2>결혼확인서_이영희_20250701.pdf</h2>
+                      <p>PDF · 245 KB · 2025.07.01 업로드</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="icbox">
+                      <FileImage size={14} color="#DC2626" />
+                    </div>
+                    <div className="ttbox">
+                      <h2>청첩장_스캔본.jpg</h2>
+                      <p>JPG · 1.2 MB · 2025.07.01 업로드</p>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul className="tbs gtog">
+                  <h1>검토 의견</h1>
+                  <li>
+                    <MessageSquareText size={14} color="#D97706" />
+                    <li>
+                      <h2>
+                        서류 확인 중입니다. 추가 서류 제출이 필요할 수 있습니다.
+                      </h2>
+                      <p>
+                        <User size={11} /> 검토자: 김인사 (인사팀장) ·
+                        2025.07.02
+                      </p>
+                    </li>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mdbt">
+              <div className="mdbtlft">
+                <Clock size={12} color="#9CA3AF" />
+                <h1>최종 수정: 2025.07.02 · 인사팀</h1>
+              </div>
+              <div className="mdbtret">
+                <button
+                  className="sccs"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  신청취소
+                </button>
+                <button
+                  className="dg"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  닫기
+                </button>
               </div>
             </div>
           </div>

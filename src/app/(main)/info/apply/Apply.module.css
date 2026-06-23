@@ -1,5 +1,4 @@
-
-.texts ul{
+.texts ul {
     font-size: 13px;
     box-sizing: border-box;
     border-top: 1px solid #E5E7EB;
@@ -7,29 +6,32 @@
     height: 44px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around; 
+    justify-content: space-around;
     background-color: white;
 }
-.texts ul:last-child{
+
+.texts ul:last-child {
     border-top: none;
     border: 1px solid #E5E7EB;
 }
-.texts ul:first-child  {
+
+.texts ul:first-child {
     border-top: none;
-    background:none ;
+    background: none;
     color: #6B7280;
     font-weight: bold;
 }
+
 /* .texts ul:nth-child(odd){background: #F1F5F9;} */
-.texts ul:last-child{
+.texts ul:last-child {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
 
-.texts ul li{
+.texts ul li {
     font-size: 13px;
-    flex:1;
+    flex: 1;
     height: 44px;
     display: flex;
     justify-content: center;
@@ -42,31 +44,35 @@
 
 
 
-.texts ul li span.gb ,.clst{
+.texts ul li span.gb,
+.clst {
     border-radius: 15px;
     padding: 5px 8px;
-    font-weight: bold ;
+    font-weight: bold;
 }
 
-.texts ul li span.clsn{
+.texts ul li span.clsn {
     background: #c1ffd3;
     color: #16A34A;
 }
-.texts ul li span.bnin{
+
+.texts ul li span.bnin {
     background: #FFF0F6;
     color: #DB2777;
 }
-.texts ul li span.bmhg{
+
+.texts ul li span.bmhg {
     background: #EDE9FE;
     color: #7C3AED;
 }
 
 
-.texts ul li span.gt{
+.texts ul li span.gt {
     background: #FEF9C3;
     color: #CA8A04;
 }
-.texts ul li span.jg{
+
+.texts ul li span.jg {
     background: #DCFCE7;
     color: #16A34A;
 }
@@ -74,11 +80,13 @@
 
 
 
-.texts ul li span.glbtns{
+.texts ul li span.glbtns {
     border-radius: 5px;
     padding: 5px 8px;
 }
-.texts ul li span.sjs{
+
+.texts ul li span.sjs {
+    cursor: pointer;
     margin-right: 4px;
     background: #EFF6FF;
     color: #374151;
@@ -87,13 +95,14 @@
 
 
 
-.texts ul:first-child li:nth-child(6){
+.texts ul:first-child li:nth-child(6) {
     justify-content: center;
     flex: 2;
     color: #6B7280;
     font-size: 13px;
 }
-.texts ul li:nth-child(6){
+
+.texts ul li:nth-child(6) {
     flex: 2;
     display: flex;
     flex-flow: column;
@@ -102,12 +111,13 @@
 }
 
 
-.texts ul:first-child li:nth-child(7){
+.texts ul:first-child li:nth-child(7) {
     justify-content: center;
     flex: 2;
     font-size: 13px;
 }
-.texts ul li:nth-child(7){
+
+.texts ul li:nth-child(7) {
     flex: 2;
     display: flex;
     flex-flow: column;
@@ -117,64 +127,74 @@
     font-size: 12px;
 }
 
-.texts ul li:nth-child(4){
+.texts ul li:nth-child(4) {
     font-weight: bold;
 }
 
-.texts ul li:nth-child(2){
+.texts ul li:nth-child(2) {
     flex: 1;
 }
-.texts ul:first-child li:nth-child(2){
+
+.texts ul:first-child li:nth-child(2) {
     flex: 1;
 }
-.texts ul li:nth-child(3){
+
+.texts ul li:nth-child(3) {
     flex: 1;
 }
-.texts ul:first-child li:nth-child(3){
+
+.texts ul:first-child li:nth-child(3) {
     flex: 1;
 }
-.texts ul li:nth-child(3){
-    flex: 2;
-}
-.texts ul:first-child li:nth-child(3){
+
+.texts ul li:nth-child(3) {
     flex: 2;
 }
 
-.texts ul li:nth-child(8){
+.texts ul:first-child li:nth-child(3) {
+    flex: 2;
+}
+
+.texts ul li:nth-child(8) {
     justify-content: left;
     flex: 4;
 }
-.texts ul:first-child li:nth-child(8){
+
+.texts ul:first-child li:nth-child(8) {
     justify-content: center;
     flex: 4;
 }
-.texts ul li:nth-child(10){
+
+.texts ul li:nth-child(10) {
     flex: 1;
 }
-.texts ul:first-child li:nth-child(10){
+
+.texts ul:first-child li:nth-child(10) {
     flex: 1;
 }
 
 
-.textsbtns li{
+.textsbtns li {
     margin-right: 10px;
     display: flex;
     gap: 4px;
 }
-.textsbtns span{
+
+.textsbtns span {
     cursor: pointer;
     border-radius: 5px;
-    padding: 2px  8px;
+    padding: 2px 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
-.textsbtns span:hover{
+.textsbtns span:hover {
     background: #1B3A6B;
     color: white;
     font-weight: bold;
 }
-.textsbtns span.textsces{
+
+.textsbtns span.textsces {
     background: #1B3A6B;
     color: white;
     font-weight: bold;
