@@ -615,7 +615,7 @@
 }
 
 .sgddg input {
-    width: 320px;
+    width: 320px !important;
     font-weight: bold;
 }
 
@@ -722,7 +722,7 @@
 
 .retboxtbtp .retboxtbin input,
 .retboxtbtp .retboxtbin select {
-    width: 228px;
+    width: 100%;
 }
 
 .retboxtbtp .retboxtbin>span {
