@@ -3,13 +3,23 @@ import s from "./Table.module.css";
 import { useEffect, useState, useEffectEvent } from "react";
 import baseApi from "@/api/baseApi";
 
-export default function Table({ tablecls }) {
+export default function Table({ tablecls, keywordss }) {
   const [employee, setemployee] = useState([]);
-  const [keyword, setkeword] = useState([]);
+  //const [keyword, setkeword] = useState([]);
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1); // 페이지는 1부터 시작
 
-  const pagss = 1;
+  const handleNext = () => {
+    if (employee.length < 10) {
+      // 데이터가 없으면 페이지 유지
+      return;
+    }
+    setPage((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    setPage((prev) => Math.max(prev - 1, 1)); // 최소 1 이하로 내려가지 않게
+  };
 
   //api를 요청해서 받는다. 통신은async await붙인다
   const getEmployee = async () => {
@@ -20,8 +30,8 @@ export default function Table({ tablecls }) {
         Authorization: `Bearer ${token}`,
       },
       params: {
-        keyword: keyword || "",
-        page: page - 1,
+        keyword: keywordss ?? "",
+        page: page,
       },
     });
     console.log(response.data.data);
@@ -38,7 +48,7 @@ export default function Table({ tablecls }) {
     };
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page]);
+  }, [page, keywordss]);
 
   const handleClick = (e) => {
     const value = Number(e.target.textContent);
@@ -280,13 +290,13 @@ export default function Table({ tablecls }) {
         <li></li>
         <li></li>
         <li>
-          <span>&lt;</span>
+          <span onClick={handlePrev}>&lt;</span>
           <span onClick={handleClick} className={s.textsces}>
             1
           </span>
           <span onClick={handleClick}>2</span>
           <span onClick={handleClick}>3</span>
-          <span>&gt;</span>
+          <span onClick={handleNext}>&gt;</span>
         </li>
       </ul>
     </ul>

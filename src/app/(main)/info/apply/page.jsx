@@ -50,6 +50,7 @@ import {
 } from "@/components/ui/popover";
 import { toast } from "sonner";
 import axios from "axios";
+import { Spinner } from "@/components/ui/spinner";
 export default function Apply() {
   {
     // const [employee, setemployee] = useState([]);
@@ -150,73 +151,80 @@ export default function Apply() {
   }
 
   const 경조사비신청하기 = async () => {
-    const token = localStorage.getItem("accessToken");
+    try {
+      const token = localStorage.getItem("accessToken");
 
-    // 1. 경조부분확인
-    if (!evttype) {
-      return alert("경조 구분을 선택해주세요");
-    }
+      // 1. 경조부분확인
+      if (!evttype) {
+        return alert("경조 구분을 선택해주세요");
+      }
 
-    // 2. 경조대상자명
-    if (!allevt.tgname) {
-      return alert("경조 대상자명을 입력해주세요");
-    }
+      // 2. 경조대상자명
+      if (!allevt.tgname) {
+        return alert("경조 대상자명을 입력해주세요");
+      }
 
-    // 3. 경조대상자관개
-    if (!allevt.tggg) {
-      return alert("경조 대상자관개를 선택해주세요");
-    }
+      // 3. 경조대상자관개
+      if (!allevt.tggg) {
+        return alert("경조 대상자관개를 선택해주세요");
+      }
 
-    // 2. 경조일
-    if (!allevt.eventDate) {
-      return alert("경조일 선택해주세요");
-    }
+      // 2. 경조일
+      if (!allevt.eventDate) {
+        return alert("경조일 선택해주세요");
+      }
 
-    // 2. 은행
-    if (!allevt.tgoh) {
-      return alert("경조비 받을 은행을 선택해주세요");
-    }
+      // 2. 은행
+      if (!allevt.tgoh) {
+        return alert("경조비 받을 은행을 선택해주세요");
+      }
 
-    // 2. 계좌번호
-    if (!allevt.accoutNumber) {
-      return alert("경조비 받을 계좌번호를 입력해주세요");
-    }
-    // 2-2. 계좌번호 확인
-    if (
-      !(10 <= allevt.accoutNumber.length && allevt.accoutNumber.length <= 12)
-    ) {
-      return alert("올바른 계좌번호를 입력해주세요");
-    }
+      // 2. 계좌번호
+      if (!allevt.accoutNumber) {
+        return alert("경조비 받을 계좌번호를 입력해주세요");
+      }
+      // 2-2. 계좌번호 확인
+      if (
+        !(10 <= allevt.accoutNumber.length && allevt.accoutNumber.length <= 12)
+      ) {
+        return alert("올바른 계좌번호를 입력해주세요");
+      }
 
-    // 2. 예금주
-    if (!allevt.tgogj) {
-      return alert("경조비 받을 예금주 입력해주세요");
-    }
+      // 2. 예금주
+      if (!allevt.tgogj) {
+        return alert("경조비 받을 예금주 입력해주세요");
+      }
 
-    const res = await baseApi.post(
-      "/api/v1/support",
-      {
-        eventType: evttype,
-        familyRelation: allevt?.tggg,
-        targetName: allevt?.tgname,
-        applicationDate: "2026-06-12",
-        eventDate: "2026-06-12",
-        requestedAmount: 500000,
-        eventLocation: allevt?.tggjjs,
-        bankName: allevt?.tgoh,
-        accountNumber: allevt?.accoutNumber,
-        accountHolder: allevt?.tgogj,
-        approvalStatus: "확인",
-        memo: allevt.memo,
-        fileIdList: [fileId],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await baseApi.post(
+        "/api/v1/support",
+        {
+          eventType: evttype,
+          familyRelation: allevt?.tggg,
+          targetName: allevt?.tgname,
+          applicationDate: "2026-06-12",
+          eventDate: "2026-06-12",
+          requestedAmount: 500000,
+          eventLocation: allevt?.tggjjs,
+          bankName: allevt?.tgoh,
+          accountNumber: allevt?.accoutNumber,
+          accountHolder: allevt?.tgogj,
+          approvalStatus: "확인",
+          memo: allevt.memo,
+          fileIdList: [fileId],
         },
-      },
-    );
-    console.log("경조사 인풋 들", evttype, allevt, fileId);
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      console.log("경조사 인풋 들", evttype, allevt, fileId);
+      alert("성공");
+    } catch (e) {
+      alert("실패 다시입력 / 백엔드확인");
+      console.error("네트워크 실패", e);
+    } finally {
+    }
   };
   const [popvw, setpopvw] = useState(false);
 
@@ -251,33 +259,62 @@ export default function Apply() {
   // 파일업로드 백엔드로 보내는거
   const upldref = useRef(null);
 
-  const [fileName, setFileName] = useState(null);
+  //const [fileName, setFileName] = useState(null);
   const [fileId, setFileId] = useState(null);
+
+  const [uploadif, setuploadif] = useState({});
+  const [iflist, setiflist] = useState({});
   const upld = async (filess) => {
     const url = "http://localhost:33000/api/v1/files/upload";
     const token = localStorage.getItem("accessToken");
 
     const fileupld = filess[0];
+    console.log("업로드 선택한 파일", fileupld);
+    console.log("업로드 선택한 파일 이름", fileupld?.name);
+    console.log("업로드 선택한 파일 사이즈", fileupld?.size);
+    setuploadif({
+      name: fileupld?.name,
+      size: fileupld?.size,
+    });
 
     const formData = new FormData();
     formData.append("file", fileupld);
     formData.append("refType", "1");
-
-    formData.append("filename", fileupld.name);
-    setFileName(formData.get("filename"));
-
-    console.log("업로드 선택한 파일 이름", formData.get("filename"));
 
     const res = await axios.post(url, formData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
-
-    console.log("업로드한파일", res.data);
     setFileId(res.data.data);
     console.log("업로드한파일ID", res.data.data);
+    console.log("업로드한파일", res.data);
+
+    // console.log("업로드 선택한 파일 이름", formData.get("filename"));
+    // formData.append("filename", fileupld.name);
+    // setFileName(formData.get("filename"));
   };
+
+  const 경조비상세조회 = async (id) => {
+    // 로딩창
+    setisLoading(true);
+
+    const token = localStorage.getItem("accessToken");
+
+    const res = await baseApi.get(`/api/v1/support/detail/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    setiflist(res.data.data);
+
+    // 로딩창
+    setisLoading(false);
+    setpopvw(true);
+  };
+  // 로딩창
+  const [isLoading, setisLoading] = useState(false);
 
   // const [uplodlist, setuplodlist] = useState([]);
   // const uplodlistss = async () => {
@@ -296,6 +333,31 @@ export default function Apply() {
 
   // onClick={() => setclgjgb("아무다른이름")}
   // className={clgjgb === "아무다른이름" ? "active" : ""}
+
+  // 이미지 다운로드
+  const goDownloadFile = async () => {
+    const token = localStorage.getItem("accessToken");
+
+    const res = await axios.get(
+      `http://localhost:33000/api/v1/files/${iflist?.savedFileId}/download`,
+      {
+        responseType: "blob",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+
+    const url = window.URL.createObjectURL(res?.data);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = iflist?.savedFileName; // 원본 파일명
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(url);
+  };
 
   return (
     <div className="wrap">
@@ -366,11 +428,16 @@ export default function Apply() {
                 <div className="mdintptp">
                   <h1>
                     <Hash size={12} color="#9CA3AF" />
-                    신청번호: WEL-2025-07-001
+                    신청번호: support-{iflist?.EmployeeEventSupportId}
                   </h1>
                   <h1>
                     <Calendar size={12} color="#9CA3AF" />
-                    신청일: 2025.07.01
+                    신청일:{" "}
+                    {(iflist?.savedFileDate ?? "임시날자 2003-01-04").slice(
+                      0,
+                      11,
+                    )}
+                    {/* 신청일: {iflist?.applicationDate} */}
                   </h1>
                 </div>
                 <div className="mdintpbt">
@@ -403,28 +470,33 @@ export default function Apply() {
                   <ul>
                     <li>경조구분</li>
                     <li>
-                      <span>본인결혼</span>
+                      <span>{iflist?.eventType}</span>
                       <h5>경조비 지급 규정 3조 1항</h5>
                     </li>
                   </ul>
                   <ul>
                     <li>대상자 / 관계</li>
                     <li>
-                      <span>이</span> <b>이영희</b> <p>본인</p>
+                      <span>
+                        {iflist?.targetName[0] === " "
+                          ? iflist?.targetName[1]
+                          : iflist?.targetName[0]}
+                      </span>
+                      <b>{iflist?.targetName}</b>{" "}
+                      <p>{iflist?.familyRelation}</p>
                     </li>
                   </ul>
                   <ul>
                     <li>경조일</li>
                     <li>
-                      <Calendar size={13} color="#9CA3AF" /> 2025년 7월 20일
-                      (일)
+                      <Calendar size={13} color="#9CA3AF" /> {iflist?.eventDate}
                     </li>
                   </ul>
                   <ul>
                     <li>경조 장소</li>
                     <li>
-                      <MapPin size={13} color="#9CA3AF" /> 더케이서울호텔
-                      그랜드볼룸
+                      <MapPin size={13} color="#9CA3AF" />{" "}
+                      {iflist?.eventLocation}
                     </li>
                   </ul>
                 </ul>
@@ -435,15 +507,16 @@ export default function Apply() {
                     <li>지급금액</li>
                     <li>
                       <Banknote size={13} color="#1B3A6B" />
-                      <b>500,000원</b>
-                      <p>(오십만원정)</p>
+                      <b>{iflist?.requestedAmount}원</b>
+                      <p>(오십만원정) (계산해서 해주기)</p>
                     </li>
                   </ul>
                   <ul>
                     <li>지급계좌</li>
                     <li>
-                      <CreditCard size={13} color="#9CA3AF" /> 국민은행
-                      12****-34 (이영희)
+                      <CreditCard size={13} color="#9CA3AF" />
+                      {iflist?.bankName} {iflist?.accountNumber} (
+                      {iflist?.accountHolder})
                     </li>
                   </ul>
                   <ul>
@@ -454,27 +527,43 @@ export default function Apply() {
                   </ul>
                 </ul>
 
-                <ul className="tbs cbsl">
-                  <h1>첨부 서류</h1>
-                  <li>
-                    <div className="icbox">
-                      <FileText size={14} color="#2563EB" />
-                    </div>
-                    <div className="ttbox">
-                      <h2>결혼확인서_이영희_20250701.pdf</h2>
-                      <p>PDF · 245 KB · 2025.07.01 업로드</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="icbox">
-                      <FileImage size={14} color="#DC2626" />
-                    </div>
-                    <div className="ttbox">
-                      <h2>청첩장_스캔본.jpg</h2>
-                      <p>JPG · 1.2 MB · 2025.07.01 업로드</p>
-                    </div>
-                  </li>
-                </ul>
+                {iflist?.savedFileName && (
+                  <ul className="tbs cbsl">
+                    <h1>첨부 서류</h1>
+                    <li>
+                      <div className="tbsret">
+                        <div className="icbox">
+                          <FileText size={14} color="#2563EB" />
+                        </div>
+                        <div className="ttbox">
+                          <h2>{iflist?.savedFileName}</h2>
+                          <p>
+                            {iflist?.savedFileExt} · {iflist?.savedFileSize} KB
+                            ·{iflist?.applicationDate} 업로드
+                          </p>
+                        </div>
+                      </div>
+                      <Download
+                        size={15}
+                        color="gray"
+                        className="icboxdown"
+                        // onClick={goDownloadFile}
+                        onClick={() => {
+                          goDownloadFile();
+                        }}
+                      />
+                    </li>
+                    {/* <li>
+                      <div className="icbox">
+                        <FileImage size={14} color="#DC2626" />
+                      </div>
+                      <div className="ttbox">
+                        <h2>(예)청첩장_스캔본.jpg</h2>
+                        <p>JPG · 1.2 MB · 2025.07.01 업로드</p>
+                      </div>
+                    </li> */}
+                  </ul>
+                )}
 
                 <ul className="tbs gtog">
                   <h1>검토 의견</h1>
@@ -523,9 +612,7 @@ export default function Apply() {
           </div>
         </div>
       )}
-
       <Nav num1={true} />
-
       <div className="inwrap">
         <Aside dummy={aside} idxs="2" subidxs="1" />
 
@@ -925,18 +1012,29 @@ export default function Apply() {
                   </button>
                 </div>
 
-                <div className="cmbpilfl">
-                  <div className="cmbpilfllft">
-                    <FileText color="#3B82F6" size={15} />
-                    <div className="cmbpilfllfttt">
-                      <h1>{fileName ?? "(예)청첩장_이영희.pdf"}</h1>
-                      <h2>238 KB · 업로드 완료</h2>
+                {uploadif?.name && (
+                  <div className="cmbpilfl">
+                    <div className="cmbpilfllft">
+                      <FileText color="#3B82F6" size={15} />
+                      <div className="cmbpilfllfttt">
+                        <h1>{uploadif?.name}</h1>
+                        <h2>
+                          (받은값 계산해야함){uploadif?.size} KB · 업로드 완료
+                        </h2>
+                      </div>
+                    </div>
+                    <div className="cmbpilflret">
+                      <span
+                        onClick={() => {
+                          setuploadif({});
+                        }}
+                      >
+                        x
+                      </span>
+                      삭제
                     </div>
                   </div>
-                  <div className="cmbpilflret">
-                    <span>x</span>삭제
-                  </div>
-                </div>
+                )}
 
                 <div className="formboxbt">
                   <h1>비고</h1>
@@ -1025,8 +1123,17 @@ export default function Apply() {
                     <span className={`${s.clst} ${s.gt}`}>검토중</span>
                   </li>
                   <li>
-                    <span className={`${s.sjs} ${s.glbtns}`}>상세</span>
-                  </li>{" "}
+                    <span
+                      className={`${s.sjs} ${s.glbtns}`}
+                      onClick={() => {
+                        경조비상세조회(it?.EmployeeEventSupportId);
+
+                        console.log(it.EmployeeEventSupportId);
+                      }}
+                    >
+                      상세
+                    </span>
+                  </li>
                 </ul>
               ))}
               <ul>
@@ -1103,6 +1210,11 @@ export default function Apply() {
           </div>
         </div>
       </div>
+      {isLoading && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <Spinner className="size-8" />
+        </div>
+      )}
     </div>
   );
 }

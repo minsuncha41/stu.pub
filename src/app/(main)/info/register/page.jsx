@@ -8,9 +8,9 @@ import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 import { Clock4, Download, Save, Search, UserPlus, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function Register() {
+export default function Register({ current }) {
   const [popvw, setpopvw] = useState(false);
 
   const popon = () => {
@@ -158,11 +158,16 @@ export default function Register() {
     postCode.open();
   };
 
+  const [keyword, setkeword] = useState("");
+
   return (
     <div className="wrap">
       <div
+        hidden
         onClick={() => {
           popon();
+          clbtns.current.click();
+          console.log(clbtns);
         }}
         className="sgdlbtn"
       >
@@ -174,7 +179,7 @@ export default function Register() {
         }}
         className="pdfbtn"
       >
-        i
+        1
       </div>
       {pdfpopvw && (
         <div className="modalwrap">
@@ -641,6 +646,7 @@ export default function Register() {
 
           <div className="textbox">
             <Table
+              keywordss={keyword}
               tablecls={[
                 "NO",
                 "사원번호",

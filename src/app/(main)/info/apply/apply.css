@@ -496,6 +496,7 @@ select {
 }
 
 .cmbpilflret span {
+    cursor: pointer;
     font-size: 15px;
 }
 
@@ -832,7 +833,7 @@ select {
 }
 
 .tbs.gjjb p {
-    width: 37px;
+    padding: 0 10px;
     height: 18px;
     display: flex;
     justify-content: center;
@@ -866,12 +867,18 @@ select {
 
 
 .cbsl li {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10;
     height: 51px;
     padding: 11.5px 14px;
-    border-bottom: 1px solid #E5E7EB;
+}
+
+.cbsl .tbsret {
+    gap: 10;
+    display: flex;
 }
 
 .cbsl li:last-child {
@@ -906,6 +913,9 @@ select {
     color: #9CA3AF;
 }
 
+.cbsl .icboxdown {
+    cursor: pointer;
+}
 
 
 .tbs.gtog>li {
