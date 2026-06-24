@@ -218,64 +218,6 @@
 
 
 
-/* 딜력 방향버튼 */
-.jgfmin {
-    position: relative;
-    height: 34px;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.jgfmin p {
-    width: 34px;
-    background-color: #F9FAFB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border: 1px solid #D1D5DB;
-}
-
-.jgfmin p:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.jgfmin p:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.jgfmin>p:hover {
-    background-color: #d3d3d4;
-}
-
-.jgfmin input {
-    padding-left: 40px;
-    text-align: center;
-    cursor: pointer;
-    width: 107px;
-    background-color: #FFFFFF;
-    display: flex;
-    border: 1px solid #D1D5DB;
-    border-left: none;
-    border-right: none;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.jgfmin .cld {
-    position: absolute;
-    top: 30%;
-    left: 35%;
-}
-
-
-
 
 
 
@@ -300,6 +242,15 @@
     padding: 0 9px;
     width: 160px;
 }
+
+.lbl input[type="date"] {
+    border-radius: 5px;
+    height: 34px;
+    border: 1px solid #D1D5DB;
+    width: 120px;
+    padding: 0 12px;
+}
+
 
 
 

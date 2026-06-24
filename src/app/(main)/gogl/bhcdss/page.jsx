@@ -155,34 +155,39 @@ export default function Bhcdss() {
           <div className="findeboxss">
             <div className="findeboxlft">
               <label className="lbl">
-                <div className="ipdybox">
-                  <div class="jgfmin ">
-                    <p>
-                      <ChevronLeft size={14} />
-                    </p>
-                    <Calendar className="cld" size={13} />
-                    <input
-                      type="number"
-                      id="year"
-                      name="year"
-                      min="1900"
-                      max="2100"
-                      value={2026}
-                    />
-                    <p>
-                      <ChevronRight size={14} />
-                    </p>
-                  </div>
-                </div>
+                <p>기간</p>
+                <input type="date" name="" id="" />
+                <span>~</span>
+                <input type="date" name="" id="" />
+              </label>
+
+              <label>
+                <ul className="inputgo">
+                  <li>1개월</li>
+                  <li>3개월</li>
+                  <li>올해</li>
+                </ul>
+              </label>
+
+              <label>
+                <p>유형</p>
+                <ul className="inputoh">
+                  <li>전체</li>
+                  <li>
+                    <span>●</span>취득
+                  </li>
+                  <li>
+                    <span>●</span>상실
+                  </li>
+                </ul>
               </label>
 
               <label className="lbl">
-                <p>부서</p>
+                <p>신고여부</p>
                 <select>
-                  <option value="">전체 부서</option>
-                  <option value="bs1">부서1</option>
-                  <option value="bs2">부서2</option>
-                  <option value="bs3">부서3</option>
+                  <option value="">전체</option>
+                  <option value="미신고">미신고</option>
+                  <option value="신고완료">신고완료</option>
                 </select>
               </label>
 
@@ -198,18 +203,6 @@ export default function Bhcdss() {
                 <RotateCcw className="icone" size={13} />
                 초기화
               </button>
-
-              <div className="fdrettt">
-                <h3>
-                  <span>●</span>지급항목
-                </h3>
-                <h3>
-                  <span>●</span>공제항목
-                </h3>
-                <h3>
-                  <span>●</span>실지급
-                </h3>
-              </div>
             </div>
           </div>
 
