@@ -26,6 +26,10 @@ export default function Toptits({
   jndbtnon,
   ttmapno,
   sgsbtnon,
+
+  // 클릭버튼이벤트
+  retbtnClick,
+  lftbtnClick,
 }) {
   return (
     <div className={s.toptits}>
@@ -48,7 +52,9 @@ export default function Toptits({
           <p>{toptits.text}</p>
         </div>
         <div className={s.titr}>
+          {/* 기본피디에프 버튼 */}
           <button
+            onClick={lftbtnClick ?? ""} //  바뀐 버튼 방식
             className={s.lftwtbtn}
             style={{ display: lftwtbtnno ? "none" : "flex" }}
           >
@@ -100,6 +106,7 @@ export default function Toptits({
 
           {/* 기본버튼 */}
           <button
+            onClick={retbtnClick ?? ""} // 2. 수신한 함수를 버튼 클릭 이벤트에 연결
             className={s.retblbtn}
             style={{ display: retwtbtnno ? "none" : "flex" }}
           >

@@ -361,7 +361,7 @@ export default function Apply() {
 
   return (
     <div className="wrap">
-      <div
+      {/* <div
         onClick={() => {
           popon();
         }}
@@ -376,7 +376,7 @@ export default function Apply() {
         className="pdfbtn"
       >
         i222222
-      </div>
+      </div> */}
       {pdfpopvw && (
         <div className="modalwrap">
           <div className="pdfpop">
@@ -428,7 +428,7 @@ export default function Apply() {
                 <div className="mdintptp">
                   <h1>
                     <Hash size={12} color="#9CA3AF" />
-                    신청번호: support-{iflist?.EmployeeEventSupportId}
+                    신청번호: support-{iflist?.EmployeeEventSupportId ?? ""}
                   </h1>
                   <h1>
                     <Calendar size={12} color="#9CA3AF" />
@@ -478,9 +478,9 @@ export default function Apply() {
                     <li>대상자 / 관계</li>
                     <li>
                       <span>
-                        {iflist?.targetName[0] === " "
-                          ? iflist?.targetName[1]
-                          : iflist?.targetName[0]}
+                        {iflist?.targetName?.[0] === " "
+                          ? iflist?.targetName?.[1]
+                          : iflist?.targetName?.[0]}
                       </span>
                       <b>{iflist?.targetName}</b>{" "}
                       <p>{iflist?.familyRelation}</p>
@@ -626,6 +626,12 @@ export default function Apply() {
               tllbtn: "PDF 다운로드",
               trrbtn: "신규신청",
             }}
+            lftbtnClick={() => {
+              pdfpopon();
+            }}
+            // retbtnClick={() => {
+            //   popon();
+            // }}
           />
 
           <div className="inputform">

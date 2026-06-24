@@ -159,28 +159,25 @@ export default function Register({ current }) {
   };
 
   const [keyword, setkeword] = useState("");
+  // const clbtns = useRef(null);
 
   return (
     <div className="wrap">
-      <div
-        hidden
-        onClick={() => {
+      {/* 원래사용했던 버튼 방식 */}
+      {/* <div         
+      onClick={() => {
           popon();
-          clbtns.current.click();
-          console.log(clbtns);
-        }}
-        className="sgdlbtn"
-      >
+        }} className="sgdlbtn">
         i
-      </div>
-      <div
+      </div> */}
+      {/* <div
         onClick={() => {
           pdfpopon();
         }}
         className="pdfbtn"
       >
         1
-      </div>
+      </div> */}
       {pdfpopvw && (
         <div className="modalwrap">
           <div className="pdfpop">
@@ -548,6 +545,7 @@ export default function Register({ current }) {
                 </div> */}
 
         <div className="registermain">
+          {/* 바뀐 버튼 방식 */}
           <Toptits
             toptits={{
               ttmap: "인사관리",
@@ -557,7 +555,14 @@ export default function Register({ current }) {
               tllbtn: "PDF 다운로드",
               trrbtn: "신규등록",
             }}
+            lftbtnClick={() => {
+              pdfpopon();
+            }}
+            retbtnClick={() => {
+              popon();
+            }}
           />
+
           {/* <div className="toptits">
                         <div className="maps">
                             <img src="/House.png" alt="" />
@@ -586,7 +591,6 @@ export default function Register({ current }) {
                             </div>
                         </div>
                     </div> */}
-
           <div className="findebox">
             <h3>
               <img src="/Search.png" alt="" />
@@ -643,7 +647,6 @@ export default function Register({ current }) {
               </button>
             </div>
           </div>
-
           <div className="textbox">
             <Table
               keywordss={keyword}
