@@ -21,7 +21,11 @@ export default function Aside({ dummy, idxs, subidxs, main, mainsub }) {
                 key={subidx}
               >
                 <a
-                  href={`http://localhost:3000/${item.titin.main}/${item.mainsub[subidx]}`}
+                  {...(item.mainsub[subidx] === ""
+                    ? {} // href 속성 자체를 빼버림
+                    : {
+                        href: `http://localhost:3000/${item.titin.main}/${item.mainsub[subidx]}`,
+                      })}
                 >
                   {" "}
                   <span>●</span>
