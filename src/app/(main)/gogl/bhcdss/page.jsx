@@ -57,6 +57,8 @@ import {
   TrendingUp,
   Upload,
   User2,
+  UserRoundMinus,
+  UserRoundPlus,
   Users,
   X,
 } from "lucide-react";
@@ -89,55 +91,64 @@ export default function Bhcdss() {
           <Toptits
             toptits={{
               ttmap: "급여관리",
-              map: "급여관리",
-              tit: "급여지급",
-              text: "월별 직원 급여 지급 내역을 관리하고 확정합니다. ",
+              map: "4대보험관리",
+              tit: "4대보험 취득/상실 내역",
+              text: "입사·퇴사에 따른 4대보험 취득·상실 내역을 조회하고 신고서를 출력합니다.",
               tllbtn: "PDF 다운로드",
-              trrbtn: "",
+              trrbtn: "취득/상실 등록",
             }}
-            ckdbtnon="0"
-            ptbtnon="0"
-            sjbtnon=""
-            lftwtbtnno=""
-            retwtbtnno="0"
-            prtbtnon=""
-            ttct=""
+            sgsbtnon="0"
           />
 
           <ul className="findebox">
             <li>
               <p>
-                <TrendingUp size={14} />
-                지급합계
+                <UserRoundPlus size={14} />
+                이달 취득
               </p>
-              <h1>28,640,000원</h1>
-              <span>전월 대비 +240,000원</span>
+              <h1>3명</h1>
+              <span>신고완료 2 · 미신고 1</span>
             </li>
             <li>
               <p>
-                <TrendingDown color="red" size={14} />
-                공제합계
+                <UserRoundMinus color="red" size={14} />
+                이달 상실
               </p>
-              <h1>4,128,000원</h1>
-              <span>전월 대비 +34,000원</span>
+              <h1>1명</h1>
+              <span>신고완료 1 · 미신고 0</span>
             </li>
             <li>
               <p>
-                <Banknote size={14} />
-                실지급합계
+                <AlertCircle size={14} />
+                미신고 건수
               </p>
-              <h1>24,512,000원</h1>
-              <span>대상인원 8명</span>
+              <h1>1건</h1>
+              <span>신고기한 임박 확인</span>
             </li>
             <li>
               <p>
                 <Clock size={14} />
-                지급상태
+                신고기한
               </p>
-              <h1>
-                <span>미확정 8건</span> <p>확정 0</p>
-              </h1>
-              <span>2025년 7월분</span>
+              <h1>D-5</h1>
+              <span>2025.07.14 마감</span>
+            </li>
+
+            <li>
+              <p>
+                <TrendingUp size={14} />
+                연간 누적 취득
+              </p>
+              <h1>12명</h1>
+              <span>2025년 1~7월 기준</span>
+            </li>
+            <li>
+              <p>
+                <TrendingDown size={14} />
+                연간 누적 상실
+              </p>
+              <h1>4명</h1>
+              <span>2025년 1~7월 기준</span>
             </li>
           </ul>
 

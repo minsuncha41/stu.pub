@@ -2,6 +2,7 @@ import {
   Calculator,
   CheckCheck,
   Copy,
+  FileText,
   Pencil,
   Printer,
   RotateCcw,
@@ -24,6 +25,7 @@ export default function Toptits({
   gbgbtnon,
   jndbtnon,
   ttmapno,
+  sgsbtnon,
 }) {
   return (
     <div className={s.toptits}>
@@ -86,6 +88,14 @@ export default function Toptits({
           >
             <RotateCcw size={14} />
             기본값
+          </button>
+          {/* 4대보험 내역 */}
+          <button
+            className={s.sjbtn}
+            style={{ display: sgsbtnon ? "flex" : "none" }}
+          >
+            <FileText size={14} />
+            신고서 일괄출력{" "}
           </button>
 
           {/* 기본버튼 */}

@@ -21,12 +21,13 @@
 }
 
 .findebox li {
-    width: 290px;
+    width: 190px;
     height: 86px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
+    gap: 5;
     border: 1px solid black;
     border-radius: 7px;
 }
@@ -48,6 +49,10 @@
 
 .findebox li span {
     font-size: 11px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+    font-weight: bold;
 }
 
 
@@ -74,8 +79,8 @@
 
 
 .findebox li:nth-child(1) {
-    background: #1B3A6B;
-    border-color: #1B3A6B;
+    background: linear-gradient(225deg, #1B3A6B 14.64%, #2563EB 85.36%);
+    border: none;
 }
 
 .findebox li:nth-child(1) p {
@@ -87,7 +92,8 @@
 }
 
 .findebox li:nth-child(1) span {
-    color: #60A5FA;
+    color: #1E40AF;
+    background: #DBEAFE;
 }
 
 .findebox li:nth-child(2) {
@@ -103,20 +109,29 @@
     color: #374151;
 }
 
-/* .findebox li:nth-child(3){
-    background: #EFF6FF;
-    border-color: #BFDBFE;
+.findebox li:nth-child(2) span {
+    color: #DC2626;
+    background: #FEE2E2;
 }
-.findebox li:nth-child(3) p{
-    color: #3B82F6;
-}
-.findebox li:nth-child(3) h1{
-    color: #1E40AF;
-}
-.findebox li:nth-child(3) span{
-    color: #3B82F6;
-} */
 
+.findebox li:nth-child(3) {
+    background: #FFF1F2;
+    border-color: #FECACA;
+}
+
+.findebox li:nth-child(3) p {
+    color: #E11D48;
+}
+
+.findebox li:nth-child(3) h1 {
+    color: #BE123C;
+}
+
+.findebox li:nth-child(3) span {
+    color: #E11D48;
+    background: #FFF1F2;
+    border: 1px solid #FECACA
+}
 
 .findebox li:nth-child(4) {
     background: #FFFBEB;
@@ -132,37 +147,49 @@
 }
 
 .findebox li:nth-child(4) span {
-    color: #D97706;
+    color: #CA8A04;
+    background: #FEF9C3;
+
 }
 
-.findebox li:nth-child(3) {
+.findebox li:nth-child(5) {
     background: #F0FDF4;
     border-color: #BBF7D0;
 }
 
-.findebox li:nth-child(3) p {
+.findebox li:nth-child(5) p {
     color: #16A34A;
 }
 
-.findebox li:nth-child(3) h1 {
+.findebox li:nth-child(5) h1 {
     color: #15803D;
 }
 
-.findebox li:nth-child(3) span {
+.findebox li:nth-child(5) span {
+    background: #b3ffcf;
     color: #16A34A;
 }
 
+.findebox li:nth-child(6) {
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
 
-/* .findebox li:nth-child(5){
-    background: #FFF1F2;
-    border-color: #FECACA;
-    }
-    .findebox li:nth-child(5) p{
-    color: #E11D48;
-    }
-    .findebox li:nth-child(5) h1{
-    color: #BE123C;
-    } */
+.findebox li:nth-child(6) p {
+    color: #3B82F6;
+}
+
+.findebox li:nth-child(6) h1 {
+    color: #1E40AF;
+}
+
+.findebox li:nth-child(6) span {
+    color: #7C3AED;
+    background: hsl(252, 100%, 95%);
+
+}
+
+
 
 
 
