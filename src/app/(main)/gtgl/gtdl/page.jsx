@@ -54,28 +54,100 @@ import {
 } from "lucide-react";
 
 export default function Gtdl() {
-  const [employee, setemployee] = useState([]);
-
-  useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
-
-      //useState를 넣는다
-      setemployee(response.data.data);
-
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
-  }, []);
-
   /* 클릭한거 클레스 주기 엑티브 */
   const [clgtoh, setclgtoh] = useState(null);
   const [clocgb, setocgb] = useState(null);
   // onClick={() => setclgtoh("아무다른이름")}
   // className={`  ${clgtoh === "아무다른이름" ? "active" : ""}`}
 
+  // 토글버튼 클릭이벤트
+  const [clots, setclots] = useState(false);
+
+  //
+  //
+  //
+  //근태조회
+  // 로딩창
+  //const [IsLoading, setIsLoading] = useState(null);
+  const [AttendanceList, setAttendanceList] = useState([]);
+  const getAttendanceDaily = async () => {
+    try {
+      //setIsLoading(true);
+
+      // 1. 근태리스트를 조회합니다.
+      const token = localStorage.getItem("accessToken");
+      const res = await baseApi.get("/api/v1/attendances/daily", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      // 2. 근태리스트를 세팅합니다.
+      setAttendanceList(res?.data?.data);
+      console.log("근태리스트", res);
+      //console.log("이건머임", IsLoading);
+    } catch (e) {
+    } finally {
+      //setIsLoading(false);
+    }
+  };
+  // 로그인하면서 보내준것들 로컬스토리지에받아서 사용
+  const [apply, setapply] = useState([]);
+
+  useEffect(() => {
+    const name = localStorage.getItem("name");
+    const position = localStorage.getItem("position");
+    const employeeNo = localStorage.getItem("employeeNo");
+    const departmentName = localStorage.getItem("departmentName");
+    setapply({
+      //오류나는건 다른 의존성없으면 상관없음
+      name,
+      position,
+      employeeNo,
+      departmentName,
+    });
+
+    getAttendanceDaily();
+  }, []);
+
+  //출근처리
+  const [cginput, setcginput] = useState({
+    employeeNo: "string",
+    workDate: new Date().toString(),
+    checkInTime: "",
+    checkOutTime: "",
+
+    workMinutes: 1073741824,
+    attendanceStatusCode: "string",
+    memo: "string",
+  });
+  const 출근처리하기 = async () => {
+    //setIsLoading(true);
+
+    const token = localStorage.getItem("accessToken");
+
+    const res = await baseApi.post(
+      "/api/v1/attendances/checkin",
+      {
+        employeeNo: apply.employeeNo,
+        workDate: cginput.workDate,
+        checkInTime: cginput.checkInTime,
+        checkOutTime: cginput.checkOutTime,
+        workMinutes: 0,
+        attendanceStatusCode: "출근",
+        memo: cginput.memo,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+
+    // 출근처리 후 재조회하기
+    getAttendanceDaily();
+    //setIsLoading(false);
+  };
   return (
     <div className="wrap">
       <Nav num2={true} />
@@ -167,7 +239,8 @@ export default function Gtdl() {
                   </p>
                   <div className="gtglipin">
                     <p>
-                      <span>박</span>박민준 · 개발팀
+                      <span>{apply.name?.slice(0, 1)}</span>
+                      {apply.name} · {apply.departmentName}
                     </p>
                     <p>x</p>
                   </div>
@@ -261,14 +334,36 @@ export default function Gtdl() {
                       <label className="cgsg">
                         <p>출근 시간</p>
                         <div className="gtglipin">
-                          <input type="text" value={"09:00"} />
+                          <input
+                            type="text"
+                            value={"09:00"}
+                            onChange={(e) =>
+                              setcginput((prev) => {
+                                return {
+                                  ...prev,
+                                  checkInTime: e.target.value,
+                                };
+                              })
+                            }
+                          />
                           <Clock4 size={13} className="gtglipinic" />
                         </div>
                       </label>
                       <label className="tgsg">
                         <p>퇴근 시간</p>
                         <div className="gtglipin">
-                          <input type="text" value={"18:00"} />
+                          <input
+                            type="text"
+                            value={"18:00"}
+                            onChange={(e) =>
+                              setcginput((prev) => {
+                                return {
+                                  ...prev,
+                                  checkOutTime: e.target.value,
+                                };
+                              })
+                            }
+                          />
                           <Clock4 size={13} className="gtglipinic" />
                         </div>
                       </label>
@@ -278,14 +373,19 @@ export default function Gtdl() {
                       <label className="cggm">
                         <div className="tgbox">
                           <p>초과근무(OT)</p>
-                          <div className="tgbtnbox">
-                            <div className="tgbtn">
+                          <div
+                            className="tgbtnbox"
+                            onClick={() => {
+                              setclots(!clots);
+                            }}
+                          >
+                            <div className={`tgbtn ${clots ? "atv" : ""}`}>
                               <div className="tgs"></div>
                             </div>
-                            <p>적용</p>
+                            <p>{clots ? "적용" : "비적용"}</p>
                           </div>
                         </div>
-                        <div className="cggmin">
+                        <div className={`cggmin ${clots ? "atv" : ""}`}>
                           <div className="gtglipin">
                             <input type="text" placeholder="18:00" />
                             <Clock4 size={13} className="gtglipinic" />
@@ -308,6 +408,14 @@ export default function Gtdl() {
                         <textarea
                           type="text"
                           placeholder="특이사항을 입력하세요"
+                          onChange={(e) =>
+                            setcginput((prev) => {
+                              return {
+                                ...prev,
+                                memo: e.target.value,
+                              };
+                            })
+                          }
                         />
                       </div>
                     </label>
@@ -701,11 +809,81 @@ export default function Gtdl() {
                   <li>관리</li>
                 </ul>
 
+                {AttendanceList.map((it, idx) => (
+                  <ul
+                    key={idx}
+                    style={{ display: it.checkInTime ? "flex" : "none" }}
+                  >
+                    {" "}
+                    <li>
+                      <input type="checkbox" />
+                    </li>
+                    <li>{it.employeeNo}</li>
+                    <li>{it.name}</li>
+                    <li>{it.departmentName}</li>
+                    <li>{it.positionName}</li>
+                    <li>
+                      <p
+                        className={`${s.gtuh} 
+                         ${it.attendanceStatusCode === "출근" ? s.cg : ""} 
+                         ${it.attendanceStatusCode === "지각" ? s.jg : ""} 
+                         ${it.attendanceStatusCode === "연차" ? s.uc : ""}
+                         ${it.attendanceStatusCode === "출장" ? s.cj : ""}
+                         ${it.attendanceStatusCode === "반차" ? s.bc : ""}
+                         ${it.attendanceStatusCode === "미등록" ? s.mdl : ""}
+                        `}
+                      >
+                        <span>●</span>
+                        {it.attendanceStatusCode}
+                      </p>
+                    </li>
+                    <li>{it.checkInTime?.slice(11, 16)}</li>
+                    <li>{it.checkOutTime?.slice(11, 16)}</li>
+                    <li>-</li>
+                    <li>-</li>
+                    <li>
+                      <span className={`${s.sjs} ${s.glbtns}`}>수정</span>
+                      <span className={`${s.dls} ${s.glbtns}`}>삭제</span>
+                    </li>
+                  </ul>
+                  // <ul key={idx}>
+                  //   <li>{it.EmployeeEventSupportId}</li>
+                  //   <li>{it.applicationDate}</li>
+                  //   <li>
+                  //     <span className={`${s.gb} ${s.bnin}`}>
+                  //       {it.eventType}
+                  //     </span>
+                  //   </li>
+                  //   <li>{it.targetName}</li>
+                  //   <li>{it.familyRelation}</li>
+                  //   <li>{it.eventDate}</li>
+                  //   <li>500,000원</li>
+                  //   <li>
+                  //     {it.bankName} {it.accountNumber}
+                  //   </li>
+                  //   <li>
+                  //     <span className={`${s.clst} ${s.gt}`}>검토중</span>
+                  //   </li>
+                  //   <li>
+                  //     <span
+                  //       className={`${s.sjs} ${s.glbtns}`}
+                  //       onClick={() => {
+                  //         경조비상세조회(it?.EmployeeEventSupportId);
+
+                  //         console.log(it.EmployeeEventSupportId);
+                  //       }}
+                  //     >
+                  //       상세
+                  //     </span>
+                  //   </li>
+                  // </ul>
+                ))}
+
                 <ul>
                   <li>
                     <input type="checkbox" />
                   </li>
-                  <li>EMP-001</li>
+                  <li> 만든거 EMP-001</li>
                   <li>김철수</li>
                   <li>인사팀</li>
                   <li>팀장</li>

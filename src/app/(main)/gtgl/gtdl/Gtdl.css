@@ -419,7 +419,7 @@
     border-radius: 50px;
     width: 34px;
     height: 18px;
-    background: #1B3A6B;
+    background: #D1D5DB;
     display: flex;
     align-items: center;
     justify-content: right;
@@ -433,10 +433,21 @@
     border-radius: 50%;
 }
 
+.tgbtn.atv {
+    background: #1B3A6B;
+    justify-content: left;
+}
+
+
 
 
 
 .cggmin {
+    display: none;
+    gap: 8;
+}
+
+.cggmin.atv {
     display: flex;
     gap: 8;
 }
