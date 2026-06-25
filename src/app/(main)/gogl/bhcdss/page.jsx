@@ -42,6 +42,7 @@ import {
   Pencil,
   Plane,
   Plus,
+  Printer,
   RotateCcw,
   Save,
   SaveAll,
@@ -53,6 +54,7 @@ import {
   Star,
   Sun,
   TableIcon,
+  Trash2,
   TrendingDown,
   TrendingUp,
   Upload,
@@ -105,22 +107,23 @@ export default function Bhcdss() {
               <p>
                 <UserRoundPlus size={14} />
                 이달 취득
-              </p>
+              </p>{" "}
               <h1>3명</h1>
-              <span>신고완료 2 · 미신고 1</span>
+              <span>신고완료 2 · 신고완료 1</span>
             </li>
             <li>
               <p>
                 <UserRoundMinus color="red" size={14} />
                 이달 상실
-              </p>
+              </p>{" "}
               <h1>1명</h1>
-              <span>신고완료 1 · 미신고 0</span>
+              <span>신고완료 1 · 신고완료 0</span>
             </li>
             <li>
               <p>
+                {" "}
                 <AlertCircle size={14} />
-                미신고 건수
+                신고완료 건수
               </p>
               <h1>1건</h1>
               <span>신고기한 임박 확인</span>
@@ -161,18 +164,18 @@ export default function Bhcdss() {
                 <input type="date" name="" id="" />
               </label>
 
-              <label>
+              <label className="lbl">
                 <ul className="inputgo">
                   <li>1개월</li>
                   <li>3개월</li>
-                  <li>올해</li>
+                  <li className="atv">올해</li>
                 </ul>
               </label>
 
-              <label>
+              <label className="lbl">
                 <p>유형</p>
                 <ul className="inputoh">
-                  <li>전체</li>
+                  <li className="atv">전체</li>
                   <li>
                     <span>●</span>취득
                   </li>
@@ -185,8 +188,9 @@ export default function Bhcdss() {
               <label className="lbl">
                 <p>신고여부</p>
                 <select>
+                  {" "}
                   <option value="">전체</option>
-                  <option value="미신고">미신고</option>
+                  <option value="신고완료">신고완료</option>
                   <option value="신고완료">신고완료</option>
                 </select>
               </label>
@@ -210,13 +214,17 @@ export default function Bhcdss() {
             <div className="fromtit">
               <h1>
                 <TableIcon size={15} />
-                2025년 7월 급여 지급 내역
+                4대보험 취득/상실 이력 (2025년)
               </h1>
               <div className="fromtitin">
-                <h2>총 8명</h2>
-                <div className="fromtitinbox">
+                <h2>총 16명</h2>
+                <label className="fromtitinbox">
                   <input type="checkbox" name="" id="" />
                   전체선택
+                </label>
+                <div className="fromtitinbox prt">
+                  <Printer size={11} />
+                  선택 신고서출력
                 </div>
               </div>
             </div>
@@ -225,167 +233,251 @@ export default function Bhcdss() {
                 <li>
                   <input type="checkbox" name="" id="" checked />
                 </li>
+                <li>취득/상실</li>
                 <li>사원번호</li>
                 <li>성명</li>
-                <li>부서</li>
-                <li>기본급</li>
-                <li>식대</li>
-                <li>교통비</li>
-                <li>야근수당</li>
-                <li>지급소계</li>
-                <li>국민연금</li>
-                <li>건강보험</li>
-                <li>고용보험</li>
-                <li>소득세</li>
-                <li>공제소계</li>
-                <li>실지급액</li>
+                <li>부서/직급</li>
+                <li>취득일</li>
+                <li>상실일</li>
+                <li>보험 종류</li>
+                <li>취득/상실 사유</li>
+                <li>신고여부</li>
+                <li>신고일</li>
+                <li>관리</li>
               </ul>
 
-              <ul>
+              <ul className="cled">
                 <li>
                   <input type="checkbox" name="" id="" />
                 </li>
-                <li>EMP-001</li>
-                <li>김철수</li>
-                <li>인사팀</li>
-                <li>4,200,000</li>
-                <li>200,000</li>
-                <li>150,000</li>
-                <li>250,000</li>
-                <li>4,800,000</li>
-                <li>189,000</li>
-                <li>167,400</li>
-                <li>43,200</li>
-                <li>132,000</li>
-                <li>643,230</li>
-                <li>4,268,400</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
+                <li className="cdss cd">
+                  <span>
+                    <s>●</s> 취득
+                  </span>
                 </li>
-                <li>EMP-002</li>
-                <li>이영희</li>
-                <li>인사팀</li>
-                <li>4,700,000</li>
-                <li>200,000</li>
-                <li>150,000</li>
-                <li>120,000</li>
-                <li>5,170,000</li>
-                <li>211,500</li>
-                <li>187,200</li>
-                <li>46,530</li>
-                <li>198,000</li>
-                <li>643,230</li>
-                <li>4,526,770</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
+                <li>EMP-009</li>
+                <li className="alt">
+                  강다은{" "}
+                  <span>
+                    <AlertCircle size={10} />
+                  </span>
                 </li>
-                <li>EMP-003</li>
-                <li>박민준</li>
-                <li>개발팀</li>
-                <li>3,500,000</li>
-                <li>200,000</li>
-                <li>150,000</li>
-                <li>350,000</li>
-                <li>4,200,000</li>
-                <li>157,500</li>
-                <li>139,300</li>
-                <li>37,800</li>
-                <li>88,000</li>
-                <li>422,600</li>
-                <li>3,777,400</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
+                <li className="bsjg">
+                  개발팀
+                  <span>사원</span>
                 </li>
-                <li>EMP-004</li>
-                <li>최지영</li>
-                <li>영업팀</li>
-                <li>2,800,000</li>
-                <li>200,000</li>
-                <li>100,000</li>
-                <li>
+                <li className="cdo cd">2025.07.10</li>
+                <li className="sso">
                   <p>-</p>
                 </li>
-                <li>3,100,000</li>
-                <li>126,000</li>
-                <li>111,400</li>
-                <li>27,900</li>
-                <li>44,000</li>
-                <li>309,300</li>
-                <li>2,790,700</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
+                <li className="bhjl">
+                  <span>국민연금</span>
+                  <span>건강보험</span>
+                  <span>고용보험</span>
+                  <span>산재보험</span>
                 </li>
-                <li>EMP-005</li>
-                <li>정수빈</li>
-                <li>개발팀</li>
-                <li>2,900,000</li>
-                <li>200,000</li>
-                <li>100,000</li>
-                <li>180,000</li>
-                <li>3,380,000</li>
-                <li>130,500</li>
-                <li>115,200</li>
-                <li>30,420</li>
-                <li>55,000</li>
-                <li>331,120</li>
-                <li>3,048,880</li>
-              </ul>
-              <ul>
-                <li>
-                  <input type="checkbox" name="" id="" />
+                <li>신규입사</li>
+                <li className="sgob msg">
+                  <span>
+                    <s>●</s>미신고
+                  </span>
                 </li>
-                <li>EMP-006</li>
-                <li>한지민</li>
-                <li>영업팀</li>
-                <li>3,200,000</li>
-                <li>200,000</li>
-                <li>100,000</li>
-                <li>90,000</li>
-                <li>3,590,000</li>
-                <li>144,000</li>
-                <li>127,300</li>
-                <li>32,310</li>
-                <li>77,000</li>
-                <li>380,610</li>
-                <li>3,209,390</li>
+                <li className="sgo day">
+                  {" "}
+                  <span>
+                    <Clock size={9} /> D-5
+                  </span>
+                </li>
+                <li className="gl">
+                  <span className="sgs">
+                    <FileText size={10} />
+                    신고서
+                  </span>
+                  <span className="sg">
+                    <Pencil size={10} />
+                    수정
+                  </span>
+                </li>
               </ul>
 
-              <ul className="hgtb">
-                <li></li>
-                <li></li>
-                <li></li>
+              <ul>
                 <li>
-                  <Sigma size={13} /> 합계 (8명)
+                  <input type="checkbox" name="" id="" />
                 </li>
-                <li>25,760,000</li>
-                <li>1,600,000</li>
-                <li>1,000,000</li>
-                <li>1,280,000</li>
-                <li>28,640,000</li>
-                <li>1,152,000</li>
-                <li>1,018,800</li>
-                <li>277,260</li>
-                <li>720,000</li>
-                <li>4,128,060</li>
-                <li>24,511,940</li>
+                <li className="cdss cd">
+                  <span>
+                    <s>●</s> 취득
+                  </span>
+                </li>
+                <li>EMP-008</li>
+                <li className="alt">오준혁</li>
+                <li className="bsjg">
+                  개발팀
+                  <span>과장</span>
+                </li>
+                <li className="cdo cd">2025.07.02</li>
+                <li className="sso">
+                  <p>-</p>
+                </li>
+                <li className="bhjl">
+                  <span>국민연금</span>
+                  <span>건강보험</span>
+                  <span>고용보험</span>
+                  <span>산재보험</span>
+                </li>
+                <li>신규입사</li>
+                <li className="sgob sgol">
+                  <span>
+                    <s>●</s>신고완료
+                  </span>
+                </li>
+                <li className="sgo">2025.07.04</li>
+                <li className="gl">
+                  <span className="sgs">
+                    <FileText size={10} />
+                    신고서
+                  </span>
+                  <span className="sg">
+                    <Pencil size={10} />
+                    수정
+                  </span>
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <input type="checkbox" name="" id="" />
+                </li>
+                <li className="cdss ss">
+                  <span>
+                    <s>●</s> 상실
+                  </span>
+                </li>
+                <li>EMP-007</li>
+                <li className="alt">류성민</li>
+                <li className="bsjg">
+                  영업팀
+                  <span>대리</span>
+                </li>
+                <li className="cdo">2023.03.15</li>
+                <li className="sso day">2025.06.30</li>
+                <li className="bhjl">
+                  <span>국민연금</span>
+                  <span>건강보험</span>
+                  <span>고용보험</span>
+                  <span>산재보험</span>
+                </li>
+                <li>자진퇴사</li>
+                <li className="sgob sgol">
+                  <span>
+                    <s>●</s>신고완료
+                  </span>
+                </li>
+                <li className="sgo day">2025.07.03</li>
+                <li className="gl">
+                  <span className="sgs">
+                    <FileText size={10} />
+                    신고서
+                  </span>
+                  <span className="sg">
+                    <Pencil size={10} />
+                    수정
+                  </span>
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <input type="checkbox" name="" id="" />
+                </li>
+                <li className="cdss cd">
+                  <span>
+                    <s>●</s> 취득
+                  </span>
+                </li>
+                <li>EMP-010</li>
+                <li className="alt">임소연</li>
+                <li className="bsjg">
+                  경영지원팀 <span>사원</span>
+                </li>
+                <li className="cdo cd">2025.07.07</li>
+                <li className="sso">
+                  <p>-</p>
+                </li>
+                <li className="bhjl">
+                  <span>국민연금</span>
+                  <span>건강보험</span>
+                  <span>고용보험</span>
+                  <span>산재보험</span>
+                </li>
+                <li>신규입사</li>
+                <li className="sgob sgol">
+                  <span>
+                    <s>●</s>신고완료
+                  </span>
+                </li>
+                <li className="sgo day">2025.07.09</li>
+                <li className="gl">
+                  <span className="sgs">
+                    <FileText size={10} />
+                    신고서
+                  </span>
+                  <span className="sg">
+                    <Pencil size={10} />
+                    수정
+                  </span>
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <input type="checkbox" name="" id="" />
+                </li>
+                <li className="cdss ss">
+                  <span>
+                    <s>●</s> 상실
+                  </span>
+                </li>
+                <li>EMP-006</li>
+                <li className="alt">한지민</li>
+                <li className="bsjg">
+                  영업팀
+                  <span>대리</span>
+                </li>
+                <li className="cdo">2022.01.10</li>
+                <li className="sso day">2025.05.31</li>
+                <li className="bhjl">
+                  <span>국민연금</span>
+                  <span>건강보험</span>
+                  <span>고용보험</span>
+                </li>
+                <li>계약만료</li>
+                <li className="sgob sgol">
+                  <span>
+                    <s>●</s>신고완료
+                  </span>
+                </li>
+                <li className="sgo day">2025.06.02</li>
+                <li className="gl">
+                  <span className="sgs">
+                    <FileText size={10} />
+                    신고서
+                  </span>
+                  <span className="del">
+                    <Trash2 size={10} />
+                    삭제
+                  </span>
+                </li>
               </ul>
 
               <ul className="textsbtns">
                 <li>
-                  <h2>총 8명 · 2025년 7월분 급여</h2>
+                  <h2>총 16건 (취득 12건 · 상실 4건)</h2>
                   <div className="br"></div>
                   <div className="ttrettt">
                     <p>
-                      <Clock size={11} /> 미확정 8건 — 급여확정 후 명세서 발송
-                      가능
+                      <AlertCircle size={11} /> 미신고 1건 · EMP-009 강다은 —
+                      신고기한 2025.07.14
                     </p>
                   </div>
                 </li>
@@ -400,6 +492,7 @@ export default function Bhcdss() {
                   <span>&lt;</span>
                   <span className="textsces">1</span>
                   <span className="">2</span>
+                  <span className="">3</span>
                   <span>&gt;</span>
                 </li>
               </ul>
