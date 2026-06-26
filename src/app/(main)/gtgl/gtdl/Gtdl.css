@@ -442,16 +442,27 @@
 
 
 .cggmin {
-    display: none;
-    gap: 8;
-}
-
-.cggmin.atv {
     display: flex;
     gap: 8;
 }
 
 .cggmin p {
+    color: #9CA3AF;
+    display: flex;
+    align-items: center;
+}
+
+.cggminto {
+    display: none;
+    gap: 8;
+}
+
+.cggminto.atv {
+    display: flex;
+    gap: 8;
+}
+
+.cggminto p {
     color: #9CA3AF;
     display: flex;
     align-items: center;
@@ -735,6 +746,9 @@
     font-size: 12px;
 }
 
+.jginputbox .cgsg {
+    width: 100%;
+}
 
 /* 조퇴 */
 

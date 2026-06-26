@@ -125,7 +125,15 @@ export default function Gtdl() {
     getAttendanceDaily();
   }, []);
 
-  //출근처리
+  const now = new Date();
+  const timeString = now.toLocaleTimeString("ko-KR", {
+    hour12: false, // 24시간제 → 오전/오후 제거
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
+  //근태관리 인풋들
   const [cginput, setcginput] = useState({
     employeeNo: "string",
     workDate: apply.allday,
@@ -133,6 +141,7 @@ export default function Gtdl() {
     checkOutTime: "",
     workMinutes: 1073741824,
     memo: "string",
+    reason: "string",
   });
   const 출근처리하기 = async () => {
     //setIsLoading(true);
@@ -144,7 +153,6 @@ export default function Gtdl() {
       {
         employeeNo: apply.employeeNo,
         workDate: `${apply.allday}T${cginput.checkInTime}:00`,
-        checkInTime: `${apply.allday}T${cginput.checkInTime}:00`,
         workMinutes: 0,
         memo: cginput.memo,
       },
@@ -159,6 +167,7 @@ export default function Gtdl() {
     getAttendanceDaily();
     //setIsLoading(false);
   };
+
   const 퇴근처리하기 = async () => {
     //setIsLoading(true);
 
@@ -168,8 +177,6 @@ export default function Gtdl() {
       "/api/v1/attendances/checkout",
       {
         employeeNo: apply.employeeNo,
-        workDate: `${apply.allday}T${cginput.checkInTime}:00`,
-        checkOutTime: `${apply.allday}T${cginput.checkOutTime}:00`,
         workMinutes: 0,
         memo: cginput.memo,
       },
@@ -180,7 +187,31 @@ export default function Gtdl() {
       },
     );
 
-    // 출근처리 후 재조회하기
+    // 퇴근처리 후 재조회하기
+    getAttendanceDaily();
+    //setIsLoading(false);
+  };
+
+  const 조퇴처리하기 = async () => {
+    //setIsLoading(true);
+
+    const token = localStorage.getItem("accessToken");
+
+    const res = await baseApi.post(
+      "/api/v1/attendances/checkout",
+      {
+        employeeNo: apply.employeeNo,
+        reason: apply.reason,
+        memo: cginput.memo,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+
+    // 퇴근처리 후 재조회하기
     getAttendanceDaily();
     //setIsLoading(false);
   };
@@ -265,7 +296,9 @@ export default function Gtdl() {
                   <ClipboardPen size={15} />
                   근태 등록
                 </h1>
-                <h2>7월 1일</h2>
+                <h2>
+                  {apply.allday?.slice(5, 7)}월 {apply.allday?.slice(8, 10)}일
+                </h2>
               </div>
 
               <div className="gtglip">
@@ -367,6 +400,9 @@ export default function Gtdl() {
                         <div className="gtglipin">
                           <input
                             type="text"
+                            readOnly
+                            disabled
+                            value={timeString}
                             onChange={(e) =>
                               setcginput((prev) => {
                                 return {
@@ -377,25 +413,6 @@ export default function Gtdl() {
                             }
                           />
                           <Clock4 size={13} className="gtglipinic" />
-                        </div>
-                      </label>
-                    </div>
-
-                    <div className="lboutbox">
-                      <label className="cggm">
-                        <div className={`cggmin ${clots ? "atv" : ""}`}>
-                          <div className="gtglipin">
-                            <input type="text" placeholder="18:00" />
-                            <Clock4 size={13} className="gtglipinic" />
-                          </div>
-                          <p>~</p>
-                          <div className="gtglipin">
-                            <input type="text" placeholder="20:30" />
-                            <Clock4 size={13} className="gtglipinic" />
-                          </div>
-                          <div className="times">
-                            <p>2.5h</p>
-                          </div>
                         </div>
                       </label>
                     </div>
@@ -440,6 +457,9 @@ export default function Gtdl() {
                         <div className="gtglipin">
                           <input
                             type="text"
+                            value={timeString}
+                            readOnly
+                            disabled
                             onChange={(e) =>
                               setcginput((prev) => {
                                 return {
@@ -456,21 +476,21 @@ export default function Gtdl() {
 
                     <div className="lboutbox">
                       <label className="cggm">
-                        <div className="tgbox">
+                        <div
+                          className="tgbox"
+                          onClick={() => {
+                            setclots(!clots);
+                          }}
+                        >
                           <p>초과근무(OT)</p>
-                          <div
-                            className="tgbtnbox"
-                            onClick={() => {
-                              setclots(!clots);
-                            }}
-                          >
+                          <div className="tgbtnbox">
                             <div className={`tgbtn ${clots ? "atv" : ""}`}>
                               <div className="tgs"></div>
                             </div>
                             <p>{clots ? "적용" : "비적용"}</p>
                           </div>
                         </div>
-                        <div className={`cggmin ${clots ? "atv" : ""}`}>
+                        <div className={`cggminto ${clots ? "atv" : ""}`}>
                           <div className="gtglipin">
                             <input type="text" placeholder="18:00" />
                             <Clock4 size={13} className="gtglipinic" />
@@ -529,14 +549,12 @@ export default function Gtdl() {
                           출근 시간 <span>지각</span>
                         </p>
                         <div className="gtglipin">
-                          <input type="text" placeholder="10:30" />
-                          <Clock4 size={13} className="gtglipinic" />
-                        </div>
-                      </label>
-                      <label className="tgsg">
-                        <p>출근 시간</p>
-                        <div className="gtglipin">
-                          <input type="text" placeholder="18:00" />
+                          <input
+                            type="text"
+                            readOnly
+                            disabled
+                            value={timeString}
+                          />
                           <Clock4 size={13} className="gtglipinic" />
                         </div>
                       </label>
@@ -594,7 +612,13 @@ export default function Gtdl() {
                           조퇴 시간 <span>필수</span>
                         </p>
                         <div className="gtglipin">
-                          <input type="text" placeholder="14:00" />
+                          <input
+                            type="text"
+                            placeholder="14:00"
+                            readOnly
+                            disabled
+                            value={timeString}
+                          />
                           <Clock4 size={13} className="gtglipinic" />
                         </div>
                       </label>
@@ -606,7 +630,18 @@ export default function Gtdl() {
                           <p>조퇴사유</p>
                         </div>
                         <div className="cggmin">
-                          <select name="" id="">
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) =>
+                              setcginput((prev) => {
+                                return {
+                                  ...prev,
+                                  reason: e.target.value,
+                                };
+                              })
+                            }
+                          >
                             <option value="개인사정">개인사정</option>
                             <option value="병원">병원</option>
                             <option value="아픔">아픔</option>
@@ -622,6 +657,14 @@ export default function Gtdl() {
                         <textarea
                           type="text"
                           placeholder="특이사항을 입력하세요"
+                          onChange={(e) =>
+                            setcginput((prev) => {
+                              return {
+                                ...prev,
+                                memo: e.target.value,
+                              };
+                            })
+                          }
                         />
                       </div>
                     </label>
@@ -631,7 +674,7 @@ export default function Gtdl() {
                         <RotateCcw size={12} color="#6B7280" />
                         <p>초기화</p>
                       </button>
-                      <button className="retblbtn">
+                      <button className="retblbtn" onClick={조퇴처리하기}>
                         <Save size={12} />
                         <p>저장</p>
                       </button>
@@ -651,10 +694,10 @@ export default function Gtdl() {
                         </div>
                         <div className="cggmin">
                           <select name="" id="">
-                            <option value="개인사정">개인사정</option>
-                            <option value="병원">병원</option>
-                            <option value="아픔">아픔</option>
-                            <option value="기타">기타</option>
+                            <option value="경조사">경조사</option>
+                            <option value="예비군">예비군</option>
+                            <option value="투표">투표</option>
+                            <option value="공휴일">공휴일</option>
                           </select>
                         </div>
                       </label>
@@ -671,15 +714,13 @@ export default function Gtdl() {
                         <div className="lboutboxintp">
                           <label className="cgsg">
                             <div className="gtglipin">
-                              <input type="text" placeholder="09:00" />
-                              <Calendar size={13} className="gtglipinic" />
+                              <input type="date" placeholder="09:00" />
                             </div>
                           </label>
                           <b>~</b>
                           <label className="tgsg">
                             <div className="gtglipin">
-                              <input type="text" placeholder="14:00" />
-                              <Calendar size={13} className="gtglipinic" />
+                              <input type="date" placeholder="14:00" />
                             </div>
                           </label>
                         </div>
@@ -967,7 +1008,7 @@ export default function Gtdl() {
               <div className="fromtit">
                 <h1>
                   <ListChecks size={15} strokeWidth={1.5} />
-                  2025.07.01 근태 목록
+                  {apply.allday} 근태 목록
                 </h1>
                 <div className="titin">
                   <h2>총 23건 </h2>
