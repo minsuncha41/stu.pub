@@ -134,7 +134,7 @@ export default function Gtdl() {
     workMinutes: 1073741824,
     memo: "string",
   });
-  const 출근처리하기 = async () => {
+  const 출퇴근처리하기 = async () => {
     //setIsLoading(true);
 
     const token = localStorage.getItem("accessToken");
@@ -145,30 +145,6 @@ export default function Gtdl() {
         employeeNo: apply.employeeNo,
         workDate: `${apply.allday}T${cginput.checkInTime}:00`,
         checkInTime: `${apply.allday}T${cginput.checkInTime}:00`,
-        workMinutes: 0,
-        memo: cginput.memo,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-
-    // 출근처리 후 재조회하기
-    getAttendanceDaily();
-    //setIsLoading(false);
-  };
-  const 퇴근처리하기 = async () => {
-    //setIsLoading(true);
-
-    const token = localStorage.getItem("accessToken");
-
-    const res = await baseApi.post(
-      "/api/v1/attendances/checkout",
-      {
-        employeeNo: apply.employeeNo,
-        workDate: `${apply.allday}T${cginput.checkInTime}:00`,
         checkOutTime: `${apply.allday}T${cginput.checkOutTime}:00`,
         workMinutes: 0,
         memo: cginput.memo,
@@ -423,7 +399,7 @@ export default function Gtdl() {
                         <RotateCcw size={12} color="#6B7280" />
                         <p>초기화</p>
                       </button>
-                      <button className="retblbtn" onClick={출근처리하기}>
+                      <button className="retblbtn" onClick={출퇴근처리하기}>
                         <Save size={12} />
                         <p>저장</p>
                       </button>
@@ -510,7 +486,7 @@ export default function Gtdl() {
                         <RotateCcw size={12} color="#6B7280" />
                         <p>초기화</p>
                       </button>
-                      <button className="retblbtn" onClick={퇴근처리하기}>
+                      <button className="retblbtn" onClick={출퇴근처리하기}>
                         <Save size={12} />
                         <p>저장</p>
                       </button>
