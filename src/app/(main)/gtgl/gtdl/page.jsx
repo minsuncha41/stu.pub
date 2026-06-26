@@ -99,9 +99,24 @@ export default function Gtdl() {
     const position = localStorage.getItem("position");
     const employeeNo = localStorage.getItem("employeeNo");
     const departmentName = localStorage.getItem("departmentName");
+
+    const Years = new Date().getFullYear();
+    const Months =
+      new Date().getMonth() + 1 < 10
+        ? "0" + (new Date().getMonth() + 1)
+        : new Date().getMonth() + 1;
+
+    const Dates =
+      new Date().getUTCDate() < 10
+        ? "0" + new Date().getUTCDate()
+        : new Date().getUTCDate();
+
+    const allday = `${Years}-${Months}-${Dates}`;
+
     setapply({
       //오류나는건 다른 의존성없으면 상관없음
       name,
+      allday,
       position,
       employeeNo,
       departmentName,
@@ -113,15 +128,13 @@ export default function Gtdl() {
   //출근처리
   const [cginput, setcginput] = useState({
     employeeNo: "string",
-    workDate: new Date().toString(),
+    workDate: apply.allday,
     checkInTime: "",
     checkOutTime: "",
-
     workMinutes: 1073741824,
-    attendanceStatusCode: "string",
     memo: "string",
   });
-  const 출근처리하기 = async () => {
+  const 출태근처리하기 = async () => {
     //setIsLoading(true);
 
     const token = localStorage.getItem("accessToken");
@@ -130,11 +143,10 @@ export default function Gtdl() {
       "/api/v1/attendances/checkin",
       {
         employeeNo: apply.employeeNo,
-        workDate: cginput.workDate,
-        checkInTime: cginput.checkInTime,
-        checkOutTime: cginput.checkOutTime,
+        workDate: `${apply.allday}T${cginput.checkInTime}:00`,
+        checkInTime: `${apply.allday}T${cginput.checkInTime}:00`,
+        checkOutTime: `${apply.allday}T${cginput.checkOutTime}:00`,
         workMinutes: 0,
-        attendanceStatusCode: "출근",
         memo: cginput.memo,
       },
       {
@@ -242,7 +254,6 @@ export default function Gtdl() {
                       <span>{apply.name?.slice(0, 1)}</span>
                       {apply.name} · {apply.departmentName}
                     </p>
-                    <p>x</p>
                   </div>
                 </label>
                 <label className="gtuh">
@@ -294,11 +305,11 @@ export default function Gtdl() {
                       <p>반차</p>
                     </li>
                     <li
-                      onClick={() => setclgtoh("출장")}
-                      className={`cj  ${clgtoh === "출장" ? "active" : ""}`}
+                      onClick={() => setclgtoh("퇴근")}
+                      className={`tg  ${clgtoh === "퇴근" ? "active" : ""}`}
                     >
                       <Plane size={12} />
-                      <p>출장</p>
+                      <p>퇴근</p>
                     </li>
                     <li
                       onClick={() => setclgtoh("교육")}
@@ -324,11 +335,7 @@ export default function Gtdl() {
                 {/* 근태 등록별 인풋 */}
 
                 {/* 출근 */}
-                {(clgtoh === "출근" ||
-                  clgtoh === "결근" ||
-                  clgtoh === "반차" ||
-                  clgtoh === "출장" ||
-                  clgtoh === "교육") && (
+                {clgtoh === "출근" && (
                   <div className="cginputbox">
                     <div className="lboutbox">
                       <label className="cgsg">
@@ -336,7 +343,6 @@ export default function Gtdl() {
                         <div className="gtglipin">
                           <input
                             type="text"
-                            value={"09:00"}
                             onChange={(e) =>
                               setcginput((prev) => {
                                 return {
@@ -349,12 +355,67 @@ export default function Gtdl() {
                           <Clock4 size={13} className="gtglipinic" />
                         </div>
                       </label>
+                    </div>
+
+                    <div className="lboutbox">
+                      <label className="cggm">
+                        <div className={`cggmin ${clots ? "atv" : ""}`}>
+                          <div className="gtglipin">
+                            <input type="text" placeholder="18:00" />
+                            <Clock4 size={13} className="gtglipinic" />
+                          </div>
+                          <p>~</p>
+                          <div className="gtglipin">
+                            <input type="text" placeholder="20:30" />
+                            <Clock4 size={13} className="gtglipinic" />
+                          </div>
+                          <div className="times">
+                            <p>2.5h</p>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <label className="bg">
+                      <p>비고</p>
+                      <div className="gtglipin">
+                        <textarea
+                          type="text"
+                          placeholder="특이사항을 입력하세요"
+                          onChange={(e) =>
+                            setcginput((prev) => {
+                              return {
+                                ...prev,
+                                memo: e.target.value,
+                              };
+                            })
+                          }
+                        />
+                      </div>
+                    </label>
+
+                    <div className="btnsbox">
+                      <button className="lftwtbtn">
+                        <RotateCcw size={12} color="#6B7280" />
+                        <p>초기화</p>
+                      </button>
+                      <button className="retblbtn" onClick={출태근처리하기}>
+                        <Save size={12} />
+                        <p>저장</p>
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* 퇴근 */}
+                {clgtoh === "퇴근" && (
+                  <div className="tginputbox">
+                    <div className="lboutbox">
                       <label className="tgsg">
                         <p>퇴근 시간</p>
                         <div className="gtglipin">
                           <input
                             type="text"
-                            value={"18:00"}
                             onChange={(e) =>
                               setcginput((prev) => {
                                 return {
@@ -425,14 +486,13 @@ export default function Gtdl() {
                         <RotateCcw size={12} color="#6B7280" />
                         <p>초기화</p>
                       </button>
-                      <button className="retblbtn">
+                      <button className="retblbtn" onClick={출태근처리하기}>
                         <Save size={12} />
                         <p>저장</p>
                       </button>
                     </div>
                   </div>
                 )}
-
                 {/* 지각 */}
                 {clgtoh === "지각" && (
                   <div className="jginputbox">
@@ -505,13 +565,6 @@ export default function Gtdl() {
                       <CircleAlert size={14} /> 지각 시간이 자동으로 계산됩니다.
                     </h1>
                     <div className="lboutbox">
-                      <label className="cgsg">
-                        <p>출근 시간</p>
-                        <div className="gtglipin">
-                          <input type="text" placeholder="09:00" />
-                          <Clock4 size={13} className="gtglipinic" />
-                        </div>
-                      </label>
                       <label className="tgsg">
                         <p>
                           조퇴 시간 <span>필수</span>
@@ -775,6 +828,114 @@ export default function Gtdl() {
                     </div>
                   </div>
                 )}
+
+                {/* 기타 */}
+                {(clgtoh === "결근" ||
+                  clgtoh === "반차" ||
+                  clgtoh === "교육") && (
+                  <div className="inputbox">
+                    <div className="lboutbox">
+                      <label className="cgsg">
+                        <p>출근 시간</p>
+                        <div className="gtglipin">
+                          <input
+                            type="text"
+                            value={"09:00"}
+                            onChange={(e) =>
+                              setcginput((prev) => {
+                                return {
+                                  ...prev,
+                                  checkInTime: e.target.value,
+                                };
+                              })
+                            }
+                          />
+                          <Clock4 size={13} className="gtglipinic" />
+                        </div>
+                      </label>
+                      <label className="tgsg">
+                        <p>퇴근 시간</p>
+                        <div className="gtglipin">
+                          <input
+                            type="text"
+                            value={"18:00"}
+                            onChange={(e) =>
+                              setcginput((prev) => {
+                                return {
+                                  ...prev,
+                                  checkOutTime: e.target.value,
+                                };
+                              })
+                            }
+                          />
+                          <Clock4 size={13} className="gtglipinic" />
+                        </div>
+                      </label>
+                    </div>
+
+                    <div className="lboutbox">
+                      <label className="cggm">
+                        <div className="tgbox">
+                          <p>초과근무(OT)</p>
+                          <div
+                            className="tgbtnbox"
+                            onClick={() => {
+                              setclots(!clots);
+                            }}
+                          >
+                            <div className={`tgbtn ${clots ? "atv" : ""}`}>
+                              <div className="tgs"></div>
+                            </div>
+                            <p>{clots ? "적용" : "비적용"}</p>
+                          </div>
+                        </div>
+                        <div className={`cggmin ${clots ? "atv" : ""}`}>
+                          <div className="gtglipin">
+                            <input type="text" placeholder="18:00" />
+                            <Clock4 size={13} className="gtglipinic" />
+                          </div>
+                          <p>~</p>
+                          <div className="gtglipin">
+                            <input type="text" placeholder="20:30" />
+                            <Clock4 size={13} className="gtglipinic" />
+                          </div>
+                          <div className="times">
+                            <p>2.5h</p>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <label className="bg">
+                      <p>비고</p>
+                      <div className="gtglipin">
+                        <textarea
+                          type="text"
+                          placeholder="특이사항을 입력하세요"
+                          onChange={(e) =>
+                            setcginput((prev) => {
+                              return {
+                                ...prev,
+                                memo: e.target.value,
+                              };
+                            })
+                          }
+                        />
+                      </div>
+                    </label>
+
+                    <div className="btnsbox">
+                      <button className="lftwtbtn">
+                        <RotateCcw size={12} color="#6B7280" />
+                        <p>초기화</p>
+                      </button>
+                      <button className="retblbtn">
+                        <Save size={12} />
+                        <p>저장</p>
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -828,7 +989,7 @@ export default function Gtdl() {
                          ${it.attendanceStatusCode === "출근" ? s.cg : ""} 
                          ${it.attendanceStatusCode === "지각" ? s.jg : ""} 
                          ${it.attendanceStatusCode === "연차" ? s.uc : ""}
-                         ${it.attendanceStatusCode === "출장" ? s.cj : ""}
+                         ${it.attendanceStatusCode === "퇴근" ? s.tg : ""}
                          ${it.attendanceStatusCode === "반차" ? s.bc : ""}
                          ${it.attendanceStatusCode === "미등록" ? s.mdl : ""}
                         `}
@@ -955,7 +1116,7 @@ export default function Gtdl() {
                   <li>사원</li>
                   <li>
                     <p className={`${s.gtuh} ${s.cj}`}>
-                      <span>●</span>출장
+                      <span>●</span>퇴근
                     </p>
                   </li>
                   <li>08:50</li>
