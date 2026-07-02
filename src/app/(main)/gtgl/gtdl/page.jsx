@@ -69,7 +69,8 @@ export default function Gtdl() {
   //근태조회
   // 로딩창
   //const [IsLoading, setIsLoading] = useState(null);
-  const [AttendanceList, setAttendanceList] = useState([]);
+  const [attendanceList, setAttendanceList] = useState([]);
+
   const getAttendanceDaily = async () => {
     try {
       //setIsLoading(true);
@@ -84,7 +85,7 @@ export default function Gtdl() {
 
       // 2. 근태리스트를 세팅합니다.
       setAttendanceList(res?.data?.data);
-      console.log("근태리스트", res);
+      console.log("근태리스트", res?.data?.data);
       //console.log("이건머임", IsLoading);
     } catch (e) {
     } finally {
@@ -141,8 +142,14 @@ export default function Gtdl() {
     checkOutTime: "",
     workMinutes: 1073741824,
     memo: "string",
-    reason: "string",
+    reason: "개인사정",
+    earlyLeaveTime: timeString,
+
+    leaveType: "연차",
+    endDate: "",
+    startDate: "",
   });
+
   const 출근처리하기 = async () => {
     //setIsLoading(true);
 
@@ -151,10 +158,7 @@ export default function Gtdl() {
     const res = await baseApi.post(
       "/api/v1/attendances/checkin",
       {
-        employeeNo: apply.employeeNo,
-        workDate: `${apply.allday}T${cginput.checkInTime}:00`,
-        workMinutes: 0,
-        memo: cginput.memo,
+        workDate: "2026-07-02",
       },
       {
         headers: {
@@ -162,6 +166,7 @@ export default function Gtdl() {
         },
       },
     );
+    alert("출근처리 완료");
 
     // 출근처리 후 재조회하기
     getAttendanceDaily();
@@ -186,6 +191,7 @@ export default function Gtdl() {
         },
       },
     );
+    alert("퇴근처리 완료");
 
     // 퇴근처리 후 재조회하기
     getAttendanceDaily();
@@ -197,11 +203,46 @@ export default function Gtdl() {
 
     const token = localStorage.getItem("accessToken");
 
+    // try {
     const res = await baseApi.post(
-      "/api/v1/attendances/checkout",
+      "/api/v1/attendances/early-leave",
       {
         employeeNo: apply.employeeNo,
-        reason: apply.reason,
+        reason: cginput.reason,
+        //earlyLeaveTime: cginput.earlyLeaveTime,
+        earlyLeaveTime: `${apply.allday}T${cginput.earlyLeaveTime}`,
+        memo: cginput.memo,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+      console.log("조퇴처리하기", `${apply.allday}${cginput.earlyLeaveTime}`),
+    );
+
+    // 조퇴처리 후 재조회하기
+    getAttendanceDaily();
+    //setIsLoading(false);
+    alert("조퇴처리 완료");
+
+    // } catch (e) {
+    //   console.error(e);
+    //   alert("네트워크 에러");
+    // } finally {
+    // }
+  };
+
+  const 연차신청하기 = async () => {
+    const token = localStorage.getItem("accessToken");
+
+    const res = await baseApi.post(
+      "/api/v1/attendances/leave",
+      {
+        employeeNo: apply.employeeNo,
+        leaveType: "연차",
+        startDate: cginput.startDate,
+        endDate: cginput.endDate,
         memo: cginput.memo,
       },
       {
@@ -210,8 +251,9 @@ export default function Gtdl() {
         },
       },
     );
+    alert("연차신청 완료");
 
-    // 퇴근처리 후 재조회하기
+    // 연차신청 후 재조회하기
     getAttendanceDaily();
     //setIsLoading(false);
   };
@@ -407,7 +449,7 @@ export default function Gtdl() {
                               setcginput((prev) => {
                                 return {
                                   ...prev,
-                                  checkInTime: e.target.value,
+                                  checkInTime: traget.value,
                                 };
                               })
                             }
@@ -464,7 +506,7 @@ export default function Gtdl() {
                               setcginput((prev) => {
                                 return {
                                   ...prev,
-                                  checkOutTime: e.target.value,
+                                  checkOutTime: timeString,
                                 };
                               })
                             }
@@ -566,7 +608,18 @@ export default function Gtdl() {
                           <p>지각사유</p>
                         </div>
                         <div className="cggmin">
-                          <select name="" id="">
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) =>
+                              setcginput((prev) => {
+                                return {
+                                  ...prev,
+                                  memo: e.target.value,
+                                };
+                              })
+                            }
+                          >
                             <option value="교통지연">교통지연</option>
                             <option value="늦잠">늦잠</option>
                             <option value="공사">공사</option>
@@ -592,7 +645,7 @@ export default function Gtdl() {
                         <RotateCcw size={12} color="#6B7280" />
                         <p>초기화</p>
                       </button>
-                      <button className="retblbtn">
+                      <button className="retblbtn" onClick={출근처리하기}>
                         <Save size={12} />
                         <p>저장</p>
                       </button>
@@ -614,10 +667,17 @@ export default function Gtdl() {
                         <div className="gtglipin">
                           <input
                             type="text"
-                            placeholder="14:00"
                             readOnly
                             disabled
                             value={timeString}
+                            onChange={(e) => {
+                              setcginput((prev) => {
+                                return {
+                                  ...prev,
+                                  earlyLeaveTime: timeString,
+                                };
+                              });
+                            }}
                           />
                           <Clock4 size={13} className="gtglipinic" />
                         </div>
@@ -714,13 +774,35 @@ export default function Gtdl() {
                         <div className="lboutboxintp">
                           <label className="cgsg">
                             <div className="gtglipin">
-                              <input type="date" placeholder="09:00" />
+                              <input
+                                type="date"
+                                placeholder="2026-07-02"
+                                onChange={(e) =>
+                                  setcginput((prev) => {
+                                    return {
+                                      ...prev,
+                                      startDate: e.target.value,
+                                    };
+                                  })
+                                }
+                              />
                             </div>
                           </label>
                           <b>~</b>
                           <label className="tgsg">
                             <div className="gtglipin">
-                              <input type="date" placeholder="14:00" />
+                              <input
+                                type="date"
+                                placeholder="2026-07-02"
+                                onChange={(e) =>
+                                  setcginput((prev) => {
+                                    return {
+                                      ...prev,
+                                      endDate: e.target.value,
+                                    };
+                                  })
+                                }
+                              />
                             </div>
                           </label>
                         </div>
@@ -812,7 +894,7 @@ export default function Gtdl() {
                             연차 구분 <span style={{ color: "red" }}>*</span>
                           </p>
                         </div>
-                        <ul className="cggminocgb">
+                        <ul className="cggminocgb" oncange={(e) => {}}>
                           <li
                             onClick={() => setocgb("종일")}
                             className={`ocgb  ${clocgb === "종일" ? "active" : ""}`}
@@ -849,13 +931,35 @@ export default function Gtdl() {
                         <div className="lboutboxintp">
                           <label className="cgsg">
                             <div className="gtglipin">
-                              <input type="date" placeholder="09:00" />
+                              <input
+                                type="date"
+                                placeholder="2026-07-02"
+                                onChange={(e) =>
+                                  setcginput((prev) => {
+                                    return {
+                                      ...prev,
+                                      startDate: e.target.value,
+                                    };
+                                  })
+                                }
+                              />
                             </div>
                           </label>
                           <b>~</b>
                           <label className="tgsg">
                             <div className="gtglipin">
-                              <input type="date" placeholder="14:00" />
+                              <input
+                                type="date"
+                                placeholder="2026-07-03"
+                                onChange={(e) =>
+                                  setcginput((prev) => {
+                                    return {
+                                      ...prev,
+                                      endDate: e.target.value,
+                                    };
+                                  })
+                                }
+                              />
                             </div>
                           </label>
                         </div>
@@ -886,7 +990,7 @@ export default function Gtdl() {
                         <RotateCcw size={12} color="#6B7280" />
                         <p>초기화</p>
                       </button>
-                      <button className="retblbtn">
+                      <button className="retblbtn" onClick={연차신청하기}>
                         <Save size={12} />
                         <p>저장</p>
                       </button>
@@ -1035,10 +1139,13 @@ export default function Gtdl() {
                   <li>관리</li>
                 </ul>
 
-                {AttendanceList.map((it, idx) => (
+                {attendanceList.map((it, idx) => (
                   <ul
                     key={idx}
-                    style={{ display: it.checkInTime ? "flex" : "none" }}
+                    style={{
+                      // 내가 따로 설정해놔서 근태유형없으면 안보이게 처리함
+                      display: it.attendanceStatusCode ? "flex" : "none",
+                    }}
                   >
                     {" "}
                     <li>
