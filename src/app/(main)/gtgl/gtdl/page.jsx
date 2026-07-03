@@ -257,6 +257,15 @@ export default function Gtdl() {
     getAttendanceDaily();
     //setIsLoading(false);
   };
+
+  //
+
+  //
+
+  //
+
+  //
+
   return (
     <div className="wrap">
       <Nav num2={true} />

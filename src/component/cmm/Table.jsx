@@ -20,7 +20,7 @@ export default function Table({ tablecls, keywordss }) {
 
   const handlePrev = () => {
     setPage((prev) => Math.max(prev - 1, 1)); // 최소 1 이하로 내려가지 않게
-    setCurrentPage((prev) => Math.max(prev - 1, 1)); // 최소 1 이하로 내려가지 않게
+    setCurrentPage((prev) => Math.max(prev - 1, 1)); // 선택된 페이지 표시용
   };
 
   //api를 요청해서 받는다. 통신은async await붙인다
@@ -54,8 +54,12 @@ export default function Table({ tablecls, keywordss }) {
 
   const handleClick = (e) => {
     setPage(e); // 클릭한 숫자로 page 변경
-    setCurrentPage(page); // 현재 선택된 페이지 상태
+    setCurrentPage(e); // 현재 선택된 페이지 상태
   };
+
+  //
+
+  //
 
   //페이지수 불러오기
   const [lastPage, setLastPage] = useState(1); // 마지막 페이지 번호
