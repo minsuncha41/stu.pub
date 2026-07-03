@@ -7,8 +7,9 @@ import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
 import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
-import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
+import RegisterSalaryInfoModal from "@/component/cmm/RegisterSalaryInfoModal";
+
 import {
   AlarmClock,
   AlertCircle,
@@ -75,11 +76,17 @@ export default function Gojbgl() {
     getEmployee();
   }, []);
 
+  const [openRegisterModal, setOpenRegisterModal] = useState(false);
+
   return (
     <div className="wrap">
       <Nav num3={true} />
 
       <div className="inwrap">
+        <RegisterSalaryInfoModal
+          open={openRegisterModal}
+          setOpen={setOpenRegisterModal}
+        />
         <Aside dummy={aside} idxs="1" subidxs="1" />
 
         <div className="main">
