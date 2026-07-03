@@ -72,25 +72,20 @@ export default function Gtdl() {
   const [attendanceList, setAttendanceList] = useState([]);
 
   const getAttendanceDaily = async () => {
-    try {
-      //setIsLoading(true);
+    //setIsLoading(true);
 
-      // 1. 근태리스트를 조회합니다.
-      const token = localStorage.getItem("accessToken");
-      const res = await baseApi.get("/api/v1/attendances/daily", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+    // 1. 근태리스트를 조회합니다.
+    const token = localStorage.getItem("accessToken");
+    const res = await baseApi.get("/api/v1/attendances/daily", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-      // 2. 근태리스트를 세팅합니다.
-      setAttendanceList(res?.data?.data);
-      console.log("근태리스트", res?.data?.data);
-      //console.log("이건머임", IsLoading);
-    } catch (e) {
-    } finally {
-      //setIsLoading(false);
-    }
+    // 2. 근태리스트를 세팅합니다.
+    setAttendanceList(res?.data?.data);
+    console.log("근태리스트", res?.data?.data);
+    //console.log("이건머임", IsLoading);
   };
   // 로그인하면서 보내준것들 로컬스토리지에받아서 사용
   const [apply, setapply] = useState([]);
@@ -158,7 +153,7 @@ export default function Gtdl() {
     const res = await baseApi.post(
       "/api/v1/attendances/checkin",
       {
-        workDate: "2026-07-02",
+        workDate: "apply.allday",
       },
       {
         headers: {
@@ -257,6 +252,38 @@ export default function Gtdl() {
     getAttendanceDaily();
     //setIsLoading(false);
   };
+  const [findDate, setFindDate] = useState(apply.allday);
+  const [keyword, setKeyword] = useState("");
+  const [departmentName, setDepartmentName] = useState("");
+
+  const 근태조회 = async ({ findDate, keyword, departmentName }) => {
+    try {
+      const token = localStorage.getItem("accessToken");
+
+      const params = {
+        findDate: findDate ?? apply.allday, // 날짜
+        keyword: keyword ?? "", // 검색어
+        //departmentName: departmentName ?? "", // 부서명
+      };
+      if (departmentName) {
+        params.departmentName = departmentName;
+      }
+      const res = await baseApi.get("/api/v1/attendances/daily", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params, // 위에서 만든 params 객체를 그대로 전달
+      });
+      console.log("근태조회", params);
+      console.log("API 응답", res?.data);
+
+      setAttendanceList(res?.data?.data);
+    } catch (e) {
+      console.error("e", e);
+    } finally {
+      // setIsLoading(false);
+    }
+  };
 
   //
 
@@ -294,7 +321,18 @@ export default function Gtdl() {
                   <p>
                     <ChevronLeft size={14} />
                   </p>
-                  <input type="date" />
+                  <input
+                    type="date"
+                    value={findDate}
+                    onChange={(e) => {
+                      setFindDate(e.target.value);
+                      근태조회({
+                        findDate: e.target.value,
+                        keyword,
+                        departmentName,
+                      });
+                    }}
+                  />
                   <p>
                     <ChevronRight size={14} />
                   </p>
@@ -308,16 +346,36 @@ export default function Gtdl() {
 
               <label className="lbl">
                 <p>부서</p>
-                <select>
+                <select
+                  onChange={(e) => {
+                    setDepartmentName(e.target.value);
+                    근태조회({
+                      findDate,
+                      keyword,
+                      departmentName: e.target.value,
+                    });
+                  }}
+                >
                   <option value="">전체 부서</option>
-                  <option value="bs1">부서1</option>
-                  <option value="bs2">부서2</option>
+                  <option value="IT본부">IT본부</option>
+                  <option value="냉장/냉동물류본부">냉장/냉동물류본부</option>
                   <option value="bs3">부서3</option>
                 </select>
               </label>
               <label className="lbl iconelbl">
                 <Search className="icone" size={13} color="#9CA3AF" />
-                <input type="text" placeholder="사원명 검색" />
+                <input
+                  type="text"
+                  placeholder="사원명 검색"
+                  onChange={(e) => {
+                    setKeyword(e.target.value);
+                    근태조회({
+                      findDate,
+                      keyword: e.target.value,
+                      departmentName,
+                    });
+                  }}
+                />
               </label>
             </div>
 
