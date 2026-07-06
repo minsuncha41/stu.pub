@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogFooter,
   DialogHeader,
-} from "@/components/ui/dialog";
+} from "@/components/ui/uidialog";
 import {
   Calculator,
   Check,
@@ -29,7 +29,6 @@ export default function RegisterSalaryInfoModal({ open, setOpen }) {
 
   const registerEmployeeSalary = async () => {
     try {
-      const token = localStorage.getItem("accessToken");
       const res = await baseApi.post("/api/v1/payroll/register/employees", {
         employeeNo: selectedEmployee?.employeeNo,
         basicSalary: selectedEmployee?.basicSalary,

@@ -25,7 +25,7 @@ import {
   Upload,
   X,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/uibutton";
 import {
   Popover,
   PopoverContent,
@@ -33,7 +33,7 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@/components/ui/uipopover";
 export default function Apply() {
   {
     // const [employee, setemployee] = useState([]);

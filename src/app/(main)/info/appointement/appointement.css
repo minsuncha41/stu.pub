@@ -580,3 +580,460 @@
 .textbox {
     margin-top: 16px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 모달창  */
+
+
+
+.wrap {
+    position: relative;
+}
+
+
+
+
+
+.modalwrap {
+    z-index: 99999999;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 500px; */
+}
+
+.modal {
+    margin: 0 auto;
+    width: 700px;
+    /* height: 814px; */
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tit {
+    background: #1B3A6B;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    color: white;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+
+.titlft {
+    font-size: 16;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    gap: 10;
+}
+
+.titret {
+    width: 32px;
+    height: 32px;
+    background: #2D5F9E;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.modalin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.topbox {
+    background: #F8FAFC;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+.use {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.use button {
+    border-radius: 3px;
+    color: #6B7280;
+    font-size: 11px;
+    width: 55px;
+    height: 20px;
+    border: 1px solid #D1D5DB;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.usebox {
+    border: 1px solid #D1D5DB;
+    width: 76px;
+    height: 88px;
+    border-radius: 10px;
+    background: #F1F5F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    color: #94A3B8;
+    font-size: 11px;
+}
+
+.topbox ul {
+    display: flex;
+    flex-flow: column wrap;
+    width: calc(100% - 76px);
+}
+
+.topbox>ul>li {
+    margin: 7px 0;
+    width: 100%;
+    height: 1px;
+    background-color: #E5E7EB;
+}
+
+.topbox ul ul {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px 0;
+}
+
+.topbox ul ul li {
+    padding: 0px 16px;
+    border-right: 1px solid #E5E7EB;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    font-size: 13px
+}
+
+.topbox ul ul li p {
+    font-size: 11px;
+    color: #9CA3AF;
+}
+
+
+.topbox ul ul:nth-child(5) li:nth-child(3) {
+    display: none;
+}
+
+.topbox ul ul:nth-child(5) li:nth-child(2) {
+    flex: 2.3;
+}
+
+.pd {
+    padding: 8px 0px;
+    border-radius: 10px;
+}
+
+
+
+
+.cllist {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 13px;
+}
+
+.cllist li {
+    display: flex;
+    text-align: center;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.cllist li.cl {
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    color: #1B3A6B;
+}
+
+.cllist li.cl::after {
+    content: "";
+    width: 100%;
+    height: 1.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #1B3A6B;
+}
+
+.blol {
+    padding: 16px;
+}
+
+
+
+.htit {
+    position: relative;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #1B3A6B;
+    font-weight: bold;
+    width: 100%;
+    height: 25px;
+}
+
+.htit::after {
+    position: absolute;
+    content: "";
+    width: 3;
+    height: 16px;
+    background: #1B3A6B;
+    left: 0;
+    border-radius: 10px;
+}
+
+.mdtb {
+    display: flex;
+    flex-flow: column;
+}
+
+.mdtb ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.mdtb ul li {
+    padding: 11px 12px;
+    border-bottom: 1px solid #E5E7EB;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 12px;
+}
+
+
+.mdtb ul:first-child li {
+    background: #F1F5F9;
+    font-weight: bold;
+    color: #6B7280;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btlft {
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 20px;
+    justify-content: space-between;
+    border-top: 1px solid #E5E7EB
+}
+
+
+.btlft p {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+.btlft p span {
+    margin-right: 5px;
+    color: red;
+}
+
+.btret {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8;
+}
+
+.btret button {
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    flex-flow: row wrap;
+    height: 36px;
+    padding: 0 20px;
+    justify-self: center;
+    align-items: center;
+    gap: 6;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.btret button:first-child {
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB
+}
+
+.btret button:last-child {
+    color: white;
+    background: #1B3A6B;
+}
+
+.sgdlbtn {
+    right: 20px;
+    top: 117px;
+    width: 96px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pdfbtn {
+    right: 122px;
+    top: 117px;
+    width: 130px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.pdfpop {
+    z-index: 10;
+    padding-top: 28px;
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdfic {
+    width: 48px;
+    height: 48px;
+    background: #EFF6FF;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pdfpop h1 {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.pdfpop p {
+    text-align: center;
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.pdfbtns {
+    width: 100%;
+    height: 76px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.pdfbtns button {
+    width: 180px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pdfbtns button:nth-child(1) {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pdfbtns button:nth-child(2) {
+    background: #2563EB;
+    color: white;
+}

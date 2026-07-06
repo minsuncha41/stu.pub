@@ -39,7 +39,7 @@ import {
   UserPlus,
   X,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/uibutton";
 import {
   Popover,
   PopoverContent,
@@ -47,10 +47,10 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@/components/ui/uipopover";
 import { toast } from "sonner";
 import axios from "axios";
-import { Spinner } from "@/components/ui/spinner";
+import { Spinner } from "@/components/ui/uispinner";
 export default function Apply() {
   {
     // const [employee, setemployee] = useState([]);

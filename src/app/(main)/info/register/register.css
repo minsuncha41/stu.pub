@@ -248,6 +248,7 @@
 .titlft {
     font-size: 16;
     font-weight: bold;
+    align-items: center;
     display: flex;
     gap: 10;
 }

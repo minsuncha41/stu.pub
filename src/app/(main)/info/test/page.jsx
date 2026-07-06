@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar } from "@/components/ui/calendar";
+import { Calendar } from "@/components/ui/uicalendar";
 import { useState } from "react";
 
 export default function Page() {
@@ -14,5 +14,5 @@ export default function Page() {
       className="rounded-lg border"
       captionLayout="dropdown"
     />
-  )
+  );
 }

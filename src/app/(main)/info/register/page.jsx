@@ -207,7 +207,7 @@ export default function Register({ current }) {
           <div className="modal">
             <div className="tit">
               <div className="titlft">
-                <UserPlus size={18} />
+                <UserPlus size={18} color="#3B82F6" />
                 인사정보 등록
               </div>
               <div

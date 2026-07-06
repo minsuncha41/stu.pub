@@ -3,35 +3,280 @@ import aside from "../infoaside.json";
 
 import "./appointement.css";
 import s from "./Appointement.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import baseApi from "@/api/baseApi";
 import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
-import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
-import { Clock4, Save, UserPlus, X } from "lucide-react";
+import {
+  Clock4,
+  Download,
+  IdCard,
+  Save,
+  Search,
+  Upload,
+  User,
+  UserPlus,
+  X,
+} from "lucide-react";
 
 export default function Appointement() {
-  const [employee, setemployee] = useState([]);
+  // const [employee, setemployee] = useState([]);
 
-  useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
+  // useEffect(() => {
+  //   //api를 요청해서 받는다. 통신은async await붙인다
+  //   const getEmployee = async () => {
+  //     const response = await baseApi.get("/api/v1/employees");
+  //     console.log(response.data.data);
 
-      //useState를 넣는다
-      setemployee(response.data.data);
+  //     //useState를 넣는다
+  //     setemployee(response.data.data);
 
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
-  }, []);
+  //     //useState에 있는 데이터를 렌더링 시킨다
+  //   };
+  //   getEmployee();
+  // }, []);
+  const [popvw, setpopvw] = useState(true);
 
+  const popon = () => {
+    setpopvw(true);
+  };
+
+  const popno = () => {
+    setpopvw(false);
+  };
+
+  const [pdfpopvw, setpdfpopvw] = useState(false);
+  const pdfpopon = () => {
+    setpdfpopvw(true);
+  };
+
+  const pdfpopno = () => {
+    setpdfpopvw(false);
+  };
+
+  // 버튼이 파일인풋
+  const upldref = useRef(null);
+
+  const [cllist, setcllist] = useState("발령이력");
   return (
     <div className="wrap">
-      <Nav num1={true} />
+      {" "}
+      {pdfpopvw && (
+        <div className="modalwrap">
+          <div className="pdfpop">
+            <div className="pdfic">
+              <Download size={24} color="#3B82F6" />
+            </div>
+            <h1>PDF 다운로드</h1>
+            <p>
+              선택한 데이터를 PDF 파일로 다운로드합니다. <br /> 계속
+              진행하시겠습니까?
+            </p>
+            <div className="pdfbtns">
+              <button
+                onClick={() => {
+                  pdfpopno();
+                }}
+              >
+                취소
+              </button>
+              <button>확인</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {popvw && (
+        <div className="modalwrap">
+          <div className="modal">
+            <div className="tit">
+              <div className="titlft">
+                <IdCard size={18} color="#3B82F6" />
+                인사정보 등록
+                <span>2025년 기준</span>
+              </div>
+              <div
+                onClick={() => {
+                  popno();
+                }}
+                className="titret"
+              >
+                <X size={18} />
+              </div>
+            </div>
 
+            <div className="modalin">
+              <div className="topbox">
+                <div className="use">
+                  <div className="usebox">
+                    <User size={26} /> 사진
+                  </div>
+                  <input type="file" name="" id="" hidden ref={upldref} />
+                  <button
+                    onClick={() => {
+                      upldref.current.click();
+                    }}
+                  >
+                    <Upload size={10} /> 변경
+                  </button>
+                </div>
+                <ul>
+                  <ul>
+                    <li>
+                      <p>사원번호</p>
+                      <b>EMP-002</b>
+                    </li>
+                    <li>
+                      <p>성명</p>
+                      <b>이영희</b>
+                    </li>
+                    <li>
+                      <p>생년월일</p>
+                      <b>1988.05.14</b>
+                    </li>
+                    <li>
+                      <p>성별</p>
+                      <b>여</b>
+                    </li>
+                  </ul>
+
+                  <li></li>
+
+                  <ul>
+                    <li>
+                      <p>부서</p>
+                      <b
+                        className="pd"
+                        style={{ color: "blue", background: "#ffffff" }}
+                      >
+                        인사팀
+                      </b>{" "}
+                    </li>
+                    <li>
+                      <p>직급</p>
+                      <b>차장</b>
+                    </li>
+                    <li>
+                      <p>입사일</p>
+                      <b>2018.07.15</b>
+                    </li>
+                    <li>
+                      <p>재직상태</p>
+                      <b className="pd" style={{ color: "green" }}>
+                        재직중
+                      </b>
+                    </li>
+                  </ul>
+
+                  <li></li>
+
+                  <ul>
+                    <li>
+                      <p>휴대폰</p>
+                      <b>010-9876-5432</b>
+                    </li>
+                    <li>
+                      <p>이메일</p>
+                      <b>lee@company.com</b>
+                    </li>
+                    <li></li>
+                    <li>
+                      <p>근속연수</p>
+                      <b>6년 11개월</b>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+
+              <ul className="cllist">
+                <li
+                  className={cllist === "발령이력" ? "cl" : ""}
+                  onClick={() => setcllist("발령이력")}
+                >
+                  발령이력
+                </li>
+                <li
+                  className={cllist === "근태요약" ? "cl" : ""}
+                  onClick={() => setcllist("근태요약")}
+                >
+                  근태요약
+                </li>
+                <li
+                  className={cllist === "급여이력" ? "cl" : ""}
+                  onClick={() => setcllist("급여이력")}
+                >
+                  급여이력
+                </li>
+                <li
+                  className={cllist === "자격증/학력" ? "cl" : ""}
+                  onClick={() => setcllist("자격증/학력")}
+                >
+                  자격증/학력
+                </li>
+              </ul>
+              {cllist === "발령이력" && (
+                <div className="blol">
+                  <h1 className="htit">발령이력</h1>
+                  <ul className="mdtb">
+                    <ul>
+                      <li>발령일</li>
+                      <li>발령유형</li>
+                      <li>발령전 부서/직급</li>
+                      <li>발령후 부서/직급</li>
+                      <li>발령번호</li>
+                    </ul>
+                    <ul>
+                      <li>2025.07.01</li>
+                      <li>
+                        <span className="sp"></span> 승진
+                      </li>
+                      <li>경영지원팀 · 과장</li>
+                      <li>인사팀 · 차장</li>
+                      <li>APT-2025-003</li>
+                    </ul>
+                    <ul>
+                      <li>2022.01.03</li>
+                      <li>전보</li>
+                      <li>총무팀 · 대리</li>
+                      <li>경영지원팀 · 과장</li>
+                      <li>APT-2022-001</li>
+                    </ul>
+                    <ul>
+                      <li>2018.07.15</li>
+                      <li>신규입사</li>
+                      <li>-</li>
+                      <li>총무팀 · 사원</li>
+                      <li>APT-2018-012</li>
+                    </ul>
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <div className="btlft">
+              <p>
+                <span>*</span>필수 입력 항목입니다.
+              </p>
+              <div className="btret">
+                <button
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  취소
+                </button>
+
+                <button>
+                  <Save size={14} />
+                  저장
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      <Nav num1={true} />
       <div className="inwrap">
         <Aside dummy={aside} idxs="1" subidxs="3" />
 
@@ -44,6 +289,12 @@ export default function Appointement() {
               text: "사원의 부서·직급·직책 발령 정보를 등록하고 이력을 관리합니다.",
               tllbtn: "PDF 다운로드",
               trrbtn: "발령등록",
+            }}
+            lftbtnClick={() => {
+              pdfpopon();
+            }}
+            retbtnClick={() => {
+              popon();
             }}
           />
 
