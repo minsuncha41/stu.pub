@@ -153,7 +153,7 @@ export default function Gtdl() {
     const res = await baseApi.post(
       "/api/v1/attendances/checkin",
       {
-        workDate: "apply.allday",
+        workDate: apply.allday,
       },
       {
         headers: {

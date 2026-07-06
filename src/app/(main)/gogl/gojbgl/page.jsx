@@ -11,70 +11,32 @@ import Toptits from "@/component/cmm/Toptits";
 import RegisterSalaryInfoModal from "@/component/cmm/RegisterSalaryInfoModal";
 
 import {
-  AlarmClock,
-  AlertCircle,
-  Baby,
-  BookOpen,
-  CakeSlice,
-  Calculator,
-  Calendar,
-  CalendarCheck,
-  CalendarPlus,
-  Check,
-  CheckCheck,
-  ChevronLeft,
-  ChevronRight,
-  ClipboardPen,
   Clock,
-  Clock1,
-  Clock10,
-  Clock4,
-  Ellipsis,
-  FileText,
-  Flower2,
-  Heart,
-  HeartHandshake,
-  HeartPulse,
-  ListChecks,
-  LogOut,
-  MoonStar,
-  Paperclip,
   Pencil,
-  Plane,
-  Plus,
   RotateCcw,
   Save,
-  SaveAll,
-  SaveOff,
   Search,
-  SendHorizontal,
-  ShieldCheck,
   Sigma,
-  Star,
-  Sun,
   TableIcon,
-  Upload,
-  User2,
-  Users,
   X,
 } from "lucide-react";
 
 export default function Gojbgl() {
-  const [employee, setemployee] = useState([]);
+  //   const [employee, setemployee] = useState([]);
 
-  useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
+  //   useEffect(() => {
+  //     //api를 요청해서 받는다. 통신은async await붙인다
+  //     const getEmployee = async () => {
+  //       const response = await baseApi.get("/api/v1/employees");
+  //       console.log(response.data.data);
 
-      //useState를 넣는다
-      setemployee(response.data.data);
+  //       //useState를 넣는다
+  //       setemployee(response.data.data);
 
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
-  }, []);
+  //       //useState에 있는 데이터를 렌더링 시킨다
+  //     };
+  //     getEmployee();
+  //   }, []);
 
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
 
@@ -84,6 +46,7 @@ export default function Gojbgl() {
 
       <div className="inwrap">
         <RegisterSalaryInfoModal
+          className="modal"
           open={openRegisterModal}
           setOpen={setOpenRegisterModal}
         />
@@ -105,6 +68,7 @@ export default function Gojbgl() {
             retwtbtnno=""
             prtbtnon=""
             ttct=""
+            retbtnClick={() => setOpenRegisterModal(true)}
           />
 
           <ul className="findebox">
