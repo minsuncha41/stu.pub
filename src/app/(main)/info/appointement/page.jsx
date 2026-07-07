@@ -9,9 +9,13 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Toptits from "@/component/cmm/Toptits";
 import {
+  Award,
+  Clock,
   Clock4,
   Download,
+  GraduationCap,
   IdCard,
+  Printer,
   Save,
   Search,
   Upload,
@@ -95,13 +99,19 @@ export default function Appointement() {
                 인사정보 등록
                 <span>2025년 기준</span>
               </div>
-              <div
-                onClick={() => {
-                  popno();
-                }}
-                className="titret"
-              >
-                <X size={18} />
+              <div className="btnbox">
+                <div className="osbtn">
+                  <Printer size={13} />
+                  인쇄
+                </div>
+                <div
+                  onClick={() => {
+                    popno();
+                  }}
+                  className="titret"
+                >
+                  <X size={18} />
+                </div>
               </div>
             </div>
 
@@ -120,6 +130,7 @@ export default function Appointement() {
                     <Upload size={10} /> 변경
                   </button>
                 </div>
+
                 <ul>
                   <ul>
                     <li>
@@ -145,12 +156,7 @@ export default function Appointement() {
                   <ul>
                     <li>
                       <p>부서</p>
-                      <b
-                        className="pd"
-                        style={{ color: "blue", background: "#ffffff" }}
-                      >
-                        인사팀
-                      </b>{" "}
+                      <b className="pd ost">인사팀</b>{" "}
                     </li>
                     <li>
                       <p>직급</p>
@@ -162,9 +168,7 @@ export default function Appointement() {
                     </li>
                     <li>
                       <p>재직상태</p>
-                      <b className="pd" style={{ color: "green" }}>
-                        재직중
-                      </b>
+                      <b className="pd jjj">재직중</b>
                     </li>
                   </ul>
 
@@ -214,9 +218,13 @@ export default function Appointement() {
                   자격증/학력
                 </li>
               </ul>
+
               {cllist === "발령이력" && (
-                <div className="blol">
-                  <h1 className="htit">발령이력</h1>
+                <div className="inbox blol">
+                  <div className="titbox">
+                    <h1 className="htit">발령이력</h1>
+                    <span className="tpd">총 3건</span>
+                  </div>
                   <ul className="mdtb">
                     <ul>
                       <li>발령일</li>
@@ -228,7 +236,7 @@ export default function Appointement() {
                     <ul>
                       <li>2025.07.01</li>
                       <li>
-                        <span className="sp"></span> 승진
+                        <span className="pd sj">승진</span>
                       </li>
                       <li>경영지원팀 · 과장</li>
                       <li>인사팀 · 차장</li>
@@ -236,17 +244,131 @@ export default function Appointement() {
                     </ul>
                     <ul>
                       <li>2022.01.03</li>
-                      <li>전보</li>
+                      <li>
+                        <span className="pd jb">전보</span>
+                      </li>
                       <li>총무팀 · 대리</li>
                       <li>경영지원팀 · 과장</li>
                       <li>APT-2022-001</li>
                     </ul>
                     <ul>
                       <li>2018.07.15</li>
-                      <li>신규입사</li>
+                      <li>
+                        <span className="pd sgos">신규입사</span>
+                      </li>
                       <li>-</li>
                       <li>총무팀 · 사원</li>
                       <li>APT-2018-012</li>
+                    </ul>
+                  </ul>
+                </div>
+              )}
+
+              {cllist === "근태요약" && (
+                <div className="inbox gtoo">
+                  <div className="titbox">
+                    <h1 className="htit">올해 근태 요약 (2025년)</h1>
+                    <p>기준일: 2025.07.01</p>
+                  </div>
+                  <ul className="gtootb">
+                    <li>
+                      <h1>124</h1>
+                      <p>출근일수</p>
+                    </li>
+                    <li>
+                      <h1>2</h1>
+                      <p>지각</p>
+                    </li>
+                    <li>
+                      <h1>8</h1>
+                      <p>연차사용</p>
+                    </li>
+                    <li>
+                      <h1>7</h1>
+                      <p>잔여연차</p>
+                    </li>
+                    <li>
+                      <h1>3</h1>
+                      <p>출장</p>
+                    </li>
+                    <li>
+                      <h1>0</h1>
+                      <p>결근</p>
+                    </li>
+                  </ul>
+                </div>
+              )}
+              {cllist === "급여이력" && (
+                <div className="inbox gool">
+                  <div className="titbox">
+                    <h1 className="htit">급여이력</h1>
+                    <p>전체보기 {">"}</p>
+                  </div>
+                  <ul className="gooltb">
+                    <ul>
+                      <li>지급연월</li>
+                      <li>기본급</li>
+                      <li>수당합계</li>
+                      <li>공제합계</li>
+                      <li>실지급액</li>
+                    </ul>
+                    <ul>
+                      <li>2025.06</li>
+                      <li>4,200,000</li>
+                      <li>620,000</li>
+                      <li>432,000</li>
+                      <li>4,388,000</li>
+                    </ul>
+                    <ul>
+                      <li>2025.05</li>
+                      <li>4,200,000</li>
+                      <li>520,000</li>
+                      <li>432,000</li>
+                      <li>4,288,000</li>
+                    </ul>
+                    <ul>
+                      <li>2025.04</li>
+                      <li>4,200,000</li>
+                      <li>420,000</li>
+                      <li>432,000</li>
+                      <li>4,188,000</li>
+                    </ul>
+                  </ul>
+                </div>
+              )}
+
+              {cllist === "자격증/학력" && (
+                <div className="inbox jjjhl">
+                  <div className="titbox">
+                    <h1 className="htit">자격증 / 학력</h1>
+                  </div>
+                  <ul className="jjjhltb">
+                    <ul>
+                      <h1>
+                        <Award size={13} color="#F59E0B" />
+                        자격증
+                      </h1>
+                      <li>
+                        <h1>정보처리기사</h1>
+                        <p>한국산업인력공단 · 2016.08</p>
+                      </li>
+                      <li>
+                        <h1>컴퓨터활용능력 1급</h1>
+                        <p>대한상공회의소 · 2014.05</p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <h1>
+                        <GraduationCap size={13} color="#3B82F6" /> 학력
+                      </h1>
+                      <li>
+                        <h1>○○대학교 경영학과 졸업</h1>
+                        <p>2007.03 - 2011.02 · 학사</p>
+                      </li>
+                      <li>
+                        <h1>△△고등학교 졸업</h1>
+                        <p>2004.03 - 2007.02</p>
+                      </li>
                     </ul>
                   </ul>
                 </div>
@@ -255,7 +377,8 @@ export default function Appointement() {
 
             <div className="btlft">
               <p>
-                <span>*</span>필수 입력 항목입니다.
+                <Clock size={12} />
+                최종 수정: 2025.07.01 · 홍길동 (인사팀)
               </p>
               <div className="btret">
                 <button
@@ -264,18 +387,14 @@ export default function Appointement() {
                   }}
                 >
                   <X size={14} />
-                  취소
-                </button>
-
-                <button>
-                  <Save size={14} />
-                  저장
+                  닫기
                 </button>
               </div>
             </div>
           </div>
         </div>
       )}
+      {/* 메인영역 */}
       <Nav num1={true} />
       <div className="inwrap">
         <Aside dummy={aside} idxs="1" subidxs="3" />

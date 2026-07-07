@@ -669,6 +669,11 @@
     cursor: pointer;
 }
 
+.titret:hover {
+    background: #ffffff;
+    color: #000;
+}
+
 
 .modalin {
     width: 100%;
@@ -679,9 +684,10 @@
 
 .topbox {
     background: #F8FAFC;
-    padding: 16px;
+    padding: 20px;
     display: flex;
     gap: 16px;
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .use {
@@ -722,6 +728,7 @@
     font-size: 11px;
 }
 
+
 .topbox ul {
     display: flex;
     flex-flow: column wrap;
@@ -744,11 +751,10 @@
 }
 
 .topbox ul ul li {
+    line-height: 20px;
     padding: 0px 16px;
     border-right: 1px solid #E5E7EB;
-    flex: 1;
-    display: flex;
-    flex-flow: column;
+    width: calc(100% / 4);
     font-size: 13px
 }
 
@@ -756,7 +762,6 @@
     font-size: 11px;
     color: #9CA3AF;
 }
-
 
 .topbox ul ul:nth-child(5) li:nth-child(3) {
     display: none;
@@ -766,10 +771,25 @@
     flex: 2.3;
 }
 
+.topbox ul ul:nth-child(5) li:nth-child(4) {
+    color: #1B3A6B;
+}
+
 .pd {
-    padding: 8px 0px;
+    padding: 1px 8px;
     border-radius: 10px;
 }
+
+.pd.ost {
+    background: #d5e7ff;
+    color: #1D4ED8;
+}
+
+.pd.jjj {
+    background: #c7ffda;
+    color: #16A34A;
+}
+
 
 
 
@@ -804,11 +824,47 @@
     background-color: #1B3A6B;
 }
 
-.blol {
+
+
+
+
+
+/* 발령이력 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.inbox {
     padding: 16px;
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
 }
 
 
+.titbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titbox .tpd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 8px;
+    font-weight: bold;
+    background: hsl(213, 100%, 93%);
+    color: #2563EB;
+    flex: 0 0 auto;
+    font-size: 11px;
+}
+
+
+.titbox p {
+    flex: 0 0 auto;
+    color: #9CA3AF;
+    font-size: 11px;
+}
 
 .htit {
     position: relative;
@@ -855,18 +911,249 @@
 .mdtb ul:first-child li {
     background: #F1F5F9;
     font-weight: bold;
+    color: #6B7280 !important;
+}
+
+.mdtb ul li:nth-child(2) {
+    flex: 0.8;
+}
+
+.mdtb ul li:nth-child(3) {
+    flex: 2;
+    color: #9CA3AF;
+}
+
+.mdtb ul:last-child li:nth-child(4) {
+    color: #9CA3AF;
+}
+
+.mdtb ul li:nth-child(4) {
+    flex: 2;
+    color: #1D4ED8;
+    font-weight: bold;
+}
+
+.pd {
+    font-weight: bold;
+}
+
+.pd.sj {
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.pd.jb {
+    background: #FEF9C3;
+    color: #CA8A04;
+}
+
+.pd.sgos {
+    background: #EDE9FE;
+    color: #7C3AED;
+}
+
+
+/* 올해근태요약 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.gtootb {
+    width: 100%;
+    display: flex;
+    gap: 8;
+}
+
+.gtootb li {
+    border-radius: 10px;
+    height: 70px;
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gtootb li h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.gtootb li p {
+    font-size: 11px;
     color: #6B7280;
+}
+
+.gtootb li:nth-child(1) {
+    border-color: #BFDBFE;
+    background: #F0F7FF;
+
+}
+
+.gtootb li:nth-child(1) h1 {
+    color: #1B3A6B;
 }
 
 
 
+.gtootb li:nth-child(2) {
+    border-color: #FECACA;
+    background: #FFF7F7;
+
+}
+
+.gtootb li:nth-child(2) h1 {
+    color: #DC2626;
+}
 
 
 
+.gtootb li:nth-child(3) {
+    border-color: #BBF7D0;
+    background: #F0FDF4;
+
+}
+
+.gtootb li:nth-child(3) h1 {
+    color: #16A34A;
+}
 
 
 
+.gtootb li:nth-child(4) {
+    border-color: #FDE68A;
+    background: #FFFBEB;
 
+}
+
+.gtootb li:nth-child(4) h1 {
+    color: #D97706;
+}
+
+
+
+.gtootb li:nth-child(5) {
+    border-color: #DDD6FE;
+    background: #F5F3FF;
+
+}
+
+.gtootb li:nth-child(5) h1 {
+    color: #7C3AED;
+}
+
+
+
+.gtootb li:nth-child(6) {
+    border-color: #E5E7EB;
+    background: #F9FAFB;
+
+}
+
+.gtootb li:nth-child(6) h1 {
+    color: #9CA3AF;
+}
+
+
+/* 급여이력 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.gooltb {
+    display: flex;
+    flex-flow: column;
+}
+
+.gooltb ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.gooltb ul li {
+    padding: 11px 12px;
+    border-bottom: 1px solid #E5E7EB;
+    flex: 1;
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 12px;
+}
+
+
+.gooltb ul:first-child li {
+    background: #F1F5F9;
+    font-weight: bold;
+    justify-content: center !important;
+    color: #6B7280 !important;
+}
+
+.gooltb ul li:nth-child(1) {
+    flex: 0.7;
+}
+
+.gooltb ul li:nth-child(2) {
+    flex: 3;
+}
+
+.gooltb ul li:nth-child(5) {
+    color: #1B3A6B;
+    font-weight: bold;
+}
+
+
+
+/* 자격증/학력 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.jjjhltb {
+    width: 100%;
+    display: flex;
+    gap: 12;
+}
+
+.jjjhltb ul {
+    width: 100%;
+    display: flex;
+    gap: 8;
+    flex-flow: column;
+}
+
+.jjjhltb ul>h1 {
+    width: 100%;
+    display: flex;
+    font-size: 13;
+    align-items: center;
+    gap: 5;
+    flex-flow: row wrap;
+}
+
+.jjjhltb ul li {
+    padding: 10px 12px;
+    border-radius: 1px;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.jjjhltb ul li h1 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.jjjhltb ul li p {
+    font-size: 11px;
+    color: #9CA3AF;
+}
+
+
+.jjjhltb ul:nth-child(1) li {
+    border-radius: 10px;
+    border: 1px solid #FDE68A;
+    background: #FFF9EC;
+
+}
+
+.jjjhltb ul:nth-child(2) li {
+    border-radius: 10px;
+    background: #F0F7FF;
+    border: 1px solid #BFDBFE;
+}
 
 
 
@@ -896,6 +1183,9 @@
 
 
 .btlft p {
+    display: flex;
+    align-items: center;
+    gap: 5;
     font-size: 12px;
     color: #9CA3AF;
 }
@@ -925,6 +1215,8 @@
     border-radius: 10px;
 }
 
+
+
 .btret button:first-child {
     background: #FFFFFF;
     border: 1px solid #D1D5DB
@@ -933,6 +1225,11 @@
 .btret button:last-child {
     color: white;
     background: #1B3A6B;
+}
+
+.btret button:last-child:hover {
+    color: white;
+    background: #435e89;
 }
 
 .sgdlbtn {
@@ -944,8 +1241,29 @@
     cursor: pointer;
 }
 
+.btnbox {
+    display: flex;
+    gap: 8;
+}
 
+.osbtn {
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 5;
+    font-weight: bold;
+    color: #93C5FD;
+    border-radius: 7px;
+    background: #2D5F9E;
+    cursor: pointer;
+}
 
+.osbtn:hover {
+    color: #000000;
+    background: #ffffff;
+}
 
 
 
