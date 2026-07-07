@@ -9,6 +9,8 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
+import RegisterSalaryInfoModal from "@/component/cmm/RegisterSalaryInfoModal";
+
 import {
   AlarmClock,
   AlertCircle,
@@ -81,12 +83,18 @@ export default function Bhcdss() {
     };
     getEmployee();
   }, []);
+  const [openRegisterModal, setOpenRegisterModal] = useState(false);
 
   return (
     <div className="wrap">
       <Nav num3={true} />
 
       <div className="inwrap">
+        <RegisterSalaryInfoModal
+          className="modal"
+          open={openRegisterModal}
+          setOpen={setOpenRegisterModal}
+        />
         <Aside dummy={aside} idxs="2" subidxs="5" />
 
         <div className="main">
@@ -99,6 +107,7 @@ export default function Bhcdss() {
               tllbtn: "PDF 다운로드",
               trrbtn: "취득/상실 등록",
             }}
+            retbtnClick={() => setOpenRegisterModal(true)}
             sgsbtnon="0"
           />
 
