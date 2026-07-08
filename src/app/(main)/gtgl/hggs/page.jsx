@@ -9,47 +9,7 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
-import {
-  AlarmClock,
-  AlertCircle,
-  Baby,
-  BookOpen,
-  CakeSlice,
-  Calculator,
-  Calendar,
-  CalendarCheck,
-  Check,
-  CheckCheck,
-  ChevronLeft,
-  ChevronRight,
-  ClipboardPen,
-  Clock,
-  Clock1,
-  Clock10,
-  Clock4,
-  Ellipsis,
-  FileText,
-  Flower2,
-  Heart,
-  HeartHandshake,
-  ListChecks,
-  LogOut,
-  Paperclip,
-  Plane,
-  Plus,
-  RotateCcw,
-  Save,
-  SaveAll,
-  SaveOff,
-  Search,
-  SendHorizontal,
-  ShieldCheck,
-  Table2,
-  TableIcon,
-  Upload,
-  Users,
-  X,
-} from "lucide-react";
+import { Calculator, RotateCcw, Search } from "lucide-react";
 
 export default function Hggs() {
   const [employee, setemployee] = useState([]);
@@ -85,6 +45,7 @@ export default function Hggs() {
               tllbtn: "PDF 다운로드",
               trrbtn: "전직원 일괄계산",
             }}
+            retplsno="0"
             lftwtbtnno=""
             retsaveimg="0"
           />

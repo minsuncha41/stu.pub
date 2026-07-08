@@ -7,79 +7,267 @@ import { useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
 import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
-import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 import {
-  AlarmClock,
-  AlertCircle,
-  Baby,
   Banknote,
-  BookOpen,
-  CakeSlice,
-  Calculator,
   Calendar,
-  CalendarCheck,
-  CalendarPlus,
-  Check,
-  CheckCheck,
   ChevronLeft,
   ChevronRight,
-  ClipboardPen,
   Clock,
-  Clock1,
-  Clock10,
-  Clock4,
-  Ellipsis,
-  FileText,
-  Flower2,
-  Heart,
-  HeartHandshake,
-  HeartPulse,
-  ListChecks,
-  LogOut,
-  MoonStar,
-  Paperclip,
-  Pencil,
-  Plane,
-  Plus,
+  Download,
   RotateCcw,
   Save,
-  SaveAll,
-  SaveOff,
   Search,
-  SendHorizontal,
-  ShieldCheck,
   Sigma,
-  Star,
-  Sun,
   TableIcon,
   TrendingDown,
   TrendingUp,
-  Upload,
-  User2,
-  Users,
+  UserPlus,
   X,
 } from "lucide-react";
 
 export default function Gojg() {
-  const [employee, setemployee] = useState([]);
+  const [popvw, setpopvw] = useState(false);
+  const popon = () => {
+    setpopvw(true);
+  };
+  const popno = () => {
+    setpopvw(false);
+  };
 
-  useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
-
-      //useState를 넣는다
-      setemployee(response.data.data);
-
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
-  }, []);
+  const [pdfpopvw, setpdfpopvw] = useState(false);
+  const pdfpopon = () => {
+    setpdfpopvw(true);
+  };
+  const pdfpopno = () => {
+    setpdfpopvw(false);
+  };
 
   return (
     <div className="wrap">
+      {pdfpopvw && (
+        <div className="modalwrap">
+          <div className="pdfpop">
+            <div className="pdfic">
+              <Download size={24} color="#3B82F6" />
+            </div>
+            <h1>PDF 다운로드</h1>
+            <p>
+              선택한 데이터를 PDF 파일로 다운로드합니다. <br /> 계속
+              진행하시겠습니까?
+            </p>
+            <div className="pdfbtns">
+              <button
+                onClick={() => {
+                  pdfpopno();
+                }}
+              >
+                취소
+              </button>
+              <button>확인</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {popvw && (
+        <div className="modalwrap">
+          <div className="modal">
+            <div className="tit">
+              <div className="titlft">
+                <UserPlus size={18} color="#3B82F6" />
+                인사정보 등록
+              </div>
+              <div
+                onClick={() => {
+                  popno();
+                }}
+                className="titret"
+              >
+                <X size={18} />
+              </div>
+            </div>
+            <div className="modalin">
+              <div className="lblbox">
+                <h1>기본정보</h1>
+                <label className="lbl">
+                  <p>
+                    사원번호 <span>*</span>
+                  </p>
+                  <input
+                    className="noinput"
+                    type="text"
+                    placeholder="자동생성"
+                    disabled
+                  />
+                </label>
+                <label className="lbl">
+                  <p>
+                    성명 <span>*</span>
+                  </p>
+                  <input type="text" placeholder="이름을 입력해주세요" />
+                </label>
+                <label className="lbl">
+                  <p>
+                    부서 <span>*</span>
+                  </p>
+                  <select>
+                    <option value="">부서를 선택하세요</option>
+                    <option value="경영지원본부">경영지원본부</option>
+                    <option value="물류운영본부">물류운영본부</option>
+                    <option value="냉장/냉동물류본부">냉장/냉동물류본부</option>
+                    <option value="차량관리본부">차량관리본부</option>
+                    <option value="창고운영본부">창고운영본부</option>
+                    <option value="영업본부">영업본부</option>
+                    <option value="IT본부">IT본부</option>
+                  </select>
+                </label>
+                <label className="lbl">
+                  <p>
+                    직급 <span>*</span>
+                  </p>
+                  <select>
+                    <option value="">직급을 선택하세요</option>
+                    <option value="사원">사원</option>
+                    <option value="과장">과장</option>
+                    <option value="부장">부장</option>
+                    <option value="팀장">팀장</option>
+                    <option value="사장">사장</option>
+                  </select>
+                </label>
+                <label className="lbl">
+                  <p>
+                    입사일 <span>*</span>
+                  </p>
+                  <input type="date" />
+                </label>
+                <label className="lbl">
+                  <p>
+                    재직상태 <span>*</span>
+                  </p>
+                  <ul>
+                    <li className="checked">
+                      <label>
+                        <input type="radio" name="jjst" value={"재직중"} />
+                        재직중
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="radio" name="jjst" value={"휴직중"} />
+                        휴직중
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="radio" name="jjst" value={"퇴직"} />
+                        퇴직
+                      </label>
+                    </li>
+                  </ul>
+                </label>
+              </div>
+
+              <div className="lblbox">
+                <h1>연락처</h1>
+                <label className="lbl">
+                  <p>
+                    휴대폰 <span>*</span>
+                  </p>
+                  <input type="text" placeholder="010-0000-0000" />
+                </label>
+                <label className="lbl">
+                  <p>
+                    이메일 <span>*</span>
+                  </p>
+                  <input type="text" placeholder="example@company.com" />
+                </label>
+              </div>
+
+              <div className="lblbox js">
+                <h1>주소</h1>
+                <div className="jsin">
+                  <label className="lbl">
+                    <p>우편번호</p>
+                    <input
+                      className="noinput"
+                      type="text"
+                      placeholder="우편번호"
+                      value={allinput.postCode}
+                    />
+                  </label>
+                  <label className="lbl">
+                    <p className="lblnott">0</p>
+                    <button onClick={openPostcode}>
+                      <Search size={13} />
+                      주소검색
+                    </button>
+                  </label>
+                </div>
+                <label className="lbl">
+                  <p>도로명주소</p>
+                  <input
+                    className="noinput"
+                    type="text"
+                    placeholder="주소검색 후 자동입력"
+                    value={allinput.address}
+                  />
+                </label>
+                <label className="lbl">
+                  <p>상세주소</p>
+                  <input type="text" placeholder="상세주소를 입력하세요" />
+                </label>
+              </div>
+              <div className="lblbox bsilcl">
+                <h1>비상연락처</h1>
+                <div className="jsin">
+                  <label className="lbl">
+                    <p>우편번호</p>
+                    <input type="text" placeholder="우편번호" />
+                  </label>
+                  <label className="lbl">
+                    <p>괸계</p>
+                    <select>
+                      <option value="">관계 선택</option>
+                      <option value="엄마">엄마</option>
+                      <option value="아빠">아빠</option>
+                      <option value="누나">누나</option>
+                      <option value="형">형</option>
+                      <option value="동생">동생</option>
+                      <option value="친척">친척</option>
+                      <option value="기타">기타</option>
+                    </select>
+                  </label>
+                  <label className="lbl">
+                    <p>연락처</p>
+                    <input type="text" placeholder="010-0000-0000" />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="btlft">
+              <p>
+                <span>*</span>필수 입력 항목입니다.
+              </p>
+              <div className="btret">
+                <button
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  취소
+                </button>
+
+                <button>
+                  <Save size={14} />
+                  저장
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Nav num3={true} />
 
       <div className="inwrap">
@@ -93,16 +281,18 @@ export default function Gojg() {
               tit: "급여지급",
               text: "월별 직원 급여 지급 내역을 관리하고 확정합니다. ",
               tllbtn: "PDF 다운로드",
-              trrbtn: "",
+              trrbtn: "급여확정",
             }}
-            ttmapno="0"
+            retplsno="0"
             ckdbtnon="0"
             ptbtnon="0"
-            sjbtnon=""
-            lftwtbtnno=""
-            retwtbtnno="0"
-            prtbtnon=""
-            ttct=""
+            retwtbtnno=""
+            lftbtnClick={() => {
+              pdfpopon();
+            }}
+            retbtnClick={() => {
+              popon();
+            }}
           />
 
           <ul className="findebox">

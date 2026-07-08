@@ -741,3 +741,319 @@
     color: #CA8A04 !important;
     font-size: 12px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 모달창 */
+
+
+
+.wrap {
+    position: relative;
+}
+
+
+
+
+
+.modalwrap {
+    z-index: 99999999;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 500px; */
+}
+
+.modal {
+    margin: 0 auto;
+    width: 600px;
+    /* height: 814px; */
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tit {
+    background: #1B3A6B;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    color: white;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+
+.titlft {
+    font-size: 16;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    gap: 10;
+}
+
+.titret {
+    width: 32px;
+    height: 32px;
+    background: #2D5F9E;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.modalin {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-flow: column;
+    gap: 14;
+}
+
+
+.lblbox {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 12px;
+}
+
+.lblbox h1 {
+    position: relative;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #1B3A6B;
+    font-weight: bold;
+    width: 100%;
+    height: 25px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.lblbox h1::after {
+    position: absolute;
+    content: "";
+    width: 3;
+    height: 16px;
+    background: #1B3A6B;
+    left: 0;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+.btlft {
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 20px;
+    justify-content: space-between;
+    border-top: 1px solid #E5E7EB
+}
+
+
+.btlft p {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+.btlft p span {
+    margin-right: 5px;
+    color: red;
+}
+
+.btret {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8;
+}
+
+.btret button {
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    flex-flow: row wrap;
+    height: 36px;
+    padding: 0 20px;
+    justify-self: center;
+    align-items: center;
+    gap: 6;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.btret button:first-child {
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB
+}
+
+.btret button:last-child {
+    color: white;
+    background: #1B3A6B;
+}
+
+.sgdlbtn {
+    right: 20px;
+    top: 117px;
+    width: 96px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pdfbtn {
+    right: 122px;
+    top: 117px;
+    width: 130px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.pdfpop {
+    z-index: 10;
+    padding-top: 28px;
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdfic {
+    width: 48px;
+    height: 48px;
+    background: #EFF6FF;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pdfpop h1 {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.pdfpop p {
+    text-align: center;
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.pdfbtns {
+    width: 100%;
+    height: 76px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.pdfbtns button {
+    width: 180px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pdfbtns button:nth-child(1) {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pdfbtns button:nth-child(2) {
+    background: #2563EB;
+    color: white;
+}

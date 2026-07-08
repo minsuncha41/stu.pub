@@ -12,11 +12,9 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Register({ current }) {
   const [popvw, setpopvw] = useState(false);
-
   const popon = () => {
     setpopvw(true);
   };
-
   const popno = () => {
     setpopvw(false);
   };
@@ -25,7 +23,6 @@ export default function Register({ current }) {
   const pdfpopon = () => {
     setpdfpopvw(true);
   };
-
   const pdfpopno = () => {
     setpdfpopvw(false);
   };
@@ -501,6 +498,7 @@ export default function Register({ current }) {
           </div>
         </div>
       )}
+
       <Nav num1={true} />
 
       {/* <header className={s.header}>

@@ -40,7 +40,7 @@ export default function Appointement() {
   //   };
   //   getEmployee();
   // }, []);
-  const [popvw, setpopvw] = useState(true);
+  const [popvw, setpopvw] = useState(false);
 
   const popon = () => {
     setpopvw(true);

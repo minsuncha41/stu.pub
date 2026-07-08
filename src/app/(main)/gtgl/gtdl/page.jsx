@@ -25,14 +25,7 @@ import {
   CircleAlert,
   ClipboardPen,
   Clock,
-  Clock1,
-  Clock10,
   Clock4,
-  Ellipsis,
-  FileText,
-  Flower2,
-  Heart,
-  HeartHandshake,
   Info,
   ListChecks,
   LogOut,
@@ -41,14 +34,10 @@ import {
   Plus,
   RotateCcw,
   Save,
-  SaveAll,
-  SaveOff,
   Search,
-  SendHorizontal,
   ShieldCheck,
   Sun,
   Trash2,
-  Upload,
   Users,
   X,
 } from "lucide-react";
@@ -310,6 +299,7 @@ export default function Gtdl() {
               tllbtn: "PDF 다운로드",
               trrbtn: "일괄저장",
             }}
+            retplsno="0"
             lftwtbtnno=""
             retsaveimg="0"
           />

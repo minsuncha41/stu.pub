@@ -10,61 +10,20 @@ import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 import {
-  AlarmClock,
-  AlertCircle,
-  Baby,
   Banknote,
-  BookOpen,
   Briefcase,
   Building2,
-  CakeSlice,
   Calculator,
   Calendar,
-  CalendarCheck,
-  CalendarPlus,
-  Check,
-  CheckCheck,
   ChevronLeft,
   ChevronRight,
-  ClipboardPen,
   Clock,
-  Clock1,
-  Clock10,
-  Clock4,
-  Ellipsis,
-  FileText,
-  Flower2,
   HardHat,
-  Heart,
-  HeartCrackIcon,
-  HeartHandshake,
   HeartPulse,
   Info,
-  ListChecks,
-  Lock,
-  LogOut,
-  MoonStar,
-  Paperclip,
-  Pencil,
-  Plane,
-  Plus,
-  RotateCcw,
-  Save,
-  SaveAll,
-  SaveOff,
-  Search,
-  SendHorizontal,
   Shield,
-  ShieldCheck,
   Sigma,
-  Star,
-  Sun,
   TableIcon,
-  TrendingDown,
-  TrendingUp,
-  Upload,
-  User2,
-  Users,
   X,
 } from "lucide-react";
 
@@ -102,14 +61,9 @@ export default function Bhsj() {
               tllbtn: "PDF 다운로드",
               trrbtn: "요율 저장",
             }}
-            ckdbtnon=""
-            ptbtnon=""
-            sjbtnon=""
+            retplsno="0"
             lftwtbtnno="0"
-            retwtbtnno=""
-            prtbtnon=""
             retsaveimg="0"
-            ttct=""
             gbgbtnon="0"
             jndbtnon="0"
           />

@@ -17,6 +17,7 @@ export default function Toptits({
   ptbtnon,
   retwtbtnno,
   retsaveimg,
+  retplsno,
   gsbtnon,
   ckdbtnon,
   prtbtnon,
@@ -110,14 +111,13 @@ export default function Toptits({
             className={s.retblbtn}
             style={{ display: retwtbtnno ? "none" : "flex" }}
           >
-            <p style={{ display: retsaveimg ? "none" : "flex" }}>+</p>
+            <p style={{ display: retplsno ? "none" : "flex" }}>+</p>
 
-            <div
-              className={s.savebox}
-              style={{ display: retsaveimg ? "flex" : "none" }}
-            >
-              <Save size={14} />
-            </div>
+            <CheckCheck
+              size={14}
+              style={{ display: ckdbtnon ? "flex" : "none" }}
+            />
+            <Save size={14} style={{ display: retsaveimg ? "flex" : "none" }} />
             {toptits.trrbtn}
           </button>
 
@@ -128,14 +128,6 @@ export default function Toptits({
           >
             <Calculator size={14} />
             전직원 일괄계산
-          </button>
-
-          <button
-            className={s.retblbtn}
-            style={{ display: ckdbtnon ? "flex" : "none" }}
-          >
-            <CheckCheck size={14} />
-            급여확정
           </button>
 
           <button
