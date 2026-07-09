@@ -20,8 +20,10 @@ import {
   Download,
   Layers,
   Lock,
+  Mail,
   MoonStar,
   Plus,
+  Printer,
   ReceiptText,
   Save,
   ShieldCheck,
@@ -80,15 +82,15 @@ export default function Sdgl() {
           <div className="modal">
             <div className="tit">
               <div className="titlft">
-                <ReceiptText size={18} color="#3B82F6" />
+                <Star className="incs" size={16} color="#FCD34D" />
                 <p>
-                  급여명세서
-                  <span>Salary Statement</span>
+                  특별성과수당 지급등록
+                  <span>Special Performance Allowance</span>
                 </p>
               </div>
 
               <div className="btret">
-                <span>2025년 7월분</span>
+                <span>2025년 7월</span>
                 <div
                   className="titret"
                   onClick={() => {
@@ -97,6 +99,67 @@ export default function Sdgl() {
                 >
                   <X size={14} />
                 </div>
+              </div>
+            </div>
+
+            <div className="mdin mdintp">
+              <h1>
+                <span>1</span>지급 기본정보
+              </h1>
+              <p></p>
+              <h1>
+                <span>2</span>지급 대상 선택
+              </h1>
+              <p></p>
+              <h2>
+                <span>3</span>첨부파일
+              </h2>
+            </div>
+            <div className="mdin mdinmid">
+              <h1 className="ttit">지급 기본정보</h1>
+              <div className="lbbox">
+                <label className="inputic">
+                  <p>
+                    수당코드<span>*</span>
+                  </p>
+                  <input type="text" value={"OT001"} />
+                  <Lock size={12} className="ic" />
+                </label>
+                <label className="inputic">
+                  <p>
+                    수당코드<span>*</span>
+                  </p>
+                  <input type="text" value={"OT001"} />
+                  <Lock size={12} className="ic" />
+                </label>
+              </div>
+            </div>
+            <div className="btlft">
+              <h1>
+                <b>
+                  <ShieldCheck size={12} />
+                  전자문서 인증완료
+                </b>
+                <p>CERT-2025-0089</p>
+              </h1>
+              <div className="btret">
+                <button className="imibtn">
+                  <Mail size={14} />
+                  이메일 발송
+                </button>
+                <button className="jjbtn">
+                  <Printer size={14} />
+                  인쇄
+                </button>
+                <button
+                  className="dgbtn"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  닫기
+                </button>
               </div>
             </div>
           </div>
@@ -119,11 +182,12 @@ export default function Sdgl() {
               trrbtn: "수당 추가",
             }}
             ttmapno="0"
-            sjbtnon=""
-            lftwtbtnno=""
-            retwtbtnno=""
-            prtbtnon=""
-            ttct=""
+            lftbtnClick={() => {
+              pdfpopon();
+            }}
+            retbtnClick={() => {
+              popon();
+            }}
           />
 
           <ul className="findebox">
