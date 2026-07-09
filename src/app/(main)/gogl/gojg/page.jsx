@@ -9,15 +9,25 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Toptits from "@/component/cmm/Toptits";
 import {
+  ArrowDown,
+  ArrowUp,
   Banknote,
   Calendar,
+  CalendarCheck,
+  Check,
   ChevronLeft,
   ChevronRight,
   Clock,
   Download,
+  InfoIcon,
+  Mail,
+  Printer,
+  Quote,
+  ReceiptText,
   RotateCcw,
   Save,
   Search,
+  ShieldCheck,
   Sigma,
   TableIcon,
   TrendingDown,
@@ -27,7 +37,7 @@ import {
 } from "lucide-react";
 
 export default function Gojg() {
-  const [popvw, setpopvw] = useState(false);
+  const [popvw, setpopvw] = useState(true);
   const popon = () => {
     setpopvw(true);
   };
@@ -74,193 +84,274 @@ export default function Gojg() {
           <div className="modal">
             <div className="tit">
               <div className="titlft">
-                <UserPlus size={18} color="#3B82F6" />
-                인사정보 등록
-              </div>
-              <div
-                onClick={() => {
-                  popno();
-                }}
-                className="titret"
-              >
-                <X size={18} />
-              </div>
-            </div>
-            <div className="modalin">
-              <div className="lblbox">
-                <h1>기본정보</h1>
-                <label className="lbl">
-                  <p>
-                    사원번호 <span>*</span>
-                  </p>
-                  <input
-                    className="noinput"
-                    type="text"
-                    placeholder="자동생성"
-                    disabled
-                  />
-                </label>
-                <label className="lbl">
-                  <p>
-                    성명 <span>*</span>
-                  </p>
-                  <input type="text" placeholder="이름을 입력해주세요" />
-                </label>
-                <label className="lbl">
-                  <p>
-                    부서 <span>*</span>
-                  </p>
-                  <select>
-                    <option value="">부서를 선택하세요</option>
-                    <option value="경영지원본부">경영지원본부</option>
-                    <option value="물류운영본부">물류운영본부</option>
-                    <option value="냉장/냉동물류본부">냉장/냉동물류본부</option>
-                    <option value="차량관리본부">차량관리본부</option>
-                    <option value="창고운영본부">창고운영본부</option>
-                    <option value="영업본부">영업본부</option>
-                    <option value="IT본부">IT본부</option>
-                  </select>
-                </label>
-                <label className="lbl">
-                  <p>
-                    직급 <span>*</span>
-                  </p>
-                  <select>
-                    <option value="">직급을 선택하세요</option>
-                    <option value="사원">사원</option>
-                    <option value="과장">과장</option>
-                    <option value="부장">부장</option>
-                    <option value="팀장">팀장</option>
-                    <option value="사장">사장</option>
-                  </select>
-                </label>
-                <label className="lbl">
-                  <p>
-                    입사일 <span>*</span>
-                  </p>
-                  <input type="date" />
-                </label>
-                <label className="lbl">
-                  <p>
-                    재직상태 <span>*</span>
-                  </p>
-                  <ul>
-                    <li className="checked">
-                      <label>
-                        <input type="radio" name="jjst" value={"재직중"} />
-                        재직중
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input type="radio" name="jjst" value={"휴직중"} />
-                        휴직중
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input type="radio" name="jjst" value={"퇴직"} />
-                        퇴직
-                      </label>
-                    </li>
-                  </ul>
-                </label>
+                <ReceiptText size={18} color="#3B82F6" />
+                <p>
+                  급여명세서
+                  <span>Salary Statement</span>
+                </p>
               </div>
 
-              <div className="lblbox">
-                <h1>연락처</h1>
-                <label className="lbl">
-                  <p>
-                    휴대폰 <span>*</span>
-                  </p>
-                  <input type="text" placeholder="010-0000-0000" />
-                </label>
-                <label className="lbl">
-                  <p>
-                    이메일 <span>*</span>
-                  </p>
-                  <input type="text" placeholder="example@company.com" />
-                </label>
-              </div>
-
-              <div className="lblbox js">
-                <h1>주소</h1>
-                <div className="jsin">
-                  <label className="lbl">
-                    <p>우편번호</p>
-                    <input
-                      className="noinput"
-                      type="text"
-                      placeholder="우편번호"
-                      value={allinput.postCode}
-                    />
-                  </label>
-                  <label className="lbl">
-                    <p className="lblnott">0</p>
-                    <button onClick={openPostcode}>
-                      <Search size={13} />
-                      주소검색
-                    </button>
-                  </label>
-                </div>
-                <label className="lbl">
-                  <p>도로명주소</p>
-                  <input
-                    className="noinput"
-                    type="text"
-                    placeholder="주소검색 후 자동입력"
-                    value={allinput.address}
-                  />
-                </label>
-                <label className="lbl">
-                  <p>상세주소</p>
-                  <input type="text" placeholder="상세주소를 입력하세요" />
-                </label>
-              </div>
-              <div className="lblbox bsilcl">
-                <h1>비상연락처</h1>
-                <div className="jsin">
-                  <label className="lbl">
-                    <p>우편번호</p>
-                    <input type="text" placeholder="우편번호" />
-                  </label>
-                  <label className="lbl">
-                    <p>괸계</p>
-                    <select>
-                      <option value="">관계 선택</option>
-                      <option value="엄마">엄마</option>
-                      <option value="아빠">아빠</option>
-                      <option value="누나">누나</option>
-                      <option value="형">형</option>
-                      <option value="동생">동생</option>
-                      <option value="친척">친척</option>
-                      <option value="기타">기타</option>
-                    </select>
-                  </label>
-                  <label className="lbl">
-                    <p>연락처</p>
-                    <input type="text" placeholder="010-0000-0000" />
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div className="btlft">
-              <p>
-                <span>*</span>필수 입력 항목입니다.
-              </p>
               <div className="btret">
-                <button
+                <span>2025년 7월분</span>
+                <div
+                  className="titret"
                   onClick={() => {
                     popno();
                   }}
                 >
                   <X size={14} />
-                  취소
-                </button>
+                </div>
+              </div>
+            </div>
 
-                <button>
-                  <Save size={14} />
-                  저장
+            <div className="mdintp">
+              <div className="mdintpret">
+                <div className="icbox">HR</div>
+                <p>
+                  주식회사 HRSystem <br />{" "}
+                  <span>사업자등록번호: 123-45-67890 | 대표: 홍길동</span>
+                </p>
+              </div>
+              <div className="mdintplft">
+                <p># PAY-2025-07-0008</p>
+                <span> {" | "} </span>{" "}
+                <p>
+                  <Calendar size={11} />
+                  2025.08.01
+                </p>
+              </div>
+            </div>
+
+            <div className="mdinsgj">
+              <h1 className="ttit">수급자 정보</h1>
+              <ul>
+                <ul>
+                  <li>성명</li>
+                  <li>
+                    {" "}
+                    <span className="fn">박</span> 박민준
+                  </li>
+                  <li>사원번호</li>
+                  <li>EMP-003</li>
+                </ul>
+
+                <ul>
+                  <li>부서</li>
+                  <li>개발팀</li>
+                  <li>직급</li>
+                  <li>대리</li>
+                </ul>
+
+                <ul>
+                  <li>지급연월</li>
+                  <li>2025.07 (7.25 지급)</li>
+                  <li>근속연수</li>
+                  <li>3년 11개월</li>
+                </ul>
+              </ul>
+            </div>
+
+            <div className="hmtb">
+              <ul>
+                <li>
+                  <h1>
+                    <TrendingUp size={12} />
+                    지급항목
+                  </h1>
+                  <h2>금액 (원)</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>기본급
+                  </h1>
+                  <h2>3,500,000</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>식대
+                  </h1>
+                  <h2>200,000</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>교통비
+                  </h1>
+                  <h2>150,000</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>야근수당
+                  </h1>
+                  <h2>350,000</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>직책수당
+                  </h1>
+                  <h2>-</h2>
+                </li>
+                <li>
+                  <h1>지급합계</h1>
+                  <h2>4,200,000</h2>
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <h1>
+                    <TrendingDown size={12} />
+                    공제항목
+                  </h1>
+                  <h2>금액 (원)</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>국민연금 (4.5%)
+                  </h1>
+                  <h2>157,500</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>건강보험 (3.98%)
+                  </h1>
+                  <h2>139,300</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>고용보험 (0.9%)
+                  </h1>
+                  <h2>37,800</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>소득세
+                  </h1>
+                  <h2>88,000</h2>
+                </li>
+                <li>
+                  <h1>
+                    <p>●</p>지방소득세 (10%)
+                  </h1>
+                  <h2>8,800</h2>
+                </li>
+                <li>
+                  <h1>공제합계</h1>
+                  <h2>431,400</h2>
+                </li>
+              </ul>
+            </div>
+
+            <div className="sjgo">
+              <div className="sjgotop">
+                <div className="sjgoret">
+                  <div className="sjgorettop">
+                    <div className="icbox">
+                      <Banknote size={13} />
+                    </div>
+                    <h1>실 지급액</h1>
+                  </div>
+                  <p>4,200,000 - 431,400</p>
+                </div>
+                <div className="sjgolft">
+                  <h1>
+                    3,768,600
+                    <p>원 (KRW)</p>
+                  </h1>
+                </div>
+              </div>
+              <div className="sjgomid">
+                <h1 className="sjgomidbox">
+                  <Quote size={11} />
+                  삼백칠십육만팔천육백원정 (₩3,768,600)
+                </h1>
+              </div>
+              <div className="sjgomidbtm">
+                <h1>
+                  <ArrowUp size={10} />
+                  지급 4,200,000원
+                </h1>
+                <p>ㅡ</p>
+                <h2>
+                  <ArrowDown size={10} />
+                  공제 431,400원
+                </h2>
+                <p>=</p>
+                <h3>
+                  <Check size={10} />
+                  실지급 3,768,600원
+                </h3>
+              </div>
+            </div>
+            <div className="sjgobtm">
+              <div className="sjgobtmtop">
+                <h1>
+                  <CalendarCheck size={12} />
+                  7월 근태 요약
+                </h1>
+                <h2>
+                  <b>
+                    <span>●</span>출근 20일
+                  </b>
+                  <p>|</p>
+                  <b>
+                    <span>●</span>연차 1일
+                  </b>
+                  <p>|</p>
+                  <b>
+                    <span>●</span>야근 7시간
+                  </b>
+                  <p>|</p>
+                  <b>
+                    <span>●</span>지각 0회
+                  </b>
+                </h2>
+              </div>
+              <div className="sjgobtmmid">
+                <h1 className="ttit">확인 및 직인</h1>
+                <div className="sjgobtmmidmid">
+                  <h1>
+                    <p>위 금액을 급여로 지급함을 확인합니다.</p>
+                    <p>지급일: 2025년 7월 25일</p>
+                    <b>주식회사 HRSystem 대표이사 홍 길 동 (인)</b>
+                  </h1>
+                  <div className="djbox">
+                    <div className="dj">
+                      <h2>직인</h2>
+                    </div>
+                  </div>
+                </div>
+                <span>
+                  <InfoIcon size={12} />본 명세서는 전자문서로 발행되었으며
+                  위변조 시 법적 처벌을 받을 수 있습니다.
+                </span>
+              </div>
+            </div>
+
+            <div className="btlft">
+              <h1>
+                <b>
+                  <ShieldCheck size={12} />
+                  전자문서 인증완료
+                </b>
+                <p>CERT-2025-0089</p>
+              </h1>
+              <div className="btret">
+                <button className="imibtn">
+                  <Mail size={14} />
+                  이메일 발송
+                </button>
+                <button className="jjbtn">
+                  <Printer size={14} />
+                  인쇄
+                </button>
+                <button
+                  className="dgbtn"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  닫기
                 </button>
               </div>
             </div>
