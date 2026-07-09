@@ -10,82 +10,99 @@ import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
 import {
-  AlarmClock,
   AlertCircle,
   Award,
-  Baby,
   BadgeCheck,
   Bookmark,
-  BookOpen,
-  CakeSlice,
-  Calculator,
   Calendar,
-  CalendarCheck,
-  CalendarPlus,
-  Check,
-  CheckCheck,
-  ChevronLeft,
   ChevronRight,
-  ClipboardPen,
   Clock,
-  Clock1,
-  Clock10,
-  Clock4,
-  Ellipsis,
-  FileText,
-  Flower2,
-  Heart,
-  HeartHandshake,
-  HeartPulse,
+  Download,
   Layers,
-  ListChecks,
   Lock,
-  LogOut,
   MoonStar,
-  Paperclip,
-  Pencil,
-  Plane,
   Plus,
   ReceiptText,
-  RotateCcw,
   Save,
-  SaveAll,
-  SaveOff,
-  Search,
-  SendHorizontal,
   ShieldCheck,
   Sigma,
   Star,
-  Sun,
-  TableIcon,
   Trash2,
   TrendingUp,
-  Upload,
-  User2,
-  Users,
   UsersRound,
   X,
 } from "lucide-react";
 
 export default function Sdgl() {
-  const [employee, setemployee] = useState([]);
+  const [popvw, setpopvw] = useState(true);
+  const popon = () => {
+    setpopvw(true);
+  };
+  const popno = () => {
+    setpopvw(false);
+  };
 
-  useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
-
-      //useState를 넣는다
-      setemployee(response.data.data);
-
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
-  }, []);
-
+  const [pdfpopvw, setpdfpopvw] = useState(false);
+  const pdfpopon = () => {
+    setpdfpopvw(true);
+  };
+  const pdfpopno = () => {
+    setpdfpopvw(false);
+  };
   return (
     <div className="wrap">
+      {pdfpopvw && (
+        <div className="modalwrap">
+          <div className="pdfpop">
+            <div className="pdfic">
+              <Download size={24} color="#3B82F6" />
+            </div>
+            <h1>PDF 다운로드</h1>
+            <p>
+              선택한 데이터를 PDF 파일로 다운로드합니다. <br /> 계속
+              진행하시겠습니까?
+            </p>
+            <div className="pdfbtns">
+              <button
+                onClick={() => {
+                  pdfpopno();
+                }}
+              >
+                취소
+              </button>
+              <button>확인</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {popvw && (
+        <div className="modalwrap">
+          <div className="modal">
+            <div className="tit">
+              <div className="titlft">
+                <ReceiptText size={18} color="#3B82F6" />
+                <p>
+                  급여명세서
+                  <span>Salary Statement</span>
+                </p>
+              </div>
+
+              <div className="btret">
+                <span>2025년 7월분</span>
+                <div
+                  className="titret"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Nav num3={true} />
 
       <div className="inwrap">

@@ -37,7 +37,7 @@ import {
 } from "lucide-react";
 
 export default function Gojg() {
-  const [popvw, setpopvw] = useState(true);
+  const [popvw, setpopvw] = useState(false);
   const popon = () => {
     setpopvw(true);
   };
