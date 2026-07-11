@@ -27,8 +27,6 @@ export default function Register({ current }) {
     setpdfpopvw(false);
   };
 
-  const token = localStorage.getItem("accessToken");
-
   const [allinput, setallinput] = useState({
     name: "",
     departmentName: "",
@@ -78,6 +76,8 @@ export default function Register({ current }) {
       if (!allinput.email) {
         return alert("인사등록 할 사람의 이메일을 입력해주세요");
       }
+
+      const token = localStorage.getItem("accessToken");
 
       const res = await baseApi.post(
         "/api/v1/employees/registerEmployee",

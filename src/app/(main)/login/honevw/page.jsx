@@ -57,7 +57,6 @@ export default function Honevw() {
     router.push("/login/loginvw");
   };
 
-  const token = localStorage.getItem("accessToken");
   const [allinput, setallinput] = useState({
     firstName: "",
     name: "",
@@ -117,6 +116,8 @@ export default function Honevw() {
       if (!ogdo) {
         return alert("약관에 동의 하셔야 회원가입이 가능합니다");
       }
+
+      const token = localStorage.getItem("accessToken");
 
       const res = await baseApi.post(
         "/api/v1/employees/joinErp",
