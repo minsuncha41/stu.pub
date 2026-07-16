@@ -763,11 +763,13 @@
 }
 
 .tbin ul li:nth-child(12).gl span.sgs {
+    cursor: pointer;
     background: #EFF6FF;
     color: #2563EB;
 }
 
 .tbin ul li:nth-child(12).gl span.sg {
+    cursor: pointer;
     background: #F1F5F9;
     color: #6B7280;
 }
@@ -914,4 +916,284 @@
     gap: 5;
     color: #E11D48 !important;
     font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 모달창 */
+
+
+
+.wrap {
+    position: relative;
+}
+
+
+
+
+
+.modalwrap {
+    z-index: 99999999;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 500px; */
+}
+
+.modal {
+    margin: 0 auto;
+    width: 650px;
+    /* height: 814px; */
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tit {
+    background: #1B3A6B;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    color: white;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+
+.titlft {
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    gap: 10;
+}
+
+.titlft p {
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column;
+}
+
+.titlft p span {
+    font-size: 10px;
+    color: #60A5FA;
+}
+
+.titret {
+    color: white;
+    width: 32px;
+    height: 32px;
+    background: #2D5F9E;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.titret:hover {
+    color: white;
+    width: 32px;
+    height: 32px;
+    background: #55769d;
+
+}
+
+.btret span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2D5F9E;
+    font-size: 11px;
+    padding: 0 10px;
+    color: #93C5FD;
+    font-weight: bold;
+    height: 20px;
+    border-radius: 20px;
+
+}
+
+
+
+.ttit {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-size: 13px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #1B3A6B;
+}
+
+.ttit::after {
+    background-color: #1B3A6B;
+    content: "";
+    position: absolute;
+    height: 13px;
+    width: 3px;
+    border-radius: 10px;
+    left: 0;
+}
+
+
+.mdin {
+    padding: 12px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btlft {
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 20px;
+    justify-content: space-between;
+    border-top: 1px solid #E5E7EB
+}
+
+
+.btlft h1 {
+    display: flex;
+    gap: 10;
+    font-size: 11px;
+}
+
+.btlft h1 b {
+    display: flex;
+    align-items: center;
+    gap: 5;
+    color: #2563EB;
+}
+
+.btlft h1 p {
+    color: #9CA3AF;
+}
+
+
+.btret {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 8;
+}
+
+.btret button {
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    flex-flow: row wrap;
+    height: 36px;
+    padding: 0 20px;
+    justify-self: center;
+    align-items: center;
+    gap: 6;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.btret button.imibtn,
+.btret button.dgbtn {
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB
+}
+
+.btret button.jjbtn {
+    color: white;
+    background: #1B3A6B;
+}
+
+.sgdlbtn {
+    right: 20px;
+    top: 117px;
+    width: 96px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
 }

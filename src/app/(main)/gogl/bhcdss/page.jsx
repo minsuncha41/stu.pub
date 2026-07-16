@@ -12,55 +12,21 @@ import Toptits from "@/component/cmm/Toptits";
 import RegisterSalaryInfoModal from "@/component/cmm/RegisterSalaryInfoModal";
 
 import {
-  AlarmClock,
   AlertCircle,
-  Baby,
-  Banknote,
-  BookOpen,
-  CakeSlice,
-  Calculator,
-  Calendar,
-  CalendarCheck,
-  CalendarPlus,
-  Check,
-  CheckCheck,
-  ChevronLeft,
-  ChevronRight,
-  ClipboardPen,
   Clock,
-  Clock1,
-  Clock10,
-  Clock4,
-  Ellipsis,
+  Download,
+  Eye,
   FileText,
-  Flower2,
-  Heart,
-  HeartHandshake,
-  HeartPulse,
-  ListChecks,
-  LogOut,
-  MoonStar,
-  Paperclip,
   Pencil,
-  Plane,
-  Plus,
   Printer,
   RotateCcw,
   Save,
-  SaveAll,
-  SaveOff,
   Search,
-  SendHorizontal,
-  ShieldCheck,
-  Sigma,
   Star,
-  Sun,
   TableIcon,
   Trash2,
   TrendingDown,
   TrendingUp,
-  Upload,
-  User2,
   UserRoundMinus,
   UserRoundPlus,
   Users,
@@ -85,15 +51,110 @@ export default function Bhcdss() {
   }, []);
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
 
+  const [popvw, setpopvw] = useState(true);
+  const popon = () => {
+    setpopvw(true);
+  };
+  const popno = () => {
+    setpopvw(false);
+  };
+
+  const [pdfpopvw, setpdfpopvw] = useState(false);
+  const pdfpopon = () => {
+    setpdfpopvw(true);
+  };
+  const pdfpopno = () => {
+    setpdfpopvw(false);
+  };
   return (
     <div className="wrap">
       <Nav num3={true} />
+      {pdfpopvw && (
+        <div className="modalwrap">
+          <div className="pdfpop">
+            <div className="pdfic">
+              <Download size={24} color="#3B82F6" />
+            </div>
+            <h1>PDF 다운로드</h1>
+            <p>
+              선택한 데이터를 PDF 파일로 다운로드합니다. <br /> 계속
+              진행하시겠습니까?
+            </p>
+            <div className="pdfbtns">
+              <button
+                onClick={() => {
+                  pdfpopno();
+                }}
+              >
+                취소
+              </button>
+              <button>확인</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {popvw && (
+        <div className="modalwrap">
+          <div className="modal">
+            <div className="tit">
+              <div className="titlft">
+                <Star className="incs" size={16} color="#FCD34D" />
+                <p>
+                  특별성과수당 지급등록
+                  <span>Special Performance Allowance</span>
+                </p>
+              </div>
+            </div>
 
+            <div className="mdin">
+              <h1 className="ttit">지급 기본정보</h1>
+            </div>
+
+            <div className="btlft">
+              <h1>
+                <p>
+                  <span>*</span>
+                  필수 입력 항목<>{" | "}</>
+                </p>
+                <b>
+                  <Users size={12} />
+                  3명 · 총 1,700,000원
+                </b>
+              </h1>
+              <div className="btret">
+                <button className="imibtn">
+                  <Eye size={14} />
+                  미리보기
+                </button>
+                <button
+                  className=" dgbtn"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <X size={14} />
+                  취소
+                </button>
+                <button
+                  className="jjbtn"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <Save size={14} />
+                  저장하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="inwrap">
         <RegisterSalaryInfoModal
           className="modal"
           open={openRegisterModal}
           setOpen={setOpenRegisterModal}
+          bhcdss="0"
         />
         <Aside dummy={aside} idxs="2" subidxs="5" />
 
@@ -118,7 +179,7 @@ export default function Bhcdss() {
                 이달 취득
               </p>{" "}
               <h1>3명</h1>
-              <span>신고완료 2 · 신고완료 1</span>
+              <span>신고완료 2 · 미신고 1</span>
             </li>
             <li>
               <p>
@@ -126,13 +187,13 @@ export default function Bhcdss() {
                 이달 상실
               </p>{" "}
               <h1>1명</h1>
-              <span>신고완료 1 · 신고완료 0</span>
+              <span>신고완료 1 · 미신고 0</span>
             </li>
             <li>
               <p>
                 {" "}
                 <AlertCircle size={14} />
-                신고완료 건수
+                미신고 건수
               </p>
               <h1>1건</h1>
               <span>신고기한 임박 확인</span>
@@ -298,7 +359,7 @@ export default function Bhcdss() {
                   </span>
                 </li>
                 <li className="gl">
-                  <span className="sgs">
+                  <span className="sgs" onClick={popon}>
                     <FileText size={10} />
                     신고서
                   </span>

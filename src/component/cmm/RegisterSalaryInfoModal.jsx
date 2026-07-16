@@ -21,7 +21,7 @@ import {
 import { useCallback, useEffect, useState } from "react";
 import baseApi from "@/api/baseApi";
 
-export default function RegisterSalaryInfoModal({ open, setOpen }) {
+export default function RegisterSalaryInfoModal({ open, setOpen, bhcdss }) {
   const [name, setName] = useState("");
   const [departmentName, setDepartmentName] = useState("");
   const [employeeList, setEmployeeList] = useState([]);
@@ -163,7 +163,7 @@ export default function RegisterSalaryInfoModal({ open, setOpen }) {
           />
         </div>
 
-        <DialogFooter className="flex flex-col gap-3 border-t border-[#E5E7EB] bg-white px-[44px] py-[36px] sm:flex-row sm:items-center sm:justify-between">
+        <DialogFooter className="flex flex-col gap-3 border-t border-[#E5E7EB] bg-white px-[44px] py-[30px] sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-[6px]">
             <Info size={10} color="#9CA3AF" />
             <span className="text-[12px] leading-[14.4px] text-[#9CA3AF]">
@@ -176,10 +176,14 @@ export default function RegisterSalaryInfoModal({ open, setOpen }) {
               <XIcon size={13} color="#6B7280" />
               취소
             </button>
-            <button className="flex items-center gap-[6px] rounded-[10px] border border-[#D1D5DB] bg-white px-[12px] py-[8px] text-[13px] font-semibold text-[#374151]">
-              <RotateCw size={13} color="#6B7280" />
-              초기화
-            </button>
+
+            {/* 4대보험 취득/상실 내역 이면 안보여줌 */}
+            {!bhcdss && (
+              <button className="flex items-center gap-[6px] rounded-[10px] border border-[#D1D5DB] bg-white px-[12px] py-[8px] text-[13px] font-semibold text-[#374151]">
+                <RotateCw size={13} color="#6B7280" />
+                초기화
+              </button>
+            )}
 
             <button
               className="flex items-center gap-[6px] rounded-[10px] bg-[#2563EB] px-[12px] py-[8px] text-[13px] font-semibold text-white"
