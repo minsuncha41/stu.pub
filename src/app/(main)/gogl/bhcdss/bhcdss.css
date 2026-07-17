@@ -1584,7 +1584,13 @@
     color: #D97706;
 }
 
-
+.sgggjb ul ul li:nth-child(2) {
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column;
+    gap: 5;
+}
 
 
 
