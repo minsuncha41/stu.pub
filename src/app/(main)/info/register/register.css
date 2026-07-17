@@ -238,6 +238,17 @@
     border-radius: 10px;
 }
 
+/* 모달창 높이 조절  멘위아레 빼고 가둬야함*/
+.modalin {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.main {
+    max-height: 900px;
+    overflow-y: auto;
+}
+
 .tit {
     background: #1B3A6B;
     display: flex;
@@ -489,7 +500,43 @@
     cursor: pointer;
 }
 
+.gjbh {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0 10;
+    width: 100%;
+}
 
+.gjbh input {
+    display: flex;
+    width: 376px;
+    text-align: center;
+}
+
+.gjbh button {
+    background: #1B3A6B;
+    color: white;
+    font-size: 13px;
+    border-radius: 7px;
+    height: 36px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 5;
+}
+
+.lblbox>span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5;
+    padding: 10px 14px;
+    background: #F0F9FF;
+    border: 1px solid #BAE6FD;
+    border-radius: 7px;
+    font-size: 12px;
+    color: #0369A1;
+}
 
 
 

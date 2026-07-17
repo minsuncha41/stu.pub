@@ -7,7 +7,16 @@ import Nav from "@/component/cmm/Nav";
 import Aside from "@/component/cmm/Aside";
 import Table from "@/component/cmm/Table";
 import Toptits from "@/component/cmm/Toptits";
-import { Clock4, Download, Save, Search, UserPlus, X } from "lucide-react";
+import {
+  CheckCheck,
+  Clock4,
+  Download,
+  Info,
+  Save,
+  Search,
+  UserPlus,
+  X,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export default function Register({ current }) {
@@ -444,6 +453,50 @@ export default function Register({ current }) {
                   />
                 </label>
               </div>
+
+              <div className="lblbox">
+                <h1>
+                  급여계좌 <span>급여 입금용 계좌를 등록해 주세요</span>{" "}
+                </h1>
+                <label className="lbl">
+                  <p>
+                    은행 <span>*</span>
+                  </p>
+                  <input
+                    onChange={(e) =>
+                      setallinput((tt) => {
+                        return {
+                          ...tt,
+                          phone: e.target.value,
+                        };
+                      })
+                    }
+                    type="text"
+                    placeholder="010-0000-0000"
+                  />
+                </label>
+                <label className="lbl">
+                  <p>
+                    예금주 <span>*</span>
+                  </p>
+                  <input type="text" placeholder="example@company.com" />
+                </label>
+                <label className="lbl gjbh">
+                  <p>
+                    계좌번호 <span>*</span>
+                  </p>
+                  <input type="text" placeholder="- 없이 숫자만 입력" />
+                  <button>
+                    <CheckCheck size={13} />
+                    계좌인증
+                  </button>
+                </label>
+                <span>
+                  <Info size={14} /> 등록된 계좌로 매월 급여가 입금됩니다.
+                  계좌번호를 정확히 입력해 주세요.
+                </span>
+              </div>
+
               <div className="lblbox bsilcl">
                 <h1>비상연락처</h1>
                 <div className="jsin">
