@@ -389,8 +389,8 @@
 
 .formboxmd {
     display: flex;
-    flex-flow: row wrap;
-    gap: 12px;
+    flex-flow: row;
+    gap: 5;
 }
 
 .fmmdlt {
@@ -402,7 +402,7 @@
     display: flex;
     flex-flow: column;
     background: #FFF7F7;
-    width: 543px;
+    width: 540px;
     height: 124px;
     gap: 7px;
 }
@@ -505,7 +505,6 @@
 }
 
 .formboxmd h3 {
-    margin-left: 10px;
     width: 24.1px;
     height: 124px;
     font-size: 20px;
@@ -521,7 +520,7 @@
     box-sizing: border-box;
     display: flex;
     flex-flow: column;
-    width: 543px;
+    width: 540px;
     height: 124px;
     gap: 12px;
     background: #F0F7FF;
@@ -541,7 +540,7 @@
 }
 
 .formboxbt textarea {
-    width: 1150px;
+    width: 1116px;
     height: 82px;
     padding: 10px 12px;
     border-radius: 6px;
