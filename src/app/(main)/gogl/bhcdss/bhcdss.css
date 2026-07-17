@@ -967,6 +967,11 @@
     overflow-y: auto;
 }
 
+.main {
+    max-height: 900px;
+    overflow-y: auto;
+}
+
 
 .tit {
     background: #1B3A6B;

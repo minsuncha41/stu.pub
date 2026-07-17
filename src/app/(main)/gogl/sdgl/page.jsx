@@ -42,7 +42,7 @@ import {
 } from "lucide-react";
 
 export default function Sdgl() {
-  const [popvw, setpopvw] = useState(true);
+  const [popvw, setpopvw] = useState(false);
   const popon = () => {
     setpopvw(true);
   };
@@ -108,274 +108,275 @@ export default function Sdgl() {
                 </div>
               </div>
             </div>
-            <div className="mdin mdintp">
-              <h1>
-                <span>1</span>지급 기본정보
-              </h1>
-              <p></p>
-              <h1>
-                <span>2</span>지급 대상 선택
-              </h1>
-              <p></p>
-              <h2>
-                <span>3</span>첨부파일
-              </h2>
-            </div>
-            <div className="mdin mdinmid">
-              <h1 className="ttit">지급 기본정보</h1>
-              <div className="lbbox">
-                <label className="inputic inputicwt">
-                  <p>
-                    지급월<span>*</span>
-                  </p>
-                  <input type="text" value={"OT001"} />
-                  <Calendar size={13} className="ic" />
-                </label>
-                <label className="inputic">
-                  <p>수당 유형</p>
-                  <input type="text" value={"OT001"} disabled readOnly />
-                  <Lock size={13} className="ic" />
-                </label>
-                <label className="inputic inputicwt">
-                  <p>
-                    지급 금액<span>*</span>
-                  </p>
-                  <div className="jggo">
+            <div className="modalin">
+              <div className="mdin mdintp">
+                <h1>
+                  <span>1</span>지급 기본정보
+                </h1>
+                <p></p>
+                <h1>
+                  <span>2</span>지급 대상 선택
+                </h1>
+                <p></p>
+                <h2>
+                  <span>3</span>첨부파일
+                </h2>
+              </div>
+              <div className="mdin mdinmid">
+                <h1 className="ttit">지급 기본정보</h1>
+                <div className="lbbox">
+                  <label className="inputic inputicwt">
+                    <p>
+                      지급월<span>*</span>
+                    </p>
                     <input type="text" value={"OT001"} />
-                    <b>원</b>
-                  </div>
-                  <h1>
-                    <Info size={11} /> 일괄 동일 금액 지급 · 개별 설정은 직원
-                    목록에서 변경
-                  </h1>
-                </label>
-                <label className="inputic">
+                    <Calendar size={13} className="ic" />
+                  </label>
+                  <label className="inputic">
+                    <p>수당 유형</p>
+                    <input type="text" value={"OT001"} disabled readOnly />
+                    <Lock size={13} className="ic" />
+                  </label>
+                  <label className="inputic inputicwt">
+                    <p>
+                      지급 금액<span>*</span>
+                    </p>
+                    <div className="jggo">
+                      <input type="text" value={"OT001"} />
+                      <b>원</b>
+                    </div>
+                    <h1>
+                      <Info size={11} /> 일괄 동일 금액 지급 · 개별 설정은 직원
+                      목록에서 변경
+                    </h1>
+                  </label>
+                  <label className="inputic">
+                    <p>
+                      과세 부여<span>*</span>
+                    </p>
+                    <ul>
+                      <li className="cled">
+                        <ReceiptText size={12} />
+                        과세
+                      </li>
+                      <li>
+                        <ShieldCheck size={12} />
+                        비과세
+                      </li>
+                    </ul>
+                    <h2>
+                      <span>●</span>과세 선택 시 소득세가 자동 공제됩니다
+                    </h2>
+                  </label>
+                </div>
+                <label className="gjsu">
                   <p>
-                    과세 부여<span>*</span>
+                    지급 사유 <span>*</span>
                   </p>
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="지급 사유를 입력하세요. (예: 2025년 2분기 성과 우수 직원 포상)"
+                  ></textarea>
+                </label>
+              </div>
+
+              <div className="lin"></div>
+
+              <div className="mdin mdinjgds">
+                <div className="ttbox">
+                  <h1 className="ttit">지급 대상 직원 선택</h1>
                   <ul>
-                    <li className="cled">
-                      <ReceiptText size={12} />
-                      과세
+                    <li>
+                      <Users size={13} />
+                      3명 선택됨
                     </li>
                     <li>
-                      <ShieldCheck size={12} />
-                      비과세
+                      <input type="checkbox" name="" id="" />
+                      전체선택
                     </li>
                   </ul>
-                  <h2>
-                    <span>●</span>과세 선택 시 소득세가 자동 공제됩니다
-                  </h2>
-                </label>
-              </div>
-              <label className="gjsu">
-                <p>
-                  지급 사유 <span>*</span>
-                </p>
-                <textarea
-                  name=""
-                  id=""
-                  placeholder="지급 사유를 입력하세요. (예: 2025년 2분기 성과 우수 직원 포상)"
-                ></textarea>
-              </label>
-            </div>
-
-            <div className="lin"></div>
-
-            <div className="mdin mdinjgds">
-              <div className="ttbox">
-                <h1 className="ttit">지급 대상 직원 선택</h1>
-                <ul>
-                  <li>
-                    <Users size={13} />
-                    3명 선택됨
-                  </li>
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                    전체선택
-                  </li>
-                </ul>
-              </div>
-              <div className="fidbox">
-                <select name="" id="">
-                  <option value="">전체부서</option>
-                  <option value="1">인사팀</option>
-                  <option value="2">냉장</option>
-                  <option value="3">IT</option>
-                  <option value="4">물류</option>
-                </select>
-                <div className="fidboxinfputbox">
-                  <input type="text" placeholder="사원 검색" />
-                  <Search size={12} className="icon" />
                 </div>
-              </div>
-              <ul>
-                <ul>
-                  <li>
-                    <input type="checkbox" name="" id="" checked />
-                  </li>
-                  <li>성명</li>
-                  <li>사원번호</li>
-                  <li>부서</li>
-                  <li>직급</li>
-                  <li>개별 지급금액 (원)</li>
-                </ul>
-
-                <ul className="ckd">
-                  <li>
-                    <input type="checkbox" name="" id="" checked />
-                  </li>
-                  <li>
-                    <span className="fn">김</span> 김철수
-                  </li>
-                  <li>EMP-001</li>
-                  <li>인사팀</li>
-                  <li>
-                    <span className="sp">팀장</span>
-                  </li>
-                  <li>
-                    <input type="text" />
-                    <p>미선택</p>
-                  </li>
-                </ul>
-
-                <ul className="ckd">
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                  </li>
-                  <li>
-                    <span className="fn">이</span> 이영희
-                  </li>
-                  <li>EMP-002</li>
-                  <li>인사팀</li>
-                  <li>
-                    <span className="sp">차장</span>
-                  </li>
-                  <li>
-                    <input type="text" />
-                    <p>미선택</p>
-                  </li>
-                </ul>
-
-                <ul className="">
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                  </li>
-                  <li>
-                    <span className="fn">박</span> 박민준
-                  </li>
-                  <li>EMP-003</li>
-                  <li>개발팀</li>
-                  <li>
-                    <span className="sp">대리</span>
-                  </li>
-                  <li>
-                    <input type="text" />
-                    <p>미선택</p>
-                  </li>
-                </ul>
-
-                <ul className="">
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                  </li>
-                  <li>
-                    <span className="fn">최</span> 최지영
-                  </li>
-                  <li>EMP-004</li>
-                  <li>영업팀</li>
-                  <li>
-                    <span className="sp">사원</span>
-                  </li>
-                  <li>
-                    <input type="text" />
-                    <p>미선택</p>
-                  </li>
-                </ul>
-
-                <ul className="ckd">
-                  <li>
-                    <input type="checkbox" name="" id="" checked />
-                  </li>
-                  <li>
-                    <span className="fn">정</span> 정수빈
-                  </li>
-                  <li>EMP-005</li>
-                  <li>개발팀</li>
-                  <li>
-                    <span className="sp so">사원</span>
-                  </li>
-                  <li>
-                    <input type="text" className="so" />
-                    <p>700,000</p>
-                  </li>
-                </ul>
-
-                <ul className="">
-                  <li>전체 5명 중 3명 선택</li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li>
-                    <b>총 지급예정액</b>
-                    <span className="sp">1,700,000원</span>
-                  </li>
-                </ul>
-              </ul>
-            </div>
-
-            <div className="lin"></div>
-
-            <div className="mdin cmbpil">
-              <h1 className="ttit">
-                첨부파일 <p>선택사항</p>
-              </h1>
-              <div className="cmbpilin">
-                <Paperclip size={18} color="#9CA3AF" />
-                <div className="cmbpiltt">
-                  <h1>결재문서·지급증빙 파일을 첨부하세요</h1>
-                  <h2>PDF, JPG, PNG · 최대 10MB · 파일 3개까지</h2>
-                </div>
-
-                {/* 파일열기 */}
-                <input type="file" hidden />
-                <button>
-                  <Upload size={13} />
-                  파일 선택
-                </button>
-              </div>
-              <div className="cmbpilfl">
-                <div className="cmbpilfllft">
-                  <div className="icon">
-                    <FileText color="#3B82F6" size={15} />
-                  </div>
-                  <div className="cmbpilfllfttt">
-                    <h1>성과수당_결재문서_2025Q2.pdf</h1>
-                    <h2>
-                      1.2 MB {" | "} <Check size={10} />
-                      업로드 완료
-                    </h2>
+                <div className="fidbox">
+                  <select name="" id="">
+                    <option value="">전체부서</option>
+                    <option value="1">인사팀</option>
+                    <option value="2">냉장</option>
+                    <option value="3">IT</option>
+                    <option value="4">물류</option>
+                  </select>
+                  <div className="fidboxinfputbox">
+                    <input type="text" placeholder="사원 검색" />
+                    <Search size={12} className="icon" />
                   </div>
                 </div>
-                <div className="cmbpilflret">
-                  <span>x</span>
-                  삭제
+                <ul>
+                  <ul>
+                    <li>
+                      <input type="checkbox" name="" id="" checked />
+                    </li>
+                    <li>성명</li>
+                    <li>사원번호</li>
+                    <li>부서</li>
+                    <li>직급</li>
+                    <li>개별 지급금액 (원)</li>
+                  </ul>
+
+                  <ul className="ckd">
+                    <li>
+                      <input type="checkbox" name="" id="" checked />
+                    </li>
+                    <li>
+                      <span className="fn">김</span> 김철수
+                    </li>
+                    <li>EMP-001</li>
+                    <li>인사팀</li>
+                    <li>
+                      <span className="sp">팀장</span>
+                    </li>
+                    <li>
+                      <input type="text" />
+                      <p>미선택</p>
+                    </li>
+                  </ul>
+
+                  <ul className="ckd">
+                    <li>
+                      <input type="checkbox" name="" id="" />
+                    </li>
+                    <li>
+                      <span className="fn">이</span> 이영희
+                    </li>
+                    <li>EMP-002</li>
+                    <li>인사팀</li>
+                    <li>
+                      <span className="sp">차장</span>
+                    </li>
+                    <li>
+                      <input type="text" />
+                      <p>미선택</p>
+                    </li>
+                  </ul>
+
+                  <ul className="">
+                    <li>
+                      <input type="checkbox" name="" id="" />
+                    </li>
+                    <li>
+                      <span className="fn">박</span> 박민준
+                    </li>
+                    <li>EMP-003</li>
+                    <li>개발팀</li>
+                    <li>
+                      <span className="sp">대리</span>
+                    </li>
+                    <li>
+                      <input type="text" />
+                      <p>미선택</p>
+                    </li>
+                  </ul>
+
+                  <ul className="">
+                    <li>
+                      <input type="checkbox" name="" id="" />
+                    </li>
+                    <li>
+                      <span className="fn">최</span> 최지영
+                    </li>
+                    <li>EMP-004</li>
+                    <li>영업팀</li>
+                    <li>
+                      <span className="sp">사원</span>
+                    </li>
+                    <li>
+                      <input type="text" />
+                      <p>미선택</p>
+                    </li>
+                  </ul>
+
+                  <ul className="ckd">
+                    <li>
+                      <input type="checkbox" name="" id="" checked />
+                    </li>
+                    <li>
+                      <span className="fn">정</span> 정수빈
+                    </li>
+                    <li>EMP-005</li>
+                    <li>개발팀</li>
+                    <li>
+                      <span className="sp so">사원</span>
+                    </li>
+                    <li>
+                      <input type="text" className="so" />
+                      <p>700,000</p>
+                    </li>
+                  </ul>
+
+                  <ul className="">
+                    <li>전체 5명 중 3명 선택</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li>
+                      <b>총 지급예정액</b>
+                      <span className="sp">1,700,000원</span>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+
+              <div className="lin"></div>
+
+              <div className="mdin cmbpil">
+                <h1 className="ttit">
+                  첨부파일 <p>선택사항</p>
+                </h1>
+                <div className="cmbpilin">
+                  <Paperclip size={18} color="#9CA3AF" />
+                  <div className="cmbpiltt">
+                    <h1>결재문서·지급증빙 파일을 첨부하세요</h1>
+                    <h2>PDF, JPG, PNG · 최대 10MB · 파일 3개까지</h2>
+                  </div>
+
+                  {/* 파일열기 */}
+                  <input type="file" hidden />
+                  <button>
+                    <Upload size={13} />
+                    파일 선택
+                  </button>
+                </div>
+                <div className="cmbpilfl">
+                  <div className="cmbpilfllft">
+                    <div className="icon">
+                      <FileText color="#3B82F6" size={15} />
+                    </div>
+                    <div className="cmbpilfllfttt">
+                      <h1>성과수당_결재문서_2025Q2.pdf</h1>
+                      <h2>
+                        1.2 MB {" | "} <Check size={10} />
+                        업로드 완료
+                      </h2>
+                    </div>
+                  </div>
+                  <div className="cmbpilflret">
+                    <span>x</span>
+                    삭제
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="infobox">
-              <Info size={14} />
-              <h1>
-                저장 전 확인사항
-                <p>
-                  저장 후 급여계산 시 해당 수당이 자동 반영됩니다. 확정 전
-                  급여담당자 검토를 권장합니다.
-                </p>
-              </h1>
+              <div className="infobox">
+                <Info size={14} />
+                <h1>
+                  저장 전 확인사항
+                  <p>
+                    저장 후 급여계산 시 해당 수당이 자동 반영됩니다. 확정 전
+                    급여담당자 검토를 권장합니다.
+                  </p>
+                </h1>
+              </div>
             </div>
-
             <div className="btlft">
               <h1>
                 <p>

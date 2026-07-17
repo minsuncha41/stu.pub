@@ -831,6 +831,18 @@
     border-radius: 10px;
 }
 
+/* 모달창 높이 조절  멘위아레 빼고 가둬야함*/
+.modalin {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.main {
+    max-height: 900px;
+    overflow-y: auto;
+}
+
+
 .tit {
     background: #1B3A6B;
     display: flex;

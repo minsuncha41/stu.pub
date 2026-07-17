@@ -103,230 +103,230 @@ export default function Gojg() {
                 </div>
               </div>
             </div>
-
-            <div className="mdintp">
-              <div className="mdintpret">
-                <div className="icbox">HR</div>
-                <p>
-                  주식회사 HRSystem <br />{" "}
-                  <span>사업자등록번호: 123-45-67890 | 대표: 홍길동</span>
-                </p>
+            <div className="modalin">
+              <div className="mdintp">
+                <div className="mdintpret">
+                  <div className="icbox">HR</div>
+                  <p>
+                    주식회사 HRSystem <br />{" "}
+                    <span>사업자등록번호: 123-45-67890 | 대표: 홍길동</span>
+                  </p>
+                </div>
+                <div className="mdintplft">
+                  <p># PAY-2025-07-0008</p>
+                  <span> {" | "} </span>{" "}
+                  <p>
+                    <Calendar size={11} />
+                    2025.08.01
+                  </p>
+                </div>
               </div>
-              <div className="mdintplft">
-                <p># PAY-2025-07-0008</p>
-                <span> {" | "} </span>{" "}
-                <p>
-                  <Calendar size={11} />
-                  2025.08.01
-                </p>
-              </div>
-            </div>
 
-            <div className="mdinsgj">
-              <h1 className="ttit">수급자 정보</h1>
-              <ul>
+              <div className="mdinsgj">
+                <h1 className="ttit">수급자 정보</h1>
                 <ul>
-                  <li>성명</li>
+                  <ul>
+                    <li>성명</li>
+                    <li>
+                      {" "}
+                      <span className="fn">박</span> 박민준
+                    </li>
+                    <li>사원번호</li>
+                    <li>EMP-003</li>
+                  </ul>
+
+                  <ul>
+                    <li>부서</li>
+                    <li>개발팀</li>
+                    <li>직급</li>
+                    <li>대리</li>
+                  </ul>
+
+                  <ul>
+                    <li>지급연월</li>
+                    <li>2025.07 (7.25 지급)</li>
+                    <li>근속연수</li>
+                    <li>3년 11개월</li>
+                  </ul>
+                </ul>
+              </div>
+
+              <div className="hmtb">
+                <ul>
                   <li>
-                    {" "}
-                    <span className="fn">박</span> 박민준
+                    <h1>
+                      <TrendingUp size={12} />
+                      지급항목
+                    </h1>
+                    <h2>금액 (원)</h2>
                   </li>
-                  <li>사원번호</li>
-                  <li>EMP-003</li>
+                  <li>
+                    <h1>
+                      <p>●</p>기본급
+                    </h1>
+                    <h2>3,500,000</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>식대
+                    </h1>
+                    <h2>200,000</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>교통비
+                    </h1>
+                    <h2>150,000</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>야근수당
+                    </h1>
+                    <h2>350,000</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>직책수당
+                    </h1>
+                    <h2>-</h2>
+                  </li>
+                  <li>
+                    <h1>지급합계</h1>
+                    <h2>4,200,000</h2>
+                  </li>
                 </ul>
 
                 <ul>
-                  <li>부서</li>
-                  <li>개발팀</li>
-                  <li>직급</li>
-                  <li>대리</li>
+                  <li>
+                    <h1>
+                      <TrendingDown size={12} />
+                      공제항목
+                    </h1>
+                    <h2>금액 (원)</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>국민연금 (4.5%)
+                    </h1>
+                    <h2>157,500</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>건강보험 (3.98%)
+                    </h1>
+                    <h2>139,300</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>고용보험 (0.9%)
+                    </h1>
+                    <h2>37,800</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>소득세
+                    </h1>
+                    <h2>88,000</h2>
+                  </li>
+                  <li>
+                    <h1>
+                      <p>●</p>지방소득세 (10%)
+                    </h1>
+                    <h2>8,800</h2>
+                  </li>
+                  <li>
+                    <h1>공제합계</h1>
+                    <h2>431,400</h2>
+                  </li>
                 </ul>
+              </div>
 
-                <ul>
-                  <li>지급연월</li>
-                  <li>2025.07 (7.25 지급)</li>
-                  <li>근속연수</li>
-                  <li>3년 11개월</li>
-                </ul>
-              </ul>
-            </div>
-
-            <div className="hmtb">
-              <ul>
-                <li>
-                  <h1>
-                    <TrendingUp size={12} />
-                    지급항목
-                  </h1>
-                  <h2>금액 (원)</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>기본급
-                  </h1>
-                  <h2>3,500,000</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>식대
-                  </h1>
-                  <h2>200,000</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>교통비
-                  </h1>
-                  <h2>150,000</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>야근수당
-                  </h1>
-                  <h2>350,000</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>직책수당
-                  </h1>
-                  <h2>-</h2>
-                </li>
-                <li>
-                  <h1>지급합계</h1>
-                  <h2>4,200,000</h2>
-                </li>
-              </ul>
-
-              <ul>
-                <li>
-                  <h1>
-                    <TrendingDown size={12} />
-                    공제항목
-                  </h1>
-                  <h2>금액 (원)</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>국민연금 (4.5%)
-                  </h1>
-                  <h2>157,500</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>건강보험 (3.98%)
-                  </h1>
-                  <h2>139,300</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>고용보험 (0.9%)
-                  </h1>
-                  <h2>37,800</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>소득세
-                  </h1>
-                  <h2>88,000</h2>
-                </li>
-                <li>
-                  <h1>
-                    <p>●</p>지방소득세 (10%)
-                  </h1>
-                  <h2>8,800</h2>
-                </li>
-                <li>
-                  <h1>공제합계</h1>
-                  <h2>431,400</h2>
-                </li>
-              </ul>
-            </div>
-
-            <div className="sjgo">
-              <div className="sjgotop">
-                <div className="sjgoret">
-                  <div className="sjgorettop">
-                    <div className="icbox">
-                      <Banknote size={13} />
+              <div className="sjgo">
+                <div className="sjgotop">
+                  <div className="sjgoret">
+                    <div className="sjgorettop">
+                      <div className="icbox">
+                        <Banknote size={13} />
+                      </div>
+                      <h1>실 지급액</h1>
                     </div>
-                    <h1>실 지급액</h1>
+                    <p>4,200,000 - 431,400</p>
                   </div>
-                  <p>4,200,000 - 431,400</p>
-                </div>
-                <div className="sjgolft">
-                  <h1>
-                    3,768,600
-                    <p>원 (KRW)</p>
-                  </h1>
-                </div>
-              </div>
-              <div className="sjgomid">
-                <h1 className="sjgomidbox">
-                  <Quote size={11} />
-                  삼백칠십육만팔천육백원정 (₩3,768,600)
-                </h1>
-              </div>
-              <div className="sjgomidbtm">
-                <h1>
-                  <ArrowUp size={10} />
-                  지급 4,200,000원
-                </h1>
-                <p>ㅡ</p>
-                <h2>
-                  <ArrowDown size={10} />
-                  공제 431,400원
-                </h2>
-                <p>=</p>
-                <h3>
-                  <Check size={10} />
-                  실지급 3,768,600원
-                </h3>
-              </div>
-            </div>
-            <div className="sjgobtm">
-              <div className="sjgobtmtop">
-                <h1>
-                  <CalendarCheck size={12} />
-                  7월 근태 요약
-                </h1>
-                <h2>
-                  <b>
-                    <span>●</span>출근 20일
-                  </b>
-                  <p>|</p>
-                  <b>
-                    <span>●</span>연차 1일
-                  </b>
-                  <p>|</p>
-                  <b>
-                    <span>●</span>야근 7시간
-                  </b>
-                  <p>|</p>
-                  <b>
-                    <span>●</span>지각 0회
-                  </b>
-                </h2>
-              </div>
-              <div className="sjgobtmmid">
-                <h1 className="ttit">확인 및 직인</h1>
-                <div className="sjgobtmmidmid">
-                  <h1>
-                    <p>위 금액을 급여로 지급함을 확인합니다.</p>
-                    <p>지급일: 2025년 7월 25일</p>
-                    <b>주식회사 HRSystem 대표이사 홍 길 동 (인)</b>
-                  </h1>
-                  <div className="djbox">
-                    <div className="dj">
-                      <h2>직인</h2>
-                    </div>
+                  <div className="sjgolft">
+                    <h1>
+                      3,768,600
+                      <p>원 (KRW)</p>
+                    </h1>
                   </div>
                 </div>
-                <span>
-                  <InfoIcon size={12} />본 명세서는 전자문서로 발행되었으며
-                  위변조 시 법적 처벌을 받을 수 있습니다.
-                </span>
+                <div className="sjgomid">
+                  <h1 className="sjgomidbox">
+                    <Quote size={11} />
+                    삼백칠십육만팔천육백원정 (₩3,768,600)
+                  </h1>
+                </div>
+                <div className="sjgomidbtm">
+                  <h1>
+                    <ArrowUp size={10} />
+                    지급 4,200,000원
+                  </h1>
+                  <p>ㅡ</p>
+                  <h2>
+                    <ArrowDown size={10} />
+                    공제 431,400원
+                  </h2>
+                  <p>=</p>
+                  <h3>
+                    <Check size={10} />
+                    실지급 3,768,600원
+                  </h3>
+                </div>
+              </div>
+              <div className="sjgobtm">
+                <div className="sjgobtmtop">
+                  <h1>
+                    <CalendarCheck size={12} />
+                    7월 근태 요약
+                  </h1>
+                  <h2>
+                    <b>
+                      <span>●</span>출근 20일
+                    </b>
+                    <p>|</p>
+                    <b>
+                      <span>●</span>연차 1일
+                    </b>
+                    <p>|</p>
+                    <b>
+                      <span>●</span>야근 7시간
+                    </b>
+                    <p>|</p>
+                    <b>
+                      <span>●</span>지각 0회
+                    </b>
+                  </h2>
+                </div>
+                <div className="sjgobtmmid">
+                  <h1 className="ttit">확인 및 직인</h1>
+                  <div className="sjgobtmmidmid">
+                    <h1>
+                      <p>위 금액을 급여로 지급함을 확인합니다.</p>
+                      <p>지급일: 2025년 7월 25일</p>
+                      <b>주식회사 HRSystem 대표이사 홍 길 동 (인)</b>
+                    </h1>
+                    <div className="djbox">
+                      <div className="dj">
+                        <h2>직인</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <span>
+                    <InfoIcon size={12} />본 명세서는 전자문서로 발행되었으며
+                    위변조 시 법적 처벌을 받을 수 있습니다.
+                  </span>
+                </div>
               </div>
             </div>
-
             <div className="btlft">
               <h1>
                 <b>

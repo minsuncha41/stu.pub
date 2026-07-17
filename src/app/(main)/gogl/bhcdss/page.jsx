@@ -60,7 +60,7 @@ export default function Bhcdss() {
   }, []);
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
 
-  const [popvw, setpopvw] = useState(true);
+  const [popvw, setpopvw] = useState(false);
   const popon = () => {
     setpopvw(true);
   };

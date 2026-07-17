@@ -6,6 +6,10 @@
 
 
 
+.main {
+    max-height: 900px;
+    overflow-y: auto;
+}
 
 .registermain {
     background: #F1F5F9;

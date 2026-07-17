@@ -8,8 +8,13 @@
     background: #F1F5F9;
     padding: 20px;
     margin-top: 56px;
-    height: calc(100vh -56px);
     width: calc(100% - 210px);
+    height: calc(100% -56px);
+}
+
+.main {
+    max-height: 900px;
+    overflow-y: auto;
 }
 
 
@@ -1016,8 +1021,6 @@
 
 
 
-
-
 .modalwrap {
     z-index: 99999999;
     background-color: rgba(0, 0, 0, 0.2);
@@ -1037,7 +1040,20 @@
     background-color: white;
     overflow: hidden;
     border-radius: 10px;
+    /* 세로 스크롤 자동 생성 */
 }
+
+/* 모달창 높이 조절  멘위아레 빼고 가둬야함*/
+.modalin {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.main {
+    max-height: 900px;
+    overflow-y: auto;
+}
+
 
 .tit {
     background: #1B3A6B;
