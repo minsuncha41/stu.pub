@@ -126,7 +126,7 @@
 .ingtgl {
     margin-top: 16px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     gap: 12;
 }
 
