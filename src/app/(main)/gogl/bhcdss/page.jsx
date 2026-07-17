@@ -28,6 +28,7 @@ import {
   RotateCcw,
   Save,
   Search,
+  Send,
   Shield,
   Star,
   TableIcon,
@@ -113,312 +114,337 @@ export default function Bhcdss() {
                 </p>
               </div>
             </div>
-
-            <div className="mdtop">
-              <div className="mdtoptop">
-                <b>강</b>
-                <ul>
+            <div className="modalin">
+              <div className="mdtop">
+                <div className="mdtoptop">
+                  <b>강</b>
                   <ul>
-                    <li>
-                      <h1>강다은</h1>
-                    </li>
-                    <li>
-                      <span>취득대상</span>
-                    </li>
-                    <li>
-                      <span>
-                        <Info size={10} /> 신고기한 임박
-                      </span>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>EMP-009</li>
-                    <li>|</li>
-                    <li>개발팀</li>
-                    <li>|</li>
-                    <li>사원</li>
-                    <li>|</li>
-                    <li>입사일 2025.07.10</li>
-                  </ul>
-                </ul>
-              </div>
-
-              <div className="mdtopbtom">
-                <div className="mdtopbtombox">
-                  <ul>
-                    <li>
-                      <Clock size={14} />
-                      신고기한
-                    </li>
-                    <li>
-                      <b>D-5</b>
-                      2025.07.14
-                    </li>
+                    <ul>
+                      <li>
+                        <h1>강다은</h1>
+                      </li>
+                      <li>
+                        <span>취득대상</span>
+                      </li>
+                      <li>
+                        <span>
+                          <Info size={10} /> 신고기한 임박
+                        </span>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li>EMP-009</li>
+                      <li>|</li>
+                      <li>개발팀</li>
+                      <li>|</li>
+                      <li>사원</li>
+                      <li>|</li>
+                      <li>입사일 2025.07.10</li>
+                    </ul>
                   </ul>
                 </div>
+
+                <div className="mdtopbtom">
+                  <div className="mdtopbtombox">
+                    <ul>
+                      <li>
+                        <Clock size={14} />
+                        신고기한
+                      </li>
+                      <li>
+                        <b>D-5</b>
+                        2025.07.14
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div className="mdin">
-              <h1 className="ttit">
-                지급 기본정보 <span>복수 선택 가능</span>
-              </h1>
-              <ul>
-                <ul className="ckd">
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                    <div className="icon">
-                      <Shield size={15} />
-                    </div>
-                    <h1>
-                      국민연금 취득신고서
-                      <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
-                    </h1>
-                  </li>
-                  <li>
-                    <span className="pd">NPS-001</span>
-                    <h4>{">"}</h4>
-                  </li>
+              <div className="mdin jggbjb">
+                <h1 className="ttit">
+                  지급 기본정보 <span>복수 선택 가능</span>
+                </h1>
+                <ul>
+                  <ul className="ckd">
+                    <li>
+                      <input type="checkbox" name="" id="" />
+                      <div className="icon">
+                        <Shield size={15} />
+                      </div>
+                      <h1>
+                        국민연금 취득신고서
+                        <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
+                      </h1>
+                    </li>
+                    <li>
+                      <span className="pd">NPS-001</span>
+                      <h4>{">"}</h4>
+                    </li>
+                  </ul>
+
+                  <ul className="ckd">
+                    <li>
+                      <input type="checkbox" name="" id="" />
+                      <div className="icon">
+                        <Shield size={15} />
+                      </div>
+                      <h1>
+                        국민연금 취득신고서
+                        <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
+                      </h1>
+                    </li>
+                    <li>
+                      <span className="pd">NPS-001</span>
+                      <h4>{">"}</h4>
+                    </li>
+                  </ul>
+
+                  <ul className="ckd">
+                    <li>
+                      <input type="checkbox" name="" id="" />
+                      <div className="icon">
+                        <Shield size={15} />
+                      </div>
+                      <h1>
+                        국민연금 취득신고서
+                        <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
+                      </h1>
+                    </li>
+                    <li>
+                      <span className="pd">NPS-001</span>
+                      <h4>{">"}</h4>
+                    </li>
+                  </ul>
+
+                  <ul className="">
+                    <li>
+                      <input type="checkbox" name="" id="" />
+                      <div className="icon">
+                        <Shield size={15} />
+                      </div>
+                      <h1>
+                        국민연금 취득신고서
+                        <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
+                      </h1>
+                    </li>
+                    <li>
+                      <span className="pd">미해당</span>
+                      <h4>{">"}</h4>
+                    </li>
+                  </ul>
                 </ul>
+              </div>
 
-                <ul className="ckd">
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                    <div className="icon">
-                      <Shield size={15} />
-                    </div>
-                    <h1>
-                      국민연금 취득신고서
-                      <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
-                    </h1>
-                  </li>
-                  <li>
-                    <span className="pd">NPS-001</span>
-                    <h4>{">"}</h4>
-                  </li>
-                </ul>
+              <div className="mdin jggbjb">
+                <h1 className="ttit">
+                  지급 기본정보{" "}
+                  <span>
+                    <Zap size={10} />
+                    자동완성
+                  </span>
+                </h1>
+                <div className="lbbox">
+                  <label className="inputic ">
+                    <p>성명</p>
+                    <input type="text" value={"강다은"} disabled readOnly />
+                    <Lock size={13} className="ic" />
+                  </label>
+                  <label className="inputic">
+                    <p>성별</p>
+                    <input type="text" value={"여"} disabled readOnly />
+                    <Lock size={13} className="ic" />
+                  </label>
 
-                <ul className="ckd">
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                    <div className="icon">
-                      <Shield size={15} />
-                    </div>
-                    <h1>
-                      국민연금 취득신고서
-                      <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
-                    </h1>
-                  </li>
-                  <li>
-                    <span className="pd">NPS-001</span>
-                    <h4>{">"}</h4>
-                  </li>
-                </ul>
+                  <label className="inputic inputicwt">
+                    <p>
+                      주민등록번호<span>*</span>
+                    </p>
+                    <input type="text" value={"981205-2●●●●●●"} />
+                    <EyeOff size={13} className="ic" />
+                  </label>
+                  <label className="inputic">
+                    <p>국적</p>
+                    <input type="text" value={"대한민국"} disabled readOnly />
+                    <Lock size={13} className="ic" />
+                  </label>
 
-                <ul className="">
-                  <li>
-                    <input type="checkbox" name="" id="" />
-                    <div className="icon">
-                      <Shield size={15} />
-                    </div>
-                    <h1>
-                      국민연금 취득신고서
-                      <p>국민연금공단 제출용 · 취득일로부터 14일 이내</p>
-                    </h1>
-                  </li>
-                  <li>
-                    <span className="pd">미해당</span>
-                    <h4>{">"}</h4>
-                  </li>
-                </ul>
-              </ul>
-            </div>
+                  <label className="inputic ">
+                    <p>
+                      취득일 (입사일)<span>*</span>
+                    </p>
+                    <input type="text" value={"2025.07.10"} disabled readOnly />
+                    <Lock size={13} className="ic" />
+                  </label>
+                  <label className="inputic inputicwt">
+                    <p>
+                      기준소득월액
+                      <span>*</span>
+                    </p>
+                    <input type="text" value={"2,800,000원"} />
+                    <Pencil size={13} className="ic" />
+                  </label>
 
-            <div className="mdin jggbjb">
-              <h1 className="ttit">
-                지급 기본정보{" "}
+                  <label className="inputic ">
+                    <p>직종</p>
+                    <input type="text" value={"일반직"} disabled readOnly />
+                    <Lock size={13} className="ic" />
+                  </label>
+                  <label className="inputic">
+                    <p>고용형태</p>
+                    <input type="text" value={"정규직"} disabled readOnly />
+                    <Lock size={13} className="ic" />
+                  </label>
+                </div>
                 <span>
-                  <Zap size={10} />
-                  자동완성
+                  <Info size={12} />
+                  자물쇠 항목은 인사정보에서 자동 불러온 값입니다.
+                  기준소득월액은 직접 수정할 수 있습니다.
                 </span>
+              </div>
+
+              <div className="mdin sgggjb">
+                <h1 className="ttit">신고기관 정보</h1>
+                <ul>
+                  <ul>
+                    <li>
+                      <div className="boxin">
+                        <div className="box"></div>
+                        <h1>국민연금공단</h1>
+                      </div>
+
+                      <span>팩스 가능</span>
+                    </li>
+                    <li>
+                      <p>
+                        <MapPin size={10} />
+                        서울강남지사
+                      </p>
+                      <p>
+                        <Phone size={10} />
+                        1355
+                      </p>
+                      <p>
+                        <Printer size={10} />
+                        02-123-4567
+                      </p>
+                    </li>
+                  </ul>
+
+                  <ul>
+                    <li>
+                      <div className="boxin">
+                        <div className="box"></div>
+                        <h1>국민건강보험공단</h1>
+                      </div>
+
+                      <span>팩스 가능</span>
+                    </li>
+                    <li>
+                      <p>
+                        <MapPin size={10} />
+                        강남지사
+                      </p>
+                      <p>
+                        <Phone size={10} />
+                        1577-1000
+                      </p>
+                      <p>
+                        <Printer size={10} />
+                        02-234-5678
+                      </p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <div className="boxin">
+                        <div className="box"></div>
+                        <h1>근로복지공단</h1>
+                      </div>
+
+                      <span>팩스 가능</span>
+                    </li>
+                    <li>
+                      <p>
+                        <MapPin size={10} />
+                        서울남부지사
+                      </p>
+                      <p>
+                        <Phone size={10} />
+                        1588-0075
+                      </p>
+                      <p>
+                        <Printer size={10} />
+                        02-345-6789
+                      </p>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+
+              <div className="mdin psjssj">
+                <h1 className="ttit">팩스 전송 설정</h1>
+                <div className="lbbox">
+                  <label className="inputic inputicwt">
+                    <p>수신 팩스번호</p>
+                    <select name="" id="">
+                      <option value="">기관 선택 후 자동입력</option>
+                      <option value="1">1기관</option>
+                      <option value="2">2기관</option>
+                      <option value="3">3기관</option>
+                    </select>
+                  </label>
+                  <label className="inputic inputicwt">
+                    <p>발신 팩스번호</p>
+                    <input type="text" value={"02-000-0000"} />
+                  </label>
+                </div>
+                <span>
+                  <Info size={12} />
+                  자물쇠 항목은 인사정보에서 자동 불러온 값입니다.
+                  기준소득월액은 직접 수정할 수 있습니다.
+                </span>
+              </div>
+            </div>
+
+            <div className="mdin sgghjo">
+              <Info size={14} />
+              <h1>
+                신고기한 주의
+                <p>
+                  취득신고 기한은 2025.07.14(월)입니다. 기한 초과 시 과태료(최대
+                  10만원)가 부과될 수 있습니다.
+                </p>
               </h1>
-              <div className="lbbox">
-                <label className="inputic ">
-                  <p>성명</p>
-                  <input type="text" value={"강다은"} disabled readOnly />
-                  <Lock size={13} className="ic" />
-                </label>
-                <label className="inputic">
-                  <p>성별</p>
-                  <input type="text" value={"여"} disabled readOnly />
-                  <Lock size={13} className="ic" />
-                </label>
-
-                <label className="inputic inputicwt">
-                  <p>
-                    주민등록번호<span>*</span>
-                  </p>
-                  <input type="text" value={"981205-2●●●●●●"} />
-                  <EyeOff size={13} className="ic" />
-                </label>
-                <label className="inputic">
-                  <p>국적</p>
-                  <input type="text" value={"대한민국"} disabled readOnly />
-                  <Lock size={13} className="ic" />
-                </label>
-
-                <label className="inputic ">
-                  <p>
-                    취득일 (입사일)<span>*</span>
-                  </p>
-                  <input type="text" value={"2025.07.10"} disabled readOnly />
-                  <Lock size={13} className="ic" />
-                </label>
-                <label className="inputic inputicwt">
-                  <p>
-                    기준소득월액
-                    <span>*</span>
-                  </p>
-                  <input type="text" value={"2,800,000원"} />
-                  <Pencil size={13} className="ic" />
-                </label>
-
-                <label className="inputic ">
-                  <p>직종</p>
-                  <input type="text" value={"일반직"} disabled readOnly />
-                  <Lock size={13} className="ic" />
-                </label>
-                <label className="inputic">
-                  <p>고용형태</p>
-                  <input type="text" value={"정규직"} disabled readOnly />
-                  <Lock size={13} className="ic" />
-                </label>
-              </div>
-              <span>
-                <Info size={12} />
-                자물쇠 항목은 인사정보에서 자동 불러온 값입니다. 기준소득월액은
-                직접 수정할 수 있습니다.
-              </span>
-            </div>
-
-            <div className="mdin sgggjb">
-              <h1 className="ttit">신고기관 정보</h1>
-              <ul>
-                <ul>
-                  <li>
-                    <div className="">
-                      <div className="box"></div>
-                      <h1>국민연금공단</h1>
-                    </div>
-
-                    <span>팩스 가능</span>
-                  </li>
-                  <li>
-                    <p>
-                      <MapPin size={10} />
-                      서울강남지사
-                    </p>
-                    <p>
-                      <Phone size={10} />
-                      1355
-                    </p>
-                    <p>
-                      <Printer size={10} />
-                      02-123-4567
-                    </p>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <div className="">
-                      <div className="box"></div>
-                      <h1>국민연금공단</h1>
-                    </div>
-
-                    <span>팩스 가능</span>
-                  </li>
-                  <li>
-                    <p>
-                      <MapPin size={10} />
-                      서울강남지사
-                    </p>
-                    <p>
-                      <Phone size={10} />
-                      1355
-                    </p>
-                    <p>
-                      <Printer size={10} />
-                      02-123-4567
-                    </p>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <div className="">
-                      <div className="box"></div>
-                      <h1>국민연금공단</h1>
-                    </div>
-
-                    <span>팩스 가능</span>
-                  </li>
-                  <li>
-                    <p>
-                      <MapPin size={10} />
-                      서울강남지사
-                    </p>
-                    <p>
-                      <Phone size={10} />
-                      1355
-                    </p>
-                    <p>
-                      <Printer size={10} />
-                      02-123-4567
-                    </p>
-                  </li>
-                </ul>
-              </ul>
-            </div>
-
-            <div className="mdin psjssj">
-              <h1 className="ttit">팩스 전송 설정</h1>
-              <div className="lbbox">
-                <label className="inputic inputicwt">
-                  <p>수신 팩스번호</p>
-                  <select name="" id="">
-                    <option value="">기관 선택 후 자동입력</option>
-                    <option value="1">1기관</option>
-                    <option value="2">2기관</option>
-                    <option value="3">3기관</option>
-                  </select>
-                </label>
-                <label className="inputic inputicwt">
-                  <p>발신 팩스번호</p>
-                  <input type="text" value={"02-000-0000"} />
-                </label>
-              </div>
-              <span>
-                <Info size={12} />
-                자물쇠 항목은 인사정보에서 자동 불러온 값입니다. 기준소득월액은
-                직접 수정할 수 있습니다.
-              </span>
             </div>
 
             <div className="btlft">
               <h1>
-                <p>
-                  <span>*</span>
-                  필수 입력 항목<>{" | "}</>
-                </p>
                 <b>
-                  <Users size={12} />
-                  3명 · 총 1,700,000원
+                  <FileText size={12} />
+                  3종 신고서 선택됨
                 </b>
+                <p>
+                  <>{" | "}</>
+                  <span>*</span>
+                  필수 입력 항목
+                </p>
               </h1>
               <div className="btret">
                 <button className="imibtn">
-                  <Eye size={14} />
-                  미리보기
+                  <Send size={14} />
+                  팩스 전송
                 </button>
+
+                <button
+                  className="jjbtn"
+                  onClick={() => {
+                    popno();
+                  }}
+                >
+                  <Printer size={14} />
+                  신고서 출력
+                </button>
+
                 <button
                   className=" dgbtn"
                   onClick={() => {
@@ -426,16 +452,7 @@ export default function Bhcdss() {
                   }}
                 >
                   <X size={14} />
-                  취소
-                </button>
-                <button
-                  className="jjbtn"
-                  onClick={() => {
-                    popno();
-                  }}
-                >
-                  <Save size={14} />
-                  저장하기
+                  닫기
                 </button>
               </div>
             </div>
