@@ -456,7 +456,11 @@ export default function Register({ current }) {
 
               <div className="lblbox">
                 <h1>
-                  급여계좌 <span>급여 입금용 계좌를 등록해 주세요</span>{" "}
+                  급여계좌{" "}
+                  <span>
+                    <Info size={11} />
+                    급여 입금용 계좌를 등록해 주세요
+                  </span>{" "}
                 </h1>
                 <label className="lbl">
                   <p>

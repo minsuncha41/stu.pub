@@ -538,6 +538,22 @@
     color: #0369A1;
 }
 
+.lblbox h1 {
+    display: flex;
+    align-items: center;
+    gap: 5;
+}
+
+.lblbox h1>span {
+    display: flex;
+    align-items: center;
+    gap: 5;
+    padding: 0px 10px;
+    background: #F0F9FF;
+    border-radius: 7px;
+    font-size: 11px;
+    color: #3B82F6;
+}
 
 
 
