@@ -12,6 +12,12 @@
     width: calc(100% - 210px);
 }
 
+.main {
+    max-height: 900px;
+    overflow-y: auto;
+}
+
+
 
 .findebox {
     padding: 20px 14px;
@@ -195,7 +201,7 @@
 .ingtgl {
     margin-top: 16px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     gap: 12;
 }
 
