@@ -299,7 +299,7 @@ export default function Table({ tablecls, keywordss }) {
           <span className={s.sjs}>수정</span>
         </li>
       </ul>
-      <ul>
+      {/* <ul>
         <li>4</li>
         <li>EMP-004</li>
         <li>최지영</li>
@@ -314,7 +314,7 @@ export default function Table({ tablecls, keywordss }) {
         <li>
           <span className={s.sjs}>수정</span>
         </li>
-      </ul>
+      </ul> */}
 
       <ul className={s.textsbtns}>
         <li>총 4건</li>
