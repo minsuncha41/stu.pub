@@ -55,21 +55,21 @@ import {
 } from "lucide-react";
 
 export default function Hgsc() {
-  const [employee, setemployee] = useState([]);
+  // const [employee, setemployee] = useState([]);
 
-  useEffect(() => {
-    //api를 요청해서 받는다. 통신은async await붙인다
-    const getEmployee = async () => {
-      const response = await baseApi.get("/api/v1/employees");
-      console.log(response.data.data);
+  // useEffect(() => {
+  //   //api를 요청해서 받는다. 통신은async await붙인다
+  //   const getEmployee = async () => {
+  //     const response = await baseApi.get("/api/v1/employees");
+  //     console.log(response.data.data);
 
-      //useState를 넣는다
-      setemployee(response.data.data);
+  //     //useState를 넣는다
+  //     setemployee(response.data.data);
 
-      //useState에 있는 데이터를 렌더링 시킨다
-    };
-    getEmployee();
-  }, []);
+  //     //useState에 있는 데이터를 렌더링 시킨다
+  //   };
+  //   getEmployee();
+  // }, []);
 
   return (
     <div className="wrap">
@@ -198,15 +198,17 @@ export default function Hgsc() {
                     <p>
                       휴가 기간<span className="str">*</span>
                     </p>
-                    <label>
-                      <p>시작일</p>
-                      <input type="date" name="" id="" />
-                    </label>
-                    <span>~</span>
-                    <label>
-                      <p>종료일</p>
-                      <input type="date" name="" id="" />
-                    </label>
+                    <div className="cgsgbox">
+                      <label>
+                        <p>시작일</p>
+                        <input type="date" name="" id="" />
+                      </label>
+                      <span>~</span>
+                      <label>
+                        <p>종료일</p>
+                        <input type="date" name="" id="" />
+                      </label>
+                    </div>
                   </label>
                   <h1 className="gtuhif hgggif">
                     <p>

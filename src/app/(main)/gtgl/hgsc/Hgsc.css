@@ -364,6 +364,12 @@
     width: 100%;
 }
 
+.cgsgbox {
+    display: flex;
+    align-items: center;
+    gap: 0 5;
+}
+
 .lboutbox .cgsg label {
     margin: 0;
 }
