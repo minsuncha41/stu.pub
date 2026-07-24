@@ -188,6 +188,18 @@ export default function CargoTrackPage() {
           ))}
         </nav>
 
+        <div
+          className="mdbtn"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            position: "absolute",
+            left: "930px",
+          }}
+        >
+          <Box /> <DispatchRequestDialog open={open} />
+        </div>
+
         <div className="flex items-center !pr-6">
           <Button variant="ghost" size="icon">
             <Bell className="h-4 w-4" />
@@ -206,11 +218,6 @@ export default function CargoTrackPage() {
           </div>
         </div>
       </header>
-
-      <div>
-        <button onClick={() => setOpen(true)}>모달 열기</button>
-        <DispatchRequestDialog open={open} setOpen={setOpen} />
-      </div>
 
       <section className="grid h-[64px] grid-cols-6 border-b border-white/10 bg-[#111f39]">
         {summary.map(({ label, value, icon: Icon }) => (
